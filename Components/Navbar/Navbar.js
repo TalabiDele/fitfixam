@@ -16,7 +16,7 @@ import {
   Tags,
   Actions,
 } from "./Style";
-import { BtnNav } from "../Components/Buttons";
+import { BtnNav } from "../Buttons";
 import Link from "next/link";
 import {
   FaToolbox,

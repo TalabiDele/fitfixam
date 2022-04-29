@@ -3,7 +3,7 @@ import { Container, Wrapper, Aside, ProviderBtns } from "./Style";
 import Image from "next/image";
 import AuthContext from "@/context/AuthContext";
 import Logo from "@/public/logo-blue.png";
-import { GoogleBtn, FacebookBtn, LoginBtn } from "../Components/Buttons";
+import { GoogleBtn, FacebookBtn, LoginBtn } from "../Buttons";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
 import Link from "next/link";
