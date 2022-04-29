@@ -3,9 +3,9 @@ import Layout from "@/components/Layout";
 
 const signup = () => {
   return (
-    // <Layout>
-    <CreateAccount />
-    // </Layout>
+    <Layout>
+      <CreateAccount />
+    </Layout>
   );
 };
 

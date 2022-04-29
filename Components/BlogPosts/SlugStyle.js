@@ -22,6 +22,7 @@ export const Card = styled.div`
   h2 {
     font-size: 19px;
     color: #020127;
+    margin-bottom: 1rem;
   }
 
   p {
@@ -42,6 +43,7 @@ export const Card = styled.div`
     justify-content: space-between;
     align-items: center;
     color: #020127;
+    margin-top: 1rem;
   }
 `;
 

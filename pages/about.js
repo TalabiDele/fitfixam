@@ -4,7 +4,7 @@ import AboutUs from "@/components/AboutUs/AboutUs";
 
 const about = () => {
   return (
-    <Layout>
+    <Layout title="About Fitfixam">
       <Hero />
       <AboutUs />
     </Layout>

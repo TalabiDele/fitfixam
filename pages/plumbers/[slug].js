@@ -44,6 +44,7 @@ import { RiShareForwardLine } from "react-icons/ri";
 import Moment from "react-moment";
 import { parseCookies } from "@/helpers/index";
 import Link from "next/link";
+import userImage from "public/userImage.png";
 
 const Slug = ({ post, posts, comments, likes, allUsers }) => {
   console.log(posts);
@@ -198,16 +199,30 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                   {allUsers.map((all) =>
                     post.user === all.id ? (
                       <div className="user_details">
-                        <Image
-                          src={all.user_image.formats.small.url}
-                          alt="User Image"
-                          width={50}
-                          height={50}
-                          cursor="pointer"
-                          objectFit="cover"
-                          className="user_image"
-                          onClick={() => displayProfile(all.slug)}
-                        />
+                        {all.user_image ? (
+                          <Image
+                            src={all.user_image.formats.small.url}
+                            alt="User Image"
+                            width={50}
+                            height={50}
+                            cursor="pointer"
+                            objectFit="cover"
+                            className="user_image"
+                            onClick={() => displayProfile(all.slug)}
+                          />
+                        ) : (
+                          <Image
+                            src={userImage}
+                            alt="User Image"
+                            width={50}
+                            height={50}
+                            cursor="pointer"
+                            objectFit="cover"
+                            className="user_image"
+                            onClick={() => displayProfile(all.slug)}
+                          />
+                        )}
+
                         <div>
                           <h3 onClick={() => displayProfile(all.slug)}>
                             {all.username}
@@ -252,7 +267,11 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
             <PostItem key={e.id}>
               <UserPosted>
                 <Image
-                  src={e.user.user_image.formats.small.url}
+                  src={
+                    e.user.user_image
+                      ? e.user.user_image.formats.small.url
+                      : userImage
+                  }
                   alt="User Image"
                   width={80}
                   height={80}
@@ -392,7 +411,11 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                       <UsersComments>
                         <div className="image">
                           <Image
-                            src={com.users.user_image.formats.small.url}
+                            src={
+                              com.users.user_image
+                                ? com.users.user_image.formats.small.url
+                                : userImage
+                            }
                             alt="User Image"
                             width={50}
                             height={50}

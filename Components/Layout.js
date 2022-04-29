@@ -5,6 +5,7 @@ import { useContext, useState, useEffect } from "react";
 import AuthContext from "@/context/AuthContext";
 import Router from "next/router";
 import NProgress from "nprogress";
+import { useRouter } from "next/router";
 // import "@/styles/nprogress.css";
 
 Router.onRouteChangeStart = (url) => {
@@ -26,6 +27,7 @@ export default function Layout({
   router,
 }) {
   const { user } = useContext(AuthContext);
+  const isRouter = useRouter();
 
   return (
     <div>
@@ -41,7 +43,11 @@ export default function Layout({
       </Head>
       <Navbar />
       <div>{children}</div>
-      <Footer />
+      {isRouter.pathname === "/login" || isRouter.pathname === "/signup" ? (
+        <></>
+      ) : (
+        <Footer />
+      )}
     </div>
   );
 }

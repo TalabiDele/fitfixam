@@ -44,6 +44,7 @@ import { RiShareForwardLine } from "react-icons/ri";
 import Moment from "react-moment";
 import { parseCookies } from "@/helpers/index";
 import { PostCategory } from "Components/PostCategory/Style";
+import userImage from "public/userImage.png";
 
 const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   const { user } = useContext(AuthContext);
@@ -305,15 +306,27 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
               <PostDetails>
                 <UserDetails>
                   <div onClick={() => displayProfile(e.user.slug)}>
-                    <Image
-                      src={e.user.user_image.formats.small.url}
-                      alt="User Image"
-                      width={50}
-                      height={50}
-                      cursor="pointer"
-                      objectFit="cover"
-                      className="user_image"
-                    />
+                    {e.user.user_image ? (
+                      <Image
+                        src={e.user.user_image.formats.small.url}
+                        alt="User Image"
+                        width={50}
+                        height={50}
+                        cursor="pointer"
+                        objectFit="cover"
+                        className="user_image"
+                      />
+                    ) : (
+                      <Image
+                        src={userImage}
+                        alt="User Image"
+                        width={50}
+                        height={50}
+                        cursor="pointer"
+                        objectFit="cover"
+                        className="user_image"
+                      />
+                    )}
                   </div>
                   <div>
                     <h3 onClick={() => displayProfile(e.user.slug)}>
@@ -354,15 +367,27 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
             <PostItem key={e.id}>
               <UserPosted>
                 <div onClick={() => displayProfile(e.user.slug)}>
-                  <Image
-                    src={e.user.user_image.formats.small.url}
-                    alt="User Image"
-                    width={80}
-                    height={80}
-                    cursor="pointer"
-                    objectFit="cover"
-                    className="user_image"
-                  />
+                  {e.user.user_image ? (
+                    <Image
+                      src={e.user.user_image.formats.small.url}
+                      alt="User Image"
+                      width={80}
+                      height={80}
+                      cursor="pointer"
+                      objectFit="cover"
+                      className="user_image"
+                    />
+                  ) : (
+                    <Image
+                      src={userImage}
+                      alt="User Image"
+                      width={80}
+                      height={80}
+                      cursor="pointer"
+                      objectFit="cover"
+                      className="user_image"
+                    />
+                  )}
                 </div>
                 <UserInfo>
                   <h2 onClick={() => displayProfile(e.user.slug)}>
@@ -535,14 +560,25 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                           className="image"
                           onClick={() => displayProfile(e.user.slug)}
                         >
-                          <Image
-                            src={com.users.user_image.formats.small.url}
-                            alt="User Image"
-                            width={70}
-                            height={70}
-                            className="user_image"
-                            objectFit="cover"
-                          />
+                          {com.users.user_image ? (
+                            <Image
+                              src={com.users.user_image.formats.small.url}
+                              alt="User Image"
+                              width={70}
+                              height={70}
+                              className="user_image"
+                              objectFit="cover"
+                            />
+                          ) : (
+                            <Image
+                              src={userImage}
+                              alt="User Image"
+                              width={70}
+                              height={70}
+                              className="user_image"
+                              objectFit="cover"
+                            />
+                          )}
                         </div>
                         <div>
                           <div className="name_time">

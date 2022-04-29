@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import AuthContext from "@/context/AuthContext";
 import qs from "qs";
 import Logo from "@/public/Blue.png";
+import userImage from "public/userImage.png";
 import {
   Wrapper,
   Container,
@@ -406,16 +407,30 @@ const Navbar = () => {
           <>
             <div className="user_profile">
               <FaBell fontSize={26} cursor="pointer" className="bell" />
-              <Image
-                src={user.user_image.formats.small.url}
-                alt="User Image"
-                width={50}
-                height={50}
-                cursor="pointer"
-                objectFit="cover"
-                className="user_image"
-                onClick={() => router.push(`/profile/${user.slug}`)}
-              />
+              {user.userImage ? (
+                <Image
+                  src={user.user_image.formats.small.url}
+                  alt="User Image"
+                  width={50}
+                  height={50}
+                  cursor="pointer"
+                  objectFit="cover"
+                  className="user_image"
+                  onClick={() => router.push(`/profile/${user.slug}`)}
+                />
+              ) : (
+                <Image
+                  src={userImage}
+                  alt="User Image"
+                  width={50}
+                  height={50}
+                  cursor="pointer"
+                  objectFit="cover"
+                  className="user_image"
+                  onClick={() => router.push(`/profile/${user.slug}`)}
+                />
+              )}
+
               <div className="user_info">
                 <h3 onClick={() => router.push(`/profile/${user.slug}`)}>
                   {user.username}

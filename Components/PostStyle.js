@@ -14,11 +14,12 @@ export const Wrapper = styled.div`
   /* background: #fcfdfd; */
   background: #fff;
   overflow-y: scroll;
+  border-radius: 10px 10px 0px 0px;
   height: 60rem;
   padding-bottom: 20rem;
   padding-right: 35rem;
-  top: 0rem;
-  z-index: -1;
+  /* top: 0rem; */
+  /* z-index: -1; */
   /* padding-top: 6rem; */
 
   div.reactions {
@@ -119,7 +120,7 @@ export const UserPosted = styled.div`
   display: flex;
   align-items: center;
   background: #fcfdfd;
-  padding: 8rem 0rem 2rem 2rem;
+  padding: 2rem 0rem 2rem 2rem;
 
   .user_image {
     cursor: pointer;
@@ -256,7 +257,9 @@ export const Comments = styled.div`
     background-color: #fcfdfd;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    width: 47%;
+    padding-left: 2rem;
+    border-radius: 10px 0px 0px 0px;
+    width: 50%;
     margin: auto;
     position: fixed;
     bottom: 0;

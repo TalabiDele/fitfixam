@@ -44,6 +44,7 @@ import Moment from "react-moment";
 import { parseCookies } from "@/helpers/index";
 import Link from "next/link";
 import { PostCategory } from "Components/PostCategory/Style";
+import userImage from "public/userImage.png";
 
 const Slug = ({ post, posts, comments, likes, allUsers }) => {
   console.log(posts);
@@ -198,16 +199,30 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                   {allUsers.map((all) =>
                     post.user === all.id ? (
                       <div className="user_details">
-                        <Image
-                          src={all.user_image.formats.small.url}
-                          alt="User Image"
-                          width={50}
-                          height={50}
-                          cursor="pointer"
-                          objectFit="cover"
-                          className="user_image"
-                          onClick={() => displayProfile(all.slug)}
-                        />
+                        {all.user_image ? (
+                          <Image
+                            src={all.user_image.formats.small.url}
+                            alt="User Image"
+                            width={50}
+                            height={50}
+                            cursor="pointer"
+                            objectFit="cover"
+                            className="user_image"
+                            onClick={() => displayProfile(all.slug)}
+                          />
+                        ) : (
+                          <Image
+                            src={userImage}
+                            alt="User Image"
+                            width={50}
+                            height={50}
+                            cursor="pointer"
+                            objectFit="cover"
+                            className="user_image"
+                            onClick={() => displayProfile(all.slug)}
+                          />
+                        )}
+
                         <div>
                           <h3 onClick={() => displayProfile(all.slug)}>
                             {all.username}
@@ -251,16 +266,30 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
           {post.map((e) => (
             <PostItem key={e.id}>
               <UserPosted>
-                <Image
-                  src={e.user.user_image.formats.small.url}
-                  alt="User Image"
-                  width={80}
-                  height={80}
-                  cursor="pointer"
-                  objectFit="cover"
-                  className="user_image"
-                  onClick={() => displayProfile(e.user.slug)}
-                />
+                {e.user.user_image ? (
+                  <Image
+                    src={e.user.user_image.formats.small.url}
+                    alt="User Image"
+                    width={80}
+                    height={80}
+                    cursor="pointer"
+                    objectFit="cover"
+                    className="user_image"
+                    onClick={() => displayProfile(e.user.slug)}
+                  />
+                ) : (
+                  <Image
+                    src={userImage}
+                    alt="User Image"
+                    width={80}
+                    height={80}
+                    cursor="pointer"
+                    objectFit="cover"
+                    className="user_image"
+                    onClick={() => displayProfile(e.user.slug)}
+                  />
+                )}
+
                 <UserInfo>
                   <h2 onClick={() => displayProfile(e.user.slug)}>
                     {e.user.username}
@@ -390,14 +419,25 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                           className="image"
                           onClick={() => displayProfile(com.users.slug)}
                         >
-                          <Image
-                            src={com.users.user_image.formats.small.url}
-                            alt="User Image"
-                            width={70}
-                            height={70}
-                            className="user_image"
-                            objectFit="cover"
-                          />
+                          {com.users.user_image ? (
+                            <Image
+                              src={com.users.user_image.formats.small.url}
+                              alt="User Image"
+                              width={70}
+                              height={70}
+                              className="user_image"
+                              objectFit="cover"
+                            />
+                          ) : (
+                            <Image
+                              src={userImage}
+                              alt="User Image"
+                              width={70}
+                              height={70}
+                              className="user_image"
+                              objectFit="cover"
+                            />
+                          )}
                         </div>
                         <div>
                           <div className="name_time">

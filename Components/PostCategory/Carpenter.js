@@ -15,6 +15,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Moment from "react-moment";
+import userImage from "public/userImage.png";
 
 const Carpenter = ({ posts, comments, allUsers }) => {
   console.log(posts);
@@ -48,16 +49,30 @@ const Carpenter = ({ posts, comments, allUsers }) => {
               {allUsers.map((all) =>
                 posts.user === all.id ? (
                   <div className="user_details">
-                    <Image
-                      src={all.user_image.formats.small.url}
-                      alt="User Image"
-                      width={50}
-                      height={50}
-                      cursor="pointer"
-                      objectFit="cover"
-                      className="user_image"
-                      onClick={() => displayProfile(all.slug)}
-                    />
+                    {all.user_image ? (
+                      <Image
+                        src={all.user_image.formats.small.url}
+                        alt="User Image"
+                        width={50}
+                        height={50}
+                        cursor="pointer"
+                        objectFit="cover"
+                        className="user_image"
+                        onClick={() => displayProfile(all.slug)}
+                      />
+                    ) : (
+                      <Image
+                        src={userImage}
+                        alt="User Image"
+                        width={50}
+                        height={50}
+                        cursor="pointer"
+                        objectFit="cover"
+                        className="user_image"
+                        onClick={() => displayProfile(all.slug)}
+                      />
+                    )}
+
                     <div>
                       <h3 onClick={() => displayProfile(all.slug)}>
                         {all.username}

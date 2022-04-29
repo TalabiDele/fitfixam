@@ -156,6 +156,20 @@ export const Wrapper = styled.div`
   margin: auto;
   padding-top: 1rem;
 
+  div.sign_nav {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    margin-left: 3rem;
+    font-size: 26px;
+    transition: all 2s ease;
+    margin-top: 2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   li {
     list-style: none;
   }
@@ -377,6 +391,7 @@ export const NavMenu = styled.div`
 
 export const Search = styled.div`
   margin-left: 15rem;
+  /* display: flex; */
 
   .search {
     position: absolute;
@@ -391,6 +406,11 @@ export const Search = styled.div`
 `;
 
 export const Btn = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: right;
+
   button {
     border: none;
     background: none;
@@ -401,6 +421,8 @@ export const Btn = styled.div`
     width: 7rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
 
     &:hover {
       color: #fff;

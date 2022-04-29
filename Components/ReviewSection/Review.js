@@ -1,7 +1,7 @@
 import { Container, Wrapper, Arrow, Header } from "./Style";
 import Image from "next/image";
 import Video from "@/public/Video.png";
-import ArrowOne from "@/public/Arrow 2.png";
+import ArrowOne from "/public/Arrow-2.png";
 import ReviewCard from "Components/ReviewCard/ReviewCard";
 
 const Review = () => {

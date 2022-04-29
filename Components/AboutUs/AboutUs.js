@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Wrapper } from "./Style";
 import Image from "next/image";
-import arrow from "@/public/arrow-2.png";
+import arrow from "/arrow-2.png";
 import founder from "@/public/founder.png";
 
 const AboutUs = () => {
@@ -10,9 +10,11 @@ const AboutUs = () => {
       <Wrapper>
         <h2>A little bit about us</h2>
         <p className="first">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hac eget mi
-          diam enim ut. Velit nec mauris diam sed facilisi arcu in euismod.
-          Adipiscing lacus ut lacus at. Libero ac id vitae amet augue.
+          Fitfixam was born out of continual disappointments at the hands of
+          artisans who claim to know how to go about their work and produce
+          unsatisfactory results in the end. It is a known fact that some
+          artisans do not keep to their word, and in most cases are not as good
+          as they claim to be.
         </p>
         <div className="img">
           <Image
@@ -24,10 +26,9 @@ const AboutUs = () => {
           />
         </div>
         <p className="para">
-          Nibh cras magna non tincidunt. Nibh hendrerit dignissim erat vulputate
-          blandit diam, odio pellentesque. Tempor in et integer nunc scelerisque
-          neque id congue. Massa et dolor, id ullamcorper nec. Egestas enim,
-          vulputate amet nam. Consequat natoque dignissim orci turpis.
+          This is not to say that there are no amazing artisans out there who
+          deliver quality service. There are in fact a lot of them, and we would
+          love to promote their work here on Fitfixam.
         </p>
         <div className="about">
           <div className="vision">
@@ -65,16 +66,62 @@ const AboutUs = () => {
           <div className="about_founder">
             <h1>Mr. Francis Nwaochei</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-              enim fringilla fames lectus leo facilisi vitae sit. Cursus et at
-              non semper id semper. Mauris quis nibh enim malesuada metus sit
-              quam. Risus cras in eget faucibus nec mauris, facilisis vitae
-              proin. Et porttitor felis, euismod cursus. Dui et eu habitasse
-              eget pulvinar lacus. Nec nibh nulla et etiam maecenas. Nam
-              habitant leo ipsum maecenas. Elementum sit sed pharetra rutrum
-              tristique aliquet dui. In ac. Nec nibh nulla et etiam maecenas.
-              Nam habitant leo ipsum maecenas. Elementum sit sed pharetra rutrum
-              tristique aliquet dui. In ac.
+              Hi and welcome to Fitfixam. Just a little overview of the Founder-
+              me. <br /> <br />
+              Francis Nwaochei is the Founder of Fitfixam started in 2021 which
+              connects quality artisans and craftsmen to customers in an
+              environment where quality craftsmen customer service is lacking.{" "}
+              <br /> <br />
+              Francis Nwaochei has over twenty-five years’ experience in a
+              multinational oil company and successfully starting up 2 other
+              small businesses. He has built a wealth of experience in various
+              capacities in engineering analysis, business planning, budgeting,
+              budget performance, contracting as well as joint venture partner
+              engagement managing over $500m in contracts and budgeting. <br />{" "}
+              <br />
+              Francis spent ten years supervising technical operations offshore
+              and onshore with a hands-on experience in planning and executing
+              technical operations. Francis technical supervision includes
+              developing work procedures, work permits, safety plans, project
+              execution and supervision. These skills formed his passion for
+              excellence in craftsmen workmanship through experience in a world
+              class multinational company. <br /> <br />
+              An MBA at Imperial college London increased Francis Nwaochei’s
+              passion to provide vision, structure, direction and strategy into
+              an industry where gaps exist and to ensure that the structure is
+              sustainable. That is my driver for the craftsmen industry
+              particularly in places where regulation is absent and quality
+              craftsmen are greatly lacking. <br /> <br />
+              At Fitfixam, the objective is to create a platform where customers
+              can identify and connect with artisans and craftsmen who do
+              excellent workmanship. There are a few main reasons for this – to
+              standardize a minimum quality of work that delivers satisfaction
+              to the customer, to raise the standard of professionalism of
+              craftsmen in the local industry, to build capacity of craftsmen
+              through competition and to create jobs and improve craftsmen
+              financial compensation where they can demand more by providing
+              quality service. <br /> <br />
+              Watching Dragon’s Den is one of my hobbies and I love to see
+              people provide business solutions that positively impact the
+              society. I cannot wait to see Fitfixam change the artisan space
+              locally and globally in a business environment that lacks standard
+              craftsmen service to customers and be part of that wonderful group
+              of people creating value through innovation and entrepreneurial
+              solutions. <br /> <br />I once lived in a building that was
+              structurally flawed and all attempts to correct the flaws were
+              unsuccessful which cost me a lot of money. The technical flaws
+              could not be addressed because the craftsmen were not qualified
+              for the job and this was a problem I realized many others were
+              facing despite having the financial resources. Efforts to get
+              qualified craftsmen only increased waste of resources and more
+              heartache. Realizing that this was a gap that needed to be filled
+              after consulting with over 500 people locally, I decided to start
+              the first digital platform where customers and artisans can
+              connect- customers can connect with quality artisans to get jobs
+              done right the first time. <br /> <br />
+              The long-term goal for Francis Nwaochei and Fitfixam is to be the
+              most trusted platform for hiring quality artisans for personal and
+              business related technical or handiwork jobs.
             </p>
           </div>
         </div>

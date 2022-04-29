@@ -4,16 +4,22 @@ import Posts from "@/components/Discussion/Posts";
 import Slug from "./feeds/[slug].js";
 
 const Feeds = ({ posts, comments, userPost, allUsers }) => {
-  console.log(allUsers);
-
   return (
     <UserLayout>
-      <div>
-        {posts.map((e) => (
-          <Posts key={e.id} posts={e} comments={comments} userPost={userPost} />
-        ))}
-      </div>
-      {/* <Slug /> */}
+      {posts.length !== 0 ? (
+        <div>
+          {posts.map((e) => (
+            <Posts
+              key={e.id}
+              posts={e}
+              comments={comments}
+              userPost={userPost}
+            />
+          ))}
+        </div>
+      ) : (
+        <div>No discussion available</div>
+      )}
     </UserLayout>
   );
 };

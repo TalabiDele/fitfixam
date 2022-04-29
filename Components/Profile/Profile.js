@@ -3,6 +3,7 @@ import { Container, Wrapper } from "./Style";
 import AuthContext from "@/context/AuthContext";
 import { useState, UseEffect, useContext } from "react";
 import Image from "next/image";
+import userImage from "public/userImage.png";
 import {
   FaUserAlt,
   FaToolbox,
@@ -81,14 +82,25 @@ const Profile = ({ usersProfile, userPosts }) => {
           <div className="user">
             <div className="user_info">
               <div className="img">
-                <Image
-                  src={usersProfile.user_image.url}
-                  alt="user image"
-                  width={170}
-                  height={170}
-                  className="image"
-                  objectFit="cover"
-                />
+                {usersProfile.user_image ? (
+                  <Image
+                    src={usersProfile.user_image.url}
+                    alt="user image"
+                    width={170}
+                    height={170}
+                    className="image"
+                    objectFit="cover"
+                  />
+                ) : (
+                  <Image
+                    src={userImage}
+                    alt="user image"
+                    width={170}
+                    height={170}
+                    className="image"
+                    objectFit="cover"
+                  />
+                )}
               </div>
               <div className="edit_img">
                 <FaPen color="#07036E" fontSize={15} className="pen" />
@@ -255,14 +267,25 @@ const Profile = ({ usersProfile, userPosts }) => {
         <div className="detail">
           <div className="user">
             <div className="img_container">
-              <Image
-                src={usersProfile.user_image.url}
-                alt="User image"
-                width={170}
-                height={170}
-                objectFit="cover"
-                className="image"
-              />
+              {usersProfile.user_image ? (
+                <Image
+                  src={usersProfile.user_image.url}
+                  alt="User image"
+                  width={170}
+                  height={170}
+                  objectFit="cover"
+                  className="image"
+                />
+              ) : (
+                <Image
+                  src={userImage}
+                  alt="User image"
+                  width={170}
+                  height={170}
+                  objectFit="cover"
+                  className="image"
+                />
+              )}
             </div>
             <div className="name">
               <p>

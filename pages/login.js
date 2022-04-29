@@ -3,9 +3,9 @@ import Layout from "@/components/Layout";
 
 const Login = () => {
   return (
-    // <Layout>
-    <Signin />
-    // </Layout>
+    <Layout>
+      <Signin />
+    </Layout>
   );
 };
 

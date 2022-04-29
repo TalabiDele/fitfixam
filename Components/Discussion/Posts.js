@@ -16,6 +16,7 @@ import SinglePost from "./SinglePost";
 import Link from "next/link";
 import Moment from "react-moment";
 import { PostCategory } from "Components/PostCategory/Style";
+import userImage from "/public/userImage.png";
 
 const Posts = ({ posts, comments, userPost }) => {
   const [postDisplay, setPostDisplay] = useState({});
@@ -78,15 +79,27 @@ const Posts = ({ posts, comments, userPost }) => {
               <PostDetails>
                 <UserDetails>
                   <div onClick={() => displayProfile(posts.user.slug)}>
-                    <Image
-                      src={posts.user.user_image.formats.small.url}
-                      alt="User Image"
-                      width={50}
-                      height={50}
-                      cursor="pointer"
-                      objectFit="cover"
-                      className="user_image"
-                    />
+                    {posts.user.user_image ? (
+                      <Image
+                        src={posts.user.user_image.formats.small.url}
+                        alt="User Image"
+                        width={50}
+                        height={50}
+                        cursor="pointer"
+                        objectFit="cover"
+                        className="user_image"
+                      />
+                    ) : (
+                      <Image
+                        src={userImage}
+                        alt="User Image"
+                        width={50}
+                        height={50}
+                        cursor="pointer"
+                        objectFit="cover"
+                        className="user_image"
+                      />
+                    )}
                   </div>
                   <div>
                     <h3 onClick={() => displayProfile(posts.user.slug)}>

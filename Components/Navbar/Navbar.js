@@ -43,48 +43,62 @@ import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
-  return (
-    <Wrapper>
-      <ul>
-        <li>
+  const router = useRouter();
+
+  if (router.pathname === "/login" || router.pathname === "/signup") {
+    return (
+      <Wrapper>
+        <div className="sign_nav">
           <Link href="/">
+            <a>Back</a>
+          </Link>
+        </div>
+      </Wrapper>
+    );
+  } else {
+    return (
+      <Wrapper>
+        <ul>
+          <li>
+            <Link href="/">
+              <a>
+                <Image src={Logo} alt="Fitfixam Logo" width={150} height={60} />
+              </a>
+            </Link>
+          </li>
+          <Container>
+            <Link href="/feeds">
+              <a>
+                <li>Discussions</li>
+              </a>
+            </Link>
+            <Link href="/blog">
+              <a>
+                <li>Blog</li>
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a>
+                <li>Contact us</li>
+              </a>
+            </Link>
+            <Link href="/about">
+              <a>
+                <li>About us</li>
+              </a>
+            </Link>
+          </Container>
+          <Link href="/signup">
             <a>
-              <Image src={Logo} alt="Fitfixam Logo" width={150} height={60} />
+              <li>
+                <BtnNav>Get Started</BtnNav>
+              </li>
             </a>
           </Link>
-        </li>
-        <Container>
-          <Link href="/feeds">
-            <a>
-              <li>Discussions</li>
-            </a>
-          </Link>
-          <Link href="/blog">
-            <a>
-              <li>Blog</li>
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a>
-              <li>Contact us</li>
-            </a>
-          </Link>
-          <Link href="/about">
-            <a>
-              <li>About us</li>
-            </a>
-          </Link>
-        </Container>
-        <Link href="/signup">
-          <a>
-            <li>
-              <BtnNav>Get Started</BtnNav>
-            </li>
-          </a>
-        </Link>
-      </ul>
-    </Wrapper>
-  );
+        </ul>
+      </Wrapper>
+    );
+  }
 };
 
 export default Navbar;

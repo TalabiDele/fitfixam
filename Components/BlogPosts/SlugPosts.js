@@ -34,6 +34,7 @@ import { useState, useContext, useEffect } from "react";
 import Moment from "react-moment";
 import ReactMarkdown from "react-markdown";
 import { NEXT_PUBLIC_API_URL } from "../../config";
+import userImage from "public/userImage.png";
 
 const BlogPosts = ({ blogPosts, post, likes, comments }) => {
   const { user } = useContext(AuthContext);
@@ -285,8 +286,10 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
                         >
                           <Image
                             src={
-                              com.users_permissions_user.user_image.formats
-                                .small.url
+                              com.users_permissions_user.user_image
+                                ? com.users_permissions_user.user_image.formats
+                                    .small.url
+                                : userImage
                             }
                             alt="User Image"
                             width={70}
