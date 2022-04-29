@@ -3,7 +3,7 @@ import Image from "next/image";
 import CarpenterImg from "@/public/Carpenter_img.png";
 import PlumberImg from "@/public/Plumber_img.png";
 import ElectricianImg from "@/public/Electrician_img.png";
-import { BtnCard } from "@/components/Buttons";
+import { BtnCard } from "../Components/Buttons";
 
 const ReviewCard = () => {
   return (

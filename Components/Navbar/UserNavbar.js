@@ -20,7 +20,7 @@ import {
   Contain,
   SearchContainer,
 } from "./Style";
-import { BtnNav } from "@/components/Buttons";
+import { BtnNav } from "../Components/Buttons";
 import Link from "next/link";
 import {
   FaToolbox,
