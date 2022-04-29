@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Wrapper } from "./Style";
 import Image from "next/image";
-import arrow from "@/public/arrow-2.png";
+import arrow from "@/public/Arrow-2.png";
 import founder from "@/public/founder.png";
 
 const AboutUs = () => {
