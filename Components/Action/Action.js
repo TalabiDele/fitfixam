@@ -15,7 +15,9 @@ const Action = () => {
             Help people discover you. Get clients here and let the testimonials
             speak for you
           </p>
-          <HeroBtn>Proceed</HeroBtn>
+          <div className="btn">
+            <HeroBtn>Proceed</HeroBtn>
+          </div>
         </div>
         <div className="wrench">
           <FaWrench

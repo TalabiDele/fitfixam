@@ -13,7 +13,9 @@ const SecondAction = () => {
           <div className="wrapper">
             <h1>Are you an artisan?</h1>
             <p>Build trust with reviews from your satisfied clients</p>
-            <HeroBtn>Proceed</HeroBtn>
+            <div className="btn">
+              <HeroBtn>Proceed</HeroBtn>
+            </div>
           </div>
           <div className="wrench">
             <FaScrewdriver

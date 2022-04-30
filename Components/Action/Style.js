@@ -1,22 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  @media (min-width: 1200px) and (max-width: 2100px) {
+  @media (max-width: 2100px) {
     background-color: #3c91e6;
     color: #fff;
     padding: 2rem 0rem;
-  }
-
-  @media (min-width: 768px) and (max-width: 1200px) {
-    background-color: #3c91e6;
-    color: #fff;
-    padding: 2rem 0rem;
-  }
-
-  @media (min-width: 375px) and (max-width: 812px) {
-    background-color: #3c91e6;
-    color: #fff;
-    padding: 4rem 0rem;
   }
 `;
 
@@ -35,10 +23,12 @@ export const Wrapper = styled.div`
 
     h1 {
       font-size: 48px;
+      margin: 1rem 0rem;
     }
 
     p {
       font-size: 34px;
+      margin-bottom: 1rem;
     }
 
     div.wrench {
@@ -55,24 +45,29 @@ export const Wrapper = styled.div`
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1200px) {
+  @media (max-width: 1200px) {
+  }
+
+  @media (max-width: 1200px) {
     display: flex;
     width: 100%;
     margin: auto;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10rem;
+    padding-left: 2rem;
 
     div.wrapper {
-      width: 50%;
+      width: 70%;
     }
 
     h1 {
       font-size: 48px;
+      margin-bottom: 1rem;
     }
 
     p {
       font-size: 34px;
+      margin-bottom: 1rem;
     }
 
     div.wrench {
@@ -89,7 +84,7 @@ export const Wrapper = styled.div`
     }
   }
 
-  @media (min-width: 375px) and (max-width: 812px) {
+  @media (max-width: 900px) {
     width: 100%;
     padding: 0rem 3rem;
 
@@ -118,6 +113,46 @@ export const Wrapper = styled.div`
         overflow-x: clip;
         display: none;
       }
+    }
+  }
+
+  @media (max-width: 600px) {
+    display: grid;
+
+    div.wrapper {
+      width: 90%;
+    }
+
+    h1 {
+      width: 100%;
+      font-size: 29px;
+    }
+  }
+
+  @media (max-width: 378px) {
+    display: grid;
+    justify-content: center;
+
+    div.wrapper {
+      padding: 0rem;
+      margin: auto;
+      width: 80%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      width: 100%;
+      /* margin: auto; */
+    }
+
+    p {
+      font-size: 19px;
+      width: 100%;
+    }
+
+    div.btn {
+      width: 100%;
     }
   }
 `;

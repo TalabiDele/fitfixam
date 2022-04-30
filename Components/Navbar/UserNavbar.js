@@ -362,7 +362,6 @@ const Navbar = () => {
                     <button>Sign in</button>
                   </a>
                 </Link>
-                <h3>or</h3>
                 <Link href="/signup">
                   <a>
                     <button>Sign up</button>
@@ -432,7 +431,10 @@ const Navbar = () => {
               )}
 
               <div className="user_info">
-                <h3 onClick={() => router.push(`/profile/${user.slug}`)}>
+                <h3
+                  onClick={() => router.push(`/profile/${user.slug}`)}
+                  className="username"
+                >
                   {user.username}
                 </h3>
                 {isProfile ? (
@@ -467,7 +469,6 @@ const Navbar = () => {
                 <button>Sign in</button>
               </a>
             </Link>
-            <h3>or</h3>
             <Link href="/signup">
               <a>
                 <button>Sign up</button>

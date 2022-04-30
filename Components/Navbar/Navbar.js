@@ -61,8 +61,15 @@ const Navbar = () => {
         <ul>
           <li>
             <Link href="/">
-              <a>
-                <Image src={Logo} alt="Fitfixam Logo" width={150} height={60} />
+              <a className="image">
+                <Image
+                  src={Logo}
+                  alt="Fitfixam Logo"
+                  width={200}
+                  height={60}
+                  className="img"
+                  objectFit="contain"
+                />
               </a>
             </Link>
           </li>

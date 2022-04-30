@@ -416,8 +416,8 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
               </UserPost>
               <Interract>
                 <div className="interract">
-                  <Likes>
-                    {/* <FaHeart fontSize={26} color="#F4442E" />
+                  {/* <Likes> */}
+                  {/* <FaHeart fontSize={26} color="#F4442E" />
                     <div className="liked_images">
                       {likes.map((l) =>
                         user ? (
@@ -453,7 +453,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                           <div></div>
                         )
                       )} */}
-                    {/* {likes.slice(0, 5).map((like) =>
+                  {/* {likes.slice(0, 5).map((like) =>
                         user ? (
                           <p className="user_likes" key={like.id}>
                             {like.like === true ? (
@@ -487,8 +487,8 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                           <p></p>
                         )
                       )} */}
-                    {/* </div> */}
-                  </Likes>
+                  {/* </div> */}
+                  {/* </Likes> */}
                   <div className="comment_share">
                     <div className="comment_count">
                       <p>{e.comments.length}</p>
@@ -643,8 +643,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                         <Link href="/login">
                           <a>Sign in</a>
                         </Link>
-                      </span>{" "}
-                      or{" "}
+                      </span>
                       <span>
                         <Link href="/signup">
                           <a>Sign up</a>

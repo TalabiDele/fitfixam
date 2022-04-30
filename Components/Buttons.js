@@ -41,7 +41,7 @@ export const HeroBtn = styled.button`
     transition: all 0.3s ease-in-out;
   }
 
-  @media (min-width: 375px) and (max-width: 812px) {
+  @media (max-width: 812px) {
     border: 2px solid #060363;
     background-color: none;
     color: #060363;
@@ -70,17 +70,27 @@ export const InputBtn = styled.button`
     background: none;
     border: 2px solid #07036e;
     color: #07036e;
+    cursor: pointer;
   }
 
-  @media (min-width: 375px) and (max-width: 812px) {
+  @media (max-width: 1200px) {
+    width: 20%;
+  }
+
+  @media (max-width: 900px) {
+    width: 30%;
+  }
+
+  @media (max-width: 375px) {
     border: none;
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 15px;
     font-size: 24px;
     padding: 1.5rem;
     background-color: #07036e;
     width: 30%;
     color: #fff;
     transition: all 0.3s ease-in-out;
+    margin-top: 2rem;
 
     &:hover {
       background: none;

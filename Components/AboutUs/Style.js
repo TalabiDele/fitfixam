@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   h2 {
     font-size: 48px;
     padding-left: 5rem;
+    margin-bottom: 3rem;
   }
 
   p {
@@ -80,7 +81,7 @@ export const Wrapper = styled.div`
     justify-content: center;
     width: 80%;
     margin: 5rem auto;
-    align-items: center;
+    /* align-items: center; */
     background: #f9fafb;
     padding: 5rem 0rem;
   }

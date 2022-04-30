@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Wrapper } from "./Style";
 import Image from "next/image";
 import arrow from "@/public/Arrow-2.png";
-import founder from "@/public/founder.png";
+import founder from "@/public/mr-francis.png";
 
 const AboutUs = () => {
   return (
@@ -60,7 +60,7 @@ const AboutUs = () => {
               alt="Mr Francis"
               width={521}
               height={615}
-              objectFit="cover"
+              objectFit="contain"
             />
           </div>
           <div className="about_founder">

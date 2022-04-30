@@ -14,40 +14,43 @@ const Footer = () => {
   return (
     <Container>
       <Wrapper>
+        <Image
+          src={Logo}
+          alt="Fitfixam logo"
+          width={200}
+          height={100}
+          objectFit="contain"
+        />
+
         <Flex>
-          <Image src={Logo} alt="Fitfixam logo" width={150} height={50} />
+          <h2>Company</h2>
+          <ul>
+            <li>About us</li>
+            <li>Contact us</li>
+            <li>Blog</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+          </ul>
         </Flex>
-        <Grid>
-          <Flex>
-            <h2>Company</h2>
-            <ul>
-              <li>About us</li>
-              <li>Contact us</li>
-              <li>Blog</li>
-              <li>Terms & Conditions</li>
-              <li>Privacy Policy</li>
-            </ul>
-          </Flex>
-          <Flex>
-            <h2>Navigation</h2>
-            <ul>
-              <li>Discussions</li>
-              <li>Carpenters</li>
-              <li>Plumbers</li>
-              <li>Electricians</li>
-              <li>Company Reviews</li>
-            </ul>
-          </Flex>
-          <Flex>
-            <Social>
-              <FaLinkedinIn />
-              <FaInstagram />
-              <FaFacebookF />
-              <FaTwitter />
-            </Social>
-            <p>fitfixam, 2022. All Rights Reserved</p>
-          </Flex>
-        </Grid>
+        <Flex>
+          <h2>Navigation</h2>
+          <ul>
+            <li>Discussions</li>
+            <li>Carpenters</li>
+            <li>Plumbers</li>
+            <li>Electricians</li>
+            <li>Company Reviews</li>
+          </ul>
+        </Flex>
+        <Flex>
+          <Social>
+            <FaLinkedinIn fontSize={30} className="icon" />
+            <FaInstagram fontSize={30} className="icon" />
+            <FaFacebookF fontSize={30} className="icon" />
+            <FaTwitter fontSize={30} className="icon" />
+          </Social>
+          <p>fitfixam, 2022. All Rights Reserved</p>
+        </Flex>
       </Wrapper>
     </Container>
   );

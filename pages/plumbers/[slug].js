@@ -482,8 +482,7 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                         <Link href="/login">
                           <a>Sign in</a>
                         </Link>
-                      </span>{" "}
-                      or{" "}
+                      </span>
                       <span>
                         <Link href="/signup">
                           <a>Sign up</a>

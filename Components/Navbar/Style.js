@@ -156,6 +156,14 @@ export const Wrapper = styled.div`
   margin: auto;
   padding-top: 1rem;
 
+  a.image {
+    width: 10rem;
+  }
+
+  .img {
+    height: 10rem;
+  }
+
   div.sign_nav {
     z-index: 100;
     position: absolute;
@@ -179,6 +187,7 @@ export const Wrapper = styled.div`
     grid-template-columns: 1fr 4fr 1fr;
     justify-items: center;
     align-items: center;
+    height: 6rem;
   }
 `;
 
@@ -217,7 +226,7 @@ export const UserNav = styled.div`
   }
   input {
     /* width: ${({ userIsOpen }) => (userIsOpen ? "60rem" : "100rem")}; */
-    width: 85rem;
+    width: 100%;
     border: none;
     padding: 1rem;
     font-size: 18px;
@@ -298,13 +307,35 @@ export const UserNav = styled.div`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    input {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    input {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: 378px) {
+    input {
+      width: 80%;
+    }
+
+    .username {
+      display: none;
+    }
+  }
 `;
 
 export const UserSideNav = styled.div`
   display: grid;
   /* padding: 1rem; */
   background: #f0f3f6;
-  width: ${({ userIsOpen }) => (userIsOpen ? "20%" : "3%")};
+  width: ${({ userIsOpen }) => (userIsOpen ? "15%" : "4%")};
   height: 100%;
   position: fixed;
   transition: all 0.1s ease;
@@ -330,10 +361,34 @@ export const UserSideNav = styled.div`
   div.settings {
     margin-top: 15rem;
   }
+
+  @media (max-width: 1900px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "4%")};
+  }
+
+  @media (max-width: 1200px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "25%" : "6%")};
+  }
+
+  @media (max-width: 900px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "8%")};
+  }
+
+  @media (max-width: 768px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "35%" : "10%")};
+  }
+
+  @media (max-width: 600px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "50%" : "12%")};
+  }
+
+  @media (max-width: 378px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "17%")};
+  }
 `;
 
 export const IconNav = styled.div`
-  padding-left: 10px;
+  padding-left: 20px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   display: flex;
@@ -355,6 +410,10 @@ export const IconNav = styled.div`
     padding: 3px;
     border-radius: 3px;
   }
+
+  @media (max-width: 378px) {
+    font-size: 19px;
+  }
 `;
 
 export const NavMenu = styled.div`
@@ -364,33 +423,64 @@ export const NavMenu = styled.div`
   position: fixed;
   left: 0;
   z-index: 100;
+  /* width: 4%; */
 
   div.side_menu {
     background: #f0f3f6;
     height: 10rem;
-    width: 3.6rem;
+    width: 3.7rem;
   }
 
   .menu {
-    width: 20rem;
+    margin-left: 1rem;
     top: 1rem;
     left: 0rem;
     position: relative;
     top: 4rem;
-    left: -8.5rem;
   }
 
   .logo_image {
     background-color: #f0f3f6;
-    padding: 2rem 10rem 2rem 2rem;
+    padding: 2rem 4rem 2rem 2rem;
     z-index: 400;
+    width: 100%;
     position: relative;
     transition: all 0.3s ease-in-out;
+  }
+
+  @media (max-width: 1900px) {
+    .logo_image {
+      padding-right: 2.6rem;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .logo_image {
+      padding-right: 3.9rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .logo_image {
+      padding-right: 1.8rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .logo_image {
+      padding-right: 3.3rem;
+    }
+  }
+
+  @media (max-width: 378px) {
+    .logo_image {
+      padding-right: 1.8rem;
+    }
   }
 `;
 
 export const Search = styled.div`
-  margin-left: 15rem;
+  margin-left: 8rem;
   /* display: flex; */
 
   .search {
@@ -402,6 +492,10 @@ export const Search = styled.div`
 
   input {
     padding-left: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 4rem;
   }
 `;
 

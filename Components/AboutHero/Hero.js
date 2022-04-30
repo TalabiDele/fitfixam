@@ -5,10 +5,10 @@ const Hero = () => {
     <Container>
       <Wrapper>
         <h1>About us</h1>
-        <p>
+        {/* <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien platea
           quis arcu, elit. Egestas sit eu.
-        </p>
+        </p> */}
       </Wrapper>
     </Container>
   );
