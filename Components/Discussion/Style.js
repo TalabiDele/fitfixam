@@ -2,22 +2,29 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin-left: 10rem;
-  display: grid;
-  grid-template-columns: 60% 40%;
+  /* display: grid;
+  grid-template-columns: 60% 40%; */
   justify-content: center;
+  width: 60%;
   /* height: 100rem; */
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin-left: 0rem;
+  }
 `;
 
 export const Wrapper = styled.div`
-  /* height: 10rem; */
-  /* overflow-y: scroll; */
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 export const PostCard = styled.div`
   border: 0.5px solid #020127;
   background: #f9fafb;
   border-radius: 10px;
-  width: 70%;
+  width: 90%;
   margin: 2rem 0rem;
   color: #020127;
   font-weight: 400;
@@ -27,6 +34,19 @@ export const PostCard = styled.div`
   .user_image {
     border-radius: 50%;
     cursor: pointer;
+  }
+
+  @media (max-width: 1200px) {
+    width: 80%;
+    margin: 2rem auto 2rem 7rem;
+  }
+
+  @media (max-width: 600px) {
+    /* margin: 2rem auto 2rem 6rem; */
+    width: 70%;
+  }
+
+  @media (max-width: 378px) {
   }
 `;
 
