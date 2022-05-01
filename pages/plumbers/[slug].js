@@ -436,7 +436,7 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                               </Moment>
                             </p>
                           </div>
-                          <p>{com.content}</p>
+                          <p className="content">{com.content}</p>
                         </div>
                       </UsersComments>
                     ) : (
@@ -449,7 +449,7 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                     className="input_comment"
                     onSubmit={(s) => postComment(s, e)}
                   >
-                    <FaCamera
+                    {/* <FaCamera
                       fontSize={26}
                       color="#07036E"
                       className="input_icons"
@@ -463,7 +463,7 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                       fontSize={26}
                       color="#07036E"
                       className="input_icons"
-                    />
+                    /> */}
                     <input
                       type="text"
                       placeholder="Write a comment..."

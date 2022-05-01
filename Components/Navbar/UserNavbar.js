@@ -374,7 +374,11 @@ const Navbar = () => {
         </CreatePost>
       </Modal>
       <UserNav isProfile={isProfile}>
-        <NavMenu>
+        <NavMenu
+          userIsOpen={userIsOpen}
+          onMouseEnter={() => setUserIsOpen(true)}
+          onMouseLeave={() => setUserIsOpen(false)}
+        >
           <div className="side_menu">
             <GiHamburgerMenu
               fontSize={30}
@@ -477,7 +481,11 @@ const Navbar = () => {
           </Btn>
         )}
       </UserNav>
-      <UserSideNav userIsOpen={userIsOpen}>
+      <UserSideNav
+        userIsOpen={userIsOpen}
+        onMouseEnter={() => setUserIsOpen(true)}
+        onMouseLeave={() => setUserIsOpen(false)}
+      >
         <div>
           <IconNav onClick={() => openModal()}>
             <FaPlus
@@ -515,7 +523,7 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <Link href="/plumbers">
+          <Link href="/electricians">
             <a>
               <IconNav
                 className={router.pathname == "/plumbers" ? "active" : ""}
@@ -525,7 +533,7 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <Link href="/electricians">
+          <Link href="/plumbers">
             <a>
               <IconNav
                 className={router.pathname == "/electricians" ? "active" : ""}
@@ -535,7 +543,7 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <IconNav>
+          <IconNav userIsOpen={userIsOpen}>
             <FaRegCompass fontSize={26} cursor="pointer" color="#07036e" />
             {userIsOpen && <p>Companies</p>}
           </IconNav>

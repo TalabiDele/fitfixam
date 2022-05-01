@@ -4,6 +4,10 @@ export const Container = styled.div`
   margin-left: 10rem;
   display: grid;
   grid-template-columns: 50% 50%;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -11,16 +15,12 @@ export const Wrapper = styled.div`
   margin: 0rem auto;
   position: fixed;
   left: 60rem;
-  /* background: #fcfdfd; */
   background: #fff;
   overflow-y: scroll;
   border-radius: 10px 10px 0px 0px;
   height: 60rem;
   padding-bottom: 20rem;
   padding-right: 35rem;
-  /* top: 0rem; */
-  /* z-index: -1; */
-  /* padding-top: 6rem; */
 
   div.reactions {
     padding: 0rem 2rem;
@@ -52,6 +52,23 @@ export const Wrapper = styled.div`
   .user_image {
     border-radius: 50%;
   }
+
+  @media (max-width: 1200px) {
+    margin: auto;
+    left: 0rem;
+    right: 0rem;
+    width: 100%;
+    padding: 0rem 4rem 10rem 8rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0rem 2rem 10rem 5rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0rem 0rem 10rem 3rem;
+  }
 `;
 
 export const PostItem = styled.div`
@@ -64,6 +81,12 @@ export const PostItem = styled.div`
     color: #020127;
     font-weight: 400;
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    p.post {
+      font-size: 19px;
+    }
   }
 `;
 
@@ -96,7 +119,7 @@ export const Cont = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  margin: 0rem 6rem;
+  margin: 0rem 1rem;
   background-color: #fcfdfd;
 
   a {
@@ -111,10 +134,31 @@ export const Cont = styled.div`
 
   p {
     margin: 1rem 2rem;
+    font-size: 26px;
+  }
+
+  @media (max-width: 600px) {
+    /* font-size: 16px; */
+
+    p.signin {
+      margin: 1rem 0rem;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    p.signin {
+      margin: 1rem 0rem;
+      font-size: 14px;
+    }
   }
 `;
 
-export const FeedPosts = styled.div``;
+export const FeedPosts = styled.div`
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
 
 export const UserPosted = styled.div`
   display: flex;
@@ -158,9 +202,9 @@ export const Interract = styled.div`
   background: #fcfdfd;
   padding: 0rem 2rem;
   z-index: 200;
-  border-bottom: 1.5px solid #dad9e9;
+  /* border-bottom: 1.5px solid #dad9e9;
   padding: 1rem 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; */
 
   div.interract {
     display: flex;
@@ -239,6 +283,14 @@ export const Reactions = styled.div`
       margin-left: 10px;
     }
   }
+
+  @media (max-width: 900px) {
+    .like,
+    .comment_here,
+    .share_here {
+      font-size: 14px;
+    }
+  }
 `;
 
 export const Comments = styled.div`
@@ -247,7 +299,7 @@ export const Comments = styled.div`
   p {
     font-weight: 400;
     font-size: 20px;
-    width: 80%;
+    width: 100%;
     /* padding: 0rem 2rem 0rem 0rem; */
   }
 
@@ -291,6 +343,18 @@ export const Comments = styled.div`
       margin-right: 15px;
     }
   }
+
+  @media (max-width: 1900px) {
+    .input_comment {
+      width: 43%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .input_comment {
+      width: 90%;
+    }
+  }
 `;
 
 export const None = styled.div`
@@ -298,8 +362,9 @@ export const None = styled.div`
 `;
 
 export const UsersComments = styled.div`
-  display: flex;
-  justify-items: center;
+  display: grid;
+  grid-template-columns: 10% 80%;
+  /* justify-items: center; */
   align-items: flex-start;
   color: #020127;
   padding: 0rem 2rem;
@@ -314,9 +379,9 @@ export const UsersComments = styled.div`
     margin-right: 10px;
   }
 
-  /* p {
-    margin: 0;
-  } */
+  p.content {
+    width: 100%;
+  }
 
   .image {
     margin: 0px 20px 0px 0px;
@@ -343,5 +408,34 @@ export const UsersComments = styled.div`
     h2 {
       cursor: pointer;
     }
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 15% 80%;
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 19px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 365px) {
+    padding: 0rem;
+    grid-template-columns: 20% 80%;
   }
 `;

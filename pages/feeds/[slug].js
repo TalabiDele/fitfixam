@@ -610,7 +610,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                     className="input_comment"
                     onSubmit={(s) => postComment(s, e)}
                   >
-                    <FaCamera
+                    {/* <FaCamera
                       fontSize={26}
                       color="#07036E"
                       className="input_icons"
@@ -624,7 +624,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       fontSize={26}
                       color="#07036E"
                       className="input_icons"
-                    />
+                    /> */}
                     <input
                       type="text"
                       placeholder="Write a comment..."
@@ -638,7 +638,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                   </form>
                 ) : (
                   <Cont>
-                    <p>
+                    <p className="signin">
                       <span>
                         <Link href="/login">
                           <a>Sign in</a>

@@ -383,7 +383,7 @@ export const UserSideNav = styled.div`
   }
 
   @media (max-width: 378px) {
-    width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "17%")};
+    width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "12%")};
   }
 `;
 
@@ -412,7 +412,10 @@ export const IconNav = styled.div`
   }
 
   @media (max-width: 378px) {
-    font-size: 19px;
+    width: 100%;
+    padding-left: 10px;
+    /* padding-right: 10px; */
+    padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "10px")};
   }
 `;
 
@@ -423,12 +426,13 @@ export const NavMenu = styled.div`
   position: fixed;
   left: 0;
   z-index: 100;
+  width: ${({ userIsOpen }) => (userIsOpen ? "15%" : "5%")};
   /* width: 4%; */
 
   div.side_menu {
     background: #f0f3f6;
     height: 10rem;
-    width: 3.7rem;
+    width: 4.7rem;
   }
 
   .menu {
@@ -449,32 +453,49 @@ export const NavMenu = styled.div`
   }
 
   @media (max-width: 1900px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "4%")};
     .logo_image {
       padding-right: 2.6rem;
     }
   }
 
   @media (max-width: 1200px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "25%" : "6%")};
     .logo_image {
       padding-right: 3.9rem;
     }
   }
 
   @media (max-width: 900px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "8%")};
     .logo_image {
       padding-right: 1.8rem;
     }
   }
 
+  @media (max-width: 768px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "35%" : "10%")};
+  }
+
   @media (max-width: 600px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "50%" : "12%")};
     .logo_image {
       padding-right: 3.3rem;
     }
   }
 
   @media (max-width: 378px) {
+    width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "12%")};
     .logo_image {
-      padding-right: 1.8rem;
+      padding-right: 4.6rem;
+    }
+
+    div.side_menu {
+      width: 2.8rem;
+    }
+
+    .menu {
+      margin-left: 0.5rem;
     }
   }
 `;
@@ -527,6 +548,22 @@ export const Btn = styled.div`
 
   h3 {
     margin: 0rem 1rem;
+  }
+
+  @media (max-width: 600px) {
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    button {
+      font-size: 14px;
+      width: 4rem;
+      padding: 1rem 0.2rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    justify-content: left;
+    margin-left: -20px;
   }
 `;
 

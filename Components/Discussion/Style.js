@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 `;
 
 export const PostCard = styled.div`
-  border: 0.5px solid #020127;
+  /* border: 0.5px solid #020127; */
   background: #f9fafb;
   border-radius: 10px;
   width: 90%;
@@ -47,6 +47,7 @@ export const PostCard = styled.div`
   }
 
   @media (max-width: 378px) {
+    margin: 2rem auto 2rem 5rem;
   }
 `;
 
@@ -54,7 +55,7 @@ export const PostDetails = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  border-top: 0.5px solid #c4c4c4;
+  /* border-top: 0.5px solid #c4c4c4; */
   background: #fff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
