@@ -43,7 +43,13 @@ import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const router = useRouter();
+
+  const openMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   if (router.pathname === "/login" || router.pathname === "/signup") {
     return (
@@ -57,7 +63,7 @@ const Navbar = () => {
     );
   } else {
     return (
-      <Wrapper>
+      <Wrapper isOpen={isOpen}>
         <ul>
           <li>
             <Link href="/">
@@ -73,35 +79,52 @@ const Navbar = () => {
               </a>
             </Link>
           </li>
-          <Container>
-            <Link href="/feeds">
-              <a>
-                <li>Discussions</li>
-              </a>
-            </Link>
-            <Link href="/blog">
-              <a>
-                <li>Blog</li>
-              </a>
-            </Link>
-            <Link href="/contact">
-              <a>
-                <li>Contact us</li>
-              </a>
-            </Link>
-            <Link href="/about">
-              <a>
-                <li>About us</li>
-              </a>
-            </Link>
+          <Container isOpen={isOpen}>
+            <div className="contain">
+              <Link href="/feeds">
+                <a>
+                  <li>Discussions</li>
+                </a>
+              </Link>
+              <Link href="/blog">
+                <a>
+                  <li>Blog</li>
+                </a>
+              </Link>
+              <Link href="/contact">
+                <a>
+                  <li>Contact us</li>
+                </a>
+              </Link>
+              <Link href="/about">
+                <a>
+                  <li>About us</li>
+                </a>
+              </Link>
+            </div>
+            <div className="button_nav">
+              <Link href="/signup">
+                <a>
+                  <li>
+                    <BtnNav>Get Started</BtnNav>
+                  </li>
+                </a>
+              </Link>
+            </div>
           </Container>
-          <Link href="/signup">
-            <a>
-              <li>
-                <BtnNav>Get Started</BtnNav>
-              </li>
-            </a>
-          </Link>
+          {isOpen ? (
+            <ImCancelCircle
+              fontSize={40}
+              className="burger_mobile"
+              onClick={() => openMenu()}
+            />
+          ) : (
+            <GiHamburgerMenu
+              fontSize={40}
+              className="burger_mobile"
+              onClick={() => openMenu()}
+            />
+          )}
         </ul>
       </Wrapper>
     );

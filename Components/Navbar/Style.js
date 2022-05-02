@@ -184,20 +184,119 @@ export const Wrapper = styled.div`
 
   ul {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 10% 90%;
     justify-items: center;
     align-items: center;
     height: 6rem;
   }
+
+  .burger_mobile {
+    display: none;
+  }
+
+  @media (max-width: 1200px) {
+  }
+
+  @media (max-width: 900px) {
+    transition: all 0.2s ease-in-out;
+    position: fixed;
+    z-index: 500;
+    top: 0rem;
+    /* margin-bottom: 4rem; */
+    /* bottom: 0rem; */
+    background-color: #f0f3f6;
+    height: 6rem;
+    padding-top: 1px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+
+    .img {
+      z-index: 600;
+      width: 3rem;
+      height: 3rem;
+      margin-left: 1rem;
+    }
+
+    div.button_nav {
+      z-index: 700;
+    }
+
+    .burger_mobile {
+      z-index: 800;
+      position: absolute;
+      right: 0;
+      margin-right: 2rem;
+      display: block;
+    }
+
+    ul {
+      grid-template-columns: 30%;
+      justify-content: space-between;
+      transition: all 0.2s ease-in-out;
+    }
+
+    a {
+      font-weight: 700;
+    }
+  }
 `;
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
+  display: flex;
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* justify-items: flex-end; */
   align-items: center;
-  width: 60%;
+  width: 95%;
   font-size: 26px;
+  margin: auto;
+  transition: all 0.2s ease-in-out;
+
+  div.contain {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: auto;
+  }
+
+  div.button_nav {
+    justify-self: end;
+  }
+
+  @media (max-width: 1200px) {
+    /* grid-template-columns: repeat(1, 1fr); */
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    position: fixed;
+    /* height: 100%; */
+    height: ${({ isOpen }) => (isOpen ? "100%" : "0%")};
+    top: 0rem;
+    bottom: 0rem;
+    z-index: 200;
+    background-color: #f0f3f6;
+    width: ${({ isOpen }) => (isOpen ? "100%" : "0%")};
+    padding-top: 0rem;
+    padding-bottom: 7rem;
+    transition: all 0.2s ease-in-out;
+
+    div.contain {
+      flex-direction: column;
+      text-align: center;
+      align-content: space-between;
+      height: 50%;
+      transition: all 0.2s ease-in-out;
+      display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+    }
+
+    div.button_nav {
+      display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+    }
+
+    /* .burger_mobile {
+      position: absolute;
+    } */
+  }
 `;
 
 export const UserNav = styled.div`

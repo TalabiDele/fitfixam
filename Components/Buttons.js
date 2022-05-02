@@ -41,18 +41,9 @@ export const HeroBtn = styled.button`
     transition: all 0.3s ease-in-out;
   }
 
-  @media (max-width: 812px) {
-    border: 2px solid #060363;
-    background-color: none;
-    color: #060363;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    /* width: 15%; */
+  @media (max-width: 900px) {
     font-size: 19px;
-    margin: auto;
-    background-color: #fff;
+    padding: 10px 20px;
   }
 `;
 

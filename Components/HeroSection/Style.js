@@ -63,7 +63,8 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 900px) {
-    padding-top: 2rem;
+    margin-top: 6rem;
+    /* padding-top: 10rem; */
 
     h1 {
       font-size: 50px;
@@ -73,13 +74,22 @@ export const Wrapper = styled.div`
     p {
       font-size: 19px;
     }
+
+    .hero_icon {
+      margin-top: 20px;
+    }
   }
 
   @media (max-width: 768px) {
     padding-top: 1rem;
+    margin-top: 10rem;
 
     h1 {
       margin: 0rem auto 1rem auto;
+      width: 80%;
+    }
+
+    p {
       width: 80%;
     }
   }
@@ -135,7 +145,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 768px) {
-    background-size: contain;
+    background-size: cover;
   }
 
   @media (max-width: 375px) {
