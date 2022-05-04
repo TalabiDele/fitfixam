@@ -554,39 +554,35 @@ export const NavMenu = styled.div`
     transition: all 0.3s ease-in-out;
   }
 
-  @media (max-width: 1900px) {
+  @media (min-width: 1281px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "4%")};
     .logo_image {
       padding-right: 2.6rem;
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (min-width: 1025px) and (max-width: 1280px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "25%" : "6%")};
     .logo_image {
       padding-right: 3.9rem;
     }
   }
 
-  @media (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "8%")};
     .logo_image {
       padding-right: 1.8rem;
     }
   }
 
-  @media (max-width: 768px) {
-    width: ${({ userIsOpen }) => (userIsOpen ? "35%" : "10%")};
-  }
-
-  @media (max-width: 600px) {
+  @media (min-width: 481px) and (max-width: 767px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "50%" : "12%")};
     .logo_image {
       padding-right: 3.3rem;
     }
   }
 
-  @media (max-width: 378px) {
+  @media (max-width: 480px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "12%")};
     .logo_image {
       padding-right: 4.6rem;
