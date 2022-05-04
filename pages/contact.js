@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "Components/Layout";
 import ContactHero from "@/components/ContactHero/ContactHero";
 import ContactUs from "Components/ContactUs/ContactUs";
+import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 const Contact = () => {
   return (

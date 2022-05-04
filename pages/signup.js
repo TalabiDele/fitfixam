@@ -1,5 +1,6 @@
 import CreateAccount from "../Components/Account/CreateAccount";
 import Layout from "@/components/Layout";
+import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 const signup = () => {
   return (

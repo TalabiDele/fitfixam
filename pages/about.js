@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/AboutHero/Hero";
 import AboutUs from "@/components/AboutUs/AboutUs";
+import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 const about = () => {
   return (

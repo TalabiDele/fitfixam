@@ -6,6 +6,7 @@ import Review from "Components/ReviewSection/Review";
 import Action from "Components/Action/Action";
 import Subscribe from "Components/Subscribe/Subscribe";
 import SecondAction from "Components/Action/SecondAction";
+import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 export default function Home() {
   return (
