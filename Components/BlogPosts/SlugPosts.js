@@ -220,7 +220,7 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
                 </p>
               </div>
               <p className="post_article">
-                <ReactMarkdown children={p.article} />
+                <ReactMarkdown>{p.article}</ReactMarkdown>
               </p>
             </div>
             <Reactions>

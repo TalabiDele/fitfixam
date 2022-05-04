@@ -461,27 +461,23 @@ export const UserSideNav = styled.div`
     margin-top: 15rem;
   }
 
-  @media (max-width: 1900px) {
+  @media (min-width: 1281px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "4%")};
   }
 
-  @media (max-width: 1200px) {
+  @media (min-width: 1025px) and (max-width: 1280px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "25%" : "6%")};
   }
 
-  @media (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "8%")};
   }
 
-  @media (max-width: 768px) {
-    width: ${({ userIsOpen }) => (userIsOpen ? "35%" : "10%")};
-  }
-
-  @media (max-width: 600px) {
+  @media (min-width: 481px) and (max-width: 767px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "50%" : "12%")};
   }
 
-  @media (max-width: 378px) {
+  @media (max-width: 480px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "12%")};
   }
 `;
@@ -510,10 +506,17 @@ export const IconNav = styled.div`
     border-radius: 3px;
   }
 
-  @media (max-width: 378px) {
+  @media (min-width: 481px) and (max-width: 767px) {
     width: 100%;
     padding-left: 10px;
-    /* padding-right: 10px; */
+    padding-right: 10px;
+    padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "10px")};
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "10px")};
   }
 `;
