@@ -1,5 +1,52 @@
 import styled from "styled-components";
 
+export const Sign = styled.div`
+  /* position: absolute; */
+
+  div.sign_nav {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    margin-left: 3rem;
+    font-size: 26px;
+    transition: all 2s ease;
+    margin-top: 2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .blue {
+    display: none;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    div.sign_nav {
+      color: #07036e;
+    }
+
+    .white {
+      display: none;
+    }
+
+    .blue {
+      display: block;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .white {
+      display: none;
+    }
+
+    .blue {
+      display: block;
+      width: 100%;
+      margin: auto;
+    }
+  }
+`;
+
 export const Modal = styled.div`
   background: #0201278f;
   position: fixed;
@@ -226,6 +273,7 @@ export const Wrapper = styled.div`
       right: 0;
       margin-right: 2rem;
       display: block;
+      cursor: pointer;
     }
 
     ul {
@@ -522,36 +570,38 @@ export const IconNav = styled.div`
 `;
 
 export const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
-  position: fixed;
-  left: 0;
-  z-index: 100;
-  width: ${({ userIsOpen }) => (userIsOpen ? "15%" : "5%")};
-  /* width: 4%; */
+  @media (min-width: 1281px) {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: fixed;
+    left: 0;
+    z-index: 100;
+    width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "5%")};
+    /* width: 4%; */
 
-  div.side_menu {
-    background: #f0f3f6;
-    height: 10rem;
-    width: 4.7rem;
-  }
+    div.side_menu {
+      background: #f0f3f6;
+      height: 10rem;
+      width: 4.7rem;
+    }
 
-  .menu {
-    margin-left: 1rem;
-    top: 1rem;
-    left: 0rem;
-    position: relative;
-    top: 4rem;
-  }
+    .menu {
+      margin-left: 1rem;
+      top: 1rem;
+      left: 0rem;
+      position: relative;
+      top: 4rem;
+    }
 
-  .logo_image {
-    background-color: #f0f3f6;
-    padding: 2rem 4rem 2rem 2rem;
-    z-index: 400;
-    width: 100%;
-    position: relative;
-    transition: all 0.3s ease-in-out;
+    .logo_image {
+      background-color: #f0f3f6;
+      padding: 2rem 5rem 2rem 2rem;
+      z-index: 400;
+      width: 100%;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   @media (max-width: 1900px) {

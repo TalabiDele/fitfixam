@@ -15,6 +15,7 @@ import {
   PostContainer,
   Tags,
   Actions,
+  Sign,
 } from "./Style";
 import { BtnNav } from "../Buttons";
 import Link from "next/link";
@@ -41,6 +42,8 @@ import userImg from "@/public/userImage.png";
 import logo from "@/public/logo-menu.png";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import { useRouter } from "next/router";
+import LogoWhite from "@/public/Logo-white.png";
+import LogoBlue from "@/public/Blue.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,13 +56,34 @@ const Navbar = () => {
 
   if (router.pathname === "/login" || router.pathname === "/signup") {
     return (
-      <Wrapper>
+      <Sign>
         <div className="sign_nav">
           <Link href="/">
-            <a>Back</a>
+            <a>
+              <div className="white">
+                <Image
+                  src={LogoWhite}
+                  alt="logo"
+                  width={200}
+                  height={50}
+                  objectFit="contain"
+                  className="white"
+                />
+              </div>
+              <div className="blue">
+                <Image
+                  src={LogoBlue}
+                  alt="logo"
+                  width={200}
+                  height={50}
+                  objectFit="contain"
+                  className="blue"
+                />
+              </div>
+            </a>
           </Link>
         </div>
-      </Wrapper>
+      </Sign>
     );
   } else {
     return (

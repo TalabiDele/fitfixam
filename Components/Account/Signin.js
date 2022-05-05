@@ -68,7 +68,7 @@ const CreateAccount = () => {
               <LoginBtn>Login</LoginBtn>
             </form>
             <p className="paragraph">
-              Don't have an account?{" "}
+              Don{"'"}t have an account?{" "}
               <Link href="/signup">
                 <a>Sign up</a>
               </Link>
