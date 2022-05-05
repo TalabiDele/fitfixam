@@ -9,6 +9,9 @@ export const Container = styled.div`
   text-align: center;
   color: #fff;
   /* bottom: 0; */
+
+  @media (max-width: 768px) {
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -20,5 +23,15 @@ export const Wrapper = styled.div`
     font-size: 34px;
     width: 70%;
     margin: 0rem auto;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 19px;
+    }
   }
 `;

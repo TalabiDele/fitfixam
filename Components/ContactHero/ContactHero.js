@@ -6,10 +6,10 @@ const ContactHero = () => {
     <Container>
       <Wrapper>
         <h1>Get in touch with us</h1>
-        <p>
+        {/* <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien platea
           quis arcu, elit. Egestas sit eu.
-        </p>
+        </p> */}
       </Wrapper>
     </Container>
   );
