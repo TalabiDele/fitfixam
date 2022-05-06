@@ -164,36 +164,38 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
 
   return (
     <Container>
-      {blogPosts.map((post) => (
-        <Card key={post.id} onClick={() => displayPost(post)}>
-          <div className="image">
-            <Image
-              src={post.image.url}
-              alt="article image"
-              width={150}
-              height={150}
-              objectFit="cover"
-              className="blog_image"
-              borderRadius="10px"
-            />
-          </div>
-          <div className="blog_details">
-            <h2>{post.title}</h2>
-            <p>{post.article.slice(0, 250).concat("...Read more")}</p>
-            <div className="info">
-              <p>
-                <BiUserCircle /> {post.author}
-              </p>
-              <p>
-                <BsCalendarEvent /> {post.date}
-              </p>
-              <p>
-                <FaRegClock /> {post.minutes} min read
-              </p>
+      <div className="cont">
+        {blogPosts.map((post) => (
+          <Card key={post.id} onClick={() => displayPost(post)}>
+            <div className="image">
+              <Image
+                src={post.image.url}
+                alt="article image"
+                width={150}
+                height={150}
+                objectFit="cover"
+                className="blog_image"
+                borderRadius="10px"
+              />
             </div>
-          </div>
-        </Card>
-      ))}
+            <div className="blog_details">
+              <h2>{post.title}</h2>
+              <p>{post.article.slice(0, 250).concat("...Read more")}</p>
+              <div className="info">
+                <p>
+                  <BiUserCircle /> {post.author}
+                </p>
+                <p>
+                  <BsCalendarEvent /> {post.date}
+                </p>
+                <p>
+                  <FaRegClock /> {post.minutes} min read
+                </p>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
       <Wrapper>
         {post.map((p) => (
           <div key={p.id}>
@@ -202,8 +204,8 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
                 <Image
                   src={p.image.url}
                   alt="blog image"
-                  width={875}
-                  height={153}
+                  width={1500}
+                  height={200}
                   objectFit="cover"
                 />
               </div>
@@ -328,7 +330,7 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
                   className="input_comment"
                   onSubmit={(s) => postComment(s, p)}
                 >
-                  <FaCamera
+                  {/* <FaCamera
                     fontSize={26}
                     color="#07036E"
                     className="input_icons"
@@ -342,7 +344,7 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
                     fontSize={26}
                     color="#07036E"
                     className="input_icons"
-                  />
+                  /> */}
                   <input
                     type="text"
                     placeholder="Write a comment..."
