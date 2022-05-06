@@ -532,8 +532,9 @@ export const Reactions = styled.div`
 
 export const UsersComments = styled.div`
   @media (min-width: 1281px) {
-    display: flex;
-    justify-items: center;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    justify-items: left;
     align-items: flex-start;
     color: #020127;
     padding: 0rem 2rem;
