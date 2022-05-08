@@ -703,11 +703,6 @@ export const Actions = styled.div`
     width: 90%;
     margin: auto;
 
-    /* div.btn {
-    display: flex;
-    justify-self: flex-end;
-  } */
-
     button {
       border: none;
       padding: 0.7rem;
@@ -822,8 +817,6 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  /* grid-template-columns: repeat(2, 1fr); */
-  /* justify-items: flex-end; */
   align-items: center;
   width: 95%;
   font-size: 26px;
@@ -842,14 +835,12 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1200px) {
-    /* grid-template-columns: repeat(1, 1fr); */
     width: 100%;
   }
 
   @media (max-width: 900px) {
     flex-direction: column;
     position: fixed;
-    /* height: 100%; */
     height: ${({ isOpen }) => (isOpen ? "100%" : "0%")};
     top: 0rem;
     bottom: 0rem;
@@ -871,11 +862,6 @@ export const Container = styled.div`
 
     div.button_nav {
       display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
-    }
-
-    /* .burger_mobile {
-      position: absolute;
-    } */
   }
 `;
 
@@ -889,7 +875,6 @@ export const UserNav = styled.div`
     background-color: #f0f3f6;
     color: #07036e;
     padding: 1rem 2rem 1rem 0rem;
-    /* margin: auto; */
     transition: all 0.3s ease;
 
     .bell {
@@ -919,8 +904,6 @@ export const UserNav = styled.div`
       align-items: center;
       transition: all 0.3s ease;
       justify-self: flex-end;
-      /* width: 100%;
-      justify-content: space-between; */
 
       div.user_info {
         display: flex;
