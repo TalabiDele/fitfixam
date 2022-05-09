@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 90%;
-    justify-items: right;
-    align-items: top;
+    justify-items: center;
+    align-items: center;
     margin: auto;
 
     p {
@@ -14,6 +14,37 @@ export const Wrapper = styled.div`
       width: 70%;
       margin: auto;
       font-size: 24px;
+    }
+
+    span.video {
+      width: 100%;
+      margin: auto;
+
+      img {
+        /* width: 100%; */
+      }
+
+      /* div.video-react-controls-enabled {
+        padding-top: 0%;
+      }
+
+      button.video-react-button {
+        display: none;
+      }
+
+      div.video-react-control-bar {
+        display: none;
+      } */
+
+      div {
+        width: 100%;
+      }
+    }
+
+    video {
+      border-radius: 10px;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+      width: 80%;
     }
   }
 
@@ -40,15 +71,29 @@ export const Wrapper = styled.div`
     flex-direction: column-reverse;
     justify-items: center;
     align-items: center;
+
+    span.video div {
+      width: 400px;
+      margin: auto;
+    }
   }
 
   @media (max-width: 600px) {
     p {
       font-size: 19px;
     }
+
+    span.video div {
+      width: 300px;
+      margin: auto;
+    }
   }
 
   @media (max-width: 375px) {
+    span.video div {
+      width: 250px;
+      margin: auto;
+    }
   }
 `;
 
