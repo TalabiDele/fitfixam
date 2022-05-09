@@ -1,8 +1,12 @@
 import { Container, Wrapper, Arrow, Header } from "./Style";
 import Image from "next/image";
-import Video from "@/public/Video.png";
+// import Video from "@/public/Video.png";
 import ArrowOne from "/public/Arrow-2.png";
 import ReviewCard from "Components/ReviewCard/ReviewCard";
+import ReactPlayer from "react-player";
+// import "video-react/dist/video-react.css";
+import { Player, ControlBar } from "video-react";
+// import Video from "@/public/Animation.mp4";
 
 const Review = () => {
   return (
@@ -24,13 +28,12 @@ const Review = () => {
             (individuals or companies).
           </p>
         </div>
-        <Image
-          src={Video}
-          alt="Review Video"
-          width={700}
-          height={400}
-          objectFit="contain"
-        />
+        <video autoPlay loop>
+          <source
+            src="https://res.cloudinary.com/ofundu/video/upload/v1652117729/Fitfixam_Video-1_2_zmiat1.mp4"
+            type="video/mp4"
+          />
+        </video>
       </Wrapper>
       <Arrow>
         <Image
