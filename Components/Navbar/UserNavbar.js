@@ -543,14 +543,22 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <IconNav userIsOpen={userIsOpen}>
-            <FaRegCompass fontSize={26} cursor="pointer" color="#07036e" />
-            {userIsOpen && <p>Companies</p>}
-          </IconNav>
-          <IconNav>
-            <FaUsersCog fontSize={26} cursor="pointer" color="#07036e" />
-            {userIsOpen && <p>Find and Artisan</p>}
-          </IconNav>
+          <Link href="/companies">
+            <a>
+              <IconNav userIsOpen={userIsOpen}>
+                <FaRegCompass fontSize={26} cursor="pointer" color="#07036e" />
+                {userIsOpen && <p>Companies</p>}
+              </IconNav>
+            </a>
+          </Link>
+          <Link href="/find-an-artisan">
+            <a>
+              <IconNav>
+                <FaUsersCog fontSize={26} cursor="pointer" color="#07036e" />
+                {userIsOpen && <p>Find an Artisan</p>}
+              </IconNav>
+            </a>
+          </Link>
           <Link href="/blog">
             <a>
               <IconNav>

@@ -263,143 +263,145 @@ const Profile = ({ usersProfile, userPosts }) => {
           </div>
         </form>
       </div>
-      <div className="container">
-        <div className="detail">
-          <div className="user">
-            <div className="img_container">
-              {usersProfile.user_image ? (
-                <Image
-                  src={usersProfile.user_image.url}
-                  alt="User image"
-                  width={170}
-                  height={170}
-                  objectFit="cover"
-                  className="image"
-                />
+      <div className="profile">
+        <div className="container">
+          <div className="detail">
+            <div className="user">
+              <div className="img_container">
+                {usersProfile.user_image ? (
+                  <Image
+                    src={usersProfile.user_image.url}
+                    alt="User image"
+                    width={170}
+                    height={170}
+                    objectFit="cover"
+                    className="image"
+                  />
+                ) : (
+                  <Image
+                    src={userImage}
+                    alt="User image"
+                    width={170}
+                    height={170}
+                    objectFit="cover"
+                    className="image"
+                  />
+                )}
+              </div>
+              <div className="name">
+                <p>
+                  {usersProfile.username}
+                  {"      "}
+                  {"      "}
+                  {usersProfile.artisan ? <FaToolbox /> : <FaUserAlt />}
+                </p>
+              </div>
+            </div>
+            <div className="contact">
+              <h1>Contact</h1>
+              {usersProfile.phone ? (
+                <p>
+                  <FaPhone color="#07036E" />
+                  {usersProfile.phone}
+                </p>
               ) : (
-                <Image
-                  src={userImage}
-                  alt="User image"
-                  width={170}
-                  height={170}
-                  objectFit="cover"
-                  className="image"
-                />
+                <p>
+                  <FaPhone color="#07036E" />
+                </p>
+              )}
+              {usersProfile.email ? (
+                <p>
+                  <FaEnvelope color="#07036E" />
+                  {usersProfile.email}
+                </p>
+              ) : (
+                <p>
+                  <FaEnvelope color="#07036E" />
+                </p>
+              )}
+              {usersProfile.address ? (
+                <p>
+                  <FaMapMarkerAlt color="#07036E" />
+                  {usersProfile.address}
+                </p>
+              ) : (
+                <p>
+                  <FaMapMarkerAlt color="#07036E" />
+                </p>
               )}
             </div>
-            <div className="name">
-              <p>
-                {usersProfile.username}
-                {"      "}
-                {"      "}
-                {usersProfile.artisan ? <FaToolbox /> : <FaUserAlt />}
-              </p>
-            </div>
           </div>
-          <div className="contact">
-            <h1>Contact</h1>
-            {usersProfile.phone ? (
-              <p>
-                <FaPhone color="#07036E" />
-                {usersProfile.phone}
-              </p>
-            ) : (
-              <p>
-                <FaPhone color="#07036E" />
-              </p>
-            )}
-            {usersProfile.email ? (
-              <p>
-                <FaEnvelope color="#07036E" />
-                {usersProfile.email}
-              </p>
-            ) : (
-              <p>
-                <FaEnvelope color="#07036E" />
-              </p>
-            )}
-            {usersProfile.address ? (
-              <p>
-                <FaMapMarkerAlt color="#07036E" />
-                {usersProfile.address}
-              </p>
-            ) : (
-              <p>
-                <FaMapMarkerAlt color="#07036E" />
-              </p>
-            )}
-          </div>
-        </div>
-        <div className="info">
-          <div className="split">
-            <h1>Personal information</h1>
-            {user ? (
-              user.id === usersProfile.id ? (
-                <button onClick={openModalHandler}>Edit</button>
+          <div className="info">
+            <div className="split">
+              <h1>Personal information</h1>
+              {user ? (
+                user.id === usersProfile.id ? (
+                  <button onClick={openModalHandler}>Edit</button>
+                ) : (
+                  <div></div>
+                )
               ) : (
                 <div></div>
+              )}
+            </div>
+            {usersProfile.personal_information ? (
+              <p className="personal">{usersProfile.personal_information}</p>
+            ) : (
+              <p className="personal"></p>
+            )}
+            {usersProfile.artisan ? (
+              usersProfile.specializations ? (
+                <div className="flex">
+                  <h2>Specialization: {"         "}</h2>
+                  <p>{usersProfile.specializations}</p>
+                </div>
+              ) : (
+                <div className="flex">
+                  <h2>Specialization: {"         "}</h2>
+                  <p></p>
+                </div>
               )
             ) : (
               <div></div>
             )}
+            {usersProfile.artisan ? (
+              usersProfile.skills ? (
+                <div className="flex">
+                  <h2>Skills: {"         "}</h2>
+                  <p>{usersProfile.skills}</p>
+                </div>
+              ) : (
+                <div className="flex">
+                  <h2>Skills: {"         "}</h2>
+                  <p></p>
+                </div>
+              )
+            ) : (
+              <div></div>
+            )}
+            {usersProfile.interest ? (
+              <div className="flex">
+                <h2>Interests: {"         "}</h2>
+                <p>{usersProfile.interest}</p>
+              </div>
+            ) : (
+              <div className="flex">
+                <h2>Interests: {"         "}</h2>
+                <p></p>
+              </div>
+            )}
+            {usersProfile.affiliations ? (
+              <div className="flex">
+                <h2>Affiliations: {"         "}</h2>
+                <p>{usersProfile.affiliations}</p>
+              </div>
+            ) : (
+              <div className="flex">
+                <h2>Affiliations: {"         "}</h2>
+                <p></p>
+              </div>
+            )}
           </div>
-          {usersProfile.personal_information ? (
-            <p className="personal">{usersProfile.personal_information}</p>
-          ) : (
-            <p className="personal"></p>
-          )}
-          {usersProfile.artisan ? (
-            usersProfile.specializations ? (
-              <div className="flex">
-                <h2>Specialization: {"         "}</h2>
-                <p>{usersProfile.specializations}</p>
-              </div>
-            ) : (
-              <div className="flex">
-                <h2>Specialization: {"         "}</h2>
-                <p></p>
-              </div>
-            )
-          ) : (
-            <div></div>
-          )}
-          {usersProfile.artisan ? (
-            usersProfile.skills ? (
-              <div className="flex">
-                <h2>Skills: {"         "}</h2>
-                <p>{usersProfile.skills}</p>
-              </div>
-            ) : (
-              <div className="flex">
-                <h2>Skills: {"         "}</h2>
-                <p></p>
-              </div>
-            )
-          ) : (
-            <div></div>
-          )}
-          {usersProfile.interest ? (
-            <div className="flex">
-              <h2>Interests: {"         "}</h2>
-              <p>{usersProfile.interest}</p>
-            </div>
-          ) : (
-            <div className="flex">
-              <h2>Interests: {"         "}</h2>
-              <p></p>
-            </div>
-          )}
-          {usersProfile.affiliations ? (
-            <div className="flex">
-              <h2>Affiliations: {"         "}</h2>
-              <p>{usersProfile.affiliations}</p>
-            </div>
-          ) : (
-            <div className="flex">
-              <h2>Affiliations: {"         "}</h2>
-              <p></p>
-            </div>
-          )}
         </div>
       </div>
       <Wrapper>
