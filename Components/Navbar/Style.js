@@ -927,12 +927,12 @@ export const UserNav = styled.div`
       background: #f0f3f6;
       box-shadow: 0px 4px 8px rgba(6, 2, 88, 0.25);
       border-radius: 0px 0px 5px 5px;
-      width: 12%;
+      width: 15%;
       padding: 2rem 2rem;
       text-align: center;
       height: ${({ isProfile }) => (isProfile ? "12rem" : "0rem")};
       opacity: ${({ isProfile }) => (isProfile ? "1" : "0")};
-      transition: all 0.1s ease-in-out;
+      transition: all 0.2s ease-in-out;
       z-index: 1000;
 
       div {
@@ -1036,7 +1036,7 @@ export const UserNav = styled.div`
       background: #f0f3f6;
       box-shadow: 0px 4px 8px rgba(6, 2, 88, 0.25);
       border-radius: 0px 0px 5px 5px;
-      width: 12%;
+      width: 20%;
       padding: 2rem 2rem;
       text-align: center;
       height: ${({ isProfile }) => (isProfile ? "12rem" : "0rem")};
@@ -1149,8 +1149,8 @@ export const UserNav = styled.div`
       background: #f0f3f6;
       box-shadow: 0px 4px 8px rgba(6, 2, 88, 0.25);
       border-radius: 0px 0px 5px 5px;
-      width: 12%;
-      padding: 2rem 2rem;
+      width: 20%;
+      padding: 2rem 1rem;
       text-align: center;
       height: ${({ isProfile }) => (isProfile ? "12rem" : "0rem")};
       opacity: ${({ isProfile }) => (isProfile ? "1" : "0")};
@@ -1168,8 +1168,9 @@ export const UserNav = styled.div`
         display: ${({ isProfile }) => (isProfile ? "flex" : "none")};
 
         p {
-          margin-left: 10px;
+          margin-left: 5px;
           cursor: pointer;
+          font-size: 14px;
         }
       }
 
@@ -1256,8 +1257,8 @@ export const UserNav = styled.div`
       background: #f0f3f6;
       box-shadow: 0px 4px 8px rgba(6, 2, 88, 0.25);
       border-radius: 0px 0px 5px 5px;
-      width: 12%;
-      padding: 2rem 2rem;
+      width: 30%;
+      padding: 2rem 1rem;
       text-align: center;
       height: ${({ isProfile }) => (isProfile ? "12rem" : "0rem")};
       opacity: ${({ isProfile }) => (isProfile ? "1" : "0")};
@@ -1275,8 +1276,9 @@ export const UserNav = styled.div`
         display: ${({ isProfile }) => (isProfile ? "flex" : "none")};
 
         p {
-          margin-left: 10px;
+          margin-left: 2px;
           cursor: pointer;
+          font-size: 14px;
         }
       }
 
@@ -1361,14 +1363,14 @@ export const UserNav = styled.div`
       position: absolute;
       /* left: 50rem; */
       right: 0rem;
-      margin-right: 2rem;
+      margin-right: 1rem;
       margin-top: 5.3rem;
       top: 0rem;
       background: #f0f3f6;
       box-shadow: 0px 4px 8px rgba(6, 2, 88, 0.25);
       border-radius: 0px 0px 5px 5px;
-      width: 12%;
-      padding: 2rem 2rem;
+      width: 40%;
+      padding: 2rem 1rem;
       text-align: center;
       height: ${({ isProfile }) => (isProfile ? "12rem" : "0rem")};
       opacity: ${({ isProfile }) => (isProfile ? "1" : "0")};
@@ -1386,8 +1388,9 @@ export const UserNav = styled.div`
         display: ${({ isProfile }) => (isProfile ? "flex" : "none")};
 
         p {
-          margin-left: 10px;
+          margin-left: 2px;
           cursor: pointer;
+          font-size: 14px;
         }
       }
 
