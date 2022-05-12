@@ -1392,17 +1392,17 @@ export const Container = styled.div`
 
     div.container {
       display: grid;
-      grid-template-columns: 40% 60%;
+      grid-template-columns: repeat(1, 1fr);
       justify-items: center;
       width: 100%;
       margin: auto;
-      gap: 2rem;
+      /* gap: 2rem; */
 
       div.detail,
       div.info {
         background-color: #f9fafb;
         border-radius: 10px;
-        margin: 4rem auto;
+        margin: 2rem auto 2rem auto;
       }
 
       div.detail {
@@ -1509,8 +1509,8 @@ export const Container = styled.div`
     /* margin-left: 2rem; */
 
     div.profile {
-      width: 80%;
-      margin: auto;
+      width: 70%;
+      margin: 0rem 6rem;
     }
 
     button {
@@ -1783,17 +1783,17 @@ export const Container = styled.div`
 
     div.container {
       display: grid;
-      grid-template-columns: 40% 60%;
+      grid-template-columns: repeat(1, 1fr);
       justify-items: center;
       width: 100%;
       margin: auto;
-      gap: 2rem;
+      /* gap: 2rem; */
 
       div.detail,
       div.info {
         background-color: #f9fafb;
         border-radius: 10px;
-        margin: 4rem auto;
+        margin: 2rem auto 0rem auto;
       }
 
       div.detail {
@@ -1837,13 +1837,13 @@ export const Container = styled.div`
 
         h1 {
           color: #020127;
-          font-size: 26px;
+          font-size: 19px;
           margin-bottom: 1rem;
         }
 
         p {
           color: #020127;
-          font-size: 16px;
+          font-size: 14px;
           display: flex;
           align-items: center;
           grid-gap: 1rem;
@@ -1867,7 +1867,7 @@ export const Container = styled.div`
           margin: 3rem auto 0rem auto;
 
           h1 {
-            font-size: 26px;
+            font-size: 19px;
             /* margin-bottom: 2rem; */
           }
         }
@@ -1875,7 +1875,7 @@ export const Container = styled.div`
         p.personal {
           width: 80%;
           margin: 1rem auto;
-          font-size: 19px;
+          font-size: 14px;
         }
 
         div.flex {
@@ -1888,7 +1888,7 @@ export const Container = styled.div`
 
           h2,
           p {
-            font-size: 19px;
+            font-size: 14px;
           }
         }
       }
@@ -2126,8 +2126,8 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 80%;
-    margin: 0rem auto 3rem auto;
+    width: 70%;
+    margin: 2rem 6rem;
 
     div.wrapper {
       background: #f9fafb;
