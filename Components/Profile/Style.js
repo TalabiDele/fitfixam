@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   @media (min-width: 1281px) {
-    z-index: 500;
+    /* z-index: 500; */
     background-color: #fff;
 
     div.profile {
@@ -27,6 +27,23 @@ export const Container = styled.div`
       }
     }
 
+    div.upload-btn {
+      width: 100%;
+      display: grid;
+      justify-items: center;
+      margin-bottom: 2rem;
+
+      button {
+        background-color: #f4442e;
+
+        &:hover {
+          border: 1.5px solid #f4442e;
+          background: none;
+          color: #f4442e;
+        }
+      }
+    }
+
     div.form-modal {
       background-color: #04023ac0;
       position: fixed;
@@ -47,12 +64,12 @@ export const Container = styled.div`
 
       form.edit {
         background-color: #f2f4f7;
-        width: 70%;
+        width: 80%;
         border-radius: 10px;
         margin: 7rem auto;
         grid-template-columns: 30% 70%;
         justify-items: center;
-        width: ${({ isOpen }) => (isOpen ? "70%" : "0%")};
+        width: ${({ isOpen }) => (isOpen ? "80%" : "0%")};
         display: ${({ isOpen }) => (isOpen ? "grid" : "none")};
         transition: all 0.1s ease-in-out;
         /* align-items: center; */
@@ -61,6 +78,8 @@ export const Container = styled.div`
           display: grid;
           justify-items: center;
           width: 100%;
+          margin: 0rem auto;
+          height: 50rem;
 
           div.user_info {
             background: #d9d9de;
@@ -94,6 +113,14 @@ export const Container = styled.div`
               bottom: 3rem;
               left: 14rem;
               text-align: center;
+
+              div.upload-form {
+                input {
+                  visibility: hidden;
+                  width: 0;
+                  height: 0;
+                }
+              }
 
               .pen {
                 margin-top: 8px;
@@ -149,10 +176,14 @@ export const Container = styled.div`
         }
 
         div.modal {
+          width: 80%;
+          margin: auto;
+
           div.header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
           }
 
           textarea,
@@ -163,9 +194,11 @@ export const Container = styled.div`
             padding: 0.5rem;
           }
 
-          textarea {
-            width: 80%;
-            margin: 1rem 0rem;
+          div.textarea {
+            textarea {
+              width: 100%;
+              margin: 1rem 0rem;
+            }
           }
 
           div.grid {
@@ -173,7 +206,7 @@ export const Container = styled.div`
             grid-gap: 1rem;
             margin-bottom: 1rem;
             justify-content: space-between;
-            width: 80%;
+            width: 100%;
             align-items: center;
 
             input {
@@ -184,19 +217,29 @@ export const Container = styled.div`
       }
 
       form.reset {
+        width: 100%;
+
+        h1 {
+          width: 80%;
+          margin: auto;
+        }
+
         div.reset_password {
           display: grid;
-          margin-top: 1rem;
+          margin: 1rem auto 0rem auto;
+          width: 80%;
 
           label {
             margin-bottom: 1rem;
           }
 
           div.reset_input {
+            width: 100%;
+
             input {
               font-size: 19px;
               padding: 0.5rem;
-              width: 30%;
+              width: 40%;
               border-radius: 10px;
               border: 1px solid #b2bbc6;
               margin-right: 1rem;
@@ -345,6 +388,23 @@ export const Container = styled.div`
       }
     }
 
+    div.upload-btn {
+      width: 100%;
+      display: grid;
+      justify-items: center;
+      margin-bottom: 2rem;
+
+      button {
+        background-color: #f4442e;
+
+        &:hover {
+          border: 1.5px solid #f4442e;
+          background: none;
+          color: #f4442e;
+        }
+      }
+    }
+
     div.form-modal {
       background-color: #04023ac0;
       position: fixed;
@@ -370,7 +430,7 @@ export const Container = styled.div`
         margin: 7rem auto;
         grid-template-columns: 30% 70%;
         justify-items: center;
-        width: ${({ isOpen }) => (isOpen ? "70%" : "0%")};
+        width: ${({ isOpen }) => (isOpen ? "90%" : "0%")};
         display: ${({ isOpen }) => (isOpen ? "grid" : "none")};
         transition: all 0.1s ease-in-out;
         /* align-items: center; */
@@ -379,6 +439,7 @@ export const Container = styled.div`
           display: grid;
           justify-items: center;
           width: 100%;
+          height: 40rem;
 
           div.user_info {
             background: #d9d9de;
@@ -410,8 +471,16 @@ export const Container = styled.div`
               background-color: #f2f4f7;
               position: relative;
               bottom: 3rem;
-              left: 14rem;
+              left: 12rem;
               text-align: center;
+
+              div.upload-form {
+                input {
+                  visibility: hidden;
+                  width: 0;
+                  height: 0;
+                }
+              }
 
               .pen {
                 margin-top: 8px;
@@ -427,13 +496,19 @@ export const Container = styled.div`
                 border: 1px solid #b2bbc6;
                 border-radius: 10px;
                 padding: 0.5rem;
+                width: 80%;
               }
+            }
+
+            button.upload-btn {
+              margin: auto;
             }
           }
 
           div.additionals {
             width: 90%;
             margin: 0rem auto;
+            height: 0rem;
 
             p {
               display: flex;
@@ -455,7 +530,7 @@ export const Container = styled.div`
 
       div.edit_form {
         padding: 4rem 0rem;
-        width: 95%;
+        width: 100%;
 
         h1 {
           font-size: 26px;
@@ -467,10 +542,15 @@ export const Container = styled.div`
         }
 
         div.modal {
+          width: 80%;
+          margin: auto;
+
           div.header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 80%;
+            margin: auto;
           }
 
           textarea,
@@ -479,17 +559,23 @@ export const Container = styled.div`
             border-radius: 10px;
             font-size: 19px;
             padding: 0.5rem;
+            /* margin: auto; */
           }
 
-          textarea {
+          div.textarea {
             width: 80%;
-            margin: 1rem 0rem;
+            margin: auto;
+
+            textarea {
+              width: 100%;
+              margin: 1rem auto;
+            }
           }
 
           div.grid {
             display: flex;
             grid-gap: 1rem;
-            margin-bottom: 1rem;
+            margin: 0rem auto 1rem auto;
             justify-content: space-between;
             width: 80%;
             align-items: center;
@@ -502,9 +588,13 @@ export const Container = styled.div`
       }
 
       form.reset {
+        width: 70%;
+        margin: auto;
+
         div.reset_password {
           display: grid;
-          margin-top: 1rem;
+          margin: 1rem auto 0rem auto;
+          width: 100%;
 
           label {
             margin-bottom: 1rem;
@@ -639,7 +729,6 @@ export const Container = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    z-index: 500;
     background-color: #fff;
     margin-left: 2rem;
 
@@ -662,6 +751,23 @@ export const Container = styled.div`
         border: 1.5px solid #07036e;
         background: none;
         color: #07036e;
+      }
+    }
+
+    div.upload-btn {
+      width: 100%;
+      display: grid;
+      justify-items: center;
+      margin-bottom: 2rem;
+
+      button {
+        background-color: #f4442e;
+
+        &:hover {
+          border: 1.5px solid #f4442e;
+          background: none;
+          color: #f4442e;
+        }
       }
     }
 
@@ -688,12 +794,36 @@ export const Container = styled.div`
         width: 70%;
         border-radius: 10px;
         margin: 7rem auto;
-        grid-template-columns: 30% 70%;
+        grid-template-columns: repeat(1, 1fr);
         justify-items: center;
+        overflow-y: scroll;
         width: ${({ isOpen }) => (isOpen ? "70%" : "0%")};
         display: ${({ isOpen }) => (isOpen ? "grid" : "none")};
         transition: all 0.1s ease-in-out;
+        height: 50rem;
         /* align-items: center; */
+
+        ::-webkit-scrollbar {
+          height: 5px;
+          width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 0px grey;
+          border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #c0c0c0;
+          border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #dbdbdb;
+        }
 
         div.user {
           display: grid;
@@ -707,6 +837,7 @@ export const Container = styled.div`
             height: 10rem;
             padding-top: 4rem;
             margin: 0rem auto;
+            /* height: 20rem; */
 
             h2 {
               margin-bottom: 1rem;
@@ -715,6 +846,8 @@ export const Container = styled.div`
             div.img {
               width: 40%;
               margin: auto;
+              display: grid;
+              justify-items: center;
             }
 
             .image {
@@ -730,8 +863,16 @@ export const Container = styled.div`
               background-color: #f2f4f7;
               position: relative;
               bottom: 3rem;
-              left: 14rem;
+              left: 24rem;
               text-align: center;
+
+              div.upload-form {
+                input {
+                  visibility: hidden;
+                  width: 0;
+                  height: 0;
+                }
+              }
 
               .pen {
                 margin-top: 8px;
@@ -753,7 +894,8 @@ export const Container = styled.div`
 
           div.additionals {
             width: 90%;
-            margin: 0rem auto;
+            margin: 16rem auto 0rem auto;
+            /* height: 20rem; */
 
             p {
               display: flex;
@@ -776,6 +918,7 @@ export const Container = styled.div`
       div.edit_form {
         padding: 4rem 0rem;
         width: 95%;
+        margin: auto;
 
         h1 {
           font-size: 26px;
@@ -787,10 +930,14 @@ export const Container = styled.div`
         }
 
         div.modal {
+          width: 100%;
+
           div.header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 90%;
+            margin: auto;
           }
 
           textarea,
@@ -801,18 +948,24 @@ export const Container = styled.div`
             padding: 0.5rem;
           }
 
-          textarea {
+          div.textarea {
             width: 80%;
-            margin: 1rem 0rem;
+            margin: auto;
+          }
+
+          textarea {
+            width: 100%;
+            margin: 1rem auto;
           }
 
           div.grid {
             display: flex;
             grid-gap: 1rem;
-            margin-bottom: 1rem;
+            /* margin-bottom: 1rem; */
             justify-content: space-between;
             width: 80%;
             align-items: center;
+            margin: 1rem auto 0rem auto;
 
             input {
               width: 90%;
@@ -822,6 +975,9 @@ export const Container = styled.div`
       }
 
       form.reset {
+        width: 80%;
+        margin: 2rem auto 0rem auto;
+
         div.reset_password {
           display: grid;
           margin-top: 1rem;
@@ -831,10 +987,12 @@ export const Container = styled.div`
           }
 
           div.reset_input {
+            width: 100%;
+
             input {
               font-size: 19px;
               padding: 0.5rem;
-              width: 30%;
+              width: 35%;
               border-radius: 10px;
               border: 1px solid #b2bbc6;
               margin-right: 1rem;
@@ -959,7 +1117,6 @@ export const Container = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    z-index: 500;
     background-color: #fff;
     margin-left: 2rem;
 
@@ -982,6 +1139,23 @@ export const Container = styled.div`
         border: 1.5px solid #07036e;
         background: none;
         color: #07036e;
+      }
+    }
+
+    div.upload-btn {
+      width: 100%;
+      display: grid;
+      justify-items: center;
+      margin-bottom: 2rem;
+
+      button {
+        background-color: #f4442e;
+
+        &:hover {
+          border: 1.5px solid #f4442e;
+          background: none;
+          color: #f4442e;
+        }
       }
     }
 
@@ -1008,12 +1182,36 @@ export const Container = styled.div`
         width: 70%;
         border-radius: 10px;
         margin: 7rem auto;
-        grid-template-columns: 30% 70%;
+        grid-template-columns: repeat(1, 1fr);
         justify-items: center;
+        overflow-y: scroll;
         width: ${({ isOpen }) => (isOpen ? "70%" : "0%")};
         display: ${({ isOpen }) => (isOpen ? "grid" : "none")};
         transition: all 0.1s ease-in-out;
+        height: 50rem;
         /* align-items: center; */
+
+        ::-webkit-scrollbar {
+          height: 5px;
+          width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 0px grey;
+          border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #c0c0c0;
+          border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #dbdbdb;
+        }
 
         div.user {
           display: grid;
@@ -1027,6 +1225,7 @@ export const Container = styled.div`
             height: 10rem;
             padding-top: 4rem;
             margin: 0rem auto;
+            /* height: 20rem; */
 
             h2 {
               margin-bottom: 1rem;
@@ -1035,6 +1234,8 @@ export const Container = styled.div`
             div.img {
               width: 40%;
               margin: auto;
+              display: grid;
+              justify-items: center;
             }
 
             .image {
@@ -1050,8 +1251,16 @@ export const Container = styled.div`
               background-color: #f2f4f7;
               position: relative;
               bottom: 3rem;
-              left: 14rem;
+              left: 1rem;
               text-align: center;
+
+              div.upload-form {
+                input {
+                  visibility: hidden;
+                  width: 0;
+                  height: 0;
+                }
+              }
 
               .pen {
                 margin-top: 8px;
@@ -1073,7 +1282,8 @@ export const Container = styled.div`
 
           div.additionals {
             width: 90%;
-            margin: 0rem auto;
+            margin: 16rem auto 0rem auto;
+            /* height: 20rem; */
 
             p {
               display: flex;
@@ -1096,6 +1306,7 @@ export const Container = styled.div`
       div.edit_form {
         padding: 4rem 0rem;
         width: 95%;
+        margin: auto;
 
         h1 {
           font-size: 26px;
@@ -1107,10 +1318,14 @@ export const Container = styled.div`
         }
 
         div.modal {
+          width: 100%;
+
           div.header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 90%;
+            margin: auto;
           }
 
           textarea,
@@ -1121,18 +1336,24 @@ export const Container = styled.div`
             padding: 0.5rem;
           }
 
-          textarea {
+          div.textarea {
             width: 80%;
-            margin: 1rem 0rem;
+            margin: auto;
+          }
+
+          textarea {
+            width: 100%;
+            margin: 1rem auto;
           }
 
           div.grid {
             display: flex;
             grid-gap: 1rem;
-            margin-bottom: 1rem;
+            /* margin-bottom: 1rem; */
             justify-content: space-between;
             width: 80%;
             align-items: center;
+            margin: 1rem auto 0rem auto;
 
             input {
               width: 90%;
@@ -1142,6 +1363,9 @@ export const Container = styled.div`
       }
 
       form.reset {
+        width: 80%;
+        margin: 2rem auto 0rem auto;
+
         div.reset_password {
           display: grid;
           margin-top: 1rem;
@@ -1151,10 +1375,12 @@ export const Container = styled.div`
           }
 
           div.reset_input {
+            width: 100%;
+
             input {
               font-size: 19px;
               padding: 0.5rem;
-              width: 30%;
+              width: 35%;
               border-radius: 10px;
               border: 1px solid #b2bbc6;
               margin-right: 1rem;
@@ -1166,7 +1392,7 @@ export const Container = styled.div`
 
     div.container {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: 40% 60%;
       justify-items: center;
       width: 100%;
       margin: auto;
@@ -1176,14 +1402,13 @@ export const Container = styled.div`
       div.info {
         background-color: #f9fafb;
         border-radius: 10px;
-        margin: auto;
+        margin: 4rem auto;
       }
 
       div.detail {
         display: grid;
         justify-items: center;
         width: 100%;
-        margin: 2rem auto 0rem auto;
 
         div.user {
           background: #d9d9de;
@@ -1239,9 +1464,9 @@ export const Container = styled.div`
 
       div.info {
         width: 100%;
-        /* z-index: 500; */
+        z-index: 500;
         color: #020127;
-        margin: 0rem auto 2rem auto;
+        /* margin-right: 10rem; */
 
         div.split {
           display: flex;
@@ -1280,9 +1505,8 @@ export const Container = styled.div`
   }
 
   @media (max-width: 480px) {
-    z-index: 500;
     background-color: #fff;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
 
     div.profile {
       width: 80%;
@@ -1306,6 +1530,23 @@ export const Container = styled.div`
       }
     }
 
+    div.upload-btn {
+      width: 100%;
+      display: grid;
+      justify-items: center;
+      margin-bottom: 2rem;
+
+      button {
+        background-color: #f4442e;
+
+        &:hover {
+          border: 1.5px solid #f4442e;
+          background: none;
+          color: #f4442e;
+        }
+      }
+    }
+
     div.form-modal {
       background-color: #04023ac0;
       position: fixed;
@@ -1318,7 +1559,7 @@ export const Container = styled.div`
 
       .cancel_icon {
         position: relative;
-        top: 5rem;
+        top: 2rem;
         width: 100%;
         bottom: 0;
         cursor: pointer;
@@ -1328,13 +1569,37 @@ export const Container = styled.div`
         background-color: #f2f4f7;
         width: 70%;
         border-radius: 10px;
-        margin: 7rem auto;
-        grid-template-columns: 30% 70%;
+        margin: 4rem auto;
+        grid-template-columns: repeat(1, 1fr);
         justify-items: center;
-        width: ${({ isOpen }) => (isOpen ? "70%" : "0%")};
+        overflow-y: scroll;
+        width: ${({ isOpen }) => (isOpen ? "90%" : "0%")};
         display: ${({ isOpen }) => (isOpen ? "grid" : "none")};
         transition: all 0.1s ease-in-out;
+        height: 50rem;
         /* align-items: center; */
+
+        ::-webkit-scrollbar {
+          height: 5px;
+          width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 0px grey;
+          border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #c0c0c0;
+          border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #dbdbdb;
+        }
 
         div.user {
           display: grid;
@@ -1348,6 +1613,7 @@ export const Container = styled.div`
             height: 10rem;
             padding-top: 4rem;
             margin: 0rem auto;
+            /* height: 20rem; */
 
             h2 {
               margin-bottom: 1rem;
@@ -1356,6 +1622,8 @@ export const Container = styled.div`
             div.img {
               width: 40%;
               margin: auto;
+              display: grid;
+              justify-items: center;
             }
 
             .image {
@@ -1371,8 +1639,16 @@ export const Container = styled.div`
               background-color: #f2f4f7;
               position: relative;
               bottom: 3rem;
-              left: 14rem;
+              left: 15rem;
               text-align: center;
+
+              div.upload-form {
+                input {
+                  visibility: hidden;
+                  width: 0;
+                  height: 0;
+                }
+              }
 
               .pen {
                 margin-top: 8px;
@@ -1394,7 +1670,8 @@ export const Container = styled.div`
 
           div.additionals {
             width: 90%;
-            margin: 0rem auto;
+            margin: 16rem auto 0rem auto;
+            /* height: 20rem; */
 
             p {
               display: flex;
@@ -1403,7 +1680,7 @@ export const Container = styled.div`
               margin-bottom: 1rem;
 
               input {
-                font-size: 19px;
+                font-size: 14px;
                 border-radius: 10px;
                 padding: 0.5rem;
                 width: 90%;
@@ -1417,43 +1694,54 @@ export const Container = styled.div`
       div.edit_form {
         padding: 4rem 0rem;
         width: 95%;
+        margin: auto;
 
         h1 {
-          font-size: 26px;
+          font-size: 19px;
         }
 
         h2,
         p {
-          font-size: 19px;
+          font-size: 14px;
         }
 
         div.modal {
+          width: 100%;
+
           div.header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 90%;
+            margin: auto;
           }
 
           textarea,
           input {
             border: 1px solid #b2bbc6;
             border-radius: 10px;
-            font-size: 19px;
+            font-size: 14px;
             padding: 0.5rem;
           }
 
-          textarea {
+          div.textarea {
             width: 80%;
-            margin: 1rem 0rem;
+            margin: auto;
+          }
+
+          textarea {
+            width: 100%;
+            margin: 1rem auto;
           }
 
           div.grid {
             display: flex;
             grid-gap: 1rem;
-            margin-bottom: 1rem;
+            /* margin-bottom: 1rem; */
             justify-content: space-between;
             width: 80%;
             align-items: center;
+            margin: 1rem auto 0rem auto;
 
             input {
               width: 90%;
@@ -1463,6 +1751,9 @@ export const Container = styled.div`
       }
 
       form.reset {
+        width: 80%;
+        margin: 2rem auto 0rem auto;
+
         div.reset_password {
           display: grid;
           margin-top: 1rem;
@@ -1472,13 +1763,18 @@ export const Container = styled.div`
           }
 
           div.reset_input {
+            width: 100%;
+            display: grid;
+            /* justify-items: center; */
+
             input {
-              font-size: 19px;
+              font-size: 14px;
               padding: 0.5rem;
-              width: 30%;
+              width: 100%;
               border-radius: 10px;
               border: 1px solid #b2bbc6;
               margin-right: 1rem;
+              margin-bottom: 1rem;
             }
           }
         }
@@ -1487,7 +1783,7 @@ export const Container = styled.div`
 
     div.container {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: 40% 60%;
       justify-items: center;
       width: 100%;
       margin: auto;
@@ -1497,14 +1793,13 @@ export const Container = styled.div`
       div.info {
         background-color: #f9fafb;
         border-radius: 10px;
-        margin: auto;
+        margin: 4rem auto;
       }
 
       div.detail {
         display: grid;
         justify-items: center;
         width: 100%;
-        margin: 2rem auto 0rem auto;
 
         div.user {
           background: #d9d9de;
@@ -1560,9 +1855,9 @@ export const Container = styled.div`
 
       div.info {
         width: 100%;
-        /* z-index: 500; */
+        z-index: 500;
         color: #020127;
-        margin: 0rem auto 2rem auto;
+        /* margin-right: 10rem; */
 
         div.split {
           display: flex;

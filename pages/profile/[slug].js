@@ -6,7 +6,7 @@ import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import AuthContext from "@/context/AuthContext";
 import { useContext } from "react";
 
-const Slug = ({ usersProfile, userPosts }) => {
+const Slug = ({ usersProfile, userPosts, token }) => {
   const { user } = useContext(AuthContext);
 
   return (
@@ -16,6 +16,7 @@ const Slug = ({ usersProfile, userPosts }) => {
           usersProfile={userProfile}
           userPosts={userPosts}
           key={userProfile.id}
+          token={token}
         />
       ))}
     </UserLayout>

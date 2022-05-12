@@ -18,8 +18,13 @@ import Link from "next/link";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import { GiCancel } from "react-icons/gi";
 import { useRouter } from "next/router";
+import spinner from "@/public/spinner.gif";
+import axios from "axios";
 
-const Profile = ({ usersProfile, userPosts }) => {
+const Profile = ({ usersProfile, token, userPosts }) => {
+  // const cors = require("cors");
+  // app.use(cors());
+
   const [isOpen, setIsOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({
     username: usersProfile.username,
@@ -31,15 +36,43 @@ const Profile = ({ usersProfile, userPosts }) => {
     phone: usersProfile.phone,
     email: usersProfile.email,
     address: usersProfile.address,
+    user_image: usersProfile.user_image,
   });
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmedPassword] = useState("");
+  const [image, setImage] = useState(null);
+  const [isImage, setIsImage] = useState(false);
+  const [userProfileImage, setUserProfileImage] = useState(null);
+  const [message, setMessage] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  // const [profilePicture, setProfilePicture] =
 
-  console.log(usersProfile);
+  const refreshData = () => router.reload();
+
+  // console.log(usersProfile);
 
   const { user } = useContext(AuthContext);
 
+  let binaryData = [];
+
   const router = useRouter();
+
+  const imageUploaded = async (e) => {
+    // e.preventDefault();
+    setUserInfo({ ...userInfo, user_image: e });
+
+    const res = await fetch(`${NEXT_PUBLIC_API_URL}/users/${usersProfile.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    });
+    const data = await res.json();
+    console.log(data);
+    // setIsPosted(data);
+    // setIsOpen(false);
+  };
 
   const updateUserHandler = async (e) => {
     e.preventDefault();
@@ -53,10 +86,46 @@ const Profile = ({ usersProfile, userPosts }) => {
     });
 
     const data = await res.json();
-    router.push(`/profile/${data.slug}`);
+    // router.push(`/profile/${data.slug}`);
+
+    // const formData = new FormData();
+    // formData.append("files", image);
+    // formData.append("ref", "users");
+    // formData.append("refId", usersProfile.id);
+    // formData.append("field", "user_image");
+    // image.forEach(({ file }) =>
+    //   bodyFormData.append(`files.images`, file, file.name)
+    // );
+
+    // const resUpload = await fetch(`${NEXT_PUBLIC_API_URL}/upload`, {
+    //   method: "POST",
+    //   headers: {
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    //   body: formData,
+    // });
+
+    // if (resUpload.ok) {
+    //   imageUploaded();
+    // }
+
     setIsOpen(false);
 
     console.log(data);
+
+    refreshData();
+  };
+
+  const handleFileChange = (e) => {
+    // const files = e.target;
+
+    setImage(e.target.files[0]);
+
+    // console.log(e.target.files[0]);
+
+    binaryData.push(image);
+
+    // uploadImage(e);
   };
 
   const openModalHandler = () => {
@@ -64,9 +133,73 @@ const Profile = ({ usersProfile, userPosts }) => {
     console.log(isOpen);
   };
 
+  const uploadImage = async (e) => {
+    e.preventDefault();
+
+    setIsLoading(true);
+    setMessage("File uploading...");
+
+    const formData = new FormData();
+    formData.append("files", image);
+    // formData.append("ref", "user");
+    formData.append("refId", usersProfile.id);
+    formData.append("field", "user_image");
+
+    const resUpload = await fetch(`${NEXT_PUBLIC_API_URL}/upload`, {
+      method: "POST",
+      // headers: {
+      //   // "Content-Type": "multipart/form-data",
+      //   Authorization: `Bearer ${token}`,
+      // },
+      body: formData,
+    });
+
+    const data = await resUpload.json();
+
+    if (resUpload.ok) {
+      imageUploaded(data);
+      setMessage("File uploaded successfully! Save Chages.");
+      setTimeout(() => {
+        setMessage();
+      }, 7000);
+    } else {
+      setMessage("Select a file");
+      setTimeout(() => {
+        setMessage();
+      }, 7000);
+    }
+
+    setIsLoading(false);
+
+    setUserProfileImage(data);
+
+    console.log(userProfileImage);
+
+    // const res = await fetch(`${NEXT_PUBLIC_API_URL}/users/${usersProfile.id}`);
+    // const data = await res.json();
+    // console.log(data);
+    // axios({
+    //   method: "post",
+    //   url: `${NEXT_PUBLIC_API_URL}/upload`,
+    //   data: formData,
+    // }).then(({ data }) => {
+    //   console.log("Succesfully uploaded: ", JSON.stringify(data));
+    // });
+
+    // if (resUpload.ok) {
+    //   imageUploaded(e);
+    // }
+
+    // console.log(resUpload);
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserInfo({ ...userInfo, [name]: value });
+  };
+
+  const handleIsImage = () => {
+    setIsImage(true);
   };
 
   return (
@@ -78,6 +211,17 @@ const Profile = ({ usersProfile, userPosts }) => {
           className="cancel_icon"
           onClick={openModalHandler}
         />
+        {/* <form onSubmit={(e) => uploadImage(e)}>
+          <input
+            type="file"
+            className="image-input"
+            name="image"
+            onChange={handleFileChange}
+          />
+          <button>Upload</button>
+        </form> */}
+        {/* <Image src={image} alt="image" width={100} height={100} /> */}
+        {/* <h1>{image.name}</h1> */}
         <form className="edit" onSubmit={(e) => updateUserHandler(e)}>
           <div className="user">
             <div className="user_info">
@@ -102,8 +246,46 @@ const Profile = ({ usersProfile, userPosts }) => {
                   />
                 )}
               </div>
-              <div className="edit_img">
-                <FaPen color="#07036E" fontSize={15} className="pen" />
+              {/* {image && (
+                <div className="img-preview">
+                  <Image
+                    src={window.URL.createObjectURL(
+                      new Blob(binaryData, { type: "application/zip" })
+                    )}
+                    alt="Image preview"
+                    width={50}
+                    height={50}
+                    objectFit="cover"
+                  />
+                </div>
+              )} */}
+              <div className="edit_img" onClick={handleIsImage}>
+                <div className="upload-form">
+                  <label htmlFor="file-input">
+                    <FaPen color="#07036E" fontSize={15} className="pen" />
+                  </label>
+                  <input
+                    type="file"
+                    id="file-input"
+                    className="image-input"
+                    onChange={handleFileChange}
+                  />
+                </div>
+              </div>
+              {/* {isImage ? (
+                <div className="upload-form">
+                  <input
+                    type="file"
+                    className="image-input"
+                    onChange={handleFileChange}
+                  />
+                  <button onClick={uploadImage}></button>
+                </div>
+              ) : (
+                <></>
+              )} */}
+              <div className="upload-btn">
+                <button onClick={uploadImage}>Upload</button>
               </div>
               <h2>
                 <input
@@ -163,23 +345,31 @@ const Profile = ({ usersProfile, userPosts }) => {
             </div>
           </div>
           <div className="edit_form">
+            <div className="message">
+              <span>{message}</span>
+              {isLoading && (
+                <Image src={spinner} alt="spinner" width={20} height={20} />
+              )}
+            </div>
             <div className="modal">
               <div className="header">
-                <h1>Personal Information</h1>
+                <h1>Personal Informations</h1>
                 <button>Save</button>
               </div>
-              <textarea
-                placeholder={
-                  usersProfile.personal_information
-                    ? usersProfile.personal_information
-                    : "Write about yourself"
-                }
-                rows="5"
-                name="personal_information"
-                id="personal_information"
-                value={userInfo.personal_information}
-                onChange={(e) => handleInputChange(e)}
-              ></textarea>
+              <div className="textarea">
+                <textarea
+                  placeholder={
+                    usersProfile.personal_information
+                      ? usersProfile.personal_information
+                      : "Write about yourself"
+                  }
+                  rows="5"
+                  name="personal_information"
+                  id="personal_information"
+                  value={userInfo.personal_information}
+                  onChange={(e) => handleInputChange(e)}
+                ></textarea>
+              </div>
               {usersProfile.artisan ? (
                 <div className="grid">
                   <h2>Specializations:</h2>

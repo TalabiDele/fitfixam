@@ -51,7 +51,7 @@ import { useRouter } from "next/router";
 const Navbar = () => {
   const router = useRouter();
 
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState([]);
   // const [imagePreview, setImagePreview] = useState(
   //   isPosted.image ? isPosted.image.formats.thumbnail.url : null
   // );
@@ -174,6 +174,9 @@ const Navbar = () => {
     formData.append("ref", "posts");
     formData.append("refId", data.id);
     formData.append("field", "images");
+    // image.forEach(({ file }) =>
+    //   bodyFormData.append(`files.images`, file, file.name)
+    // );
 
     const resUpload = await fetch(`${NEXT_PUBLIC_API_URL}/upload`, {
       method: "POST",
@@ -187,13 +190,18 @@ const Navbar = () => {
       imageUploaded(data);
     }
 
+    console.log();
+
     setIsModal(false);
+
+    setImage(null);
 
     refreshData();
   };
 
   const handleFileChange = (e) => {
-    setImage(e.target.files[0]);
+    setImage([image, ...e.target.files]);
+    console.log(image);
   };
 
   const handleSearchChange = async (e) => {
@@ -338,7 +346,7 @@ const Navbar = () => {
                   type="file"
                   placeholder="Upload an image"
                   onChange={handleFileChange}
-                  // multiple="multiple"
+                  multiple="multiple"
                 />
                 <div className="btn">
                   <button
@@ -410,7 +418,7 @@ const Navbar = () => {
           <>
             <div className="user_profile">
               <FaBell fontSize={26} cursor="pointer" className="bell" />
-              {user.userImage ? (
+              {user.user_image ? (
                 <Image
                   src={user.user_image.formats.small.url}
                   alt="User Image"
