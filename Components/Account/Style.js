@@ -140,6 +140,35 @@ export const Wrapper = styled.div`
           color: #fff;
         }
       }
+
+      div.category {
+        transition: all 0.3s ease;
+        p {
+          font-size: 26px;
+          text-align: left;
+          font-weight: 400;
+          color: #050253;
+        }
+
+        .artisan_category {
+          display: flex;
+
+          input {
+            border: 1px solid #909dad;
+            background: #fff;
+            border-radius: 5px;
+            padding: 0rem 2rem;
+            margin-top: 1rem;
+            margin-right: 2rem;
+            cursor: pointer;
+          }
+
+          .active {
+            background: #050253;
+            color: #fff;
+          }
+        }
+      }
     }
   }
 
@@ -225,6 +254,34 @@ export const Wrapper = styled.div`
           color: #fff;
         }
       }
+
+      div.category {
+        p {
+          font-size: 26px;
+        }
+
+        .artisan_category {
+          display: flex;
+          text-align: left;
+          font-weight: 400;
+          color: #050253;
+
+          input {
+            border: 1px solid #909dad;
+            background: #fff;
+            border-radius: 5px;
+            padding: 0rem 2rem;
+            margin-top: 1rem;
+            margin-right: 2rem;
+            cursor: pointer;
+          }
+
+          .active {
+            background: #050253;
+            color: #fff;
+          }
+        }
+      }
     }
   }
 
@@ -308,6 +365,34 @@ export const Wrapper = styled.div`
         .active {
           background: #050253;
           color: #fff;
+        }
+      }
+
+      div.category {
+        p {
+          font-size: 26px;
+          text-align: left;
+          font-weight: 400;
+          color: #050253;
+        }
+
+        .artisan_category {
+          display: flex;
+
+          input {
+            border: 1px solid #909dad;
+            background: #fff;
+            border-radius: 5px;
+            padding: 0rem 2rem;
+            margin-top: 1rem;
+            margin-right: 2rem;
+            cursor: pointer;
+          }
+
+          .active {
+            background: #050253;
+            color: #fff;
+          }
         }
       }
     }
@@ -396,6 +481,34 @@ export const Wrapper = styled.div`
           color: #fff;
         }
       }
+
+      div.category {
+        p {
+          font-size: 26px;
+        }
+
+        .artisan_category {
+          display: flex;
+          text-align: left;
+          font-weight: 400;
+          color: #050253;
+
+          input {
+            border: 1px solid #909dad;
+            background: #fff;
+            border-radius: 5px;
+            padding: 0rem 2rem;
+            margin-top: 1rem;
+            margin-right: 2rem;
+            cursor: pointer;
+          }
+
+          .active {
+            background: #050253;
+            color: #fff;
+          }
+        }
+      }
     }
   }
 
@@ -481,6 +594,34 @@ export const Wrapper = styled.div`
         .active {
           background: #050253;
           color: #fff;
+        }
+      }
+
+      div.category {
+        p {
+          font-size: 26px;
+          text-align: left;
+          font-weight: 400;
+          color: #050253;
+        }
+
+        .artisan_category {
+          display: flex;
+
+          input {
+            border: 1px solid #909dad;
+            background: #fff;
+            border-radius: 5px;
+            padding: 0rem 2rem;
+            margin-top: 1rem;
+            margin-right: 2rem;
+            cursor: pointer;
+          }
+
+          .active {
+            background: #050253;
+            color: #fff;
+          }
         }
       }
     }

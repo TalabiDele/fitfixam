@@ -7,8 +7,10 @@ import { GoogleBtn, FacebookBtn, LoginBtn } from "../Buttons";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
 import Link from "next/link";
+import { getSession, signIn, signOut } from "next-auth/client/_utils";
+import { useRouter } from "next/router";
 
-const CreateAccount = () => {
+const CreateAccount = ({ session }) => {
   const [isSignin, setIsSignin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

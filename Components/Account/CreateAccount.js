@@ -17,6 +17,12 @@ const CreateAccount = () => {
     (Math.random() + 1).toString(36).substring(7)
   );
   const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [user_category, setUser_category] = useState({
+    id: "",
+  });
+  const [isCarpenter, setIsCarpenter] = useState(false);
+  const [isPlumber, setIsPlumber] = useState(false);
+  const [isElectrician, setIsElectrician] = useState(false);
 
   const { register, error } = useContext(AuthContext);
 
@@ -34,19 +40,53 @@ const CreateAccount = () => {
     }
     setSlug(username);
 
-    register({ username, email, password, artisan, slug });
-
-    console.log(register);
+    register({ username, email, password, artisan, slug, user_category });
   };
 
   const getIsArtisan = () => {
     setArtisan(true);
-    console.log(artisan);
   };
 
   const getIsUser = () => {
     setArtisan(false);
-    console.log(artisan);
+  };
+
+  const getCarpenter = (e) => {
+    setIsCarpenter(true);
+    setIsPlumber(false);
+    setIsElectrician(false);
+
+    setUser_category({
+      id: e.target.name,
+    });
+
+    console.log(user_category);
+  };
+
+  const getPlumber = (e) => {
+    // const { category, name } = e.target;
+
+    setIsCarpenter(false);
+    setIsPlumber(true);
+    setIsElectrician(false);
+
+    setUser_category({
+      id: e.target.name,
+    });
+
+    console.log(user_category);
+  };
+
+  const getElectrician = (e) => {
+    setIsCarpenter(false);
+    setIsPlumber(false);
+    setIsElectrician(true);
+
+    setUser_category({
+      id: e.target.name,
+    });
+
+    console.log(user_category);
   };
 
   return (
@@ -106,6 +146,35 @@ const CreateAccount = () => {
               className={artisan ? "" : "active"}
             />
           </div>
+          {artisan && (
+            <div className="category">
+              <p>Choose category</p>
+              <div className="artisan_category">
+                <input
+                  type="button"
+                  value="carpenter"
+                  name="1"
+                  onClick={getCarpenter}
+                  className={!isCarpenter ? "" : "active"}
+                />
+                <input
+                  type="button"
+                  value="plumber"
+                  name="2"
+                  onClick={getPlumber}
+                  className={!isPlumber ? "" : "active"}
+                />
+                <input
+                  type="button"
+                  value="electrician"
+                  name="3"
+                  onClick={getElectrician}
+                  className={!isElectrician ? "" : "active"}
+                />
+              </div>
+            </div>
+          )}
+
           <RegisterBtn>Sign up</RegisterBtn>
         </form>
         <p className="paragraph">

@@ -3,7 +3,8 @@ import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 export default async (req, res) => {
   if (req.method === "POST") {
-    const { username, email, password, slug, artisan } = req.body;
+    const { username, email, password, slug, artisan, user_category } =
+      req.body;
     const strapiRes = await fetch(
       `${NEXT_PUBLIC_API_URL}/auth/local/register`,
       {
@@ -18,6 +19,7 @@ export default async (req, res) => {
           password,
           slug,
           artisan,
+          user_category,
         }),
       }
     );
