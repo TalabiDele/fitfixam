@@ -315,13 +315,14 @@ export const Wrapper = styled.div`
       padding: 5rem 0rem;
 
       h2 {
-        font-size: 36px;
+        font-size: 24px;
+        margin-bottom: 1rem;
       }
 
       div.soc {
-        font-size: 58px;
         display: flex;
-        width: 60%;
+        font-size: 30px;
+        width: 40%;
         margin: auto;
         justify-content: space-between;
       }
@@ -400,8 +401,8 @@ export const Wrapper = styled.div`
       }
 
       div.soc {
-        font-size: 30px;
         display: flex;
+        font-size: 30px;
         width: 40%;
         margin: auto;
         justify-content: space-between;
