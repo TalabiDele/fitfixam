@@ -77,7 +77,7 @@ export const Wrapper = styled.div`
     }
 
     .paragraph {
-      width: 40%;
+      width: 50%;
       margin: auto;
       margin-top: 2rem;
       margin-bottom: 2rem;
@@ -191,7 +191,7 @@ export const Wrapper = styled.div`
     }
 
     .paragraph {
-      width: 40%;
+      width: 50%;
       margin: auto;
       margin-top: 2rem;
       margin-bottom: 2rem;
@@ -304,7 +304,7 @@ export const Wrapper = styled.div`
     }
 
     .paragraph {
-      width: 40%;
+      width: 50%;
       margin: auto;
       margin-top: 2rem;
       margin-bottom: 2rem;
@@ -418,7 +418,7 @@ export const Wrapper = styled.div`
     }
 
     .paragraph {
-      width: 40%;
+      width: 50%;
       margin: auto;
       margin-top: 2rem;
       margin-bottom: 2rem;
@@ -533,7 +533,7 @@ export const Wrapper = styled.div`
     }
 
     .paragraph {
-      width: 40%;
+      width: 80%;
       margin: auto;
       margin-top: 2rem;
       margin-bottom: 2rem;

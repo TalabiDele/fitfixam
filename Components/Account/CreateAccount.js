@@ -186,7 +186,6 @@ const CreateAccount = () => {
           <Link href="/privacyPolicy">
             <a>Terms and Conditions</a>
           </Link>
-          .
         </p>
         <p className="paragraph">
           Already have an account?{" "}

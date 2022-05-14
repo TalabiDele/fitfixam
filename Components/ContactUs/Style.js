@@ -361,26 +361,29 @@ export const Wrapper = styled.div`
       background: #fff;
       box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
       border-radius: 10px;
-      padding: 4rem;
+      padding: 4rem 0rem;
 
       form {
         display: grid;
-        width: 100%;
+        width: 80%;
+        margin: auto;
 
         input {
           border: 2px solid #b2bbc6;
           border-radius: 10px;
           padding: 1rem;
-          margin-bottom: 2rem;
-          font-size: 24px;
+          font-size: 19px;
+          width: 100%;
+          margin: 0rem auto 2rem auto;
         }
 
         textarea {
           border: 2px solid #b2bbc6;
           border-radius: 10px;
           padding: 1rem;
-          margin-bottom: 2rem;
-          font-size: 24px;
+          margin: 0rem auto 2rem auto;
+          font-size: 19px;
+          width: 100%;
         }
       }
     }
@@ -392,13 +395,14 @@ export const Wrapper = styled.div`
       padding: 5rem 0rem;
 
       h2 {
-        font-size: 36px;
+        font-size: 24px;
+        margin-bottom: 1rem;
       }
 
       div.soc {
-        font-size: 58px;
+        font-size: 30px;
         display: flex;
-        width: 60%;
+        width: 40%;
         margin: auto;
         justify-content: space-between;
       }
