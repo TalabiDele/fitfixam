@@ -14,11 +14,11 @@ export const Container = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    margin-left: 8rem;
+    margin-left: 2rem;
   }
 
   @media (max-width: 480px) {
-    margin-left: 6rem;
+    margin-left: 4rem;
     /* margin-right: 1rem; */
   }
 `;
@@ -145,18 +145,18 @@ export const Card = styled.div`
 
   @media (min-width: 481px) and (max-width: 767px) {
     display: flex;
-    flex-direction: column;
     border-radius: 10px;
-    width: 90%;
+    width: 80%;
     padding: 1rem 2rem;
-    margin-top: 5rem;
+    margin: 5rem auto 2rem auto;
     background: #f9fafb;
     border: 0.5px solid #020127;
     cursor: pointer;
     justify-content: flex-start;
+    align-items: center;
 
     h2 {
-      font-size: 20px;
+      font-size: 16px;
       color: #020127;
       margin-bottom: 1rem;
     }
@@ -167,46 +167,8 @@ export const Card = styled.div`
 
     div.image {
       margin-bottom: 2rem;
-
-      .blog_image {
-        border-radius: 10px;
-      }
-    }
-
-    div.info {
-      display: flex;
-      width: 70%;
-      justify-content: space-between;
-      align-items: center;
-      color: #020127;
-      margin-top: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    width: 90%;
-    padding: 1rem 1rem;
-    margin-top: 5rem;
-    background: #f9fafb;
-    border: 0.5px solid #020127;
-    cursor: pointer;
-    justify-content: flex-start;
-
-    h2 {
-      font-size: 20px;
-      color: #020127;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 12px;
-    }
-
-    div.image {
-      margin-bottom: 2rem;
+      width: 100%;
+      margin-right: 1rem;
 
       .blog_image {
         border-radius: 10px;
@@ -220,6 +182,55 @@ export const Card = styled.div`
       align-items: center;
       color: #020127;
       margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    display: flex;
+    border-radius: 10px;
+    width: 95%;
+    padding: 1rem 1rem;
+    margin: 5rem auto 3rem auto;
+    background: #f9fafb;
+    border: 0.5px solid #020127;
+    cursor: pointer;
+    justify-content: flex-start;
+
+    h2 {
+      font-size: 14px;
+      color: #020127;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    div.blog_details {
+      width: 100%;
+    }
+
+    div.image {
+      margin-bottom: 2rem;
+      width: 50%;
+      margin-right: 1rem;
+
+      .blog_image {
+        border-radius: 10px;
+      }
+    }
+
+    div.info {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      color: #020127;
+      margin-top: 1rem;
+
+      p {
+        font-size: 8px;
+      }
     }
   }
 `;

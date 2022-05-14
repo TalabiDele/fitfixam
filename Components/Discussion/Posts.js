@@ -101,7 +101,7 @@ const Posts = ({ posts, comments, userPost }) => {
                       />
                     )}
                   </div>
-                  <div>
+                  <div className="post_dets">
                     <h3 onClick={() => displayProfile(posts.user.slug)}>
                       {posts.user.username}
                     </h3>

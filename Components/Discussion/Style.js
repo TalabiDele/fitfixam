@@ -70,6 +70,11 @@ export const UserDetails = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem 0rem 1rem 2rem;
+  width: 100%;
+
+  div.post_dets {
+    width: 100%;
+  }
 
   div.user_details {
     display: flex;
