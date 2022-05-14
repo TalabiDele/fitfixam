@@ -754,6 +754,7 @@ export const Wrapper = styled.div`
 
   li {
     list-style: none;
+    font-size: 19px;
   }
 
   ul {

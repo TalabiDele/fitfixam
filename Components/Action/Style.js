@@ -22,12 +22,12 @@ export const Wrapper = styled.div`
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 40px;
       margin: 1rem 0rem;
     }
 
     p {
-      font-size: 34px;
+      font-size: 24px;
       margin-bottom: 1rem;
     }
 
@@ -61,12 +61,12 @@ export const Wrapper = styled.div`
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 40px;
       margin-bottom: 1rem;
     }
 
     p {
-      font-size: 34px;
+      font-size: 24px;
       margin-bottom: 1rem;
     }
 
@@ -93,12 +93,12 @@ export const Wrapper = styled.div`
     }
 
     h1 {
-      font-size: 34px;
+      font-size: 30px;
       width: 100%;
     }
 
     p {
-      font-size: 25px;
+      font-size: 20px;
     }
 
     div.wrench {
@@ -125,7 +125,11 @@ export const Wrapper = styled.div`
 
     h1 {
       width: 100%;
-      font-size: 29px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 19px;
     }
   }
 

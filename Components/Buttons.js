@@ -154,31 +154,153 @@ export const LoginBtn = styled.button`
 `;
 
 export const BtnCard = styled.div`
-  button {
-    background-color: #fff;
-    font-size: 26px;
-    font-weight: 700;
-    color: #3c91e6;
-    border: none;
-    border-radius: 5px;
-    width: 90%;
-    padding: 0.5rem 1rem;
-    margin: 1rem;
-    display: grid;
-    align-self: flex-end;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  @media (min-width: 1281px) {
+    button {
+      background-color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      color: #3c91e6;
+      border: none;
+      border-radius: 5px;
+      width: 90%;
+      padding: 0.5rem 1rem;
+      margin: 1rem;
+      display: grid;
+      align-self: flex-end;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
 
-    &:hover {
-      background: none;
-      color: #fff;
+      &:hover {
+        background: none;
+        color: #fff;
+      }
+    }
+
+    .btn {
+      &:hover {
+        background: none;
+        color: #fff;
+      }
     }
   }
 
-  .btn {
-    &:hover {
-      background: none;
-      color: #fff;
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    button {
+      background-color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      color: #3c91e6;
+      border: none;
+      border-radius: 5px;
+      width: 90%;
+      padding: 0.5rem 1rem;
+      margin: 1rem;
+      display: grid;
+      align-self: flex-end;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: none;
+        color: #fff;
+      }
+    }
+
+    .btn {
+      &:hover {
+        background: none;
+        color: #fff;
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    button {
+      background-color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      color: #3c91e6;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      margin: 0rem auto 1rem auto;
+      display: grid;
+      align-self: flex-end;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: none;
+        color: #fff;
+      }
+    }
+
+    .btn {
+      &:hover {
+        background: none;
+        color: #fff;
+      }
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    button {
+      background-color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      color: #3c91e6;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      margin: 0rem auto 1rem auto;
+      display: grid;
+      align-self: flex-end;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: none;
+        color: #fff;
+      }
+    }
+
+    .btn {
+      &:hover {
+        background: none;
+        color: #fff;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    button {
+      background-color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      color: #3c91e6;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      margin: 0rem auto 1rem auto;
+      display: grid;
+      align-self: flex-end;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: none;
+        color: #fff;
+      }
+    }
+
+    .btn {
+      &:hover {
+        background: none;
+        color: #fff;
+      }
     }
   }
 `;

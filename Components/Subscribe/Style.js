@@ -15,8 +15,12 @@ export const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     background-color: #bdddfd1f;
-    padding-top: 10rem;
+    padding-top: 3rem;
     height: 40rem;
+  }
+
+  @media (max-width: 600px) {
+    height: 30rem;
   }
 `;
 
@@ -31,14 +35,14 @@ export const Container = styled.div`
     /* padding: 5rem 0rem; */
 
     h1 {
-      font-size: 45px;
+      font-size: 35px;
     }
 
     p {
       color: #546881;
-      font-size: 26px;
+      font-size: 20px;
       width: 35%;
-      margin: 2rem auto 5rem auto;
+      margin: 1rem auto 5rem auto;
     }
 
     input {
@@ -55,14 +59,14 @@ export const Container = styled.div`
 
   @media (max-width: 1200px) {
     h1 {
-      font-size: 45px;
+      font-size: 35px;
     }
 
     p {
       color: #546881;
-      font-size: 26px;
+      font-size: 20px;
       width: 70%;
-      margin: 2rem auto 5rem auto;
+      margin: 1rem auto 5rem auto;
     }
 
     input {
@@ -81,13 +85,14 @@ export const Container = styled.div`
     h1 {
       width: 80%;
       margin: auto;
+      font-size: 30px;
     }
 
     p {
       color: #546881;
-      font-size: 25px;
+      font-size: 20px;
       width: 80%;
-      margin: 2rem auto 5rem auto;
+      margin: 1rem auto 5rem auto;
     }
   }
 

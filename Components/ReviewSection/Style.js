@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
       color: #3d4c5e;
       width: 70%;
       margin: auto;
-      font-size: 24px;
+      font-size: 19px;
     }
 
     span.video {
@@ -72,6 +72,10 @@ export const Wrapper = styled.div`
     justify-items: center;
     align-items: center;
 
+    p {
+      font-size: 16px;
+    }
+
     span.video div {
       width: 400px;
       margin: auto;
@@ -80,7 +84,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 600px) {
     p {
-      font-size: 19px;
+      font-size: 16px;
     }
 
     span.video div {
@@ -115,31 +119,36 @@ export const Arrow = styled.div`
 export const Header = styled.h1`
   /* margin-left: 15rem; */
   /* width: 50%; */
-  margin-top: 4rem;
-  margin-left: 12rem;
-  font-size: 34px;
+  /* margin-top: 4rem;
+  margin-bottom: 2rem; */
+  margin: 0rem auto 1rem auto;
+  width: 70%;
+  /* margin-left: 12rem; */
+  font-size: 30px;
 
   @media (max-width: 1900px) {
-    margin: 3rem 0rem 1rem 3rem;
+    /* margin: 3rem 0rem 1rem 3rem; */
   }
 
   @media (max-width: 1200px) {
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
   }
 
   @media (max-width: 768px) {
-    margin-left: 0rem;
+    margin: 3rem auto 1rem auto;
+    width: 90%;
     text-align: left;
     display: grid;
     justify-self: start;
+    font-size: 24px;
   }
 
   @media (max-width: 600px) {
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
   }
 
   @media (max-width: 375px) {
-    margin-left: 1rem;
-    font-size: 26px;
+    /* margin-left: 1rem; */
+    font-size: 20px;
   }
 `;
