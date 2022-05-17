@@ -3,6 +3,7 @@ import { NEXT_PUBLIC_URL, NEXT_PUBLIC_API_URL } from "@/config/index";
 import { parseCookies } from "@/helpers/index";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { getSession, useSession } from "next-auth/react";
 
 const AuthContext = createContext();
 
@@ -12,6 +13,11 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   // const [allUsers, setAllUsers] = useState(null);
+
+  const { data: session } = useSession();
+
+  console.log(session);
+  console.log(process.env.NEXTAUTH_URL);
 
   const router = useRouter();
 
@@ -95,6 +101,18 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // Provider authentication
+  const userProvider = async () => {
+    const res = await fetch(`${NEXT_PUBLIC_URL}/api/auth/[...nextauth]`);
+    const data = await res.json();
+
+    if (res.ok) {
+      setUser(data.user);
+    } else {
+      setUser(null);
+    }
+  };
+
   // Check user logged in
   const checkUserLoggedIn = async (user) => {
     const res = await fetch(`${NEXT_PUBLIC_URL}/api/user`);
@@ -118,6 +136,7 @@ export const AuthProvider = ({ children }) => {
         checkUserLoggedIn,
         isLoading,
         error,
+        userProvider,
       }}
     >
       {children}

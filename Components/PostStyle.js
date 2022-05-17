@@ -3,18 +3,28 @@ import styled from "styled-components";
 export const Container = styled.div`
   margin-left: 10rem;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 30% 70%;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `;
 
+export const PostImages = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 40%;
+  /* margin-left: 2rem; */
+  /* padding: 3rem 0rem; */
+  /* background-color: #fcfdfd; */
+`;
+
 export const Wrapper = styled.div`
-  width: 80%;
+  width: 100%;
   margin: 0rem auto;
   position: fixed;
-  left: 60rem;
+  left: 50rem;
+  right: 0rem;
   background: #fff;
   overflow-y: scroll;
   border-radius: 10px 10px 0px 0px;
@@ -190,7 +200,7 @@ export const UserPost = styled.div`
   padding: 0rem 2rem;
 
   p {
-    border-bottom: 1.5px solid #dad9e9;
+    /* border-bottom: 1.5px solid #dad9e9; */
     padding-bottom: 1rem;
     margin-bottom: 0rem;
   }
@@ -211,6 +221,7 @@ export const Interract = styled.div`
     border-bottom: 1.5px solid #dad9e9;
     z-index: 300;
     padding: 1rem 0rem;
+    width: 80%;
   }
 
   div.likes {
@@ -260,12 +271,16 @@ export const Likes = styled.div`
 
 export const Reactions = styled.div`
   width: 100%;
+  background-color: #fcfdfd;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   div.reactions {
     display: flex;
     border-bottom: 1.5px solid #dad9e9;
-    padding: 1rem 2rem;
+    padding: 1rem 0rem;
     margin-bottom: 2rem;
+    width: 80%;
   }
 
   div {
@@ -311,7 +326,7 @@ export const Comments = styled.div`
     padding-bottom: 1rem;
     padding-left: 2rem;
     border-radius: 10px 0px 0px 0px;
-    width: 50%;
+    width: 57%;
     margin: auto;
     position: fixed;
     bottom: 0;

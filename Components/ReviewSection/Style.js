@@ -6,8 +6,9 @@ export const Wrapper = styled.div`
     grid-template-columns: repeat(2, 1fr);
     width: 90%;
     justify-items: center;
-    align-items: center;
+    /* align-items: center; */
     margin: auto;
+    z-index: 10;
 
     p {
       color: #3d4c5e;
@@ -103,15 +104,16 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   margin-top: 2rem;
-  padding-top: 3rem;
+  padding-top: 10rem;
   background: url("/Blocks.png"), #f9fafb;
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
+  z-index: 10;
 `;
 
 export const Arrow = styled.div`
-  width: 10%;
+  width: 5%;
   /* margin-left: 20rem; */
   margin: 2rem auto;
 `;

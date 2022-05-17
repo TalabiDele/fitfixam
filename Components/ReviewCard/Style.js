@@ -127,8 +127,7 @@ export const Container = styled.div``;
 
 export const Card = styled.div`
   @media (min-width: 1281px) {
-    width: 80%;
-    /* height: 489px; */
+    width: 70%;
     background-color: #3c91e6;
     border-radius: 10px;
     color: white;

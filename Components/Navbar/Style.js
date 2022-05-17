@@ -726,7 +726,7 @@ export const Actions = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
+  width: 80%;
   margin: auto;
   padding-top: 1rem;
 
@@ -754,7 +754,11 @@ export const Wrapper = styled.div`
 
   li {
     list-style: none;
-    font-size: 19px;
+    font-size: 24px;
+  }
+
+  div.contain {
+    width: 40%;
   }
 
   ul {
@@ -827,7 +831,7 @@ export const Container = styled.div`
   div.contain {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 50%;
     margin: auto;
   }
 
@@ -1446,14 +1450,18 @@ export const UserSideNav = styled.div`
   height: 100%;
   position: fixed;
   transition: all 0.1s ease;
-  padding: 0rem;
+  /* padding-left: 1rem; */
   z-index: 100;
   transition: all 0.3s ease-in-out;
+  /* justify-items: center; */
 
   .active {
     border-right: 5px solid #07036e;
     background-color: #dad9e9;
     transition: all 0.3s ease-in-out;
+    /* width: ${({ userIsOpen }) => (userIsOpen ? "15%" : "4%")}; */
+    width: 100%;
+    /* padding: 1rem; */
   }
 
   .add_post_page {
@@ -1466,7 +1474,7 @@ export const UserSideNav = styled.div`
   }
 
   div.settings {
-    margin-top: 15rem;
+    margin-top: 20rem;
   }
 
   @media (min-width: 1281px) {
@@ -1491,17 +1499,22 @@ export const UserSideNav = styled.div`
 `;
 
 export const IconNav = styled.div`
-  padding-left: 20px;
+  /* padding-left: 25px; */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   display: flex;
   align-items: center;
-  height: 4rem;
+  height: 3rem;
+
+  svg {
+    font-size: 1.3rem;
+  }
 
   p {
     color: #07036e;
     margin-left: 2rem;
     font-weight: bold;
+    /* font-size: 1.3rem; */
   }
 
   &:hover {
@@ -1514,16 +1527,37 @@ export const IconNav = styled.div`
     border-radius: 3px;
   }
 
+  @media (min-width: 1281px) {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 10px;
+    padding-right: ${({ userIsOpen }) => (userIsOpen ? "16px" : "4px")};
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 10px;
+    padding-right: ${({ userIsOpen }) => (userIsOpen ? "16px" : "4px")};
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 100%;
+    padding-left: 1.5rem;
+    /* padding-right: 10px; */
+    padding-right: ${({ userIsOpen }) => (userIsOpen ? "16px" : "4px")};
+  }
+
   @media (min-width: 481px) and (max-width: 767px) {
     width: 100%;
-    padding-left: 10px;
+    padding-left: 1.5rem;
     padding-right: 10px;
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "10px")};
   }
 
   @media (max-width: 480px) {
     width: 100%;
-    padding-left: 10px;
+    padding-left: 1rem;
     padding-right: 10px;
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "10px")};
   }
@@ -1537,7 +1571,7 @@ export const NavMenu = styled.div`
     position: fixed;
     left: 0;
     z-index: 100;
-    width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "5%")};
+    width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "4%")};
     /* width: 4%; */
 
     div.side_menu {

@@ -5,17 +5,18 @@ export const BtnNav = styled.button`
   background-color: none;
   color: #f4442e;
   font-weight: bold;
-  padding: 10px 30px;
+  padding: 20px 30px;
   border-radius: 10px;
   cursor: pointer;
   width: 100%;
   background-color: #fff;
   transition: all 0.3s ease-in-out;
+  font-size: 16px;
 
   &:hover {
     background-color: #f4442e;
     color: white;
-    border: none;
+    /* border: none; */
     transition: all 0.3s ease-in-out;
   }
 `;

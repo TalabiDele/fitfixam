@@ -22,13 +22,14 @@ export const Wrapper = styled.div`
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 50px;
       margin: 1rem 0rem;
     }
 
     p {
-      font-size: 24px;
+      font-size: 22px;
       margin-bottom: 1rem;
+      width: 80%;
     }
 
     div.wrench {

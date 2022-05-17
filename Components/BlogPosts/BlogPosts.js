@@ -20,8 +20,8 @@ const BlogPosts = ({ blogPosts }) => {
             <Image
               src={post.image.url}
               alt="article image"
-              width={150}
-              height={150}
+              width={200}
+              height={200}
               objectFit="cover"
               className="blog_image"
               borderRadius="10px"
@@ -29,7 +29,7 @@ const BlogPosts = ({ blogPosts }) => {
           </div>
           <div className="blog_details">
             <h2>{post.title}</h2>
-            <p>{post.article.slice(0, 250).concat("...Read more")}</p>
+            <p>{post.article.slice(0, 150).concat("...Read more")}</p>
             <div className="info">
               <p>
                 <BiUserCircle /> {post.author}

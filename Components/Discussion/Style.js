@@ -64,6 +64,7 @@ export const PostDetails = styled.div`
 export const PostText = styled.div`
   cursor: pointer;
   padding: 1rem 2rem 1rem 2rem;
+  font-size: 19px;
 `;
 
 export const UserDetails = styled.div`

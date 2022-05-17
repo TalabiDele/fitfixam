@@ -29,9 +29,9 @@ export const Card = styled.div`
   @media (min-width: 1281px) {
     display: flex;
     align-items: center;
-    border: 0.5px solid #020127;
+    /* border: 0.5px solid #020127; */
     border-radius: 10px;
-    width: 90%;
+    width: 60%;
     padding: 1rem 2rem;
     margin-top: 5rem;
     background: #f9fafb;
@@ -57,7 +57,7 @@ export const Card = styled.div`
 
     div.info {
       display: flex;
-      width: 40%;
+      width: 70%;
       justify-content: space-between;
       align-items: center;
       color: #020127;
@@ -68,7 +68,7 @@ export const Card = styled.div`
   @media (min-width: 1025px) and (max-width: 1280px) {
     display: flex;
     align-items: center;
-    border: 0.5px solid #020127;
+    /* border: 0.5px solid #020127; */
     border-radius: 10px;
     width: 90%;
     padding: 1rem 2rem;
@@ -107,7 +107,7 @@ export const Card = styled.div`
   @media (min-width: 768px) and (max-width: 1024px) {
     display: flex;
     align-items: center;
-    border: 0.5px solid #020127;
+    /* border: 0.5px solid #020127; */
     border-radius: 10px;
     width: 90%;
     padding: 1rem 2rem;
@@ -150,7 +150,7 @@ export const Card = styled.div`
     padding: 1rem 2rem;
     margin: 5rem auto 2rem auto;
     background: #f9fafb;
-    border: 0.5px solid #020127;
+    /* border: 0.5px solid #020127; */
     cursor: pointer;
     justify-content: flex-start;
     align-items: center;
@@ -192,7 +192,7 @@ export const Card = styled.div`
     padding: 1rem 1rem;
     margin: 5rem auto 3rem auto;
     background: #f9fafb;
-    border: 0.5px solid #020127;
+    /* border: 0.5px solid #020127; */
     cursor: pointer;
     justify-content: flex-start;
 

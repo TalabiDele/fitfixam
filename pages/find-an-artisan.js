@@ -134,7 +134,7 @@ export const Header = styled.div`
   @media (min-width: 1281px) {
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 80%;
     margin: 2rem auto;
     align-items: center;
 
@@ -217,10 +217,11 @@ export const Cards = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    width: 90%;
+    width: 100%;
 
     div.card {
       width: 100%;
+      margin-right: -10rem;
     }
   }
 

@@ -19,6 +19,7 @@ import {
   UsersComments,
   Contain,
   Cont,
+  PostImages,
 } from "@/components/PostStyle";
 import Image from "next/image";
 import {
@@ -82,19 +83,6 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
       setLikedPost(isLiked);
     }
 
-    post.map((e) => {
-      if (user) {
-        setPostId(e);
-        e.likes.map((l) => {
-          if (l.like && l.users_permissions_user === user.id) {
-            console.log(l);
-          } else {
-            console.log("Not user");
-          }
-        });
-      }
-    });
-    likePost();
     getPostId();
     // setLiked(likedPost.like);
     // console.log(likedPost);
@@ -131,38 +119,6 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
     // handleData(e);
   };
 
-  const likePost = async (e) => {
-    // setLiked(!liked);
-    post.map((p) =>
-      setIsLiked({
-        ...isLiked,
-        like: false,
-        post: p,
-        users_permissions_user: isUser,
-      })
-    );
-
-    try {
-      const res = await fetch(`${NEXT_PUBLIC_API_URL}/likes`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(isLiked),
-      });
-      const data = await res.json();
-      setLikedPost(data);
-      // setIsLiked(data);
-      // setLiked(likedPost.like);
-      // console.log(liked);
-      console.log(likedPost);
-    } catch (error) {
-      console.log(error);
-    }
-
-    // refreshData();
-  };
-
   const updateLike = async (e) => {
     // likePost(e);
     setLiked(!liked);
@@ -180,49 +136,39 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
     }
 
     try {
-      const res = await fetch(`${NEXT_PUBLIC_API_URL}/likes/${likedPost.id}`, {
-        method: "PUT",
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/likes`, {
+        method: "POST",
         headers: {
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(isLiked),
+        body: JSON.stringify({
+          post: parseInt(postId.id),
+        }),
       });
       const data = await res.json();
-      setLikedPost(data);
+      // setLikedPost(data);
       console.log(data);
     } catch (error) {
       console.log(error);
     }
   };
+
   const unlike = async (e) => {
-    // likePost(e);
-    setLiked(!liked);
-
-    if (user) {
-      post.map((p) =>
-        setIsLiked({
-          ...isLiked,
-          like: false,
-          post: p,
-          users_permissions_user: isUser,
-        })
-      );
-    }
-
-    try {
-      const res = await fetch(`${NEXT_PUBLIC_API_URL}/likes/${likedPost.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(isLiked),
-      });
-      const data = await res.json();
-      setLikedPost(data);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    const res = await fetch(`${NEXT_PUBLIC_API_URL}/likes/${postId.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      // body: JSON.stringify(isLiked),
+    });
+    const data = await res.json();
+    // setLikedPost(data);
+    console.log(data);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   const postComment = async (e, p) => {
@@ -413,6 +359,20 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                     />
                   </div>
                 ))} */}
+                <PostImages>
+                  {e.images &&
+                    e.images.map((img) => (
+                      <div className="post_images" key={img.id}>
+                        <Image
+                          src={img.url}
+                          alt={img.name}
+                          width={img.width}
+                          height={img.height}
+                          obajectFit="cover"
+                        />
+                      </div>
+                    ))}
+                </PostImages>
               </UserPost>
               <Interract>
                 <div className="interract">
@@ -506,19 +466,27 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                     <div className="like">
                       {/* {likes.map((lik) => (
                     <div key={lik.id}> */}
-                      {isLiked.like ? (
-                        <FaHeart
-                          fontSize={26}
-                          onClick={() => unlike(e)}
-                          color="#F4442E"
-                        />
-                      ) : (
-                        <FaRegHeart
-                          fontSize={26}
-                          onClick={() => updateLike(e)}
-                          color="#020127"
-                        />
+                      {/* {isLiked.like ? ( */}
+                      {console.log(user)}
+                      {user.likes.map((like) =>
+                        like.post === postId.id ? (
+                          <FaHeart
+                            fontSize={26}
+                            onClick={() => unlike(e)}
+                            color="#F4442E"
+                          />
+                        ) : (
+                          <FaRegHeart
+                            fontSize={26}
+                            onClick={() => updateLike(e)}
+                            color="#020127"
+                          />
+                        )
                       )}
+
+                      {/* ) : ( */}
+
+                      {/* )} */}
                       <p>Like</p>
                       {/* </div>
                   ))} */}

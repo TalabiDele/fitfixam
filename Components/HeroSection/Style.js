@@ -3,22 +3,58 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   @media (min-width: 1281px) {
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 10rem;
 
     h1 {
-      font-size: 95px;
-      width: 60%;
-      margin: 2rem auto 4rem auto;
+      font-size: 70px;
+      width: 50%;
+      margin: 2rem auto 1rem auto;
       color: #040242;
       line-height: 1;
       z-index: -2;
       font-weight: 900;
       letter-spacing: -0.02em;
-      line-height: 104px;
     }
 
     p {
-      font-size: 26px;
+      font-size: 24px;
+      color: #47586e;
+      width: 40%;
+      margin: 0rem auto 2rem auto;
+    }
+
+    span {
+      color: #f4442e;
+    }
+
+    .hero_icon {
+      margin-top: 10rem;
+      margin-bottom: -10rem;
+      text-align: center;
+    }
+
+    div.btns {
+      display: grid;
+      justify-items: center;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    text-align: center;
+    padding-top: 5rem;
+
+    h1 {
+      font-size: 50px;
+      width: 55%;
+      margin: 0rem auto 2rem auto;
+      color: #040242;
+      z-index: -2;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 22px;
       color: #47586e;
       width: 50%;
       margin: 0rem auto 4rem auto;
@@ -40,63 +76,25 @@ export const Wrapper = styled.div`
     }
   }
 
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    text-align: center;
-    padding-top: 3rem;
-
-    h1 {
-      font-size: 70px;
-      width: 80%;
-      margin: 2rem auto 2rem auto;
-      color: #040242;
-      z-index: -2;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      font-size: 22px;
-      color: #47586e;
-      width: 80%;
-      margin: 0rem auto 4rem auto;
-    }
-
-    span {
-      color: #f4442e;
-    }
-
-    .hero_icon {
-      margin-top: 4rem;
-      margin-bottom: -10rem;
-      text-align: center;
-    }
-
-    div.btns {
-      display: grid;
-      justify-items: center;
-    }
-  }
-
   @media (min-width: 768px) and (max-width: 1024px) {
-    h1 {
-    }
+    padding-top: 4rem;
 
     text-align: center;
 
     h1 {
-      font-size: 70px;
-      margin: 2rem auto 4rem auto;
+      font-size: 50px;
+      margin: 0rem auto 4rem auto;
       color: #040242;
       line-height: 1;
       z-index: -2;
       font-weight: 900;
       letter-spacing: -0.02em;
       margin: 2rem auto 1rem auto;
-      width: 70%;
+      width: 80%;
     }
 
     p {
-      font-size: 22px;
+      font-size: 20px;
       color: #47586e;
       width: 70%;
       margin: 0rem auto 2rem auto;
@@ -120,7 +118,7 @@ export const Wrapper = styled.div`
 
   @media (min-width: 481px) and (max-width: 767px) {
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 2rem;
 
     h1 {
       color: #040242;
@@ -130,14 +128,14 @@ export const Wrapper = styled.div`
       letter-spacing: -0.02em;
       width: 90%;
       font-size: 50px;
-      margin: 6rem auto 2rem auto;
+      margin: 2rem auto 2rem auto;
     }
 
     p {
       color: #47586e;
-      width: 70%;
-      margin: 0rem auto 2rem auto;
-      font-size: 20px;
+      width: 90%;
+      margin: 0rem auto 1rem auto;
+      font-size: 16px;
     }
 
     span {
@@ -220,25 +218,24 @@ export const Container = styled.div`
     background: url("/hero-background.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     width: 100%;
-    height: 60rem;
+    height: 100vh;
     position: relative;
     padding-top: -2rem;
     background-color: #f9fafb;
-    margin-bottom: -3rem;
+    margin-bottom: -4rem;
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     z-index: 3;
     background: url("/hero-background.png");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
     width: 100%;
-    height: 40rem;
+    height: 70vh;
     position: relative;
-    padding-top: -2rem;
+    /* padding-bottom: 10rem; */
     background-color: #f9fafb;
     margin-bottom: -3rem;
   }
@@ -250,12 +247,13 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 40rem;
+    height: 60vh;
     position: relative;
     padding-top: -2rem;
     background-color: #f9fafb;
     margin-bottom: -3rem;
     padding-top: 1rem;
+    margin-top: 12rem;
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
@@ -263,9 +261,10 @@ export const Container = styled.div`
     background: url("/hero-background.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     width: 100%;
-    height: 40rem;
+    height: 50vh;
+    margin-top: 10rem;
     position: relative;
     /* padding-top: 10rem; */
     background-color: #f9fafb;

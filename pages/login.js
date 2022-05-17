@@ -11,12 +11,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// export const getServerSideProps = async ({ req }) => {
-//   const session = await getSession({ req });
-//   return {
-//     props: {
-//       session,
-//     },
-//   };
-// };

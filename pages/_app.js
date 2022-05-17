@@ -2,6 +2,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import "../styles/globals.css";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { SessionProvider } from "next-auth/react";
 
 function Loading() {
   const router = useRouter();
@@ -44,12 +45,14 @@ function Loading() {
   );
 }
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <AuthProvider>
-      <Loading />
-      <Component {...pageProps} />
-    </AuthProvider>
+    <SessionProvider session={session}>
+      <AuthProvider>
+        <Loading />
+        <Component {...pageProps} />
+      </AuthProvider>
+    </SessionProvider>
   );
 }
 

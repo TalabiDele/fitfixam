@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   @media (min-width: 1281px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 30% 70%;
     align-items: center;
     height: 100%;
     position: fixed;
@@ -68,10 +68,11 @@ export const Wrapper = styled.div`
     margin: auto;
     overflow-y: scroll;
     height: 100%;
+    padding-bottom: 10rem;
 
     h1 {
-      font-size: 60px;
-      margin: 5rem 0rem 3rem 0rem;
+      font-size: 40px;
+      margin: 5rem 0rem 0rem 0rem;
       padding: 0rem;
       height: 4rem;
     }
@@ -80,13 +81,13 @@ export const Wrapper = styled.div`
       width: 50%;
       margin: auto;
       margin-top: 2rem;
-      margin-bottom: 2rem;
+      /* margin-bottom: 4rem; */
       font-size: 18px;
     }
 
     p {
-      font-size: 36px;
-      margin: 0rem;
+      font-size: 20px;
+      /* margin-bottom: 4rem; */
     }
 
     a {
@@ -182,9 +183,10 @@ export const Wrapper = styled.div`
     margin: auto;
     overflow-y: scroll;
     height: 100%;
+    padding-bottom: 10rem;
 
     h1 {
-      font-size: 60px;
+      font-size: 40px;
       margin: 5rem 0rem 3rem 0rem;
       padding: 0rem;
       height: 4rem;
@@ -195,11 +197,11 @@ export const Wrapper = styled.div`
       margin: auto;
       margin-top: 2rem;
       margin-bottom: 2rem;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     p {
-      font-size: 36px;
+      font-size: 24px;
       margin: 0rem;
     }
 
@@ -295,9 +297,10 @@ export const Wrapper = styled.div`
     margin: auto;
     overflow-y: scroll;
     height: 100%;
+    padding-bottom: 10rem;
 
     h1 {
-      font-size: 60px;
+      font-size: 40px;
       margin: 5rem 0rem 3rem 0rem;
       padding: 0rem;
       height: 4rem;
@@ -312,7 +315,7 @@ export const Wrapper = styled.div`
     }
 
     p {
-      font-size: 36px;
+      font-size: 24px;
       margin: 0rem;
     }
 
@@ -409,6 +412,7 @@ export const Wrapper = styled.div`
     overflow-y: scroll;
     height: 100%;
     margin-top: 4rem;
+    padding-bottom: 10rem;
 
     h1 {
       font-size: 40px;
@@ -645,13 +649,13 @@ export const Aside = styled.div`
     bottom: 0rem;
 
     h1 {
-      font-size: 72px;
+      font-size: 50px;
       margin-bottom: 0rem;
       margin-top: 15rem;
     }
 
     p {
-      font-size: 36px;
+      font-size: 24px;
       margin-top: 0rem;
     }
   }
@@ -672,13 +676,13 @@ export const Aside = styled.div`
     bottom: 0rem;
 
     h1 {
-      font-size: 72px;
+      font-size: 50px;
       margin-bottom: 0rem;
       margin-top: 15rem;
     }
 
     p {
-      font-size: 36px;
+      font-size: 24px;
       margin-top: 0rem;
     }
   }

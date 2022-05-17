@@ -24,6 +24,7 @@ export default function Home() {
 // Tasks
 
 // 9 Add user location
-// Create mobile responsiveness
-// Display the image of each post
 // Create like functionality
+// Provider logins
+// Icon on the feeds page
+// Artisan reviews

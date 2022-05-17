@@ -5,7 +5,7 @@ export const Container = styled.div`
     margin-left: 7rem;
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 40% 60%;
     position: fixed;
 
     div.cont {
@@ -83,7 +83,7 @@ export const Card = styled.div`
   @media (min-width: 1281px) {
     display: flex;
     align-items: center;
-    border: 0.5px solid #020127;
+    /* border: 0.5px solid #020127; */
     border-radius: 10px;
     width: 100%;
     padding: 1rem 2rem;
@@ -168,13 +168,15 @@ export const Wrapper = styled.div`
 
     h1 {
       text-align: center;
+      margin: 2rem 0rem 1rem 0rem;
     }
 
     div.details {
       display: flex;
       width: 50%;
       justify-content: space-between;
-      margin: auto;
+      margin: 0rem auto 3rem auto;
+
       p {
         text-align: center;
       }
@@ -183,7 +185,7 @@ export const Wrapper = styled.div`
     p.post_article {
       width: 90%;
       margin: auto;
-      font-size: 26px;
+      font-size: 19px;
     }
   }
 

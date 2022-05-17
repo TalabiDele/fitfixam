@@ -75,6 +75,9 @@ const Navbar = () => {
   const [isCarpenter, setIsCarpenter] = useState(false);
   const [isPlumber, setIsPlumber] = useState(false);
   const [isElect, setIsElect] = useState(false);
+  const [message, setMessage] = useState("");
+
+  let imgArr = [];
 
   useEffect(() => {
     // setPostCategory(postCategory);
@@ -142,7 +145,7 @@ const Navbar = () => {
     });
   };
 
-  const handlePost = async () => {
+  const handlePost = async (files) => {
     const res = await fetch(`${NEXT_PUBLIC_API_URL}/posts`, {
       method: "POST",
       headers: {
@@ -170,7 +173,10 @@ const Navbar = () => {
     // }
 
     const formData = new FormData();
-    formData.append("files", image);
+    for (let i = 0; i < image.length; i++) {
+      // formData.append("files", image);
+      formData.append("files", image[i]);
+    }
     formData.append("ref", "posts");
     formData.append("refId", data.id);
     formData.append("field", "images");
@@ -180,9 +186,10 @@ const Navbar = () => {
 
     const resUpload = await fetch(`${NEXT_PUBLIC_API_URL}/upload`, {
       method: "POST",
-      // headers: {
-      //   Authorization: `Bearer ${token}`,
-      // },
+      headers: {
+        // Authorization: `Bearer ${token}`,
+        // "Content-Type": "multipart/form-data",
+      },
       body: formData,
     });
 
@@ -200,7 +207,22 @@ const Navbar = () => {
   };
 
   const handleFileChange = (e) => {
-    setImage([image, ...e.target.files]);
+    if (e.target.files.length > 3) {
+      setMessage("You have an upload limit of 3 images");
+      setTimeout(() => {
+        setMessage("");
+      }, 5000);
+      e.target.value = null;
+    } else {
+      setImage(e.target.files);
+    }
+
+    // imgArr.push(e.target.files[i]);
+    // setImage([imgArr]);
+    // console.log(e.target.files[i]);
+    // formData.append(e.targte.files[i].name, files[i]);
+    // handlePost(e.target.files);
+
     console.log(image);
   };
 
@@ -221,10 +243,10 @@ const Navbar = () => {
       `${NEXT_PUBLIC_API_URL}/posts?post_contains=${searchValue}`,
       {
         method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          // Authorization: `Bearer ${token}`,
-        },
+        // headers: {
+        // "Content-Type": "application/json",
+        // Authorization: `Bearer ${token}`,
+        // },
         // body: JSON.stringify(postItem),
       }
     );
@@ -287,6 +309,29 @@ const Navbar = () => {
     handlePostCategory(e);
   };
 
+  const handleUpload = async () => {
+    const formData = new FormData();
+    formData.append("files", image);
+    // formData.append("ref", "posts");
+    // formData.append("refId", data.id);
+    formData.append("field", "images");
+    // image.forEach(({ file }) =>
+    //   bodyFormData.append(`files.images`, file, file.name)
+    // );
+
+    const resUpload = await fetch(`${NEXT_PUBLIC_API_URL}/upload`, {
+      method: "POST",
+      // headers: {
+      //   Authorization: `Bearer ${token}`,
+      // },
+      body: formData,
+    });
+
+    if (resUpload.ok) {
+      imageUploaded();
+    }
+  };
+
   return (
     <>
       <Modal isModal={isModal}>
@@ -342,12 +387,16 @@ const Navbar = () => {
                 />
               </Tags>
               <Actions>
-                <input
-                  type="file"
-                  placeholder="Upload an image"
-                  onChange={handleFileChange}
-                  multiple="multiple"
-                />
+                <div className="upload">
+                  <input
+                    type="file"
+                    placeholder="Upload an image"
+                    onChange={handleFileChange}
+                    multiple="multiple"
+                    accept=".jpg,.jpeg,.png"
+                  />
+                  <p>{message}</p>
+                </div>
                 <div className="btn">
                   <button
                     className="btn_cancel"
@@ -494,7 +543,7 @@ const Navbar = () => {
         onMouseEnter={() => setUserIsOpen(true)}
         onMouseLeave={() => setUserIsOpen(false)}
       >
-        <div>
+        <div className="side_nav">
           <IconNav onClick={() => openModal()}>
             <FaPlus
               fontSize={26}

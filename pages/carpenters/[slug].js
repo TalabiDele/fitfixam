@@ -508,7 +508,7 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                           <a>Sign up</a>
                         </Link>
                       </span>{" "}
-                      to react to this post...
+                      to react to this post
                     </p>
                   </Cont>
                 )}
