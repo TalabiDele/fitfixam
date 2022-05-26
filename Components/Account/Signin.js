@@ -66,14 +66,14 @@ const CreateAccount = () => {
                   </button>
                 </div>
               ))} */}
-              <GoogleBtn onClick={() => signIn()}>
+              {/* <GoogleBtn onClick={() => signIn()}>
                 <FcGoogle /> Google
               </GoogleBtn>
               <FacebookBtn>
                 <FaFacebookSquare /> Facebook
-              </FacebookBtn>
+              </FacebookBtn> */}
             </ProviderBtns>
-            <h2>Or</h2>
+            {/* <h2>Or</h2> */}
             <form onSubmit={handleSubmitSignin}>
               <input
                 type="email"

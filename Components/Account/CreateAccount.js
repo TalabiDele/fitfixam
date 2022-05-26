@@ -100,14 +100,14 @@ const CreateAccount = () => {
         <h1>Create an Account</h1>
         <p>You can either sign up with</p>
         <ProviderBtns>
-          <GoogleBtn>
+          {/* <GoogleBtn>
             <FcGoogle /> Google
           </GoogleBtn>
           <FacebookBtn>
             <FaFacebookSquare /> Facebook
-          </FacebookBtn>
+          </FacebookBtn> */}
         </ProviderBtns>
-        <h2>Or</h2>
+        {/* <h2>Or</h2> */}
         <form onSubmit={handleSubmitSignup}>
           <input
             type="text"
