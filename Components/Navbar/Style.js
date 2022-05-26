@@ -781,6 +781,8 @@ export const Wrapper = styled.div`
     position: fixed;
     z-index: 500;
     top: 0rem;
+    right: 0rem;
+    width: 100%;
     /* margin-bottom: 4rem; */
     /* bottom: 0rem; */
     background-color: #f0f3f6;
