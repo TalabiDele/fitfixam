@@ -65,6 +65,7 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 900px) {
+    margin-top: 0rem;
   }
 
   @media (max-width: 768px) {
@@ -104,12 +105,16 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   margin-top: 2rem;
-  padding-top: 10rem;
+  padding-top: 4rem;
   background: url("/Blocks.png"), #f9fafb;
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
   z-index: 10;
+
+  @media (max-width: 900px) {
+    padding-top: 4rem;
+  }
 `;
 
 export const Arrow = styled.div`
@@ -119,24 +124,20 @@ export const Arrow = styled.div`
 `;
 
 export const Header = styled.h1`
-  /* margin-left: 15rem; */
-  /* width: 50%; */
-  /* margin-top: 4rem;
-  margin-bottom: 2rem; */
   margin: 0rem auto 1rem auto;
   width: 70%;
-  /* margin-left: 12rem; */
   font-size: 30px;
 
   @media (max-width: 1900px) {
     /* margin: 3rem 0rem 1rem 3rem; */
   }
 
-  @media (max-width: 1200px) {
-    /* margin-left: 2rem; */
+  @media (max-width: 900px) {
+    /* padding-top: 4rem; */
   }
 
   @media (max-width: 768px) {
+    /* padding-top: 4rem; */
     margin: 3rem auto 1rem auto;
     width: 90%;
     text-align: left;

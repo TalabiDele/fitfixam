@@ -41,6 +41,9 @@ export const PostCard = styled.div`
     margin: 2rem auto 2rem 7rem;
   }
 
+  @media (max-width: 900px) {
+  }
+
   @media (max-width: 600px) {
     /* margin: 2rem auto 2rem 6rem; */
     width: 70%;
@@ -65,6 +68,10 @@ export const PostText = styled.div`
   cursor: pointer;
   padding: 1rem 2rem 1rem 2rem;
   font-size: 19px;
+
+  @media (max-width: 900px) {
+    font-size: 14px;
+  }
 `;
 
 export const UserDetails = styled.div`

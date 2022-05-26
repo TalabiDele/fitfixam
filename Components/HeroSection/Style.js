@@ -118,7 +118,7 @@ export const Wrapper = styled.div`
 
   @media (min-width: 481px) and (max-width: 767px) {
     text-align: center;
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
 
     h1 {
       color: #040242;

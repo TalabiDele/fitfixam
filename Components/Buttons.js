@@ -133,6 +133,12 @@ export const RegisterBtn = styled.button`
   transition: all 0.3s ease-in-out;
 
   &:hover {
+    color: #fff;
+    background: #07036e;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 19px;
   }
 `;
 
@@ -151,6 +157,10 @@ export const LoginBtn = styled.button`
     color: #07036e;
     border: 2px solid #07036e;
     background: none;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 16px;
   }
 `;
 

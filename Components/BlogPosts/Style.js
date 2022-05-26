@@ -163,6 +163,8 @@ export const Card = styled.div`
 
     p {
       font-size: 12px;
+      height: 2rem;
+      overflow-y: hidden;
     }
 
     div.image {
@@ -204,6 +206,8 @@ export const Card = styled.div`
 
     p {
       font-size: 12px;
+      height: 2rem;
+      overflow-y: hidden;
     }
 
     div.blog_details {

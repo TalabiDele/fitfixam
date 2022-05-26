@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    background-color: #bdddfd1f;
+    background-color: #ffffffa2;
     padding-top: 3rem;
     height: 40rem;
   }
@@ -28,7 +28,8 @@ export const Container = styled.div`
   @media (max-width: 2100px) {
     text-align: center;
     z-index: 100;
-    background: url("/subscribe-bg.png"), #f9fafb;
+    background: url("/subscribe-bg.png");
+    background-color: #fff;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -54,6 +55,10 @@ export const Container = styled.div`
       font-size: 24px;
       box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
       font-weight: bold;
+
+      ::placeholder {
+        opacity: 0.3;
+      }
     }
   }
 

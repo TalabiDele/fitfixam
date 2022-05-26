@@ -489,10 +489,13 @@ export const Wrapper = styled.div`
       div.category {
         p {
           font-size: 26px;
+          text-align: left;
+          color: #050253;
         }
 
         .artisan_category {
           display: flex;
+          flex-direction: column;
           text-align: left;
           font-weight: 400;
           color: #050253;
@@ -505,6 +508,12 @@ export const Wrapper = styled.div`
             margin-top: 1rem;
             margin-right: 2rem;
             cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            width: 100%;
+
+            &:hover {
+              opacity: 0.5;
+            }
           }
 
           .active {
