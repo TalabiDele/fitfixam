@@ -12,12 +12,13 @@ export const AuthProvider = ({ children }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [userData, setUserData] = useState();
   // const [allUsers, setAllUsers] = useState(null);
 
   const { data: session } = useSession();
 
-  console.log(session);
-  console.log(process.env.NEXTAUTH_URL);
+  // console.log(session);
+  console.log(userData);
 
   const router = useRouter();
 
@@ -67,9 +68,11 @@ export const AuthProvider = ({ children }) => {
     const data = await res.json();
 
     // console.log(data);
+    // setUserData(data);
 
     if (res.ok) {
-      setUser(data.user);
+      setUser(data.user.user);
+      setUserData(data);
       router.push("/feeds");
     } else {
       setErrorMessage(data.message);
@@ -103,20 +106,15 @@ export const AuthProvider = ({ children }) => {
 
   // Provider authentication
   const userProvider = async () => {
-    const res = await fetch(`${NEXT_PUBLIC_URL}/api/auth/[...nextauth]`);
-    const data = await res.json();
-
-    if (res.ok) {
-      setUser(data.user);
-    } else {
-      setUser(null);
-    }
+    setUser(session.user);
+    console.log(user);
   };
 
   // Check user logged in
-  const checkUserLoggedIn = async (user) => {
+  const checkUserLoggedIn = async () => {
     const res = await fetch(`${NEXT_PUBLIC_URL}/api/user`);
     const data = await res.json();
+    // setUserData(data);
 
     if (res.ok) {
       setUser(data.user);
@@ -137,6 +135,7 @@ export const AuthProvider = ({ children }) => {
         isLoading,
         error,
         userProvider,
+        userData,
       }}
     >
       {children}

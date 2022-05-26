@@ -1490,7 +1490,7 @@ export const UserSideNav = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    width: ${({ userIsOpen }) => (userIsOpen ? "50%" : "10%")};
+    width: ${({ userIsOpen }) => (userIsOpen ? "60%" : "12%")};
   }
 
   @media (max-width: 480px) {
@@ -1552,7 +1552,7 @@ export const IconNav = styled.div`
     width: 100%;
     padding-left: 1.5rem;
     padding-right: 10px;
-    padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "10px")};
+    padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "12px")};
   }
 
   @media (max-width: 480px) {
@@ -1673,7 +1673,7 @@ export const NavMenu = styled.div`
     position: fixed;
     left: 0;
     z-index: 100;
-    width: ${({ userIsOpen }) => (userIsOpen ? "50%" : "10%")};
+    width: ${({ userIsOpen }) => (userIsOpen ? "60%" : "12%")};
     /* width: 4%; */
 
     div.side_menu {

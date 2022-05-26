@@ -46,9 +46,14 @@ import Moment from "react-moment";
 import { parseCookies } from "@/helpers/index";
 import { PostCategory } from "Components/PostCategory/Style";
 import userImage from "public/userImage.png";
+import { LikesContext } from "@/context/LikesContext";
 
 const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   const { user } = useContext(AuthContext);
+  const { likesGiven, likeReceived } = useContext(LikesContext);
+
+  console.log(token);
+
   const [postId, setPostId] = useState({});
   const [isUser, setIsUser] = useState(user);
   const [isComment, setIsComment] = useState({
@@ -71,6 +76,10 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   // likePost();
   // const [commentLike, setCommentLike] = useState({})
 
+  const isPostLiked = (() => {
+    likes;
+  })();
+
   useEffect(() => {
     if (user) {
       console.log(isUser);
@@ -92,12 +101,22 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   const router = useRouter();
 
   const refreshData = () => router.replace(router.asPath);
+  console.log(likesGiven);
 
   let postLike = 0;
 
   const displayPost = (e) => {
     router.push(`/feeds/${e.slug}`);
   };
+
+  const isPostAlreadyLiked = (() => {
+    // return (
+    //   likesGiven &&
+    //   likesGiven.find((like) => like.post && like.post.id == postId.id)
+    // );
+  })();
+
+  console.log("isPostAlreadyLiked", isPostAlreadyLiked);
 
   const getPostId = () => {
     post.map((m) => setPostId(m));
@@ -468,20 +487,30 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                     <div key={lik.id}> */}
                       {/* {isLiked.like ? ( */}
                       {console.log(user)}
-                      {user.likes.map((like) =>
-                        like.post === postId.id ? (
-                          <FaHeart
-                            fontSize={26}
-                            onClick={() => unlike(e)}
-                            color="#F4442E"
-                          />
-                        ) : (
-                          <FaRegHeart
-                            fontSize={26}
-                            onClick={() => updateLike(e)}
-                            color="#020127"
-                          />
-                        )
+                      {/* {user.likes.map((like) =>
+                        like.post === postId.id ? ( */}
+                      <FaHeart
+                        fontSize={26}
+                        onClick={() => unlike(e)}
+                        color="#F4442E"
+                      />
+                      {/* ) : ( */}
+                      <FaRegHeart
+                        fontSize={26}
+                        onClick={() => updateLike(e)}
+                        color="#060258"
+                      />
+                      {/* )
+                      )} */}
+                      {e.likes.map(
+                        (like) =>
+                          like.user !== user.id && (
+                            <FaRegHeart
+                              fontSize={26}
+                              onClick={() => updateLike(e)}
+                              color="#060258"
+                            />
+                          )
                       )}
 
                       {/* ) : ( */}
@@ -634,6 +663,8 @@ export default Slug;
 
 export async function getServerSideProps({ query: { slug }, req }) {
   const { token } = parseCookies(req);
+
+  // console.log(token);
 
   const resPost = await fetch(`${NEXT_PUBLIC_API_URL}/posts?slug=${slug}`);
   const post = await resPost.json();

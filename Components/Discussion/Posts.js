@@ -36,12 +36,6 @@ const Posts = ({ posts, comments, userPost }) => {
     router.push(`/feeds/${e.slug}`);
   };
 
-  if (posts.category === null || posts.category === undefined) {
-    console.log("null");
-  } else {
-    console.log(posts.category.title);
-  }
-
   const categoryPage = (e) => {
     router.push(`/${e}`);
   };

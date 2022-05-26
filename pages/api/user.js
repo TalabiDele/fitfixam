@@ -10,6 +10,8 @@ export default async (req, res) => {
 
     const { token } = cookie.parse(req.headers.cookie);
 
+    // console.log("user token", token);
+
     const strapiRes = await fetch(`${NEXT_PUBLIC_API_URL}/users/me`, {
       method: "GET",
       headers: {

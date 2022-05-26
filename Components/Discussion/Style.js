@@ -72,6 +72,7 @@ export const UserDetails = styled.div`
   align-items: center;
   padding: 1rem 0rem 1rem 2rem;
   width: 100%;
+  /* background: #f9fafb; */
 
   div.post_dets {
     width: 100%;

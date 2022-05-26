@@ -2,33 +2,18 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
-export default NextAuth({
+const options = {
   providers: [
+    // GitHubProvider({
+    //     clientId: process.env.GITHUB_ID,
+    //     clientSecret: process.env.GITHUB_SECRET
+    // }),
     GoogleProvider({
-      clientId: "GOOGLE_CLIENT_ID",
-      clientSecret: "GOOGLE_CLIENT_SECRET",
-      // authorizationUrl:
-      //   "https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code",
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
-  jwt: {
-    encryption: true,
-  },
-  secret: process.env.SECRET,
+  // secret: process.env.SECRET,
+};
 
-  //Callback here
-  callbacks: {
-    async jwt(token, account) {
-      if (account?.accessToken) {
-        token.accessToken = account.accessToken;
-      }
-      return token;
-    },
-    redirect: async (url, _baseUrl) => {
-      if (url === "/user") {
-        return Promise.resolve("/");
-      }
-      return Promise.resolve("/");
-    },
-  },
-});
+export default (req, res) => NextAuth(req, res, options);

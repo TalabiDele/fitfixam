@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { SessionProvider } from "next-auth/react";
+import { LikesContextProvider } from "@/context/LikesContext";
 
 function Loading() {
   const router = useRouter();
@@ -49,8 +50,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
       <AuthProvider>
-        <Loading />
-        <Component {...pageProps} />
+        <LikesContextProvider>
+          <Loading />
+          <Component {...pageProps} />
+        </LikesContextProvider>
       </AuthProvider>
     </SessionProvider>
   );

@@ -18,6 +18,7 @@ export default async (req, res) => {
     });
 
     const data = await strapiRes.json();
+    console.log(data);
 
     if (strapiRes.ok) {
       // Set cookie
@@ -32,7 +33,7 @@ export default async (req, res) => {
         })
       );
 
-      res.status(200).json({ user: data.user });
+      res.status(200).json({ user: data });
     } else {
       res
         .status(data.statusCode)
