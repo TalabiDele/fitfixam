@@ -3,6 +3,7 @@ import { Container, Wrapper, Aside, ProviderBtns } from "./Style";
 import Image from "next/image";
 import AuthContext from "@/context/AuthContext";
 import Logo from "@/public/logo-blue.png";
+import { useRouter } from "next/router";
 import { GoogleBtn, FacebookBtn, RegisterBtn } from "../Buttons";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -24,6 +25,8 @@ const CreateAccount = () => {
   const [isPlumber, setIsPlumber] = useState(false);
   const [isElectrician, setIsElectrician] = useState(false);
 
+  const router = useRouter();
+
   const { register, error } = useContext(AuthContext);
 
   useEffect(() => {
@@ -40,6 +43,10 @@ const CreateAccount = () => {
     }
     setSlug(username);
 
+    // if (user_category.id === null) {
+    //   console.log(user_category);
+    // }
+
     register({ username, email, password, artisan, slug, user_category });
   };
 
@@ -49,6 +56,8 @@ const CreateAccount = () => {
 
   const getIsUser = () => {
     setArtisan(false);
+
+    setUser_category(null);
   };
 
   const getCarpenter = (e) => {
