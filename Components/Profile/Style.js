@@ -321,7 +321,7 @@ export const Container = styled.div`
 
       div.info {
         width: 100%;
-        z-index: 500;
+        /* z-index: 500; */
         color: #020127;
         /* margin-right: 10rem; */
 
@@ -688,7 +688,7 @@ export const Container = styled.div`
 
       div.info {
         width: 100%;
-        z-index: 500;
+        /* z-index: 500; */
         color: #020127;
         /* margin-right: 10rem; */
 
@@ -1076,7 +1076,7 @@ export const Container = styled.div`
 
       div.info {
         width: 100%;
-        z-index: 500;
+        /* z-index: 500; */
         color: #020127;
         /* margin-right: 10rem; */
 
@@ -1464,7 +1464,7 @@ export const Container = styled.div`
 
       div.info {
         width: 100%;
-        z-index: 500;
+        /* z-index: 500; */
         color: #020127;
         /* margin-right: 10rem; */
 
@@ -1855,7 +1855,7 @@ export const Container = styled.div`
 
       div.info {
         width: 100%;
-        z-index: 500;
+        /* z-index: 500; */
         color: #020127;
         /* margin-right: 10rem; */
 
