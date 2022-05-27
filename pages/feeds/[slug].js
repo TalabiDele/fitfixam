@@ -50,9 +50,7 @@ import { LikesContext } from "@/context/LikesContext";
 
 const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   const { user } = useContext(AuthContext);
-  const { likesGiven, likeReceived } = useContext(LikesContext);
-
-  console.log(token);
+  // const { likesGiven, likeReceived } = useContext(LikesContext);
 
   const [postId, setPostId] = useState({});
   const [isUser, setIsUser] = useState(user);
@@ -62,9 +60,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
     timestamp: "",
     users: user,
   });
-
   const [liked, setLiked] = useState(false);
-
   const [isLiked, setIsLiked] = useState({
     like: liked,
     post: postId,
@@ -72,6 +68,8 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   });
   const [likedPost, setLikedPost] = useState();
   const [userComments, setUserComments] = useState();
+  const [likesGiven, setLikesGiven] = useState([]);
+  const [likesReceived, setLikesReceived] = useState([]);
 
   // likePost();
   // const [commentLike, setCommentLike] = useState({})
@@ -81,22 +79,56 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   })();
 
   useEffect(() => {
-    if (user) {
-      console.log(isUser);
-      setIsLiked({
-        ...isLiked,
-        like: liked,
-        post: postId,
-        users_permissions_user: isUser,
-      });
-      setLikedPost(isLiked);
-    }
+    // if (user) {
+    //   console.log(isUser);
+    //   setIsLiked({
+    //     ...isLiked,
+    //     like: liked,
+    //     post: postId,
+    //     users_permissions_user: isUser,
+    //   });
+    //   setLikedPost(isLiked);
+    // }
 
     getPostId();
     // setLiked(likedPost.like);
     // console.log(likedPost);
     // setLiked(!liked);
-  }, []);
+
+    if (user) {
+      console.log(user.id);
+      const loadLikesGiven = async () => {
+        console.log(token);
+        const res = await fetch(
+          `${NEXT_PUBLIC_API_URL}/likes/given?user=${user.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const data = await res.json();
+
+        setLikesGiven(data);
+        // console.log(data);
+      };
+      loadLikesGiven();
+
+      const loadLikesReceived = async () => {
+        const res = await fetch(
+          `${NEXT_PUBLIC_API_URL}/likes/received?post.user=${user.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const data = await res.json();
+        setLikesReceived(data);
+      };
+      loadLikesReceived();
+    }
+  }, [user]);
 
   const router = useRouter();
 
@@ -489,11 +521,11 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       {console.log(user)}
                       {/* {user.likes.map((like) =>
                         like.post === postId.id ? ( */}
-                      <FaHeart
+                      {/* <FaHeart
                         fontSize={26}
                         onClick={() => unlike(e)}
                         color="#F4442E"
-                      />
+                      /> */}
                       {/* ) : ( */}
                       <FaRegHeart
                         fontSize={26}
@@ -502,15 +534,23 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       />
                       {/* )
                       )} */}
-                      {e.likes.map(
-                        (like) =>
-                          like.user !== user.id && (
+                      {e.likes.map((like) =>
+                        like.user !== user.id ? (
+                          <>
                             <FaRegHeart
                               fontSize={26}
                               onClick={() => updateLike(e)}
                               color="#060258"
                             />
-                          )
+                            {console.log(like.user)}
+                          </>
+                        ) : (
+                          <FaHeart
+                            fontSize={26}
+                            onClick={() => unlike(e)}
+                            color="#F4442E"
+                          />
+                        )
                       )}
 
                       {/* ) : ( */}

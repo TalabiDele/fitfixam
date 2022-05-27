@@ -4,6 +4,7 @@ import CarpenterImg from "@/public/Carpenter_img.png";
 import PlumberImg from "@/public/Plumber_img.png";
 import ElectricianImg from "@/public/Electrician_img.png";
 import { BtnCard } from "../Buttons";
+import Link from "next/link";
 
 const ReviewCard = () => {
   return (
@@ -27,9 +28,13 @@ const ReviewCard = () => {
               Choose the right carpenter for your project by asking the right
               questions
             </p>
-            <BtnCard>
-              <button>Click Here</button>
-            </BtnCard>
+            <Link href="/carpenters">
+              <a>
+                <BtnCard>
+                  <button>Click Here</button>
+                </BtnCard>
+              </a>
+            </Link>
           </div>
         </Card>
         <Card className="card">
@@ -47,9 +52,13 @@ const ReviewCard = () => {
               Are you looking to install new pipes, or fix the ones you have
               already? You need to make an informed choice
             </p>
-            <BtnCard>
-              <button className="btn">Click Here</button>
-            </BtnCard>
+            <Link href="/plumbers">
+              <a>
+                <BtnCard>
+                  <button className="btn">Click Here</button>
+                </BtnCard>
+              </a>
+            </Link>
           </div>
         </Card>
         <Card>
@@ -67,9 +76,13 @@ const ReviewCard = () => {
               Have any electrical issues? Be sure your home is safe. Hire an
               electrical expert.
             </p>
-            <BtnCard>
-              <button>Click Here</button>
-            </BtnCard>
+            <Link href="/electricians">
+              <a>
+                <BtnCard>
+                  <button>Click Here</button>
+                </BtnCard>
+              </a>
+            </Link>
           </div>
         </Card>
       </Wrapper>

@@ -2,6 +2,7 @@ import { HeroBtn } from "Components/Buttons";
 import { Container, Wrapper } from "./Style";
 import { useState } from "react";
 import { FaWrench } from "react-icons/fa";
+import Link from "next/link";
 
 const Action = () => {
   const [isBlue, setIsBlue] = useState(true);
@@ -16,7 +17,11 @@ const Action = () => {
             speak for you
           </p>
           <div className="btn">
-            <HeroBtn>Proceed</HeroBtn>
+            <Link href="/signup">
+              <a>
+                <HeroBtn>Proceed</HeroBtn>
+              </a>
+            </Link>
           </div>
         </div>
         <div className="wrench">

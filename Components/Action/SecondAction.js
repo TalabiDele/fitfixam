@@ -2,6 +2,7 @@ import { HeroBtn } from "Components/Buttons";
 import { Container, Wrapper, Wrap } from "./Style";
 import { useState } from "react";
 import { FaScrewdriver } from "react-icons/fa";
+import Link from "next/link";
 
 const SecondAction = () => {
   const [isBlue, setIsBlue] = useState(true);
@@ -14,7 +15,11 @@ const SecondAction = () => {
             <h1>Are you an artisan?</h1>
             <p>Build trust with reviews from your satisfied clients</p>
             <div className="btn">
-              <HeroBtn>Proceed</HeroBtn>
+              <Link href="/signup">
+                <a>
+                  <HeroBtn>Proceed</HeroBtn>
+                </a>
+              </Link>
             </div>
           </div>
           <div className="wrench">

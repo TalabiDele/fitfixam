@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import FooterBg from "@/public/hammer-bg.png";
 import BGImage from "./BG";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -25,21 +26,61 @@ const Footer = () => {
         <Flex>
           <h2>Company</h2>
           <ul>
-            <li>About us</li>
-            <li>Contact us</li>
-            <li>Blog</li>
-            <li>Terms & Conditions</li>
-            <li>Privacy Policy</li>
+            <Link href="/about">
+              <a>
+                <li>About us</li>
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a>
+                <li>Contact us</li>
+              </a>
+            </Link>
+            <Link href="/blog">
+              <a>
+                <li>Blog</li>
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <li>Terms & Conditions</li>
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <li>Privacy Policy</li>
+              </a>
+            </Link>
           </ul>
         </Flex>
         <Flex>
           <h2>Navigation</h2>
           <ul>
-            <li>Discussions</li>
-            <li>Carpenters</li>
-            <li>Plumbers</li>
-            <li>Electricians</li>
-            <li>Company Reviews</li>
+            <Link href="/feeds">
+              <a>
+                <li>Discussions</li>
+              </a>
+            </Link>
+            <Link href="/carpenters">
+              <a>
+                <li>Carpenters</li>
+              </a>
+            </Link>
+            <Link href="/plumbers">
+              <a>
+                <li>Plumbers</li>
+              </a>
+            </Link>
+            <Link href="/electricians">
+              <a>
+                <li>Electricians</li>
+              </a>
+            </Link>
+            <Link href="/companies">
+              <a>
+                <li>Company Reviews</li>
+              </a>
+            </Link>
           </ul>
         </Flex>
         <Flex>

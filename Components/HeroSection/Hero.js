@@ -2,6 +2,7 @@ import BGImage from "Components/BG";
 import { Wrapper, Container } from "./Style";
 import { HeroBtn } from "Components/Buttons";
 import HeroBg from "@/public/hero-background.png";
+import Link from "next/link";
 import { HiChevronDoubleDown } from "react-icons/hi";
 
 const Hero = () => {
@@ -17,7 +18,11 @@ const Hero = () => {
           make the right decisions.
         </p>
         <div className="btns">
-          <HeroBtn>Get Started</HeroBtn>
+          <Link href="/signup">
+            <a>
+              <HeroBtn>Get Started</HeroBtn>
+            </a>
+          </Link>
           <HiChevronDoubleDown
             fontSize={70}
             color={"#f4442e"}

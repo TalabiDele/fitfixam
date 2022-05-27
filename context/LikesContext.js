@@ -16,44 +16,42 @@ export const LikesContextProvider = ({ children, token }) => {
   console.log(userData);
 
   useEffect(() => {
-    if (user) {
-      console.log(user.id);
-      const loadLikesGiven = async (req) => {
-        const { token } = getTokenCookie(req);
-        console.log(token);
-        const res = await fetch(
-          `${NEXT_PUBLIC_API_URL}/likes/given?user=${user.id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        const data = await res.json();
-
-        setLikesGiven(data);
-        // console.log(data);
-      };
-      loadLikesGiven();
-
-      const loadLikesReceived = async () => {
-        const res = await fetch(
-          `${NEXT_PUBLIC_API_URL}/likes/received?post.user=${user.id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        const data = await res.json();
-        setLikesReceived(data);
-      };
-      loadLikesReceived();
-    }
+    // if (user) {
+    //   console.log(user.id);
+    //   const loadLikesGiven = async (req) => {
+    //     const { token } = getTokenCookie(req);
+    //     console.log(token);
+    //     const res = await fetch(
+    //       `${NEXT_PUBLIC_API_URL}/likes/given?user=${user.id}`,
+    //       {
+    //         headers: {
+    //           Authorization: `Bearer ${token}`,
+    //         },
+    //       }
+    //     );
+    //     const data = await res.json();
+    //     setLikesGiven(data);
+    //     // console.log(data);
+    //   };
+    //   loadLikesGiven();
+    //   const loadLikesReceived = async () => {
+    //     const res = await fetch(
+    //       `${NEXT_PUBLIC_API_URL}/likes/received?post.user=${user.id}`,
+    //       {
+    //         headers: {
+    //           Authorization: `Bearer ${token}`,
+    //         },
+    //       }
+    //     );
+    //     const data = await res.json();
+    //     setLikesReceived(data);
+    //   };
+    //   loadLikesReceived();
+    // }
   }, [user]);
 
-  console.log("LikesGiven", likesGiven);
-  console.log("LikesReceived", likesReceived);
+  // console.log("LikesGiven", likesGiven);
+  // console.log("LikesReceived", likesReceived);
 
   return (
     <LikesContext.Provider value={{ likesGiven, likesReceived }}>
