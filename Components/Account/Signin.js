@@ -49,7 +49,7 @@ const CreateAccount = () => {
           </Aside>
           <Wrapper error={error}>
             <h1>Login</h1>
-            <p>You can either login with</p>
+            {/* <p>You can either login with</p> */}
             <ProviderBtns>
               {/* {Object.values(providers).map((provider) => (
                 <div key={provider.name} className={styles.container}>

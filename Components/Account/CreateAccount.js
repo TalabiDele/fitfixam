@@ -107,7 +107,7 @@ const CreateAccount = () => {
       </Aside>
       <Wrapper>
         <h1>Create an Account</h1>
-        <p>You can either sign up with</p>
+        {/* <p>You can either sign up with</p> */}
         <ProviderBtns>
           {/* <GoogleBtn>
             <FcGoogle /> Google
