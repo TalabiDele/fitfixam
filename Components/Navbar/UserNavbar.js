@@ -105,9 +105,9 @@ const Navbar = () => {
   };
 
   const handleIsOpen = () => {
-    setUserIsOpen(!userIsOpen);
-
-    console.log(userIsOpen);
+    setTimeout(() => {
+      setUserIsOpen(!userIsOpen);
+    }, 2000);
   };
 
   const openModal = () => {
@@ -544,14 +544,25 @@ const Navbar = () => {
         onMouseLeave={() => setUserIsOpen(false)}
       >
         <div className="side_nav">
-          <IconNav onClick={() => openModal()}>
-            <FaPlus
-              fontSize={26}
-              cursor="pointer"
-              color="#fff"
-              className="add_post"
-            />{" "}
-          </IconNav>
+          {userIsOpen ? (
+            <IconNav>
+              <div className="write" onClick={() => openModal()}>
+                <p>
+                  Write something <FaPlus />
+                </p>
+              </div>
+            </IconNav>
+          ) : (
+            <IconNav>
+              <FaPlus
+                fontSize={26}
+                cursor="pointer"
+                color="#fff"
+                className="add_post"
+              />{" "}
+            </IconNav>
+          )}
+
           <Link href="/feeds">
             <a>
               <IconNav className={router.pathname === "/feeds" ? "active" : ""}>
@@ -602,7 +613,10 @@ const Navbar = () => {
           </Link>
           <Link href="/companies">
             <a>
-              <IconNav userIsOpen={userIsOpen}>
+              <IconNav
+                userIsOpen={userIsOpen}
+                className={router.pathname === "/companies" ? "active" : ""}
+              >
                 <FaRegCompass fontSize={26} cursor="pointer" color="#07036e" />
                 {userIsOpen && <p>Companies</p>}
               </IconNav>
@@ -610,7 +624,11 @@ const Navbar = () => {
           </Link>
           <Link href="/find-an-artisan">
             <a>
-              <IconNav>
+              <IconNav
+                className={
+                  router.pathname === "/find-an-artisan" ? "active" : ""
+                }
+              >
                 <FaUsersCog fontSize={26} cursor="pointer" color="#07036e" />
                 {userIsOpen && <p>Find an Artisan</p>}
               </IconNav>
@@ -618,7 +636,7 @@ const Navbar = () => {
           </Link>
           <Link href="/blog">
             <a>
-              <IconNav>
+              <IconNav className={router.pathname === "/blog" ? "active" : ""}>
                 <FaFeatherAlt fontSize={26} cursor="pointer" color="#07036e" />
                 {userIsOpen && <p>Articles</p>}
               </IconNav>

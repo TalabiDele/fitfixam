@@ -1534,6 +1534,24 @@ export const IconNav = styled.div`
     padding-left: 1.5rem;
     padding-right: 10px;
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "16px" : "4px")};
+
+    div.write {
+      background: #fff;
+      border: 2px solid #07036e;
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          margin-left: 1rem;
+          color: #f4442e;
+        }
+      }
+    }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
