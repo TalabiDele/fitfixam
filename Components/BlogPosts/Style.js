@@ -33,7 +33,7 @@ export const Card = styled.div`
     border-radius: 10px;
     width: 60%;
     padding: 1rem 2rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     background: #f9fafb;
     cursor: pointer;
 
@@ -72,7 +72,7 @@ export const Card = styled.div`
     border-radius: 10px;
     width: 90%;
     padding: 1rem 2rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     background: #f9fafb;
     cursor: pointer;
 
@@ -111,7 +111,7 @@ export const Card = styled.div`
     border-radius: 10px;
     width: 90%;
     padding: 1rem 2rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     background: #f9fafb;
     cursor: pointer;
 
@@ -148,7 +148,7 @@ export const Card = styled.div`
     border-radius: 10px;
     width: 80%;
     padding: 1rem 2rem;
-    margin: 5rem auto 2rem auto;
+    margin: 2rem auto 2rem auto;
     background: #f9fafb;
     /* border: 0.5px solid #020127; */
     cursor: pointer;
@@ -192,7 +192,7 @@ export const Card = styled.div`
     border-radius: 10px;
     width: 95%;
     padding: 1rem 1rem;
-    margin: 5rem auto 3rem auto;
+    margin: 2rem auto 3rem auto;
     background: #f9fafb;
     /* border: 0.5px solid #020127; */
     cursor: pointer;

@@ -208,14 +208,23 @@ export const Card = styled.div`
 
     p {
       margin-bottom: 1rem;
-      font-size: 19px;
+      font-size: 16px;
       text-transform: capitalize;
     }
 
     div.address {
       display: flex;
-      gap: 5px;
+      /* gap: 5px; */
       justify-content: center;
+      width: 80%;
+      margin: auto;
+
+      p {
+        /* font-size: 14px; */
+        width: 100%;
+        margin: auto;
+        font-size: 14px;
+      }
     }
   }
 
@@ -256,7 +265,7 @@ export const Card = styled.div`
 
     p {
       margin-bottom: 1rem;
-      font-size: 19px;
+      font-size: 15px;
       text-transform: capitalize;
     }
 
@@ -264,6 +273,14 @@ export const Card = styled.div`
       display: flex;
       gap: 5px;
       justify-content: center;
+      width: 80%;
+      margin: auto;
+
+      p {
+        font-size: 14px;
+        width: 100%;
+        margin: auto;
+      }
     }
   }
 `;

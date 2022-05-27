@@ -268,7 +268,7 @@ export const Cards = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-    width: 70%;
+    width: 60%;
     gap: 3rem;
     margin: auto;
 
