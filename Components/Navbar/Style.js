@@ -1475,28 +1475,43 @@ export const UserSideNav = styled.div`
     top: 30rem;
   }
 
-  div.settings {
-    margin-top: 20rem;
-  }
-
   @media (min-width: 1281px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "4%")};
+    div.settings {
+      margin-top: 20rem;
+    }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "25%" : "6%")};
+
+    div.settings {
+      margin-top: 10rem;
+    }
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "8%")};
+
+    div.settings {
+      margin-top: 10rem;
+    }
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "60%" : "12%")};
+
+    div.settings {
+      margin-top: 10rem;
+    }
   }
 
   @media (max-width: 480px) {
     width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "12%")};
+
+    div.settings {
+      margin-top: 10rem;
+    }
   }
 `;
 
@@ -1559,6 +1574,24 @@ export const IconNav = styled.div`
     padding-left: 1.5rem;
     padding-right: 10px;
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "16px" : "4px")};
+
+    div.write {
+      background: #fff;
+      border: 2px solid #07036e;
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          margin-left: 1rem;
+          color: #f4442e;
+        }
+      }
+    }
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -1566,6 +1599,24 @@ export const IconNav = styled.div`
     padding-left: 1.5rem;
     /* padding-right: 10px; */
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "16px" : "4px")};
+
+    div.write {
+      background: #fff;
+      border: 2px solid #07036e;
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          margin-left: 1rem;
+          color: #f4442e;
+        }
+      }
+    }
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
@@ -1573,6 +1624,24 @@ export const IconNav = styled.div`
     padding-left: 1.5rem;
     padding-right: 10px;
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "12px")};
+
+    div.write {
+      background: #fff;
+      border: 2px solid #07036e;
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          margin-left: 1rem;
+          color: #f4442e;
+        }
+      }
+    }
   }
 
   @media (max-width: 480px) {
@@ -1580,6 +1649,24 @@ export const IconNav = styled.div`
     padding-left: 1rem;
     padding-right: 10px;
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "10px")};
+
+    div.write {
+      background: #fff;
+      border: 2px solid #07036e;
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          margin-left: 1rem;
+          color: #f4442e;
+        }
+      }
+    }
   }
 `;
 
