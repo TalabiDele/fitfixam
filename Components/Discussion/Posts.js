@@ -52,8 +52,6 @@ const Posts = ({ posts, comments, userPost }) => {
         <Container>
           <Wrapper>
             <PostCard>
-              {/* <Link href={`/${posts.slug}`}> */}
-              {/* <a> */}
               <PostText>
                 <p onClick={() => displayPost(posts)}>{posts.post}</p>
               </PostText>
