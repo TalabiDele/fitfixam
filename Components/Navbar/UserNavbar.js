@@ -594,7 +594,7 @@ const Navbar = () => {
           <Link href="/electricians">
             <a>
               <IconNav
-                className={router.pathname == "/plumbers" ? "active" : ""}
+                className={router.pathname == "/electricians" ? "active" : ""}
               >
                 <FaScrewdriver fontSize={26} cursor="pointer" color="#07036e" />
                 {userIsOpen && <p>Electricians</p>}
@@ -604,7 +604,7 @@ const Navbar = () => {
           <Link href="/plumbers">
             <a>
               <IconNav
-                className={router.pathname == "/electricians" ? "active" : ""}
+                className={router.pathname == "/plumbers" ? "active" : ""}
               >
                 <FaWrench fontSize={26} cursor="pointer" color="#07036e" />
                 {userIsOpen && <p>Plumbers</p>}
