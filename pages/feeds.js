@@ -3,7 +3,7 @@ import { NEXT_PUBLIC_API_URL } from "../config";
 import Posts from "@/components/Discussion/Posts";
 import Slug from "./feeds/[slug].js";
 import styled from "styled-components";
-import Icon from "@/components/Icon/Icon";
+import Icon from "../Components/Icon/Icon";
 
 const Feeds = ({ posts, comments, userPost, allUsers }) => {
   return (

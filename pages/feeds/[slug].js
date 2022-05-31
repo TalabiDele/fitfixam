@@ -589,59 +589,63 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                 )}
               </Reactions>
               <Comments>
-                {comments.map((com) => (
-                  <div key={com.key}>
-                    {e.id === com.post.id ? (
-                      <UsersComments>
-                        <div
-                          className="image"
-                          onClick={() => displayProfile(e.user.slug)}
-                        >
-                          {com.users.user_image ? (
-                            <Image
-                              src={com.users.user_image.formats.small.url}
-                              alt="User Image"
-                              width={70}
-                              height={70}
-                              className="user_image"
-                              objectFit="cover"
-                            />
-                          ) : (
-                            <Image
-                              src={userImage}
-                              alt="User Image"
-                              width={70}
-                              height={70}
-                              className="user_image"
-                              objectFit="cover"
-                            />
-                          )}
-                        </div>
-                        <div>
-                          <div className="name_time">
-                            <h2 onClick={() => displayProfile(e.user.slug)}>
-                              {com.users.username}
-                            </h2>
-                            <span></span>
-                            <p className="time">
-                              <Moment fromNow ago>
-                                {com.created_at}
-                              </Moment>
-                            </p>
+                {comments ? (
+                  comments.map((com) => (
+                    <div key={com.key}>
+                      {e.id === com.post.id ? (
+                        <UsersComments>
+                          <div
+                            className="image"
+                            onClick={() => displayProfile(e.user.slug)}
+                          >
+                            {com.users.user_image ? (
+                              <Image
+                                src={com.users.user_image.formats.small.url}
+                                alt="User Image"
+                                width={70}
+                                height={70}
+                                className="user_image"
+                                objectFit="cover"
+                              />
+                            ) : (
+                              <Image
+                                src={userImage}
+                                alt="User Image"
+                                width={70}
+                                height={70}
+                                className="user_image"
+                                objectFit="cover"
+                              />
+                            )}
                           </div>
-                          <p>{com.content}</p>
-                          {/* {e.comments.slice(0, 1).map((c) => (
-                            <div key={c.id}>
-                              <p>{c.content}</p>
+                          <div>
+                            <div className="name_time">
+                              <h2 onClick={() => displayProfile(e.user.slug)}>
+                                {com.users.username}
+                              </h2>
+                              <span></span>
+                              <p className="time">
+                                <Moment fromNow ago>
+                                  {com.created_at}
+                                </Moment>
+                              </p>
                             </div>
-                          ))} */}
-                        </div>
-                      </UsersComments>
-                    ) : (
-                      <div></div>
-                    )}
-                  </div>
-                ))}
+                            <p>{com.content}</p>
+                            {/* {e.comments.slice(0, 1).map((c) => (
+                              <div key={c.id}>
+                                <p>{c.content}</p>
+                              </div>
+                            ))} */}
+                          </div>
+                        </UsersComments>
+                      ) : (
+                        <div></div>
+                      )}
+                    </div>
+                  ))
+                ) : (
+                  <></>
+                )}
                 {user ? (
                   <form
                     className="input_comment"
