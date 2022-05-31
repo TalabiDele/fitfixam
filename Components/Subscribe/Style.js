@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  background-color: #bdddfd1f;
+  padding-top: 10rem;
+  height: 40rem;
+
   @media (max-width: 2100px) {
     background-color: #bdddfd1f;
     padding-top: 10rem;
@@ -25,6 +29,41 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
+  text-align: center;
+  z-index: 100;
+  background: url("/subscribe-bg.png");
+  background-color: #fff;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* padding: 5rem 0rem; */
+
+  h1 {
+    font-size: 35px;
+  }
+
+  p {
+    color: #546881;
+    font-size: 20px;
+    width: 35%;
+    margin: 1rem auto 5rem auto;
+  }
+
+  input {
+    width: 30%;
+    background-color: #fff;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 15px 0px 0px 15px;
+    font-size: 24px;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+
+    ::placeholder {
+      opacity: 0.3;
+    }
+  }
+
   @media (max-width: 2100px) {
     text-align: center;
     z-index: 100;

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  background-color: #3c91e6;
+  color: #fff;
+  padding: 2rem 0rem;
+
   @media (max-width: 2100px) {
     background-color: #3c91e6;
     color: #fff;
@@ -9,6 +13,41 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10rem;
+
+  div.wrapper {
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 50px;
+    margin: 1rem 0rem;
+  }
+
+  p {
+    font-size: 22px;
+    margin-bottom: 1rem;
+    width: 80%;
+  }
+
+  div.wrench {
+    display: grid;
+    position: relative;
+    top: 3rem;
+    overflow-x: clip;
+    width: 20rem;
+    right: 0rem;
+
+    .tool {
+      overflow-x: clip;
+    }
+  }
+
   @media (min-width: 1200px) and (max-width: 2100px) {
     display: flex;
     width: 100%;
@@ -163,6 +202,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Wrap = styled.div`
+  .action {
+    background-color: #f4442e;
+  }
+
   @media (min-width: 1200px) and (max-width: 2100px) {
     .action {
       background-color: #f4442e;

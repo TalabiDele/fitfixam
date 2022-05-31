@@ -1,6 +1,36 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+  justify-items: center;
+  /* align-items: center; */
+  margin: auto;
+  z-index: 10;
+
+  p {
+    color: #3d4c5e;
+    width: 70%;
+    margin: auto;
+    font-size: 19px;
+  }
+
+  span.video {
+    width: 100%;
+    margin: auto;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  video {
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    width: 80%;
+  }
+
   @media (max-width: 2100px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -20,22 +50,6 @@ export const Wrapper = styled.div`
     span.video {
       width: 100%;
       margin: auto;
-
-      img {
-        /* width: 100%; */
-      }
-
-      /* div.video-react-controls-enabled {
-        padding-top: 0%;
-      }
-
-      button.video-react-button {
-        display: none;
-      }
-
-      div.video-react-control-bar {
-        display: none;
-      } */
 
       div {
         width: 100%;

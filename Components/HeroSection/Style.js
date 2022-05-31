@@ -1,6 +1,42 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  text-align: center;
+  padding-top: 10rem;
+
+  h1 {
+    font-size: 70px;
+    width: 50%;
+    margin: 2rem auto 1rem auto;
+    color: #040242;
+    line-height: 1;
+    z-index: -2;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    font-size: 24px;
+    color: #47586e;
+    width: 40%;
+    margin: 0rem auto 2rem auto;
+  }
+
+  span {
+    color: #f4442e;
+  }
+
+  .hero_icon {
+    margin-top: 10rem;
+    margin-bottom: -10rem;
+    text-align: center;
+  }
+
+  div.btns {
+    display: grid;
+    justify-items: center;
+  }
+
   @media (min-width: 1281px) {
     text-align: center;
     padding-top: 10rem;
@@ -213,6 +249,18 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
+  z-index: 3;
+  background: url("/hero-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding-top: -2rem;
+  background-color: #f9fafb;
+  margin-bottom: -4rem;
+
   @media (min-width: 1281px) {
     z-index: 3;
     background: url("/hero-background.png");

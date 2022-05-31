@@ -2,6 +2,20 @@ import styled from "styled-components";
 import BG from "@/public/hammer-bg.png";
 
 export const Container = styled.div`
+  padding: 5rem 0rem 5rem 0rem;
+  width: 100%;
+  margin: auto;
+  color: white;
+  background: url("/hammer-bg.png"), #07036e;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  li {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+
   @media (max-width: 2100px) {
     padding: 5rem 0rem 5rem 0rem;
     width: 100%;
@@ -20,6 +34,13 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  width: 90%;
+  margin: auto;
+  align-items: flex-start;
+
   @media (max-width: 2100px) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -53,6 +74,12 @@ export const Flex = styled.div`
 `;
 
 export const Social = styled.div`
+  margin-bottom: 1rem;
+
+  .icon {
+    margin-right: 2rem;
+  }
+
   @media (max-width: 2100px) {
     margin-bottom: 1rem;
 

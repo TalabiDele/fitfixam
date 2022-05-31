@@ -1,6 +1,21 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+  margin: auto;
+  justify-items: center;
+  padding-bottom: 5rem;
+
+  .card {
+    background-color: #07036e;
+
+    button {
+      color: #07036e;
+    }
+  }
+
   @media (min-width: 1281px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -126,6 +141,32 @@ export const Wrapper = styled.div`
 export const Container = styled.div``;
 
 export const Card = styled.div`
+  width: 70%;
+  background-color: #3c91e6;
+  border-radius: 10px;
+  color: white;
+  display: grid;
+  gap: 1rem;
+
+  .card_details {
+    padding: 0rem 1rem;
+  }
+
+  h1 {
+    padding: 1rem;
+    font-size: 36px;
+  }
+
+  p {
+    padding: 0rem 1rem 1rem 1rem;
+    font-size: 19px;
+    height: 6rem;
+  }
+
+  .image {
+    border-radius: 10px;
+  }
+
   @media (min-width: 1281px) {
     width: 70%;
     background-color: #3c91e6;
