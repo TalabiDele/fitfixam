@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 90%;
-  margin: 4rem auto;
+  margin: 2rem auto;
   color: #020127;
 
   div.container {
@@ -68,5 +68,80 @@ export const Container = styled.div`
     grid-template-columns: repeat(3, 1fr);
     width: 90%;
     justify-items: center;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    /* margin-left: ; */
+    width: 80%;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 70%;
+
+    div.card {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0rem 1rem 1rem 1rem;
+    }
+
+    div.company {
+      border-bottom: 0.5px solid #546881;
+      border-right: none;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 70%;
+    /* margin: 3rem 2rem 0rem auto; */
+
+    div.card {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0rem 1rem 1rem 1rem;
+    }
+
+    div.company {
+      border-bottom: 0.5px solid #546881;
+      border-right: none;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 70%;
+
+    div.card {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0rem 1rem 1rem 1rem;
+    }
+
+    div.company {
+      border-bottom: 0.5px solid #546881;
+      border-right: none;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+    }
+
+    div.details {
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: left;
+    }
+
+    div.social {
+      display: grid;
+      grid-template-columns: 20% 80%;
+      gap: 1rem;
+      text-align: left;
+      align-items: center;
+      /* justify-items: center; */
+      margin-bottom: 1rem;
+      width: 100%;
+      /* margin: auto; */
+    }
+
+    div.icon {
+      text-align: left;
+      /* margin: 0rem 1rem; */
+      margin-bottom: 0rem;
+    }
   }
 `;
