@@ -3,14 +3,14 @@ import { NEXT_PUBLIC_API_URL } from "../config";
 import Posts from "@/components/Discussion/Posts";
 import Slug from "./feeds/[slug].js";
 import styled from "styled-components";
-import Icon from "../Components/Icon/IconStatic";
+import IconStatic from "../Components/IconStatic/IconStatic";
 
 const Feeds = ({ posts, comments, userPost, allUsers }) => {
   return (
     <UserLayout>
       {posts.length !== 0 ? (
         <div>
-          <Icon />
+          <IconStatic />
           <Container>
             {posts.map((e) => (
               <Posts
