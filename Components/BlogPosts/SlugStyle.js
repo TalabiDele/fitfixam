@@ -343,7 +343,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 480px) {
     color: #020127;
-    margin: 0rem 1rem 0rem 5rem;
+    margin: 0rem 1rem 0rem 4rem;
     padding-bottom: 5rem;
     /* position: fixed; */
 
@@ -372,7 +372,8 @@ export const Wrapper = styled.div`
     h1 {
       text-align: center;
       margin-top: 1rem;
-      font-size: 30px;
+      font-size: 25px;
+      margin-bottom: 0.5rem;
     }
 
     div.details {
@@ -382,13 +383,14 @@ export const Wrapper = styled.div`
       margin: 0rem auto 1rem auto;
       p {
         text-align: center;
+        font-size: 14px;
       }
     }
 
     p.post_article {
       width: 100%;
       margin: auto;
-      font-size: 19px;
+      font-size: 16px;
     }
   }
 `;

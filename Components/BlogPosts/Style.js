@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 480px) {
-    margin-left: 4rem;
+    margin-left: 3rem;
     /* margin-right: 1rem; */
   }
 `;
