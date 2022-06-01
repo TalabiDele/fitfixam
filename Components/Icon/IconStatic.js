@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "./Style";
 import Image from "next/image";
-import icon from "/public/home.png";
+import icon from "/public/StaticIcon.png";
 
 const Icon = () => {
   return (
