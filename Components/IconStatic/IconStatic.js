@@ -1,14 +1,14 @@
 import React from "react";
 import { Container } from "./Style";
 import Image from "next/image";
-import iconStatic from "/public/StaticIcon.png";
+// import iconStatic from "/public/StaticIcon.png";
 
 const IconStatic = () => {
   return (
     <Container>
       <div className="img">
         <Image
-          src={iconStatic}
+          // src={iconStatic}
           alt="icons"
           width="20px"
           height="800px"
