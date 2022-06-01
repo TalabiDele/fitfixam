@@ -14,22 +14,17 @@ const AboutUs = () => {
           artisans who claim to know how to go about their work and produce
           unsatisfactory results in the end. It is a known fact that some
           artisans do not keep to their word, and in most cases are not as good
-          as they claim to be.
-        </p>
-        <div className="img">
-          <Image
-            src={arrow}
-            alt="arrow"
-            width={155.81}
-            height={124.8}
-            className="image"
-          />
-        </div>
-        <p className="para">
+          as they claim to be. <br /> <br />
           This is not to say that there are no amazing artisans out there who
           deliver quality service. There are in fact a lot of them, and we would
           love to promote their work here on Fitfixam.
         </p>
+
+        {/* <p className="para">
+          This is not to say that there are no amazing artisans out there who
+          deliver quality service. There are in fact a lot of them, and we would
+          love to promote their work here on Fitfixam.
+        </p> */}
         <div className="about">
           <div className="vision">
             <h1>Vision</h1>

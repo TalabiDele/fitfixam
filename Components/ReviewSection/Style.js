@@ -120,7 +120,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   margin-top: 2rem;
   padding-top: 4rem;
-  background: url("/Blocks.png"), #f9fafb;
+  background: #f9fafb;
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;

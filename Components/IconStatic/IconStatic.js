@@ -1,14 +1,14 @@
 import React from "react";
 import { Container } from "./Style";
 import Image from "next/image";
-import icon from "/public/StaticIcon.png";
+import iconStatic from "/public/StaticIcon.png";
 
-const Icon = () => {
+const IconStatic = () => {
   return (
     <Container>
       <div className="img">
         <Image
-          src={icon}
+          src={iconStatic}
           alt="icons"
           width="20px"
           height="800px"
@@ -20,4 +20,4 @@ const Icon = () => {
   );
 };
 
-export default Icon;
+export default IconStatic;

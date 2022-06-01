@@ -36,6 +36,7 @@ export const Wrapper = styled.div`
 
       h3 {
         font-size: 34px;
+        margin-bottom: 2rem;
       }
 
       p {
@@ -55,6 +56,16 @@ export const Wrapper = styled.div`
 
       form {
         display: grid;
+
+        text-align: center;
+
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          margin-bottom: 2rem;
+        }
 
         input {
           width: 550px;
@@ -113,6 +124,7 @@ export const Wrapper = styled.div`
 
       h3 {
         font-size: 34px;
+        margin-bottom: 2rem;
       }
 
       p {
@@ -132,6 +144,16 @@ export const Wrapper = styled.div`
 
       form {
         display: grid;
+
+        text-align: center;
+
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          margin-bottom: 2rem;
+        }
 
         input {
           width: 550px;
@@ -191,6 +213,7 @@ export const Wrapper = styled.div`
 
       h3 {
         font-size: 27px;
+        margin-bottom: 2rem;
       }
 
       p {
@@ -212,6 +235,16 @@ export const Wrapper = styled.div`
         display: grid;
         width: 100%;
         margin: auto;
+
+        text-align: center;
+
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          margin-bottom: 2rem;
+        }
 
         input {
           border: 2px solid #b2bbc6;
@@ -269,6 +302,7 @@ export const Wrapper = styled.div`
 
       h3 {
         font-size: 27px;
+        margin-bottom: 2rem;
       }
 
       p {
@@ -289,6 +323,16 @@ export const Wrapper = styled.div`
       form {
         display: grid;
         width: 100%;
+
+        text-align: center;
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          margin-bottom: 2rem;
+        }
 
         input {
           border: 2px solid #b2bbc6;
@@ -347,6 +391,7 @@ export const Wrapper = styled.div`
 
       h3 {
         font-size: 27px;
+        margin-bottom: 2rem;
       }
 
       p {
@@ -368,6 +413,15 @@ export const Wrapper = styled.div`
         display: grid;
         width: 80%;
         margin: auto;
+        text-align: center;
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          margin-bottom: 2rem;
+        }
 
         input {
           border: 2px solid #b2bbc6;

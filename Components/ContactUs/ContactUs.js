@@ -30,6 +30,8 @@ const ContactUs = () => {
         </div>
         <div className="form">
           <form>
+            <h2>Tell us Something</h2>
+            <p>Questions or comments are welcome</p>
             <input type="text" placeholder="Full Name" />
             <input type="email" placeholder="Email" />
             <input type="number" placeholder="Phone Number" />

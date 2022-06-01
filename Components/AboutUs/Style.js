@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  background: url("/home-bg.png"), #f9fafb;
+  background-size: contain;
+  width: 100%;
+  /* height: 50rem; */
+  background-repeat: no-repeat;
+
   @media (min-width: 1281px) {
     background: url("/home-bg.png"), #f9fafb;
     background-size: contain;
@@ -43,27 +49,119 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  padding: 4rem 0rem;
+
+  h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  p {
+    width: 30%;
+    font-size: 20px;
+  }
+
+  /* p.first {
+    margin-left: 15rem;
+  }
+
+  p.para {
+    margin-left: 60rem;
+  } */
+
+  .image {
+    position: relative;
+    transform: rotate(-50deg);
+    /* padding-left: 20rem; */
+    left: 20rem;
+  }
+
+  div.img {
+    margin-left: 40rem;
+    position: relative;
+    top: 4rem;
+  }
+
+  div.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    width: 100%;
+    margin: 5rem auto;
+    padding: 7rem 0rem;
+    background-color: #fff;
+
+    div.vision {
+      border-right: 2px solid #060258;
+    }
+
+    p {
+      width: 60%;
+      margin: auto;
+    }
+
+    h1,
+    p {
+      text-align: center;
+    }
+
+    ul {
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 45px;
+      width: 60%;
+      margin: auto;
+
+      li {
+        font-size: 20px;
+      }
+    }
+  }
+
+  div.founder {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    width: 80%;
+    margin: 5rem auto;
+    /* align-items: center; */
+    background: #f9fafb;
+    padding: 5rem 0rem;
+  }
+
+  div.about_founder {
+    width: 90%;
+    margin: auto;
+
+    p {
+      width: 100%;
+    }
+  }
+
   @media (min-width: 1281px) {
     padding: 4rem 0rem;
 
     h2 {
-      font-size: 48px;
-      padding-left: 5rem;
+      font-size: 38px;
+      text-align: center;
       margin-bottom: 3rem;
     }
 
     p {
-      width: 30%;
-      font-size: 30px;
+      width: 60%;
+      margin: auto;
+      font-size: 20px;
     }
 
     p.first {
-      margin-left: 15rem;
+      /* margin-left: 15rem; */
+      text-align: center;
     }
 
-    p.para {
+    /* p.para {
       margin-left: 60rem;
-    }
+    } */
 
     .image {
       position: relative;
@@ -107,6 +205,10 @@ export const Wrapper = styled.div`
         line-height: 45px;
         width: 60%;
         margin: auto;
+
+        li {
+          font-size: 20px;
+        }
       }
     }
 
@@ -135,22 +237,20 @@ export const Wrapper = styled.div`
     padding: 4rem 0rem;
 
     h2 {
-      font-size: 48px;
-      padding-left: 5rem;
+      font-size: 38px;
+      text-align: center;
       margin-bottom: 3rem;
     }
 
     p {
-      width: 50%;
-      font-size: 30px;
+      width: 60%;
+      margin: auto;
+      font-size: 20px;
     }
 
     p.first {
-      margin-left: 5rem;
-    }
-
-    p.para {
-      margin-left: 35rem;
+      /* margin-left: 15rem; */
+      text-align: center;
     }
 
     .image {
@@ -195,6 +295,10 @@ export const Wrapper = styled.div`
         line-height: 45px;
         width: 60%;
         margin: auto;
+
+        li {
+          font-size: 20px;
+        }
       }
     }
 
@@ -223,22 +327,20 @@ export const Wrapper = styled.div`
     padding: 4rem 0rem;
 
     h2 {
-      font-size: 48px;
-      padding-left: 5rem;
+      text-align: center;
+      font-size: 38px;
       margin-bottom: 3rem;
     }
 
     p {
-      width: 50%;
+      width: 60%;
+      margin: auto;
       font-size: 20px;
     }
 
     p.first {
-      margin-left: 2rem;
-    }
-
-    p.para {
-      margin-left: 28rem;
+      /* margin-left: 15rem; */
+      text-align: center;
     }
 
     .image {
@@ -284,6 +386,10 @@ export const Wrapper = styled.div`
         line-height: 45px;
         width: 60%;
         margin: auto;
+
+        li {
+          font-size: 20px;
+        }
       }
     }
 
@@ -313,22 +419,20 @@ export const Wrapper = styled.div`
     padding: 4rem 0rem;
 
     h2 {
-      font-size: 40px;
-      padding-left: 5rem;
-      margin-bottom: 3rem;
+      font-size: 25px;
+      text-align: center;
+      margin-bottom: 1rem;
     }
 
     p {
-      width: 60%;
-      font-size: 19px;
+      width: 80%;
+      margin: auto;
+      font-size: 16px;
     }
 
     p.first {
-      margin-left: 2rem;
-    }
-
-    p.para {
-      margin-left: 15rem;
+      /* margin-left: 15rem; */
+      text-align: center;
     }
 
     .image {
@@ -359,7 +463,7 @@ export const Wrapper = styled.div`
       p {
         width: 100%;
         margin: auto;
-        font-size: 20px;
+        font-size: 16px;
       }
 
       h1,
@@ -374,6 +478,10 @@ export const Wrapper = styled.div`
         width: 90%;
         padding-left: 1rem;
         margin: auto;
+
+        li {
+          font-size: 16px;
+        }
       }
     }
 
@@ -403,23 +511,20 @@ export const Wrapper = styled.div`
     padding: 4rem 0rem;
 
     h2 {
-      font-size: 40px;
-      /* padding-left: 5rem; */
-      margin-bottom: 3rem;
-      margin-left: 2rem;
+      font-size: 25px;
+      text-align: center;
+      margin-bottom: 1rem;
     }
 
     p {
-      width: 60%;
-      font-size: 19px;
+      width: 80%;
+      margin: auto;
+      font-size: 16px;
     }
 
     p.first {
-      margin-left: 2rem;
-    }
-
-    p.para {
-      margin-left: 6rem;
+      /* margin-left: 15rem; */
+      text-align: center;
     }
 
     .image {
@@ -444,8 +549,8 @@ export const Wrapper = styled.div`
       background-color: #fff;
 
       div.vision {
-        /* border-right: 2px solid #060258; */
-        margin-bottom: 2rem;
+        border-right: none;
+        margin-bottom: 4rem;
       }
 
       p {
@@ -466,6 +571,10 @@ export const Wrapper = styled.div`
         width: 90%;
         padding-left: 1rem;
         margin: auto;
+
+        li {
+          font-size: 16px;
+        }
       }
     }
 

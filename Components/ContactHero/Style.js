@@ -5,7 +5,8 @@ export const Container = styled.div`
   background-size: cover;
   width: 100%;
   background-repeat: no-repeat;
-  padding: 7rem;
+  padding-top: 7rem;
+  padding-bottom: 3rem;
   text-align: center;
   color: #fff;
   /* bottom: 0; */
@@ -15,6 +16,9 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+
   h1 {
     font-size: 86px;
   }
@@ -26,7 +30,13 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 768px) {
+    padding-top: 2rem;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+
     h1 {
+      /* padding-top: 3rem; */
       font-size: 30px;
     }
 
