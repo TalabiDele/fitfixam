@@ -253,10 +253,10 @@ export const Cards = styled.div`
 
   @media (min-width: 481px) and (max-width: 767px) {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    width: 50%;
-    gap: 3rem;
+    width: 30%;
+    gap: 1rem;
     margin: auto;
 
     div.card {
@@ -266,11 +266,11 @@ export const Cards = styled.div`
 
   @media (max-width: 480px) {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    width: 60%;
-    gap: 3rem;
-    margin: auto;
+    width: 100%;
+    gap: 1rem;
+    margin: 0rem auto 0rem 5rem;
 
     div.card {
       width: 100%;

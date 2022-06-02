@@ -13,6 +13,11 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [userData, setUserData] = useState();
+  const [emailError, setEmailError] = useState();
+  const [emailEmpty, setEmailEmpty] = useState(false);
+  const [nameError, setNameError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [confirmError, setConfirmError] = useState(false);
   // const [allUsers, setAllUsers] = useState(null);
 
   const { data: session } = useSession();
@@ -29,6 +34,7 @@ export const AuthProvider = ({ children }) => {
 
   // Register
   const register = async (user) => {
+    setIsLoading(true);
     const res = await fetch(`${NEXT_PUBLIC_URL}/api/register`, {
       method: "POST",
       headers: {
@@ -36,7 +42,15 @@ export const AuthProvider = ({ children }) => {
       },
       body: JSON.stringify(user),
     });
-    setIsLoading(true);
+
+    if (!res.ok) {
+      setEmailError(res);
+
+      setTimeout(() => {
+        setEmailError(false);
+      }, 5000);
+    }
+
     const data = await res.json();
 
     if (res.ok) {
@@ -44,12 +58,15 @@ export const AuthProvider = ({ children }) => {
       setUser(data.user);
       console.log(user);
       router.push("/feeds");
+      setIsLoading(false);
     } else {
-      setError(data.message);
-      setError(null);
+      console.log("not working");
+      setEmailError(true);
+      setTimeout(() => {
+        setIsLoading(false);
+        setEmailError(false);
+      }, 1000);
     }
-
-    setIsLoading(false);
   };
 
   // Login
@@ -136,6 +153,17 @@ export const AuthProvider = ({ children }) => {
         error,
         userProvider,
         userData,
+        setError,
+        emailError,
+        setEmailError,
+        emailEmpty,
+        setEmailEmpty,
+        nameError,
+        setNameError,
+        passwordError,
+        setPasswordError,
+        confirmError,
+        setConfirmError,
       }}
     >
       {children}

@@ -6,7 +6,7 @@ import ReviewCard from "Components/ReviewCard/ReviewCard";
 import ReactPlayer from "react-player";
 // import "video-react/dist/video-react.css";
 import { Player, ControlBar } from "video-react";
-// import Video from "@/public/Animation.mp4";
+import animation from "@/public/Animation.gif";
 
 const Review = () => {
   return (
@@ -28,12 +28,13 @@ const Review = () => {
             (individuals or companies).
           </p>
         </div>
-        <video autoPlay loop>
+        <Image src={animation} alt="GIF" />
+        {/* <video autoPlay loop>
           <source
             src="https://res.cloudinary.com/ofundu/video/upload/v1652117729/Fitfixam_Video-1_2_zmiat1.mp4"
             type="video/mp4"
           />
-        </video>
+        </video> */}
       </Wrapper>
       <Arrow>
         <Image

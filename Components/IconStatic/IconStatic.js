@@ -7,13 +7,13 @@ const IconStatic = () => {
   return (
     <Container>
       <div className="img">
-        <Image
-          // src={iconStatic}
+        {/* <Image
+          src={iconStatic}
           alt="icons"
           width="20px"
           height="800px"
           objectFit="contain"
-        />
+        /> */}
       </div>
       <h2>Feed</h2>
     </Container>

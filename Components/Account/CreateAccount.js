@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import { Container, Wrapper, Aside, ProviderBtns } from "./Style";
+import { Container, Wrapper, Aside, ProviderBtns, Spinner } from "./Style";
 import Image from "next/image";
 import AuthContext from "@/context/AuthContext";
 import Logo from "@/public/logo-blue.png";
@@ -8,6 +8,7 @@ import { GoogleBtn, FacebookBtn, RegisterBtn } from "../Buttons";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
 import Link from "next/link";
+import spinner from "@/public/spinner.gif";
 
 const CreateAccount = () => {
   const [username, setUsername] = useState("");
@@ -27,7 +28,22 @@ const CreateAccount = () => {
 
   const router = useRouter();
 
-  const { register, error } = useContext(AuthContext);
+  const {
+    register,
+    error,
+    setError,
+    emailError,
+    setEmailError,
+    isLoading,
+    emailEmpty,
+    setEmailEmpty,
+    nameError,
+    setNameError,
+    passwordError,
+    setPasswordError,
+    confirmError,
+    setConfirmError,
+  } = useContext(AuthContext);
 
   useEffect(() => {
     getIsArtisan();
@@ -38,16 +54,46 @@ const CreateAccount = () => {
     e.preventDefault();
 
     if (password !== passwordConfirm) {
-      toast.error("Passwords do not match");
-      return;
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
     }
+    if (username === "") {
+      setNameError(true);
+
+      setTimeout(() => {
+        setNameError(false);
+      }, 5000);
+    }
+    if (email === "") {
+      setEmailEmpty(true);
+
+      setTimeout(() => {
+        setEmailEmpty(false);
+      }, 5000);
+    }
+    if (password === "") {
+      setPasswordError(true);
+
+      setTimeout(() => {
+        setPasswordError(false);
+      }, 5000);
+    }
+    if (passwordConfirm === "") {
+      setConfirmError(true);
+
+      setTimeout(() => {
+        setConfirmError(false);
+      }, 5000);
+    }
+
     setSlug(username);
+    register({ username, email, password, artisan, slug, user_category });
 
     // if (user_category.id === null) {
     //   console.log(user_category);
     // }
-
-    register({ username, email, password, artisan, slug, user_category });
   };
 
   const getIsArtisan = () => {
@@ -99,111 +145,128 @@ const CreateAccount = () => {
   };
 
   return (
-    <Container>
-      <Aside>
-        <Image src={Logo} alt="Fitifixam logo" width={100} height={100} />
-        <h1>Welcome</h1>
-        <p>Are you ready to get started?</p>
-      </Aside>
-      <Wrapper>
-        <h1>Create an Account</h1>
-        {/* <p>You can either sign up with</p> */}
-        <ProviderBtns>
-          {/* <GoogleBtn>
+    <>
+      {/* {isLoading && (
+        <Spinner>
+          <Image src={spinner} alt="spinner" width={500} height={500} />
+        </Spinner>
+      )} */}
+      <Container>
+        <Aside>
+          <Image src={Logo} alt="Fitifixam logo" width={100} height={100} />
+          <h1>Welcome</h1>
+          <p>Are you ready to get started?</p>
+        </Aside>
+        <Wrapper error={error}>
+          <h1>Create an Account</h1>
+          {/* <p>You can either sign up with</p> */}
+          <ProviderBtns>
+            {/* <GoogleBtn>
             <FcGoogle /> Google
           </GoogleBtn>
           <FacebookBtn>
             <FaFacebookSquare /> Facebook
           </FacebookBtn> */}
-        </ProviderBtns>
-        {/* <h2>Or</h2> */}
-        <form onSubmit={handleSubmitSignup}>
-          <input
-            type="text"
-            placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            onChange={(e) => setPasswordConfirm(e.target.value)}
-          />
-          <p className="is_artisan">Are you an Artisan?</p>
-          <div className="artisan_btn">
+          </ProviderBtns>
+          {/* <h2>Or</h2> */}
+          <form onSubmit={handleSubmitSignup}>
+            {nameError && <span>Enter username</span>}
             <input
-              type="button"
-              value="Yes"
-              name="true"
-              onClick={getIsArtisan}
-              className={artisan ? "active" : ""}
+              type="text"
+              placeholder="Username"
+              onChange={(e) => setUsername(e.target.value)}
+              className={nameError ? "error" : ""}
             />
+            {emailError && <span>Email already exists</span>}
+            {emailEmpty && <span>Enter a valid email</span>}
             <input
-              type="button"
-              value="No"
-              name="false"
-              onClick={getIsUser}
-              className={artisan ? "" : "active"}
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              className={emailError || emailEmpty ? "error" : ""}
             />
-          </div>
-          {artisan && (
-            <div className="category">
-              <p>Choose category</p>
-              <div className="artisan_category">
-                <input
-                  type="button"
-                  value="carpenter"
-                  name="1"
-                  onClick={getCarpenter}
-                  className={!isCarpenter ? "" : "active"}
-                />
-                <input
-                  type="button"
-                  value="plumber"
-                  name="2"
-                  onClick={getPlumber}
-                  className={!isPlumber ? "" : "active"}
-                />
-                <input
-                  type="button"
-                  value="electrician"
-                  name="3"
-                  onClick={getElectrician}
-                  className={!isElectrician ? "" : "active"}
-                />
-              </div>
+            {passwordError && <span>Enter password</span>}
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              className={error || passwordError ? "error" : ""}
+            />
+            {error && <span>Passwords do not match</span>}
+            {confirmError && <span>Confirm password</span>}
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              onChange={(e) => setPasswordConfirm(e.target.value)}
+              className={error || confirmError ? "error" : ""}
+            />
+            <p className="is_artisan">Are you an Artisan?</p>
+            <div className="artisan_btn">
+              <input
+                type="button"
+                value="Yes"
+                name="true"
+                onClick={getIsArtisan}
+                className={artisan ? "active" : ""}
+              />
+              <input
+                type="button"
+                value="No"
+                name="false"
+                onClick={getIsUser}
+                className={artisan ? "" : "active"}
+              />
             </div>
-          )}
+            {artisan && (
+              <div className="category">
+                <p>Choose category</p>
+                <div className="artisan_category">
+                  <input
+                    type="button"
+                    value="carpenter"
+                    name="1"
+                    onClick={getCarpenter}
+                    className={!isCarpenter ? "" : "active"}
+                  />
+                  <input
+                    type="button"
+                    value="plumber"
+                    name="2"
+                    onClick={getPlumber}
+                    className={!isPlumber ? "" : "active"}
+                  />
+                  <input
+                    type="button"
+                    value="electrician"
+                    name="3"
+                    onClick={getElectrician}
+                    className={!isElectrician ? "" : "active"}
+                  />
+                </div>
+              </div>
+            )}
 
-          <RegisterBtn>Sign up</RegisterBtn>
-        </form>
-        <p className="paragraph">
-          By Clicking “enter”, you hereby attest to have read our{" "}
-          <Link href="/privacyPolicy">
-            <a>Privacy Policy </a>
-          </Link>
-          and agree to our{" "}
-          <Link href="/privacyPolicy">
-            <a>Terms and Conditions</a>
-          </Link>
-        </p>
-        <p className="paragraph">
-          Already have an account?{" "}
-          <Link href="/login">
-            <a>Login</a>
-          </Link>
-        </p>
-      </Wrapper>
-    </Container>
+            <RegisterBtn>Sign up</RegisterBtn>
+          </form>
+          <p className="paragraph">
+            By Clicking “enter”, you hereby attest to have read our{" "}
+            <Link href="/privacyPolicy">
+              <a>Privacy Policy </a>
+            </Link>
+            and agree to our{" "}
+            <Link href="/privacyPolicy">
+              <a>Terms and Conditions</a>
+            </Link>
+          </p>
+          <p className="paragraph">
+            Already have an account?{" "}
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
+          </p>
+        </Wrapper>
+      </Container>
+    </>
   );
 };
 

@@ -79,6 +79,7 @@ const CreateAccount = () => {
                 type="email"
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
+                className={error ? "error" : ""}
               />
               {displayError()}
               {/* {error ? <span>Invalid email or password</span> : <span></span>} */}
@@ -86,6 +87,7 @@ const CreateAccount = () => {
                 type="password"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
+                className={error ? "error" : ""}
               />
               <LoginBtn>Login</LoginBtn>
             </form>

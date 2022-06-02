@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+  height: 100%;
+  position: fixed;
+  justify-items: center;
+  /* grid-gap: 8rem; */
+  width: 100%;
+
   @media (min-width: 1281px) {
     display: grid;
     grid-template-columns: 30% 70%;
@@ -58,6 +67,124 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  text-align: center;
+  justify-items: center;
+  grid-gap: 10px;
+  width: 100%;
+  justify-self: flex-end;
+  position: relative;
+  margin: auto;
+  overflow-y: scroll;
+  height: 100%;
+  padding-bottom: 10rem;
+
+  h1 {
+    font-size: 40px;
+    margin: 5rem 0rem 0rem 0rem;
+    padding: 0rem;
+    height: 4rem;
+  }
+
+  .paragraph {
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+    /* margin-bottom: 4rem; */
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 20px;
+    /* margin-bottom: 4rem; */
+  }
+
+  a {
+    color: blue;
+  }
+
+  form {
+    display: grid;
+    width: 50%;
+    margin: auto;
+
+    .error {
+      border: 2px solid #ec3123;
+    }
+
+    input {
+      border: 1px solid #909dad;
+      height: 4rem;
+      padding: 1rem;
+      font-size: 18px;
+      margin-bottom: 3rem;
+      border-radius: 10px;
+      /* border: ${({ error }) =>
+        error ? "2px solid #ec3123" : "1px solid #909dad"}; */
+      border: 1px solid #909dad;
+    }
+
+    span {
+      /* margin-bottom: -2rem; */
+      color: #ec3123;
+      text-align: left;
+    }
+
+    p.is_artisan {
+      font-size: 26px;
+      font-weight: 400;
+      text-align: left;
+      color: #050253;
+    }
+
+    div.artisan_btn {
+      display: flex;
+
+      input {
+        border: 1px solid #909dad;
+        background: #fff;
+        border-radius: 5px;
+        padding: 0rem 2rem;
+        margin-top: 1rem;
+        margin-right: 2rem;
+        cursor: pointer;
+      }
+
+      .active {
+        background: #050253;
+        color: #fff;
+      }
+    }
+
+    div.category {
+      transition: all 0.3s ease;
+      p {
+        font-size: 26px;
+        text-align: left;
+        font-weight: 400;
+        color: #050253;
+      }
+
+      .artisan_category {
+        display: flex;
+
+        input {
+          border: 1px solid #909dad;
+          background: #fff;
+          border-radius: 5px;
+          padding: 0rem 2rem;
+          margin-top: 1rem;
+          margin-right: 2rem;
+          cursor: pointer;
+        }
+
+        .active {
+          background: #050253;
+          color: #fff;
+        }
+      }
+    }
+  }
+
   @media (min-width: 1281px) {
     text-align: center;
     justify-items: center;
@@ -106,8 +233,6 @@ export const Wrapper = styled.div`
         font-size: 18px;
         margin-bottom: 3rem;
         border-radius: 10px;
-        border: ${({ error }) =>
-          error ? "2px solid #ec3123" : "1px solid #909dad"};
       }
 
       span {
@@ -221,8 +346,6 @@ export const Wrapper = styled.div`
         font-size: 18px;
         margin-bottom: 3rem;
         border-radius: 10px;
-        border: ${({ error }) =>
-          error ? "2px solid #ec3123" : "1px solid #909dad"};
       }
 
       span {
@@ -335,8 +458,6 @@ export const Wrapper = styled.div`
         font-size: 18px;
         margin-bottom: 3rem;
         border-radius: 10px;
-        border: ${({ error }) =>
-          error ? "2px solid #ec3123" : "1px solid #909dad"};
       }
 
       span {
@@ -450,8 +571,6 @@ export const Wrapper = styled.div`
         font-size: 18px;
         margin-bottom: 3rem;
         border-radius: 10px;
-        border: ${({ error }) =>
-          error ? "2px solid #ec3123" : "1px solid #909dad"};
       }
 
       span {
@@ -574,8 +693,6 @@ export const Wrapper = styled.div`
         font-size: 18px;
         margin-bottom: 3rem;
         border-radius: 10px;
-        border: ${({ error }) =>
-          error ? "2px solid #ec3123" : "1px solid #909dad"};
       }
 
       span {
@@ -737,3 +854,5 @@ export const ProviderBtns = styled.div`
   justify-content: center;
   margin-top: 2rem;
 `;
+
+export const Spinner = styled.div``;
