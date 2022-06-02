@@ -26,6 +26,43 @@ export const Container = styled.div`
 export const Wrapper = styled.div``;
 
 export const Card = styled.div`
+  display: flex;
+  align-items: center;
+  /* border: 0.5px solid #020127; */
+  border-radius: 10px;
+  width: 60%;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  background: #f9fafb;
+  cursor: pointer;
+
+  h2 {
+    font-size: 24px;
+    color: #020127;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  div.image {
+    margin-right: 2rem;
+
+    .blog_image {
+      border-radius: 10px;
+    }
+  }
+
+  div.info {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    color: #020127;
+    margin-top: 1rem;
+  }
+
   @media (min-width: 1281px) {
     display: flex;
     align-items: center;

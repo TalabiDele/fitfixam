@@ -107,6 +107,22 @@ export const Wrapper = styled.div`
     width: 50%;
     margin: auto;
 
+    div.password {
+      width: 100%;
+      position: relative;
+
+      input {
+        width: 100%;
+        position: reletive;
+      }
+
+      div.show-password {
+        position: relative;
+        bottom: 5.5rem;
+        left: 18rem;
+      }
+    }
+
     .error {
       border: 2px solid #ec3123;
     }
@@ -226,6 +242,22 @@ export const Wrapper = styled.div`
       width: 50%;
       margin: auto;
 
+      div.password {
+        width: 100%;
+        position: relative;
+
+        input {
+          width: 100%;
+          position: reletive;
+        }
+
+        div.show-password {
+          position: relative;
+          bottom: 5.5rem;
+          left: 16rem;
+        }
+      }
+
       input {
         border: 1px solid #909dad;
         height: 4rem;
@@ -339,6 +371,22 @@ export const Wrapper = styled.div`
       width: 50%;
       margin: auto;
 
+      div.password {
+        width: 100%;
+        position: relative;
+
+        input {
+          width: 100%;
+          position: reletive;
+        }
+
+        div.show-password {
+          position: relative;
+          bottom: 5.5rem;
+          left: 7rem;
+        }
+      }
+
       input {
         border: 1px solid #909dad;
         height: 4rem;
@@ -450,6 +498,22 @@ export const Wrapper = styled.div`
       display: grid;
       width: 50%;
       margin: auto;
+
+      div.password {
+        width: 100%;
+        position: relative;
+
+        input {
+          width: 100%;
+          position: reletive;
+        }
+
+        div.show-password {
+          position: relative;
+          bottom: 5.5rem;
+          left: 7rem;
+        }
+      }
 
       input {
         border: 1px solid #909dad;
@@ -563,6 +627,22 @@ export const Wrapper = styled.div`
       display: grid;
       width: 50%;
       margin: auto;
+
+      div.password {
+        width: 100%;
+        position: relative;
+
+        input {
+          width: 100%;
+          position: reletive;
+        }
+
+        div.show-password {
+          position: relative;
+          bottom: 5.5rem;
+          left: 9rem;
+        }
+      }
 
       input {
         border: 1px solid #909dad;
@@ -685,6 +765,22 @@ export const Wrapper = styled.div`
       display: grid;
       width: 80%;
       margin: auto;
+
+      div.password {
+        width: 100%;
+        position: relative;
+
+        input {
+          width: 100%;
+          position: reletive;
+        }
+
+        div.show-password {
+          position: relative;
+          bottom: 5.5rem;
+          left: 8rem;
+        }
+      }
 
       input {
         border: 1px solid #909dad;

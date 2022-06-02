@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { GoogleBtn, FacebookBtn, RegisterBtn } from "../Buttons";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
+import { BiShow, BiHide } from "react-icons/bi";
 import Link from "next/link";
 import spinner from "@/public/spinner.gif";
 
@@ -25,6 +26,8 @@ const CreateAccount = () => {
   const [isCarpenter, setIsCarpenter] = useState(false);
   const [isPlumber, setIsPlumber] = useState(false);
   const [isElectrician, setIsElectrician] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const router = useRouter();
 
@@ -94,6 +97,14 @@ const CreateAccount = () => {
     // if (user_category.id === null) {
     //   console.log(user_category);
     // }
+  };
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleShowConfirmPassword = () => {
+    setShowConfirm(!showConfirm);
   };
 
   const getIsArtisan = () => {
@@ -185,21 +196,39 @@ const CreateAccount = () => {
               onChange={(e) => setEmail(e.target.value)}
               className={emailError || emailEmpty ? "error" : ""}
             />
-            {passwordError && <span>Enter password</span>}
-            <input
-              type="password"
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-              className={error || passwordError ? "error" : ""}
-            />
-            {error && <span>Passwords do not match</span>}
-            {confirmError && <span>Confirm password</span>}
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              onChange={(e) => setPasswordConfirm(e.target.value)}
-              className={error || confirmError ? "error" : ""}
-            />
+            <div className="password">
+              {passwordError && <span>Enter password</span>}
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                className={error || passwordError ? "error" : ""}
+              />
+              <div className="show-password">
+                {showPassword ? (
+                  <BiHide onClick={() => handleShowPassword()} />
+                ) : (
+                  <BiShow onClick={() => handleShowPassword()} />
+                )}
+              </div>
+            </div>
+            <div className="password">
+              {error && <span>Passwords do not match</span>}
+              {confirmError && <span>Confirm password</span>}
+              <input
+                type={showConfirm ? "text" : "password"}
+                placeholder="Confirm Password"
+                onChange={(e) => setPasswordConfirm(e.target.value)}
+                className={error || confirmError ? "error" : ""}
+              />
+              <div className="show-password">
+                {showConfirm ? (
+                  <BiHide onClick={() => handleShowConfirmPassword()} />
+                ) : (
+                  <BiShow onClick={() => handleShowConfirmPassword()} />
+                )}
+              </div>
+            </div>
             <p className="is_artisan">Are you an Artisan?</p>
             <div className="artisan_btn">
               <input
