@@ -254,7 +254,7 @@ export const Wrapper = styled.div`
         div.show-password {
           position: relative;
           bottom: 5.5rem;
-          left: 16rem;
+          left: 18rem;
         }
       }
 

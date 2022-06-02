@@ -9,12 +9,14 @@ import { FaFacebookSquare } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { BiShow, BiHide } from "react-icons/bi";
 // import { getProviders, signIn as SignIntoProvider } from "next-auth/react";
 
 const CreateAccount = () => {
   const [isSignin, setIsSignin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const { data: session } = useSession();
 
@@ -34,6 +36,10 @@ const CreateAccount = () => {
       setTimeout(() => {}, 3000);
       return <span>Invalid email or password</span>;
     }
+  };
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -75,20 +81,32 @@ const CreateAccount = () => {
             </ProviderBtns>
             {/* <h2>Or</h2> */}
             <form onSubmit={handleSubmitSignin}>
-              <input
-                type="email"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-                className={error ? "error" : ""}
-              />
-              {displayError()}
+              <div className="password">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={error ? "error" : ""}
+                />
+
+                {displayError()}
+              </div>
               {/* {error ? <span>Invalid email or password</span> : <span></span>} */}
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-                className={error ? "error" : ""}
-              />
+              <div className="password">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={error ? "error" : ""}
+                />
+                <div className="show-password">
+                  {showPassword ? (
+                    <BiHide onClick={() => handleShowPassword()} />
+                  ) : (
+                    <BiShow onClick={() => handleShowPassword()} />
+                  )}
+                </div>
+              </div>
               <LoginBtn>Login</LoginBtn>
             </form>
             <p className="paragraph">
