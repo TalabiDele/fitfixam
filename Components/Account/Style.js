@@ -625,7 +625,7 @@ export const Wrapper = styled.div`
 
     form {
       display: grid;
-      width: 50%;
+      width: 80%;
       margin: auto;
 
       div.password {
@@ -640,7 +640,7 @@ export const Wrapper = styled.div`
         div.show-password {
           position: relative;
           bottom: 5.5rem;
-          left: 9rem;
+          left: 11rem;
         }
       }
 
