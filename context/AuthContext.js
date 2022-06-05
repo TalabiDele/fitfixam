@@ -69,6 +69,32 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const forgotPassword = async ({ email }) => {
+    const res = await fetch(`${NEXT_PUBLIC_URL}/api/forgot-password`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    });
+
+    const data = await res.json();
+
+    // console.log(data);
+    // setUserData(data);
+
+    if (res.ok) {
+      setUser(data.user.user);
+      setUserData(data);
+      // router.push("/feeds");
+    } else {
+      setErrorMessage(data.message);
+      setError(true);
+    }
+  };
+
   // Login
   const login = async ({ email: identifier, password }) => {
     const res = await fetch(`${NEXT_PUBLIC_URL}/api/login`, {
@@ -131,7 +157,6 @@ export const AuthProvider = ({ children }) => {
   const checkUserLoggedIn = async () => {
     const res = await fetch(`${NEXT_PUBLIC_URL}/api/user`);
     const data = await res.json();
-    // setUserData(data);
 
     if (res.ok) {
       setUser(data.user);
@@ -164,6 +189,7 @@ export const AuthProvider = ({ children }) => {
         setPasswordError,
         confirmError,
         setConfirmError,
+        forgotPassword,
       }}
     >
       {children}

@@ -107,6 +107,18 @@ export const Wrapper = styled.div`
     width: 50%;
     margin: auto;
 
+    div.forgot {
+      margin-top: -3.5rem;
+      text-align: right;
+      color: #000;
+      text-decoration: underline;
+      z-index: 5;
+
+      a {
+        color: #000;
+      }
+    }
+
     div.password {
       width: 100%;
       position: relative;
@@ -123,8 +135,9 @@ export const Wrapper = styled.div`
       }
     }
 
-    .error {
+    input.error {
       border: 2px solid #ec3123;
+      color: #ec3123;
     }
 
     input {
@@ -952,3 +965,77 @@ export const ProviderBtns = styled.div`
 `;
 
 export const Spinner = styled.div``;
+
+export const Alert = styled.div`
+  /* background-color: #f5f5f5; */
+  border: 1px solid #8bc34a;
+  width: 60%;
+  text-align: center;
+
+  margin: 2rem auto 2rem auto;
+  padding: 1rem;
+  border-radius: 20px;
+  color: #8bc34a;
+  height: ${({ sent }) => (sent ? "block" : "none")};
+  height: ${({ sent }) => (sent ? "4rem" : "0rem")};
+  /* height: 4rem; */
+  opacity: ${({ sent }) => (sent ? "1" : "0")};
+  transition: all 0.3s ease-in-out;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+
+    svg {
+      color: #8bc34a;
+    }
+  }
+
+  @media (min-width: 1281px) {
+    width: 60%;
+    margin: 2rem auto 0rem auto;
+    height: ${({ sent }) => (sent ? "4rem" : "0rem")};
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 80%;
+    padding: 1rem;
+    height: ${({ sent }) => (sent ? "5rem" : "0rem")};
+
+    p {
+      font-size: 19px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 80%;
+    padding: 1rem;
+    height: ${({ sent }) => (sent ? "5rem" : "0rem")};
+
+    p {
+      font-size: 19px;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 80%;
+    padding: 1rem;
+    height: ${({ sent }) => (sent ? "5rem" : "0rem")};
+
+    p {
+      font-size: 19px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 80%;
+    padding: 1rem;
+    height: ${({ sent }) => (sent ? "5rem" : "0rem")};
+
+    p {
+      font-size: 19px;
+    }
+  }
+`;

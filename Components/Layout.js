@@ -43,7 +43,10 @@ export default function Layout({
       </Head>
       <Navbar />
       <div>{children}</div>
-      {isRouter.pathname === "/login" || isRouter.pathname === "/signup" ? (
+      {isRouter.pathname === "/login" ||
+      isRouter.pathname === "/signup" ||
+      isRouter.pathname === "/forgot-password" ||
+      isRouter.pathname === "/reset-password" ? (
         <></>
       ) : (
         <Footer />

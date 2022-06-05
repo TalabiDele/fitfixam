@@ -107,6 +107,11 @@ const CreateAccount = () => {
                   )}
                 </div>
               </div>
+              <div className="forgot">
+                <Link href="/forgot-password">
+                  <a>Forgot Password</a>
+                </Link>
+              </div>
               <LoginBtn>Login</LoginBtn>
             </form>
             <p className="paragraph">

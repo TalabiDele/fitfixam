@@ -54,7 +54,12 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  if (router.pathname === "/login" || router.pathname === "/signup") {
+  if (
+    router.pathname === "/login" ||
+    router.pathname === "/signup" ||
+    router.pathname === "/forgot-password" ||
+    router.pathname === "/reset-password"
+  ) {
     return (
       <Sign>
         <div className="sign_nav">
