@@ -1,5 +1,12 @@
 import { useState, useContext, useEffect } from "react";
-import { Container, Wrapper, Aside, ProviderBtns, Spinner } from "./Style";
+import {
+  Container,
+  Wrapper,
+  Aside,
+  ProviderBtns,
+  Spinner,
+  Alert,
+} from "./Style";
 import Image from "next/image";
 import AuthContext from "@/context/AuthContext";
 import Logo from "@/public/logo-blue.png";
@@ -10,6 +17,7 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { BiShow, BiHide } from "react-icons/bi";
 import Link from "next/link";
 import spinner from "@/public/spinner.gif";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 const CreateAccount = () => {
   const [username, setUsername] = useState("");
@@ -28,6 +36,8 @@ const CreateAccount = () => {
   const [isElectrician, setIsElectrician] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [isValid, setIsValid] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const router = useRouter();
 
@@ -53,8 +63,30 @@ const CreateAccount = () => {
     getIsUser();
   }, []);
 
+  const validateEmail = (e) => {
+    const pattern =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const result = pattern.test(e);
+    console.log(result);
+    if (result) {
+      console.log("Valid");
+      setIsValid(false);
+    } else {
+      console.log("Not valid");
+      setIsValid(true);
+    }
+  };
+
   const handleSubmitSignup = (e) => {
     e.preventDefault();
+
+    validateEmail(email);
+
+    if (isValid) {
+      console.log("Email is not valid");
+    } else {
+      console.log("Email is valid");
+    }
 
     if (password !== passwordConfirm) {
       setError(true);
@@ -91,8 +123,9 @@ const CreateAccount = () => {
       }, 5000);
     }
 
-    setSlug(username);
+    // setSlug(username);
     register({ username, email, password, artisan, slug, user_category });
+    setSent(true);
 
     // if (user_category.id === null) {
     //   console.log(user_category);
@@ -169,6 +202,12 @@ const CreateAccount = () => {
           <p>Are you ready to get started?</p>
         </Aside>
         <Wrapper error={error}>
+          <Alert sent={sent}>
+            <p>
+              Check your mail! A link has been sent to you.{" "}
+              <IoMdCheckmarkCircleOutline color="#8bc34a" fontSize={30} />
+            </p>
+          </Alert>
           <h1>Create an Account</h1>
           {/* <p>You can either sign up with</p> */}
           <ProviderBtns>
