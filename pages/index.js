@@ -10,7 +10,24 @@ import SecondAction from "Components/Action/SecondAction";
 export default function Home() {
   return (
     <div>
-      <Layout>
+      <Layout
+        title="Fitfixam | Home"
+        description="Here, you can find reviews of artisans and companies that offer artisan services. Be girded with the information that will help you make the right decisions. Fix it one time"
+        keywords="Artisans,
+        Repair,
+        Fix,
+        Carpenters,
+        Plumbers,
+        Electricians,
+        Reviews,
+        Good,
+        Bad, 
+        Services,
+        Satisfied,
+        Craftsmen,
+        Experience
+        "
+      >
         <Hero />
         <Review />
         <Action />
