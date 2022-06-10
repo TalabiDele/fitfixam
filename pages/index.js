@@ -25,7 +25,8 @@ export default function Home() {
         Services,
         Satisfied,
         Craftsmen,
-        Experience
+        Experience,
+        Nigeria,
         "
       >
         <Hero />
