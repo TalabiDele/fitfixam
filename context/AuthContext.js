@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
   const [passwordError, setPasswordError] = useState(false);
   const [confirmError, setConfirmError] = useState(false);
   const [emailMessage, setEmailMessage] = useState("");
+  const [sent, setSent] = useState(false);
   // const [allUsers, setAllUsers] = useState(null);
 
   const { data: session } = useSession();
@@ -57,10 +58,16 @@ export const AuthProvider = ({ children }) => {
     if (res.ok) {
       setIsLoading(true);
       setUser(data.user);
+      setSent(true);
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
       setTimeout(() => {
-        setEmailMessage("Check email for confirmation!");
-      }, 5000);
-      router.push("/login");
+        router.push("/login");
+      }, 10000);
+      setEmailMessage("Check email for confirmation!");
       setIsLoading(false);
     } else {
       console.log("not working");
@@ -194,6 +201,7 @@ export const AuthProvider = ({ children }) => {
         setConfirmError,
         forgotPassword,
         emailMessage,
+        sent,
       }}
     >
       {children}

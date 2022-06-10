@@ -966,6 +966,85 @@ export const ProviderBtns = styled.div`
 
 export const Spinner = styled.div``;
 
+export const RegisterAlert = styled.div`
+  background: #ffffffcf;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+  color: #8bc34a;
+  position: fixed;
+  left: 0rem;
+  display: ${({ sent }) => (sent ? "grid" : "none")};
+  justify-items: center;
+  align-items: center;
+  height: ${({ sent }) => (sent ? "100%" : "0%")};
+  opacity: ${({ sent }) => (sent ? "1" : "0")};
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    font-size: 2rem;
+
+    svg {
+      color: #8bc34a;
+    }
+  }
+
+  @media (min-width: 1281px) {
+    width: 100%;
+    margin: auto;
+    /* height: ${({ sent }) => (sent ? "100%" : "0%")}; */
+    height: 100%;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 80%;
+    padding: 1rem;
+    height: ${({ sent }) => (sent ? "100%" : "0%")};
+
+    p {
+      font-size: 19px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 80%;
+    padding: 1rem;
+    height: ${({ sent }) => (sent ? "100%" : "0%")};
+
+    p {
+      font-size: 19px;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 80%;
+    padding: 1rem;
+    height: ${({ sent }) => (sent ? "100%" : "0%")};
+
+    p {
+      font-size: 19px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 80%;
+    padding: 1rem;
+    height: ${({ sent }) => (sent ? "100%" : "0%")};
+
+    p {
+      font-size: 19px;
+    }
+  }
+`;
+
 export const Alert = styled.div`
   /* background-color: #f5f5f5; */
   border: 1px solid #8bc34a;

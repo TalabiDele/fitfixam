@@ -5,7 +5,7 @@ import {
   Aside,
   ProviderBtns,
   Spinner,
-  Alert,
+  RegisterAlert,
 } from "./Style";
 import Image from "next/image";
 import AuthContext from "@/context/AuthContext";
@@ -37,7 +37,6 @@ const CreateAccount = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [isValid, setIsValid] = useState(false);
-  const [sent, setSent] = useState(false);
 
   const router = useRouter();
 
@@ -56,6 +55,7 @@ const CreateAccount = () => {
     setPasswordError,
     confirmError,
     setConfirmError,
+    sent,
   } = useContext(AuthContext);
 
   useEffect(() => {
@@ -125,7 +125,6 @@ const CreateAccount = () => {
 
     // setSlug(username);
     register({ username, email, password, artisan, slug, user_category });
-    setSent(true);
 
     // if (user_category.id === null) {
     //   console.log(user_category);
@@ -202,12 +201,12 @@ const CreateAccount = () => {
           <p>Are you ready to get started?</p>
         </Aside>
         <Wrapper error={error}>
-          <Alert sent={sent}>
+          <RegisterAlert sent={sent}>
             <p>
-              Check your mail! A link has been sent to you.{" "}
+              Check your mail! A confirmation link has been sent to you.{" "}
               <IoMdCheckmarkCircleOutline color="#8bc34a" fontSize={30} />
             </p>
-          </Alert>
+          </RegisterAlert>
           <h1>Create an Account</h1>
           {/* <p>You can either sign up with</p> */}
           <ProviderBtns>
