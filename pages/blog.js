@@ -4,7 +4,11 @@ import { NEXT_PUBLIC_API_URL } from "../config";
 
 const Blog = ({ blogPosts }) => {
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam Blog"
+      keywords="Repair Review Connect Blog Fitfixam"
+      description="Blog articles for fitfixam"
+    >
       <BlogPosts blogPosts={blogPosts} />
     </UserLayout>
   );

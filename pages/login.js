@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 
 const Login = () => {
   return (
-    <Layout>
+    <Layout title="Fitfixam | Login" description="Login to Fitfixam">
       <Signin />
     </Layout>
   );

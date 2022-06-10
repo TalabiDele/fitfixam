@@ -4,7 +4,23 @@ import Posts from "@/components/Discussion/Posts";
 
 const Trending = ({ post, posts, comments, likes }) => {
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam | Trending"
+      keywords="Artisans
+    Repair
+    Fix
+    Carpenters
+    Plumbers 
+    Electricians 
+    Reviews 
+    Good 
+    Bad 
+    Services 
+    Satisfied 
+    Craftsmen
+    Experience
+    "
+    >
       {posts.length !== 0 ? (
         <div>
           {posts.map((e) => (

@@ -7,7 +7,23 @@ import Carpenter from "@/components/PostCategory/Carpenter";
 
 const Carpenters = ({ post, posts, comments, likes, allUsers }) => {
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam | Carpenters Feed"
+      keywords="Artisans
+    Repair
+    Fix
+    Carpenters
+    Plumbers 
+    Electricians 
+    Reviews 
+    Good 
+    Bad 
+    Services 
+    Satisfied 
+    Craftsmen
+    Experience
+    "
+    >
       <div>
         {posts.posts.map((e) => (
           <Carpenter

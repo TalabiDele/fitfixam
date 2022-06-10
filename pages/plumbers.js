@@ -7,7 +7,23 @@ import Plumber from "@/components/PostCategory/Plumber";
 
 const Plumbers = ({ post, posts, comments, likes, allUsers }) => {
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam | Plumbers Feed"
+      keywords="Artisans
+    Repair
+    Fix
+    Carpenters
+    Plumbers 
+    Electricians 
+    Reviews 
+    Good 
+    Bad 
+    Services 
+    Satisfied 
+    Craftsmen
+    Experience
+    "
+    >
       <div>
         {posts.posts.map((e) => (
           <Plumber

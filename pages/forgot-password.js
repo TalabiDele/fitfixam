@@ -4,7 +4,11 @@ import Layout from "@/components/Layout";
 
 const Login = () => {
   return (
-    <Layout>
+    <Layout
+      title="Fitfixam | Forgot Password"
+      description="Reset your password if you already have an account."
+      keywords="Fitfixam forgot password"
+    >
       <ForgotPassword />
     </Layout>
   );

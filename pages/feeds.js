@@ -7,7 +7,23 @@ import IconStatic from "../Components/IconStatic/IconStatic";
 
 const Feeds = ({ posts, comments, userPost, allUsers }) => {
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam | Feed"
+      keywords="Artisans
+    Repair
+    Fix
+    Carpenters
+    Plumbers 
+    Electricians 
+    Reviews 
+    Good 
+    Bad 
+    Services 
+    Satisfied 
+    Craftsmen
+    Experience
+    "
+    >
       {posts.length !== 0 ? (
         <div>
           <IconStatic />

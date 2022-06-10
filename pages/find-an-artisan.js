@@ -64,7 +64,24 @@ const FindArtisan = ({ carpenters, plumbers }) => {
   };
 
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam | Find an Artisan"
+      description="Connect with artisans."
+      keywords="Artisans
+      Repair
+      Fix
+      Carpenters
+      Plumbers 
+      Electricians 
+      Reviews 
+      Good 
+      Bad 
+      Services 
+      Satisfied 
+      Craftsmen
+      Experience
+      "
+    >
       <>
         <Header>
           <h1>Carpenters</h1>

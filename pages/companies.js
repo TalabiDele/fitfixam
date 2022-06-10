@@ -5,7 +5,23 @@ import CompaniesPage from "@/components/Companies/CompaniesPage";
 
 const Companies = ({ companies }) => {
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam | Companies"
+      keywords="Artisans
+    Repair
+    Fix
+    Carpenters
+    Plumbers 
+    Electricians 
+    Reviews 
+    Good 
+    Bad 
+    Services 
+    Satisfied 
+    Craftsmen
+    Experience
+    "
+    >
       <CompaniesPage companies={companies} />
     </UserLayout>
   );

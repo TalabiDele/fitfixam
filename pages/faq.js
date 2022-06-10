@@ -4,7 +4,10 @@ import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 const Faq = ({ artisanFaq, clientFaq, generalFaq }) => {
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam | FAQ"
+      description="Fitfixam frequently asked questions"
+    >
       <FaqComponent
         artisanFaq={artisanFaq}
         clientFaq={clientFaq}

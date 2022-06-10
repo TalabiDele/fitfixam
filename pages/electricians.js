@@ -7,7 +7,7 @@ import Electrician from "@/components/PostCategory/Electrician";
 
 const Electricians = ({ post, posts, comments, likes, allUsers }) => {
   return (
-    <UserLayout>
+    <UserLayout title="Fitfixam | Electricians Feed">
       <div>
         {posts.posts.map((e) => (
           <Electrician
