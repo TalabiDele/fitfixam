@@ -1,7 +1,11 @@
 import cookie from "cookie";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
+import AuthContext from "@/context/AuthContext";
+import { useContext } from "react";
 
 export default async (req, res) => {
+  // const { setIsToken, isToken } = useContext(AuthContext);
+
   if (req.method === "GET") {
     if (!req.headers.cookie) {
       res.status(403).json({ message: "Not Authorized" });
@@ -10,14 +14,14 @@ export default async (req, res) => {
 
     const { token } = cookie.parse(req.headers.cookie);
 
-    // console.log("user token", token);
-
     const strapiRes = await fetch(`${NEXT_PUBLIC_API_URL}/users/me`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+
+    // setIsToken(token);
 
     const user = await strapiRes.json();
 

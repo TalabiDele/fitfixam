@@ -47,10 +47,13 @@ import { parseCookies } from "@/helpers/index";
 import { PostCategory } from "Components/PostCategory/Style";
 import userImage from "public/userImage.png";
 import { LikesContext } from "@/context/LikesContext";
+import cookie from "cookie";
 
 const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
-  const { user } = useContext(AuthContext);
+  const { user, userData, isToken } = useContext(AuthContext);
   // const { likesGiven, likeReceived } = useContext(LikesContext);
+
+  console.log(token);
 
   const [postId, setPostId] = useState({});
   const [isUser, setIsUser] = useState(user);
@@ -60,16 +63,17 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
     timestamp: "",
     users: user,
   });
-  const [liked, setLiked] = useState(false);
-  const [isLiked, setIsLiked] = useState({
-    like: liked,
-    post: postId,
-    users_permissions_user: isUser,
-  });
-  const [likedPost, setLikedPost] = useState();
+  const [isLiked, setIsLiked] = useState(false);
   const [userComments, setUserComments] = useState();
-  const [likesGiven, setLikesGiven] = useState([]);
-  const [likesReceived, setLikesReceived] = useState([]);
+  // const [likesGiven, setLikesGiven] = useState([]);
+  // const [likesReceived, setLikesReceived] = useState([]);
+  const [userLiked, setUserLiked] = useState();
+  const [liking, setLiking] = useState();
+
+  let liked;
+
+  const router = useRouter();
+  const refreshData = () => router.replace(router.asPath);
 
   // likePost();
   // const [commentLike, setCommentLike] = useState({})
@@ -78,62 +82,82 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
     likes;
   })();
 
-  useEffect(() => {
-    // if (user) {
-    //   console.log(isUser);
-    //   setIsLiked({
-    //     ...isLiked,
-    //     like: liked,
-    //     post: postId,
-    //     users_permissions_user: isUser,
-    //   });
-    //   setLikedPost(isLiked);
+  const findUserLiked = () => {
+    // console.log("User likes", likes);
+
+    // likes.map((like) => {
+    //   console.log("Each like", like);
+    // });
+    // console.log(post);
+    if (user) {
+      post.map((e) => {
+        setUserLiked(
+          likes.find(
+            (like) => user.id === like.user.id && e.id === like.post.id
+          )
+        );
+        // setUserLiked(liked);
+        // console.log(liked);
+      });
+    }
+
+    console.log(userLiked);
+
+    // if (userLiked) {
+    //   console.log("Liked");
+    //   setIsLiked(true);
+    // } else {
+    //   console.log("Not liked");
+    //   setIsLiked(false);
     // }
+  };
+
+  useEffect(() => {
+    console.log(findUserLiked());
+
+    console.log(isLiked);
 
     getPostId();
     // setLiked(likedPost.like);
     // console.log(likedPost);
     // setLiked(!liked);
 
-    if (user) {
-      console.log(user.id);
-      const loadLikesGiven = async () => {
-        console.log(token);
-        const res = await fetch(
-          `${NEXT_PUBLIC_API_URL}/likes/given?user=${user.id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        const data = await res.json();
+    // if (user) {
+    //   console.log(user.id);
+    //   const loadLikesGiven = async () => {
+    //     console.log(token);
+    //     const res = await fetch(
+    //       `${NEXT_PUBLIC_API_URL}/likes/given?user=${user.id}`,
+    //       {
+    //         headers: {
+    //           Authorization: `Bearer ${token}`,
+    //         },
+    //       }
+    //     );
+    //     const data = await res.json();
 
-        setLikesGiven(data);
-        // console.log(data);
-      };
-      loadLikesGiven();
+    //     setLikesGiven(data);
+    //     // console.log(data);
+    //   };
+    //   loadLikesGiven();
 
-      const loadLikesReceived = async () => {
-        const res = await fetch(
-          `${NEXT_PUBLIC_API_URL}/likes/received?post.user=${user.id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        const data = await res.json();
-        setLikesReceived(data);
-      };
-      loadLikesReceived();
-    }
+    //   const loadLikesReceived = async () => {
+    //     const res = await fetch(
+    //       `${NEXT_PUBLIC_API_URL}/likes/received?post.user=${user.id}`,
+    //       {
+    //         headers: {
+    //           Authorization: `Bearer ${token}`,
+    //         },
+    //       }
+    //     );
+    //     const data = await res.json();
+    //     setLikesReceived(data);
+    //   };
+    //   loadLikesReceived();
+    // }
   }, [user]);
 
-  const router = useRouter();
-
-  const refreshData = () => router.replace(router.asPath);
-  console.log(likesGiven);
+  // console.log(likesGiven);
 
   let postLike = 0;
 
@@ -151,7 +175,17 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   console.log("isPostAlreadyLiked", isPostAlreadyLiked);
 
   const getPostId = () => {
-    post.map((m) => setPostId(m));
+    post.map((m) => {
+      setPostId(m);
+    });
+
+    // postLike = postId.likes.length;
+
+    // console.log(postLike);
+
+    // postId.likes.map((e) => {
+    //   postLike = e.
+    // })
   };
 
   const handleInputChange = (e, p) => {
@@ -171,35 +205,27 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   };
 
   const updateLike = async (e) => {
-    // likePost(e);
-    setLiked(!liked);
-    console.log(liked);
+    console.log(token);
+    setIsLiked(true);
 
-    if (user) {
-      post.map((p) =>
-        setIsLiked({
-          ...isLiked,
-          like: true,
-          post: p,
-          users_permissions_user: isUser,
-        })
-      );
-    }
+    console.log(isLiked);
 
     try {
-      const res = await fetch(`${NEXT_PUBLIC_API_URL}/likes`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${token}`,
+          // Authorization: `Bearer ${isToken}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          post: parseInt(postId.id),
+          user: user,
+          post: postId,
         }),
       });
       const data = await res.json();
       // setLikedPost(data);
       console.log(data);
+      refreshData();
     } catch (error) {
       console.log(error);
     }
@@ -207,16 +233,21 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
 
   const unlike = async (e) => {
     // try {
-    const res = await fetch(`${NEXT_PUBLIC_API_URL}/likes/${postId.id}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      // body: JSON.stringify(isLiked),
-    });
+    setIsLiked(false);
+    const res = await fetch(
+      `${NEXT_PUBLIC_API_URL}/post-likes/${userLiked.id}`,
+      {
+        method: "DELETE",
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        // },
+        // body: JSON.stringify(isLiked),
+      }
+    );
     const data = await res.json();
     // setLikedPost(data);
     console.log(data);
+    refreshData();
     // } catch (error) {
     //   console.log(error);
     // }
@@ -427,35 +458,35 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
               </UserPost>
               <Interract>
                 <div className="interract">
-                  {/* <Likes> */}
-                  {/* <FaHeart fontSize={26} color="#F4442E" />
+                  <Likes>
+                    <FaHeart fontSize={26} color="#F4442E" />
                     <div className="liked_images">
                       {likes.map((l) =>
                         user ? (
                           <div key={l.id}>
                             {console.log(l)}
-                            {l.like ? (
-                              l.post.id === e.id ? (
-                                <div>
-                                  {l.users_permissions_user ? (
-                                    <Image
-                                      src={
-                                        l.users_permissions_user.user_image
-                                          .formats.small.url
-                                      }
-                                      alt="User Image"
-                                      width={30}
-                                      height={30}
-                                      className="user_image"
-                                      objectFit="cover"
-                                    />
-                                  ) : (
-                                    <></>
-                                  )}
-                                </div>
-                              ) : (
-                                <div></div>
-                              )
+                            {l.post.id === e.id ? (
+                              <div>
+                                {l.user.user_image ? (
+                                  <Image
+                                    src={l.user.user_image.formats.small.url}
+                                    alt="User Image"
+                                    width={30}
+                                    height={30}
+                                    className="user_image"
+                                    objectFit="cover"
+                                  />
+                                ) : (
+                                  <Image
+                                    src={userImage}
+                                    alt="User Image"
+                                    width={30}
+                                    height={30}
+                                    className="user_image"
+                                    objectFit="cover"
+                                  />
+                                )}
+                              </div>
                             ) : (
                               <div></div>
                             )}
@@ -463,33 +494,37 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                         ) : (
                           <div></div>
                         )
-                      )} */}
-                  {/* {likes.slice(0, 5).map((like) =>
+                      )}
+                      {likes.slice(0, 5).map((like) =>
                         user ? (
                           <p className="user_likes" key={like.id}>
-                            {like.like === true ? (
-                              like.post.id === e.id ? (
-                                <div>
-                                  <None>
-                                    {!like.like
-                                      ? (postLike = e.likes.length - 1)
-                                      : postLike}
-                                  </None>
-                                  {like.like && postLike < 1 ? (
+                            {like.post.id === e.id ? (
+                              <div>
+                                <None>{(postLike += e.likes.length)}</None>
+                                {postLike === 1 ? (
+                                  like.user.id === user.id && (
                                     <p className="user_likes">
-                                      {like.users_permissions_user.username}{" "}
-                                      likes your post
+                                      You like this post
                                     </p>
-                                  ) : (
-                                    <p className="user_likes">
-                                      {user.username} and {postLike} others like
-                                      your post
-                                    </p>
-                                  )}
-                                </div>
-                              ) : (
-                                <p></p>
-                              )
+                                  )
+                                ) : like.user.id === user.id ? (
+                                  <p className="user_likes">
+                                    You and {postLike - 1} other(s) like this
+                                    post
+                                  </p>
+                                ) : (
+                                  <p className="user_likes">
+                                    {likes.slice(-1).username} and {postLike}{" "}
+                                    others like this post
+                                    {console.log(likes.slice(-1))}
+                                  </p>
+                                )}
+                                {/* {postLike === 1 && (
+                                  <p className="user_likes">
+                                    {like.user.username} likes your post
+                                  </p>
+                                )} */}
+                              </div>
                             ) : (
                               <div></div>
                             )}
@@ -497,9 +532,9 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                         ) : (
                           <p></p>
                         )
-                      )} */}
-                  {/* </div> */}
-                  {/* </Likes> */}
+                      )}
+                    </div>
+                  </Likes>
                   <div className="comment_share">
                     <div className="comment_count">
                       <p>{e.comments.length}</p>
@@ -515,50 +550,29 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                 {user ? (
                   <div className="reactions">
                     <div className="like">
-                      {/* {likes.map((lik) => (
-                    <div key={lik.id}> */}
-                      {/* {isLiked.like ? ( */}
-                      {console.log(user)}
-                      {/* {user.likes.map((like) =>
-                        like.post === postId.id ? ( */}
-                      {/* <FaHeart
-                        fontSize={26}
-                        onClick={() => unlike(e)}
-                        color="#F4442E"
-                      /> */}
-                      {/* ) : ( */}
-                      <FaRegHeart
-                        fontSize={26}
-                        onClick={() => updateLike(e)}
-                        color="#060258"
-                      />
-                      {/* )
-                      )} */}
-                      {e.likes.map((like) =>
-                        like.user !== user.id ? (
-                          <>
-                            <FaRegHeart
-                              fontSize={26}
-                              onClick={() => updateLike(e)}
-                              color="#060258"
-                            />
-                            {console.log(like.user)}
-                          </>
-                        ) : (
+                      {/* {findUserLiked !== undefined && ( */}
+                      {userLiked ? (
+                        <>
                           <FaHeart
                             fontSize={26}
                             onClick={() => unlike(e)}
                             color="#F4442E"
                           />
-                        )
+                          <p>Liked</p>
+                        </>
+                      ) : (
+                        <>
+                          <FaRegHeart
+                            fontSize={26}
+                            onClick={() => updateLike(e)}
+                            color="#060258"
+                          />
+                          <p>Like</p>
+                        </>
                       )}
-
-                      {/* ) : ( */}
-
                       {/* )} */}
-                      <p>Like</p>
-                      {/* </div>
-                  ))} */}
+                      {/* {findUserLiked === undefined && ( */}
+                      {/* )} */}
                     </div>
                     <div className="comment_here">
                       <FaRegComment fontSize={26} color="#020127" />
@@ -705,10 +719,15 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
 
 export default Slug;
 
-export async function getServerSideProps({ query: { slug }, req }) {
+export async function getServerSideProps({ req, query: { slug } }) {
+  // const { token } = parseCookies(req);
+  // function parseCookies(req) {
+  //   return cookie.parse(req ? req.headers.cookie || "" : "");
+  // }
+
   const { token } = parseCookies(req);
 
-  // console.log(token);
+  console.log(token);
 
   const resPost = await fetch(`${NEXT_PUBLIC_API_URL}/posts?slug=${slug}`);
   const post = await resPost.json();
@@ -719,7 +738,7 @@ export async function getServerSideProps({ query: { slug }, req }) {
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);
   const comments = await resComments.json();
 
-  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/likes`);
+  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`);
   const likes = await resLikes.json();
 
   const resUsers = await fetch(`${NEXT_PUBLIC_API_URL}/users`);

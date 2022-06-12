@@ -20,6 +20,7 @@ export const AuthProvider = ({ children }) => {
   const [confirmError, setConfirmError] = useState(false);
   const [emailMessage, setEmailMessage] = useState("");
   const [sent, setSent] = useState(false);
+  const [isToken, setIsToken] = useState();
   // const [allUsers, setAllUsers] = useState(null);
 
   const { data: session } = useSession();
@@ -54,6 +55,8 @@ export const AuthProvider = ({ children }) => {
     }
 
     const data = await res.json();
+
+    setUserData(data);
 
     if (res.ok) {
       setIsLoading(true);
