@@ -632,14 +632,25 @@ const Profile = ({ usersProfile, token, userPosts }) => {
             {usersProfile.posts.map((post) => (
               <div className="card" key={post.id}>
                 <div className="dets">
-                  <Image
-                    src={usersProfile.user_image.url}
-                    alt="User image"
-                    width={70}
-                    height={70}
-                    objectFit="cover"
-                    className="image"
-                  />
+                  {usersProfile.user_image ? (
+                    <Image
+                      src={usersProfile.user_image.url}
+                      alt="User image"
+                      width={70}
+                      height={70}
+                      objectFit="cover"
+                      className="image"
+                    />
+                  ) : (
+                    <Image
+                      src={userImage}
+                      alt="User image"
+                      width={70}
+                      height={70}
+                      objectFit="cover"
+                      className="image"
+                    />
+                  )}
                   <div className="post">
                     <div className="username">
                       <h2>{usersProfile.username}</h2>

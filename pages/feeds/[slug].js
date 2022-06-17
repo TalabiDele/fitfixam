@@ -527,7 +527,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                         <UsersComments>
                           <div
                             className="image"
-                            onClick={() => displayProfile(e.user.slug)}
+                            onClick={() => displayProfile(com.users.slug)}
                           >
                             {com.users.user_image ? (
                               <Image
@@ -551,7 +551,9 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                           </div>
                           <div>
                             <div className="name_time">
-                              <h2 onClick={() => displayProfile(e.user.slug)}>
+                              <h2
+                                onClick={() => displayProfile(com.users.slug)}
+                              >
                                 {com.users.username}
                               </h2>
                               <span></span>
