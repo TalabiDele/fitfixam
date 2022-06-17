@@ -64,29 +64,29 @@ const CreateAccount = () => {
   }, []);
 
   const validateEmail = (e) => {
-    const pattern =
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const result = pattern.test(e);
-    console.log(result);
-    if (result) {
-      console.log("Valid");
-      setIsValid(false);
-    } else {
-      console.log("Not valid");
-      setIsValid(true);
-    }
+    // const pattern =
+    //   /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    // const result = pattern.test(e);
+    // console.log(result);
+    // if (result) {
+    //   console.log("Valid");
+    //   setIsValid(false);
+    // } else {
+    //   console.log("Not valid");
+    //   setIsValid(true);
+    // }
   };
 
   const handleSubmitSignup = (e) => {
     e.preventDefault();
 
-    validateEmail(email);
+    // validateEmail(email);
 
-    if (isValid) {
-      console.log("Email is not valid");
-    } else {
-      console.log("Email is valid");
-    }
+    // if (isValid) {
+    //   console.log("Email is not valid");
+    // } else {
+    //   console.log("Email is valid");
+    // }
 
     if (password !== passwordConfirm) {
       setError(true);
@@ -201,12 +201,12 @@ const CreateAccount = () => {
           <p>Are you ready to get started?</p>
         </Aside>
         <Wrapper error={error}>
-          <RegisterAlert sent={sent}>
+          {/* <RegisterAlert sent={sent}>
             <p>
               Check your mail! A confirmation link has been sent to you.{" "}
               <IoMdCheckmarkCircleOutline color="#8bc34a" fontSize={30} />
             </p>
-          </RegisterAlert>
+          </RegisterAlert> */}
           <h1>Create an Account</h1>
           {/* <p>You can either sign up with</p> */}
           <ProviderBtns>

@@ -90,7 +90,7 @@ export const PostItem = styled.div`
     font-size: 26px;
     color: #020127;
     font-weight: 400;
-    width: 100%;
+    width: 80%;
   }
 
   @media (max-width: 768px) {
@@ -203,6 +203,7 @@ export const UserPost = styled.div`
     /* border-bottom: 1.5px solid #dad9e9; */
     padding-bottom: 1rem;
     margin-bottom: 0rem;
+    width: 80%;
   }
 `;
 
@@ -260,6 +261,11 @@ export const Likes = styled.div`
   /* border-bottom: 1.5px solid #dad9e9; */
   /* justify-content: space-between; */
   width: 100%;
+
+  div.liking {
+    height: 1.2rem;
+    overflow: hidden;
+  }
 
   p.user_likes {
     font-size: 15px;

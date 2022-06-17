@@ -47,7 +47,6 @@ import Link from "next/link";
 import userImage from "public/userImage.png";
 
 const Slug = ({ post, posts, comments, likes, allUsers }) => {
-  console.log(posts);
   const { user } = useContext(AuthContext);
   const [postId, setPostId] = useState({});
   const [commentDisplayed, setCommentDisplay] = useState(false);
@@ -61,25 +60,31 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
 
   const [liked, setLiked] = useState(false);
 
-  const [isLiked, setIsLiked] = useState({
-    like: liked,
-    post: postId,
-    users_permissions_user: user,
-  });
-  // const [commentLike, setCommentLike] = useState({})
+  const [isLiked, setIsLiked] = useState(false);
+  const [userLiked, setUserLiked] = useState();
+
+  const findUserLiked = () => {
+    if (user) {
+      post.map((e) => {
+        setUserLiked(
+          likes.find(
+            (like) => user.id === like.user.id && e.id === like.post.id
+          )
+        );
+
+        if (userLiked) {
+          console.log(userLiked);
+        } else {
+          console.log("User Like is null");
+        }
+      });
+    }
+  };
 
   useEffect(() => {
     getPostId();
-    likePost();
-    // setLiked(!liked);
-    // setLiked(!liked);
-    setIsLiked({
-      ...isLiked,
-      like: liked,
-      post: postId,
-      users_permissions_user: user,
-    });
-  }, []);
+    findUserLiked();
+  }, [user]);
 
   const router = useRouter();
 
@@ -92,7 +97,9 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
   };
 
   const getPostId = (e) => {
-    setPostId(e);
+    post.map((m) => {
+      setPostId(m);
+    });
   };
 
   const handleInputChange = (e, p) => {
@@ -111,32 +118,53 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
     // handleData(e);
   };
 
-  const likePost = async (e) => {
-    getPostId(e);
-    setLiked(!liked);
-    setIsLiked({
-      ...isLiked,
-      like: liked,
-      post: postId,
-      users_permissions_user: user,
-    });
+  const updateLike = async (e) => {
+    setIsLiked(true);
+
+    console.log(isLiked);
 
     try {
-      const res = await fetch(`${NEXT_PUBLIC_API_URL}/likes`, {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(isLiked),
+        body: JSON.stringify({
+          user: user,
+          post: postId,
+        }),
       });
       const data = await res.json();
+      // setLikedPost(data);
       console.log(data);
+      setUserLiked(true);
+      refreshData();
     } catch (error) {
       console.log(error);
     }
+  };
 
-    // refreshData();
+  const unlike = async (e) => {
+    // try {
+    setIsLiked(false);
+    const res = await fetch(
+      `${NEXT_PUBLIC_API_URL}/post-likes/${userLiked.id}`,
+      {
+        method: "DELETE",
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        // },
+        // body: JSON.stringify(isLiked),
+      }
+    );
+    const data = await res.json();
+    // setLikedPost(data);
+    console.log(data);
+    setUserLiked(false);
+    refreshData();
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   const postComment = async (e, p) => {
@@ -295,115 +323,164 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                 <p className="post">{e.post}</p>
               </UserPost>
               <Interract>
-                <div className="likes">
+                <div className="interract">
                   <Likes>
-                    {/* <FaHeart fontSize={26} color="#F4442E" />
+                    <FaHeart fontSize={26} color="#F4442E" />
                     <div className="liked_images">
-                      {likes.map((l) => (
-                        <div key={l.id}>
-                          {l.post.id === e.id ? (
-                            <div>
-                              <Image
-                                src={
-                                  l.users_permissions_user.user_image.formats
-                                    .small.url
-                                }
-                                alt="User Image"
-                                width={30}
-                                height={30}
-                                className="user_image"
-                                objectFit="cover"
-                              />
-                            </div>
-                          ) : (
-                            <div></div>
-                          )}
-                        </div>
-                      ))} */}
-                    {/* {likes.slice(0, 5).map((like) => (
-                        <p className="user_likes" key={like.id}>
-                          {like.post.id === e.id ? (
-                            <div>
-                              <None>{(postLike = e.likes.length - 1)}</None>
-                              {postLike < 1 ? (
-                                <p className="user_likes">
-                                  {like.users_permissions_user.username} likes
-                                  your post
-                                </p>
-                              ) : (
-                                <p className="user_likes">
-                                  {like.users_permissions_user.username} and{" "}
-                                  {postLike} others like your post
-                                </p>
+                      {likes.slice(0, 4).map((l) =>
+                        user ? (
+                          <div key={l.id}>
+                            {console.log(l)}
+                            {l.post.id === e.id ? (
+                              <div>
+                                {l.user.user_image ? (
+                                  <Image
+                                    src={l.user.user_image.formats.small.url}
+                                    alt="User Image"
+                                    width={30}
+                                    height={30}
+                                    className="user_image"
+                                    objectFit="cover"
+                                  />
+                                ) : (
+                                  <Image
+                                    src={userImage}
+                                    alt="User Image"
+                                    width={30}
+                                    height={30}
+                                    className="user_image"
+                                    objectFit="cover"
+                                  />
+                                )}
+                              </div>
+                            ) : (
+                              <div></div>
+                            )}
+                          </div>
+                        ) : (
+                          <div></div>
+                        )
+                      )}
+                      <div className="liking">
+                        {likes.map((like) =>
+                          user ? (
+                            <p className="user_likes" key={like.id}>
+                              {e.post_likes.map((use) =>
+                                console.log(use.user, user.id)
                               )}
-                            </div>
+                              {like.post.id === e.id ? (
+                                <div>
+                                  <None>
+                                    {(postLike += e.post_likes.length)}
+                                  </None>
+                                  {console.log(postLike)}
+
+                                  {userLiked && e.post_likes.length > 1 && (
+                                    <p className="user_likes">
+                                      You and {e.post_likes.length - 1} other(s)
+                                      like this post
+                                    </p>
+                                  )}
+
+                                  {userLiked && e.post_likes.length === 1 && (
+                                    <p className="user_likes">
+                                      You like this post
+                                    </p>
+                                  )}
+
+                                  {!userLiked && e.post_likes.length === 1 && (
+                                    <p className="user_likes">
+                                      {like.user.username} likes this post
+                                    </p>
+                                  )}
+
+                                  {!userLiked && e.post_likes.length > 1 && (
+                                    <p className="user_likes">
+                                      {likes
+                                        .slice(-1)
+                                        .map((last) => last.user.username)}{" "}
+                                      and {e.post_likes.length - 1} other(s)
+                                      like this post
+                                    </p>
+                                  )}
+                                </div>
+                              ) : (
+                                <div></div>
+                              )}
+                            </p>
                           ) : (
                             <p></p>
-                          )}
-                        </p>
-                      ))} */}
-                    {/* </div> */}
-                    <div className="comment_share">
-                      <div className="comment_count">
-                        <p>{e.comments.length}</p>
-                        <FaComment fontSize={16} color="#3074B8" />
-                      </div>
-                      <div className="share_count">
-                        <FaShare fontSize={16} color="#FA7B23" />
+                          )
+                        )}
                       </div>
                     </div>
                   </Likes>
+                  <div className="comment_share">
+                    <div className="comment_count">
+                      <p>{e.comments.length}</p>
+                      <FaComment fontSize={16} color="#3074B8" />
+                    </div>
+                    <div className="share_count">
+                      <FaShare fontSize={16} color="#FA7B23" />
+                    </div>
+                  </div>
                 </div>
               </Interract>
-              <div className="reactions">
-                <Reactions>
-                  {/* {user ? (
-                    <div className="reactions">
-                      <div className="like">
-                        {liked ? (
+              <Reactions>
+                {user ? (
+                  <div className="reactions">
+                    <div className="like">
+                      {userLiked ? (
+                        <>
                           <FaHeart
                             fontSize={26}
-                            onClick={() => likePost(e)}
+                            onClick={() => unlike(e)}
                             color="#F4442E"
                           />
-                        ) : (
+                          <p>Liked</p>
+                        </>
+                      ) : (
+                        <>
                           <FaRegHeart
                             fontSize={26}
-                            onClick={() => likePost(e)}
-                            color="#F4442E"
+                            onClick={() => updateLike(e)}
+                            color="#060258"
                           />
-                        )}
-                        <p>Like</p>
-                      </div>
-                      <div className="comment_here">
-                        <FaRegComment fontSize={26} color="#020127" />
-                        <p>Comment</p>
-                      </div>
-                      <div className="share_here">
-                        <RiShareForwardLine fontSize={26} color="#020127" />
-                        <p>Share</p>
-                      </div>
+                          <p>Like</p>
+                        </>
+                      )}
+                      {/* )} */}
+                      {/* {findUserLiked === undefined && ( */}
+                      {/* )} */}
                     </div>
-                  ) : (
-                    <Contain>
-                      <p>
-                        <span>
-                          <Link href="/login">
-                            <a>Sign in</a>
-                          </Link>
-                        </span>{" "}
-                        or{" "}
-                        <span>
-                          <Link href="/signup">
-                            <a>Sign up</a>
-                          </Link>
-                        </span>{" "}
-                        to react to this post...
-                      </p>
-                    </Contain>
-                  )} */}
-                </Reactions>
-              </div>
+                    <div className="comment_here">
+                      <FaRegComment fontSize={26} color="#020127" />
+                      <p>Comment</p>
+                    </div>
+                    <div className="share_here">
+                      <RiShareForwardLine fontSize={26} color="#020127" />
+                      <p>Share</p>
+                    </div>
+                  </div>
+                ) : (
+                  <Contain>
+                    <p>
+                      <span>
+                        <Link href="/login">
+                          <a>Sign in</a>
+                        </Link>
+                      </span>{" "}
+                      or{" "}
+                      <span>
+                        <Link href="/signup">
+                          <a>Sign up</a>
+                        </Link>
+                      </span>{" "}
+                      to react to this post...
+                    </p>
+                  </Contain>
+                )}
+              </Reactions>
               <Comments>
                 {comments.map((com) => (
                   <div key={com.key}>
@@ -515,7 +592,7 @@ export async function getServerSideProps({ query: { slug }, req }) {
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);
   const comments = await resComments.json();
 
-  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/likes`);
+  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`);
   const likes = await resLikes.json();
 
   const resUsers = await fetch(`${NEXT_PUBLIC_API_URL}/users`);

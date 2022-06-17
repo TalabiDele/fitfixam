@@ -51,12 +51,8 @@ import cookie from "cookie";
 
 const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   const { user, userData, isToken } = useContext(AuthContext);
-  // const { likesGiven, likeReceived } = useContext(LikesContext);
-
-  console.log(token);
 
   const [postId, setPostId] = useState({});
-  const [isUser, setIsUser] = useState(user);
   const [isComment, setIsComment] = useState({
     content: "",
     post: postId,
@@ -64,31 +60,12 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
     users: user,
   });
   const [isLiked, setIsLiked] = useState(false);
-  const [userComments, setUserComments] = useState();
-  // const [likesGiven, setLikesGiven] = useState([]);
-  // const [likesReceived, setLikesReceived] = useState([]);
   const [userLiked, setUserLiked] = useState();
-  const [liking, setLiking] = useState();
-
-  let liked;
 
   const router = useRouter();
   const refreshData = () => router.replace(router.asPath);
 
-  // likePost();
-  // const [commentLike, setCommentLike] = useState({})
-
-  const isPostLiked = (() => {
-    likes;
-  })();
-
   const findUserLiked = () => {
-    // console.log("User likes", likes);
-
-    // likes.map((like) => {
-    //   console.log("Each like", like);
-    // });
-    // console.log(post);
     if (user) {
       post.map((e) => {
         setUserLiked(
@@ -96,68 +73,20 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
             (like) => user.id === like.user.id && e.id === like.post.id
           )
         );
-        // setUserLiked(liked);
-        // console.log(liked);
+
+        if (userLiked) {
+          console.log(userLiked);
+        } else {
+          console.log("User Like is null");
+        }
       });
     }
-
-    console.log(userLiked);
-
-    // if (userLiked) {
-    //   console.log("Liked");
-    //   setIsLiked(true);
-    // } else {
-    //   console.log("Not liked");
-    //   setIsLiked(false);
-    // }
   };
 
   useEffect(() => {
-    console.log(findUserLiked());
-
-    console.log(isLiked);
-
     getPostId();
-    // setLiked(likedPost.like);
-    // console.log(likedPost);
-    // setLiked(!liked);
-
-    // if (user) {
-    //   console.log(user.id);
-    //   const loadLikesGiven = async () => {
-    //     console.log(token);
-    //     const res = await fetch(
-    //       `${NEXT_PUBLIC_API_URL}/likes/given?user=${user.id}`,
-    //       {
-    //         headers: {
-    //           Authorization: `Bearer ${token}`,
-    //         },
-    //       }
-    //     );
-    //     const data = await res.json();
-
-    //     setLikesGiven(data);
-    //     // console.log(data);
-    //   };
-    //   loadLikesGiven();
-
-    //   const loadLikesReceived = async () => {
-    //     const res = await fetch(
-    //       `${NEXT_PUBLIC_API_URL}/likes/received?post.user=${user.id}`,
-    //       {
-    //         headers: {
-    //           Authorization: `Bearer ${token}`,
-    //         },
-    //       }
-    //     );
-    //     const data = await res.json();
-    //     setLikesReceived(data);
-    //   };
-    //   loadLikesReceived();
-    // }
+    findUserLiked();
   }, [user]);
-
-  // console.log(likesGiven);
 
   let postLike = 0;
 
@@ -165,27 +94,10 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
     router.push(`/feeds/${e.slug}`);
   };
 
-  const isPostAlreadyLiked = (() => {
-    // return (
-    //   likesGiven &&
-    //   likesGiven.find((like) => like.post && like.post.id == postId.id)
-    // );
-  })();
-
-  console.log("isPostAlreadyLiked", isPostAlreadyLiked);
-
   const getPostId = () => {
     post.map((m) => {
       setPostId(m);
     });
-
-    // postLike = postId.likes.length;
-
-    // console.log(postLike);
-
-    // postId.likes.map((e) => {
-    //   postLike = e.
-    // })
   };
 
   const handleInputChange = (e, p) => {
@@ -199,9 +111,6 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
     });
 
     getPostId(p);
-    // console.log(postId);
-
-    // handleData(e);
   };
 
   const updateLike = async (e) => {
@@ -214,7 +123,6 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
       const res = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`, {
         method: "POST",
         headers: {
-          // Authorization: `Bearer ${isToken}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -225,6 +133,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
       const data = await res.json();
       // setLikedPost(data);
       console.log(data);
+      setUserLiked(true);
       refreshData();
     } catch (error) {
       console.log(error);
@@ -247,6 +156,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
     const data = await res.json();
     // setLikedPost(data);
     console.log(data);
+    setUserLiked(false);
     refreshData();
     // } catch (error) {
     //   console.log(error);
@@ -404,6 +314,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
+                      onClick={() => displayProfile(e.user.slug)}
                     />
                   ) : (
                     <Image
@@ -414,6 +325,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
+                      onClick={() => displayProfile(e.user.slug)}
                     />
                   )}
                 </div>
@@ -430,17 +342,6 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
               </UserPosted>
               <UserPost>
                 <p className="post">{e.post}</p>
-                {/* {e.post.images.map((img) => (
-                  <div className="image" key={img.id}>
-                    <Image
-                      src={img.url}
-                      alt="post images"
-                      objectFit="cover"
-                      width={307}
-                      height={264}
-                    />
-                  </div>
-                ))} */}
                 <PostImages>
                   {e.images &&
                     e.images.map((img) => (
@@ -461,78 +362,93 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                   <Likes>
                     <FaHeart fontSize={26} color="#F4442E" />
                     <div className="liked_images">
-                      {likes.map((l) =>
-                        user ? (
-                          <div key={l.id}>
-                            {console.log(l)}
-                            {l.post.id === e.id ? (
-                              <div>
-                                {l.user.user_image ? (
-                                  <Image
-                                    src={l.user.user_image.formats.small.url}
-                                    alt="User Image"
-                                    width={30}
-                                    height={30}
-                                    className="user_image"
-                                    objectFit="cover"
-                                  />
-                                ) : (
-                                  <Image
-                                    src={userImage}
-                                    alt="User Image"
-                                    width={30}
-                                    height={30}
-                                    className="user_image"
-                                    objectFit="cover"
-                                  />
-                                )}
-                              </div>
-                            ) : (
-                              <div></div>
-                            )}
-                          </div>
-                        ) : (
-                          <div></div>
-                        )
-                      )}
-                      {likes.slice(0, 5).map((like) =>
-                        user ? (
-                          <p className="user_likes" key={like.id}>
-                            {like.post.id === e.id ? (
-                              <div>
-                                <None>{(postLike += e.likes.length)}</None>
-                                {postLike === 1 ? (
-                                  like.user.id === user.id && (
+                      {likes
+                        .slice(0, 4)
+                        .map((l) =>
+                          user ? (
+                            <div key={l.id}>
+                              {l.post.id === e.id ? (
+                                <div>
+                                  {l.user.user_image ? (
+                                    <Image
+                                      src={l.user.user_image.formats.small.url}
+                                      alt="User Image"
+                                      width={30}
+                                      height={30}
+                                      className="user_image"
+                                      objectFit="cover"
+                                    />
+                                  ) : (
+                                    <Image
+                                      src={userImage}
+                                      alt="User Image"
+                                      width={30}
+                                      height={30}
+                                      className="user_image"
+                                      objectFit="cover"
+                                    />
+                                  )}
+                                </div>
+                              ) : (
+                                <div></div>
+                              )}
+                            </div>
+                          ) : (
+                            <div></div>
+                          )
+                        )}
+                      <div className="liking">
+                        {likes.map((like) =>
+                          user ? (
+                            <p className="user_likes" key={like.id}>
+                              {e.post_likes.map((use) =>
+                                console.log(use.user, user.id)
+                              )}
+                              {like.post.id === e.id ? (
+                                <div>
+                                  <None>
+                                    {(postLike += e.post_likes.length)}
+                                  </None>
+                                  {console.log(postLike)}
+
+                                  {userLiked && e.post_likes.length > 1 && (
+                                    <p className="user_likes">
+                                      You and {e.post_likes.length - 1} other(s)
+                                      like this post
+                                    </p>
+                                  )}
+
+                                  {userLiked && e.post_likes.length === 1 && (
                                     <p className="user_likes">
                                       You like this post
                                     </p>
-                                  )
-                                ) : like.user.id === user.id ? (
-                                  <p className="user_likes">
-                                    You and {postLike - 1} other(s) like this
-                                    post
-                                  </p>
-                                ) : (
-                                  <p className="user_likes">
-                                    {likes.slice(-1).username} and {postLike}{" "}
-                                    others like this post
-                                    {console.log(likes.slice(-1))}
-                                  </p>
-                                )}
-                                {/* {postLike === 1 && (
-                                  <p className="user_likes">
-                                    {like.user.username} likes your post
-                                  </p>
-                                )} */}
-                              </div>
-                            ) : (
-                              <div></div>
-                            )}
-                          </p>
-                        ) : (
-                          <p></p>
-                        )
-                      )}
+                                  )}
+
+                                  {!userLiked && e.post_likes.length === 1 && (
+                                    <p className="user_likes">
+                                      {like.user.username} likes this post
+                                    </p>
+                                  )}
+
+                                  {!userLiked && e.post_likes.length > 1 && (
+                                    <p className="user_likes">
+                                      {likes
+                                        .slice(-1)
+                                        .map((last) => last.user.username)}{" "}
+                                      and {e.post_likes.length - 1} other(s)
+                                      like this post
+                                    </p>
+                                  )}
+                                </div>
+                              ) : (
+                                <div></div>
+                              )}
+                            </p>
+                          ) : (
+                            <p></p>
+                          )
+                        )}
+                      </div>
                     </div>
                   </Likes>
                   <div className="comment_share">
@@ -550,6 +466,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                 {user ? (
                   <div className="reactions">
                     <div className="like">
+                      {/* {findUserLiked()} */}
                       {/* {findUserLiked !== undefined && ( */}
                       {userLiked ? (
                         <>
