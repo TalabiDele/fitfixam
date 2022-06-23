@@ -46,13 +46,13 @@ export const AuthProvider = ({ children }) => {
       body: JSON.stringify(user),
     });
 
-    // if (!res.ok) {
-    //   setEmailError(res);
+    if (!res.ok) {
+      setEmailError(res);
 
-    //   setTimeout(() => {
-    //     setEmailError(false);
-    //   }, 5000);
-    // }
+      setTimeout(() => {
+        setEmailError(false);
+      }, 5000);
+    }
 
     const data = await res.json();
 
