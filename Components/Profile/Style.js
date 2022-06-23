@@ -285,18 +285,23 @@ export const Container = styled.div`
         }
 
         div.name {
-          border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-          padding: 0rem 5rem 2rem 5rem;
+          padding: 0rem 5rem 1rem 5rem;
           color: #020127;
           display: flex;
           font-size: 26px;
           font-weight: 700;
         }
+
+        div.category {
+          text-align: center;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+          padding: 1rem;
+        }
       }
     }
 
     div.contact {
-      margin-top: 8rem;
+      margin-top: 11rem;
       margin-bottom: 4rem;
       width: 80%;
 
@@ -644,18 +649,23 @@ export const Container = styled.div`
           }
 
           div.name {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-            padding: 0rem 5rem 2rem 5rem;
+            padding: 0rem 5rem 0rem 5rem;
             color: #020127;
             display: flex;
             font-size: 26px;
             font-weight: 700;
           }
+
+          div.category {
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+          }
         }
       }
 
       div.contact {
-        margin-top: 8rem;
+        margin-top: 11rem;
         margin-bottom: 4rem;
         width: 80%;
 
@@ -1010,18 +1020,23 @@ export const Container = styled.div`
           }
 
           div.name {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-            padding: 0rem 5rem 2rem 5rem;
+            padding: 0rem 5rem 1rem 5rem;
             color: #020127;
             display: flex;
             font-size: 26px;
             font-weight: 700;
           }
+
+          div.category {
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+          }
         }
       }
 
       div.contact {
-        margin-top: 8rem;
+        margin-top: 11rem;
         margin-bottom: 4rem;
         width: 90%;
 
@@ -1398,18 +1413,23 @@ export const Container = styled.div`
           }
 
           div.name {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-            padding: 0rem 5rem 2rem 5rem;
+            padding: 0rem 5rem 1rem 5rem;
             color: #020127;
             display: flex;
             font-size: 26px;
             font-weight: 700;
           }
+
+          div.category {
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+          }
         }
       }
 
       div.contact {
-        margin-top: 8rem;
+        margin-top: 11rem;
         margin-bottom: 4rem;
         width: 90%;
 
@@ -1786,18 +1806,23 @@ export const Container = styled.div`
           }
 
           div.name {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-            padding: 0rem 5rem 2rem 5rem;
+            padding: 0rem 5rem 1rem 5rem;
             color: #020127;
             display: flex;
             font-size: 26px;
             font-weight: 700;
           }
+
+          div.category {
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+          }
         }
       }
 
       div.contact {
-        margin-top: 8rem;
+        margin-top: 11rem;
         margin-bottom: 4rem;
         width: 90%;
 
@@ -2177,18 +2202,23 @@ export const Container = styled.div`
           }
 
           div.name {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-            padding: 0rem 5rem 2rem 5rem;
+            padding: 0rem 5rem 1rem 5rem;
             color: #020127;
             display: flex;
             font-size: 26px;
             font-weight: 700;
           }
+
+          div.category {
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+          }
         }
       }
 
       div.contact {
-        margin-top: 8rem;
+        margin-top: 11rem;
         margin-bottom: 4rem;
         width: 90%;
 

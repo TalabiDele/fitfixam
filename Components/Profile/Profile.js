@@ -535,8 +535,17 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                   {usersProfile.artisan ? <FaToolbox /> : <FaUserAlt />}
                 </p>
               </div>
+              {usersProfile.artisan && (
+                <div className="category">
+                  <p>{usersProfile.user_category.categories}</p>
+                  <p>
+                    <FaMapMarkerAlt color="#07036E" /> {usersProfile.address}
+                  </p>
+                </div>
+              )}
             </div>
             <div className="contact">
+              {/* {console.log(usersProfile.category)} */}
               <h1>Contact</h1>
               {usersProfile.phone ? (
                 <p>
@@ -741,33 +750,59 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
           ) : (
             <div className="wrapper">
               <h1>What others have said</h1>
-              {usersProfile.ratings.map((rev) => (
-                <div className="card" key={rev.id}>
-                  <div className="dets">
-                    <Image
-                      src={usersProfile.user_image.url}
-                      alt="User image"
-                      width={70}
-                      height={70}
-                      objectFit="cover"
-                      className="image"
-                    />
-                    <div className="post">
-                      <div className="username">
-                        <h2>{usersProfile.username}</h2>
-                        <p className="time">
-                          <Moment fromNow ago>
-                            {rev.created_at}
-                          </Moment>
-                        </p>
-                      </div>
-                      <div className="user_post">
-                        <p>{rev.review}</p>
+              {artisanRatings.map(
+                (rate) =>
+                  rate.user.id === usersProfile.id && (
+                    <div className="card" key={rate.id}>
+                      <div className="dets">
+                        {rate.user_rating.user_image ? (
+                          <Image
+                            src={rate.user_rating.user_image.url}
+                            alt="User image"
+                            width={70}
+                            height={70}
+                            objectFit="cover"
+                            className="image"
+                          />
+                        ) : (
+                          <Image
+                            src={userImage}
+                            alt="User image"
+                            width={70}
+                            height={70}
+                            objectFit="cover"
+                            className="image"
+                          />
+                        )}
+                        <div className="post">
+                          <div className="username">
+                            <h2>{rate.user_rating.username}</h2>
+                            <p className="time">
+                              <Moment fromNow ago>
+                                {rate.created_at}
+                              </Moment>
+                            </p>
+                            {stars.map((star, i) =>
+                              i === 0 ? (
+                                <></>
+                              ) : (
+                                <RatingStar
+                                  key={i}
+                                  starId={i}
+                                  id={i}
+                                  userRating={rate.rating}
+                                />
+                              )
+                            )}
+                          </div>
+                          <div className="user_post">
+                            <p>{rate.rating_text}</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  )
+              )}
             </div>
           )
         ) : (
