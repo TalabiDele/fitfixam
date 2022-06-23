@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect } from "react";
 import { Container, Wrapper } from "./Style";
 import AuthContext from "@/context/AuthContext";
 import { useState, UseEffect, useContext } from "react";
@@ -17,14 +17,12 @@ import Moment from "react-moment";
 import Link from "next/link";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import { GiCancel } from "react-icons/gi";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { useRouter } from "next/router";
 import spinner from "@/public/spinner.gif";
-import axios from "axios";
+import Rating from "react-rating";
 
-const Profile = ({ usersProfile, token, userPosts }) => {
-  // const cors = require("cors");
-  // app.use(cors());
-
+const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({
     username: usersProfile.username,
@@ -45,7 +43,13 @@ const Profile = ({ usersProfile, token, userPosts }) => {
   const [userProfileImage, setUserProfileImage] = useState(null);
   const [message, setMessage] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  // const [profilePicture, setProfilePicture] =
+  const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [description, setDescription] = useState("");
+  const [matchUser, setMatchUser] = useState();
+
+  const stars = [0, 1, 2, 3, 4, 5];
+  // console.log(stars.shift());
 
   const refreshData = () => router.reload();
 
@@ -54,6 +58,15 @@ const Profile = ({ usersProfile, token, userPosts }) => {
   const { user } = useContext(AuthContext);
 
   let binaryData = [];
+
+  useEffect(() => {
+    console.log(usersProfile.artisan_ratings);
+    if (user) {
+      usersProfile.artisan_ratings.map((e) => {
+        console.log(e);
+      });
+    }
+  }, []);
 
   const router = useRouter();
 
@@ -86,28 +99,6 @@ const Profile = ({ usersProfile, token, userPosts }) => {
     });
 
     const data = await res.json();
-    // router.push(`/profile/${data.slug}`);
-
-    // const formData = new FormData();
-    // formData.append("files", image);
-    // formData.append("ref", "users");
-    // formData.append("refId", usersProfile.id);
-    // formData.append("field", "user_image");
-    // image.forEach(({ file }) =>
-    //   bodyFormData.append(`files.images`, file, file.name)
-    // );
-
-    // const resUpload = await fetch(`${NEXT_PUBLIC_API_URL}/upload`, {
-    //   method: "POST",
-    //   headers: {
-    //     Authorization: `Bearer ${token}`,
-    //   },
-    //   body: formData,
-    // });
-
-    // if (resUpload.ok) {
-    //   imageUploaded();
-    // }
 
     setIsOpen(false);
 
@@ -174,23 +165,6 @@ const Profile = ({ usersProfile, token, userPosts }) => {
     setUserProfileImage(data);
 
     console.log(userProfileImage);
-
-    // const res = await fetch(`${NEXT_PUBLIC_API_URL}/users/${usersProfile.id}`);
-    // const data = await res.json();
-    // console.log(data);
-    // axios({
-    //   method: "post",
-    //   url: `${NEXT_PUBLIC_API_URL}/upload`,
-    //   data: formData,
-    // }).then(({ data }) => {
-    //   console.log("Succesfully uploaded: ", JSON.stringify(data));
-    // });
-
-    // if (resUpload.ok) {
-    //   imageUploaded(e);
-    // }
-
-    // console.log(resUpload);
   };
 
   const handleInputChange = (e) => {
@@ -200,6 +174,81 @@ const Profile = ({ usersProfile, token, userPosts }) => {
 
   const handleIsImage = () => {
     setIsImage(true);
+  };
+
+  const handleRating = async (e) => {
+    e.preventDefault();
+
+    const one = 20;
+    const two = 40;
+    const three = 60;
+    const four = 100;
+    const five = 200;
+
+    try {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/artisan-ratings`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          user: usersProfile,
+          user_rating: user,
+          rating_text: description,
+          rating: rating,
+        }),
+      });
+      const data = await res.json();
+      console.log(data);
+      refreshData();
+    } catch (error) {
+      console.log(error);
+    }
+
+    console.log(rating, description);
+  };
+
+  const RatingStar = ({ starId, userRating }) => {
+    let ratingStar = (
+      <AiFillStar fontSize={30} color="#B2BBC6" cursor="pointer" />
+    );
+
+    if (userRating && userRating >= starId) {
+      ratingStar = (
+        <AiFillStar fontSize={30} color="#FA7B23" cursor="pointer" />
+      );
+    }
+
+    return <div className="star">{ratingStar}</div>;
+  };
+
+  const Star = ({ starId, rating, onMouseEnter, onMouseLeave, onClick }) => {
+    let ratingStar = (
+      <AiFillStar fontSize={30} color="#B2BBC6" cursor="pointer" />
+    );
+
+    if (rating && rating >= starId) {
+      ratingStar = (
+        <AiFillStar fontSize={30} color="#FA7B23" cursor="pointer" />
+      );
+    }
+
+    return (
+      <div
+        className="star"
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        onClick={onClick}
+      >
+        {ratingStar}
+      </div>
+    );
+  };
+
+  const getRatingScore = (e) => {
+    if (e === 0) console.log(index);
+    setRating(e);
   };
 
   return (
@@ -596,36 +645,131 @@ const Profile = ({ usersProfile, token, userPosts }) => {
       </div>
       <Wrapper>
         {usersProfile.artisan ? (
-          <div className="wrapper">
-            <h1>What others have said</h1>
-            {usersProfile.artisan_reviews.map((rev) => (
-              <div className="card" key={rev.id}>
-                <div className="dets">
-                  <Image
-                    src={usersProfile.user_image.url}
-                    alt="User image"
-                    width={70}
-                    height={70}
-                    objectFit="cover"
-                    className="image"
-                  />
-                  <div className="post">
-                    <div className="username">
-                      <h2>{usersProfile.username}</h2>
-                      <p className="time">
-                        <Moment fromNow ago>
-                          {rev.created_at}
-                        </Moment>
-                      </p>
+          user && user.id !== usersProfile.id ? (
+            <div className="reviews">
+              <div className="wrapper">
+                <h1>What others have said</h1>
+                {artisanRatings.map(
+                  (rate) =>
+                    rate.user.id === usersProfile.id && (
+                      <div className="card" key={rate.id}>
+                        <div className="dets">
+                          {rate.user_rating.user_image ? (
+                            <Image
+                              src={rate.user_rating.user_image.url}
+                              alt="User image"
+                              width={70}
+                              height={70}
+                              objectFit="cover"
+                              className="image"
+                            />
+                          ) : (
+                            <Image
+                              src={userImage}
+                              alt="User image"
+                              width={70}
+                              height={70}
+                              objectFit="cover"
+                              className="image"
+                            />
+                          )}
+                          <div className="post">
+                            <div className="username">
+                              <h2>{rate.user_rating.username}</h2>
+                              <p className="time">
+                                <Moment fromNow ago>
+                                  {rate.created_at}
+                                </Moment>
+                              </p>
+                              {stars.map((star, i) =>
+                                i === 0 ? (
+                                  <></>
+                                ) : (
+                                  <RatingStar
+                                    key={i}
+                                    starId={i}
+                                    id={i}
+                                    userRating={rate.rating}
+                                  />
+                                )
+                              )}
+                            </div>
+                            <div className="user_post">
+                              <p>{rate.rating_text}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                )}
+              </div>
+              {user && user.id !== usersProfile.id && (
+                <div className="review_form">
+                  <h2>Rate and Review</h2>
+                  <form action="" onSubmit={handleRating}>
+                    {/* <Rating start={0} stop={5} /> */}
+                    <div className="flex">
+                      {stars.map((star, i) =>
+                        i === 0 ? (
+                          <></>
+                        ) : (
+                          <Star
+                            key={i}
+                            starId={i}
+                            rating={hoverRating || rating}
+                            onMouseEnter={() => setHoverRating(i)}
+                            onMouseLeave={() => setHoverRating(0)}
+                            onClick={() => getRatingScore(i)}
+                            id={i}
+                          />
+                        )
+                      )}
                     </div>
-                    <div className="user_post">
-                      <p>{rev.review}</p>
+                    <textarea
+                      name=""
+                      id=""
+                      cols="30"
+                      rows="10"
+                      placeholder="Write something..."
+                      onChange={(e) => setDescription(e.target.value)}
+                    ></textarea>
+                    <input type="submit" value="Send" />
+                  </form>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="wrapper">
+              <h1>What others have said</h1>
+              {usersProfile.ratings.map((rev) => (
+                <div className="card" key={rev.id}>
+                  <div className="dets">
+                    <Image
+                      src={usersProfile.user_image.url}
+                      alt="User image"
+                      width={70}
+                      height={70}
+                      objectFit="cover"
+                      className="image"
+                    />
+                    <div className="post">
+                      <div className="username">
+                        <h2>{usersProfile.username}</h2>
+                        <p className="time">
+                          <Moment fromNow ago>
+                            {rev.created_at}
+                          </Moment>
+                        </p>
+                      </div>
+                      <div className="user_post">
+                        <p>{rev.review}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )
         ) : (
           <div className="wrapper">
             <h1>Recent Activities</h1>

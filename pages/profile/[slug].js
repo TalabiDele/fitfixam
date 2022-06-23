@@ -6,7 +6,7 @@ import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import AuthContext from "@/context/AuthContext";
 import { useContext } from "react";
 
-const Slug = ({ usersProfile, userPosts, token }) => {
+const Slug = ({ usersProfile, userPosts, token, artisanRatings }) => {
   const { user } = useContext(AuthContext);
 
   return (
@@ -17,6 +17,7 @@ const Slug = ({ usersProfile, userPosts, token }) => {
           userPosts={userPosts}
           key={userProfile.id}
           token={token}
+          artisanRatings={artisanRatings}
         />
       ))}
     </UserLayout>
@@ -34,10 +35,17 @@ export async function getServerSideProps({ query: { slug }, req }) {
   const res = await fetch(`${NEXT_PUBLIC_API_URL}/posts?_sort=created_at:DESC`);
   const posts = await res.json();
 
-  const resUserPosts = await fetch(`${NEXT_PUBLIC_API_URL}/users/me`);
+  const resUserPosts = await fetch(
+    `${NEXT_PUBLIC_API_URL}/users/me?populate=*`
+  );
   const userPosts = await resUserPosts.json();
 
+  const resArtisanRatings = await fetch(
+    `${NEXT_PUBLIC_API_URL}/artisan-ratings`
+  );
+  const artisanRatings = await resArtisanRatings.json();
+
   return {
-    props: { usersProfile, posts, userPosts, token },
+    props: { usersProfile, posts, userPosts, token, artisanRatings },
   };
 }
