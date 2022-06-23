@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
         behavior: "smooth",
       });
       setTimeout(() => {
-        router.push("/login");
+        router.push("/feeds");
       }, 10000);
       setEmailMessage("Check email for confirmation!");
       setIsLoading(false);
