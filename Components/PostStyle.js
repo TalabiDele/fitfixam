@@ -26,10 +26,10 @@ export const Wrapper = styled.div`
   left: 50rem;
   right: 0rem;
   background: #fff;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   border-radius: 10px 10px 0px 0px;
   height: 60rem;
-  padding-bottom: 20rem;
+  padding-bottom: 10rem;
   padding-right: 35rem;
 
   div.reactions {
@@ -63,7 +63,35 @@ export const Wrapper = styled.div`
     border-radius: 50%;
   }
 
+  @media (min-width: 1281px) {
+    left: 45rem;
+  }
+
   @media (max-width: 1200px) {
+    left: 5rem;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    left: 4rem;
+    padding-right: 0rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    left: 5rem;
+    padding-right: 0rem;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    left: 4rem;
+    padding-right: 0rem;
+  }
+
+  @media (max-width: 480px) {
+    left: 3rem;
+    padding-right: 0rem;
+  }
+
+  /* @media (max-width: 1200px) {
     margin: auto;
     left: 0rem;
     right: 0rem;
@@ -78,7 +106,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 600px) {
     padding: 0rem 0rem 10rem 3rem;
-  }
+  } */
 `;
 
 export const PostItem = styled.div`
@@ -93,8 +121,36 @@ export const PostItem = styled.div`
     width: 80%;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 1281px) {
     p.post {
+      width: 80%;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    p.post {
+      width: 90%;
+      font-size: 19px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    p.post {
+      width: 90%;
+      font-size: 19px;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    p.post {
+      width: 90%;
+      font-size: 19px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    p.post {
+      width: 90%;
       font-size: 19px;
     }
   }
@@ -165,7 +221,21 @@ export const Cont = styled.div`
 `;
 
 export const FeedPosts = styled.div`
+  display: block;
+
   @media (max-width: 1200px) {
+    display: none;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    display: none;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    display: none;
+  }
+
+  @media (max-width: 480px) {
     display: none;
   }
 `;
@@ -203,7 +273,7 @@ export const UserPost = styled.div`
     /* border-bottom: 1.5px solid #dad9e9; */
     padding-bottom: 1rem;
     margin-bottom: 0rem;
-    width: 80%;
+    width: 90%;
   }
 `;
 
@@ -251,6 +321,30 @@ export const Interract = styled.div`
         margin-right: 10px;
         font-size: 16px;
       }
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    div.interract {
+      width: 90%;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    div.interract {
+      width: 90%;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    div.interract {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    div.interract {
+      width: 90%;
     }
   }
 `;
@@ -312,10 +406,38 @@ export const Reactions = styled.div`
       font-size: 14px;
     }
   }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    div.reactions {
+      width: 90%;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    div.reactions {
+      width: 90%;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    div.reactions {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    div.reactions {
+      width: 90%;
+    }
+  }
 `;
 
 export const Comments = styled.div`
   background-color: #fff;
+  overflow-y: scroll;
+  height: 30rem;
+  padding-bottom: 5rem;
+  width: 80%;
 
   p {
     font-weight: 400;
@@ -332,7 +454,7 @@ export const Comments = styled.div`
     padding-bottom: 1rem;
     padding-left: 2rem;
     border-radius: 10px 0px 0px 0px;
-    width: 57%;
+    width: 63%;
     margin: auto;
     position: fixed;
     bottom: 0;
@@ -340,7 +462,7 @@ export const Comments = styled.div`
 
     input {
       border-radius: 5px 0px 0px 5px;
-      width: 70%;
+      width: 90%;
       border: none;
       background-color: #fff;
       height: 50px;
@@ -365,15 +487,68 @@ export const Comments = styled.div`
     }
   }
 
+  @media (min-width: 1281px) {
+    width: 80%;
+
+    /* .input_comment {
+      width: 55%;
+    } */
+  }
+
   @media (max-width: 1900px) {
+    width: 80%;
+
     .input_comment {
-      width: 43%;
+      width: 56%;
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1500px) {
+    width: 80%;
+    margin-right: 5rem;
+
     .input_comment {
-      width: 90%;
+      width: 48%;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 90%;
+    margin-right: 5rem;
+
+    .input_comment {
+      width: 100%;
+      padding-left: 10rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 80%;
+    margin-right: 5rem;
+
+    .input_comment {
+      width: 100%;
+      padding-left: 10rem;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 80%;
+    margin-right: 5rem;
+
+    .input_comment {
+      width: 100%;
+      padding-left: 6rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 80%;
+    margin-right: 5rem;
+
+    .input_comment {
+      width: 100%;
+      padding-left: 6rem;
     }
   }
 `;

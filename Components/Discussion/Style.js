@@ -37,7 +37,7 @@ export const PostCard = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 1200px) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     width: 80%;
     margin: 2rem auto 2rem 7rem;
   }
@@ -45,12 +45,13 @@ export const PostCard = styled.div`
   @media (max-width: 900px) {
   }
 
-  @media (max-width: 600px) {
-    /* margin: 2rem auto 2rem 6rem; */
+  @media (min-width: 481px) and (max-width: 767px) {
+    margin: 2rem auto 2rem 7rem;
     width: 70%;
   }
 
-  @media (max-width: 378px) {
+  @media (max-width: 480px) {
+    width: 70%;
     margin: 2rem auto 2rem 5rem;
   }
 `;
