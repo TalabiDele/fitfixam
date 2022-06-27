@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
   const { data: session } = useSession();
 
   // console.log(session);
-  console.log(userData);
+  // console.log(userData);
 
   const router = useRouter();
 

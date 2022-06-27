@@ -114,7 +114,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   };
 
   const updateLike = async (e) => {
-    console.log(token);
+    // console.log(token);
     setIsLiked(true);
 
     console.log(isLiked);
@@ -123,6 +123,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
       const res = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`, {
         method: "POST",
         headers: {
+          // Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
