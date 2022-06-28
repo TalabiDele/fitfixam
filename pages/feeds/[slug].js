@@ -310,8 +310,8 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                     <Image
                       src={e.user.user_image.formats.small.url}
                       alt="User Image"
-                      width={80}
-                      height={80}
+                      width={50}
+                      height={50}
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
@@ -321,8 +321,8 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                     <Image
                       src={userImage}
                       alt="User Image"
-                      width={80}
-                      height={80}
+                      width={50}
+                      height={50}
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
@@ -361,7 +361,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
               <Interract>
                 <div className="interract">
                   <Likes>
-                    <FaHeart fontSize={26} color="#F4442E" />
+                    <FaHeart fontSize={19} color="#F4442E" />
                     <div className="liked_images">
                       {likes
                         .slice(0, 4)
@@ -374,8 +374,8 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                                     <Image
                                       src={l.user.user_image.formats.small.url}
                                       alt="User Image"
-                                      width={30}
-                                      height={30}
+                                      width={19}
+                                      height={19}
                                       className="user_image"
                                       objectFit="cover"
                                     />
@@ -383,8 +383,8 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                                     <Image
                                       src={userImage}
                                       alt="User Image"
-                                      width={30}
-                                      height={30}
+                                      width={19}
+                                      height={19}
                                       className="user_image"
                                       objectFit="cover"
                                     />
@@ -410,8 +410,6 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                                   <None>
                                     {(postLike += e.post_likes.length)}
                                   </None>
-                                  {console.log(postLike)}
-
                                   {userLiked && e.post_likes.length > 1 && (
                                     <p className="user_likes">
                                       You and {e.post_likes.length - 1} other(s)
@@ -472,7 +470,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       {userLiked ? (
                         <>
                           <FaHeart
-                            fontSize={26}
+                            fontSize={19}
                             onClick={() => unlike(e)}
                             color="#F4442E"
                           />
@@ -481,7 +479,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       ) : (
                         <>
                           <FaRegHeart
-                            fontSize={26}
+                            fontSize={19}
                             onClick={() => updateLike(e)}
                             color="#060258"
                           />
@@ -493,11 +491,11 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       {/* )} */}
                     </div>
                     <div className="comment_here">
-                      <FaRegComment fontSize={26} color="#020127" />
+                      <FaRegComment fontSize={19} color="#020127" />
                       <p>Comment</p>
                     </div>
                     <div className="share_here">
-                      <RiShareForwardLine fontSize={26} color="#020127" />
+                      <RiShareForwardLine fontSize={19} color="#020127" />
                       <p>Share</p>
                     </div>
                   </div>
@@ -534,8 +532,8 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                               <Image
                                 src={com.users.user_image.formats.small.url}
                                 alt="User Image"
-                                width={70}
-                                height={70}
+                                width={40}
+                                height={40}
                                 className="user_image"
                                 objectFit="cover"
                               />
@@ -543,14 +541,14 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                               <Image
                                 src={userImage}
                                 alt="User Image"
-                                width={70}
-                                height={70}
+                                width={40}
+                                height={40}
                                 className="user_image"
                                 objectFit="cover"
                               />
                             )}
                           </div>
-                          <div>
+                          <div className="comment_content">
                             <div className="name_time">
                               <h2
                                 onClick={() => displayProfile(com.users.slug)}
@@ -564,7 +562,28 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                                 </Moment>
                               </p>
                             </div>
-                            <p>{com.content}</p>
+                            <p>
+                              {com.content} Lorem ipsum dolor sit amet
+                              consectetur adipisicing elit. Sint explicabo
+                              tempore vero iure sapiente dolorem mollitia
+                              quaerat nulla. Voluptatem eos commodi, odio
+                              molestias doloremque amet iusto assumenda
+                              doloribus aliquam aut, repellendus consequatur
+                              quibusdam dolor aspernatur fuga atque magnam
+                              placeat sapiente blanditiis. Cupiditate, pariatur
+                              tempore? Nihil fugit libero itaque optio quos.{" "}
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Ullam iure asperiores officiis, culpa
+                              veritatis dolorum natus voluptatum maiores eum
+                              odit nulla doloribus similique numquam incidunt
+                              vero provident quis sed maxime suscipit nobis,
+                              ipsa repellat. Laboriosam, nulla qui? Sed, quasi
+                              numquam. Lorem ipsum dolor sit amet consectetur
+                              adipisicing elit. Quidem animi impedit similique
+                              asperiores, incidunt magni quis atque. Maxime ex
+                              est facere sint pariatur perspiciatis a enim! Ut
+                              accusantium nam impedit.
+                            </p>
                             {/* {e.comments.slice(0, 1).map((c) => (
                               <div key={c.id}>
                                 <p>{c.content}</p>

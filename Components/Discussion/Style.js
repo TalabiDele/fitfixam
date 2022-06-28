@@ -58,7 +58,7 @@ export const PostCard = styled.div`
 
 export const PostDetails = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
   align-items: center;
   /* border-top: 0.5px solid #c4c4c4; */
   background: #fff;
