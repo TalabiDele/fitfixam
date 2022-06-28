@@ -53,7 +53,9 @@ const Posts = ({ posts, comments, userPost }) => {
           <Wrapper>
             <PostCard>
               <PostText>
-                <p onClick={() => displayPost(posts)}>{posts.post}</p>
+                <p onClick={() => displayPost(posts)}>
+                  {posts.post.slice(0, 150).concat("...Read more")}
+                </p>
               </PostText>
               <PostCategory className="post_category">
                 {posts.category === null || posts.category === undefined ? (

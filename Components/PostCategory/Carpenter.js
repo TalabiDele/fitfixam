@@ -35,7 +35,9 @@ const Carpenter = ({ posts, comments, allUsers }) => {
       <Wrapper>
         <PostCard>
           <PostText>
-            <p onClick={() => displayPost(posts)}>{posts.post}</p>
+            <p onClick={() => displayPost(posts)}>
+              {posts.post.slice(0, 150).concat("...Read more")}
+            </p>
           </PostText>
           <PostCategory className="post_category">
             <Link href="/carpenters">

@@ -213,7 +213,9 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
           {posts.posts.map((post) => (
             <PostCard key={post.id}>
               <PostText>
-                <p onClick={() => displayPost(post)}>{post.post}</p>
+                <p onClick={() => displayPost(post)}>
+                  {post.post.slice(0, 80).concat(" ...Read more")}
+                </p>
               </PostText>
               <PostCategory className="post_category">
                 <Link href="/plumbers">

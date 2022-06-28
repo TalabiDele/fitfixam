@@ -229,7 +229,9 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
           {posts.map((e) => (
             <PostCard key={e.id}>
               <PostText>
-                <p onClick={() => displayPost(e)}>{e.post}</p>
+                <p onClick={() => displayPost(e)}>
+                  {e.post.slice(0, 80).concat(" ...Read more")}
+                </p>
               </PostText>
               <PostCategory className="post_category">
                 {e.category === null || e.category === undefined ? (
