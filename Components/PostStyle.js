@@ -486,7 +486,7 @@ export const Comments = styled.div`
       background-color: #fff;
       height: 50px;
       font-size: 19px;
-      color: #b2bbc6;
+      /* color: #b2bbc6; */
       padding: 0rem 1rem;
     }
 

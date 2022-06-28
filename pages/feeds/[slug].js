@@ -564,28 +564,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                                 </Moment>
                               </p>
                             </div>
-                            <p>
-                              {com.content} Lorem ipsum dolor sit amet
-                              consectetur adipisicing elit. Sint explicabo
-                              tempore vero iure sapiente dolorem mollitia
-                              quaerat nulla. Voluptatem eos commodi, odio
-                              molestias doloremque amet iusto assumenda
-                              doloribus aliquam aut, repellendus consequatur
-                              quibusdam dolor aspernatur fuga atque magnam
-                              placeat sapiente blanditiis. Cupiditate, pariatur
-                              tempore? Nihil fugit libero itaque optio quos.{" "}
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Ullam iure asperiores officiis, culpa
-                              veritatis dolorum natus voluptatum maiores eum
-                              odit nulla doloribus similique numquam incidunt
-                              vero provident quis sed maxime suscipit nobis,
-                              ipsa repellat. Laboriosam, nulla qui? Sed, quasi
-                              numquam. Lorem ipsum dolor sit amet consectetur
-                              adipisicing elit. Quidem animi impedit similique
-                              asperiores, incidunt magni quis atque. Maxime ex
-                              est facere sint pariatur perspiciatis a enim! Ut
-                              accusantium nam impedit.
-                            </p>
+                            <p>{com.content}</p>
                             {/* {e.comments.slice(0, 1).map((c) => (
                               <div key={c.id}>
                                 <p>{c.content}</p>

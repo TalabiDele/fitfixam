@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   @media (min-width: 1281px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 80%;
+    width: 100%;
     margin: auto;
     justify-items: center;
     padding-bottom: 5rem;
@@ -54,11 +54,11 @@ export const Wrapper = styled.div`
   @media (min-width: 768px) and (max-width: 1024px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 90%;
+    width: 100%;
     margin: auto;
     justify-items: center;
     padding-bottom: 5rem;
-    gap: 2rem;
+    gap: 1rem;
 
     .card {
       background-color: #07036e;
@@ -141,12 +141,12 @@ export const Wrapper = styled.div`
 export const Container = styled.div``;
 
 export const Card = styled.div`
-  width: 70%;
+  width: 60%;
   background-color: #3c91e6;
   border-radius: 10px;
   color: white;
   display: grid;
-  gap: 1rem;
+  /* gap: 1rem; */
 
   .card_details {
     padding: 0rem 1rem;
@@ -168,7 +168,7 @@ export const Card = styled.div`
   }
 
   @media (min-width: 1281px) {
-    width: 70%;
+    width: 60%;
     background-color: #3c91e6;
     border-radius: 10px;
     color: white;
@@ -225,7 +225,7 @@ export const Card = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    width: 100%;
+    width: 90%;
     /* height: 489px; */
     background-color: #3c91e6;
     border-radius: 10px;
