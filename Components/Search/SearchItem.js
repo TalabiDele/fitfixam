@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import AuthContext from "@/context/AuthContext";
+import userImage from "@/public/userImage.png";
 
 const SearchItem = ({ posts }) => {
   const router = useRouter();
@@ -15,14 +16,25 @@ const SearchItem = ({ posts }) => {
       ) : (
         posts.map((e) => (
           <div className="container" key={e.id}>
-            <Image
-              src={e.user.user_image.url}
-              alt="user image"
-              width={61}
-              height={61}
-              objectFit="cover"
-              className="image"
-            />
+            {e.user.user_image ? (
+              <Image
+                src={e.user.user_image.url}
+                alt="user image"
+                width={40}
+                height={40}
+                objectFit="cover"
+                className="image"
+              />
+            ) : (
+              <Image
+                src={userImage}
+                alt="user image"
+                width={40}
+                height={40}
+                objectFit="cover"
+                className="image"
+              />
+            )}
             <h2>{e.user.username}</h2>
             {"-"}
             <p>{e.post.slice(0, 60).concat("...")}</p>

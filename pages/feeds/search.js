@@ -13,7 +13,11 @@ const Search = ({ posts, query }) => {
   return (
     <UserLayout>
       <Container>
-        <h1>You searched for {router.query.term}</h1>
+        <h1>
+          You searched for {'"'}
+          {router.query.term}
+          {'"'}
+        </h1>
         <div className="results">
           <h2>Results</h2>
           <div className="btns">
