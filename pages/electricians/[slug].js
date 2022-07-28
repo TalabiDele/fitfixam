@@ -480,8 +480,8 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                       <p>Comment</p>
                     </div>
                     <div className="share_here">
-                      <RiShareForwardLine fontSize={26} color="#020127" />
-                      <p>Share</p>
+                      {/* <RiShareForwardLine fontSize={26} color="#020127" />
+                      <p>Share</p> */}
                     </div>
                   </div>
                 ) : (

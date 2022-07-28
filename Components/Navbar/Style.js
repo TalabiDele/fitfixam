@@ -882,6 +882,10 @@ export const UserNav = styled.div`
     width: 100%;
     background-color: #f0f3f6;
     color: #07036e;
+    position: fixed;
+    /* left: 0; */
+    z-index: 100;
+    /* top: 0; */
     padding: 1rem 2rem 1rem 0rem;
     transition: all 0.3s ease;
 
@@ -1448,14 +1452,19 @@ export const UserSideNav = styled.div`
   display: grid;
   /* padding: 1rem; */
   background: #f0f3f6;
-  width: ${({ userIsOpen }) => (userIsOpen ? "15%" : "4%")};
+  width: 15%;
   height: 100%;
   position: fixed;
   transition: all 0.1s ease;
+  top: 5rem;
   /* padding-left: 1rem; */
   z-index: 100;
   transition: all 0.3s ease-in-out;
   /* justify-items: center; */
+
+  div.write_icon {
+    margin-bottom: 1rem;
+  }
 
   .active {
     border-right: 5px solid #07036e;
@@ -1476,9 +1485,13 @@ export const UserSideNav = styled.div`
   }
 
   @media (min-width: 1281px) {
-    width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "4%")};
+    width: 16%;
     div.settings {
       margin-top: 20rem;
+    }
+
+    div.write_icon {
+      margin-bottom: 1rem;
     }
   }
 
@@ -1523,6 +1536,14 @@ export const IconNav = styled.div`
   align-items: center;
   height: 3rem;
 
+  div.write_icon {
+    margin-bottom: 1rem;
+  }
+
+  div.write {
+    margin: 1rem auto;
+  }
+
   svg {
     font-size: 1.3rem;
   }
@@ -1548,12 +1569,17 @@ export const IconNav = styled.div`
     width: 100%;
     padding-left: 1.5rem;
     padding-right: 10px;
-    padding-right: ${({ userIsOpen }) => (userIsOpen ? "16px" : "4px")};
+    padding-right: 16px;
+
+    div.write_icon {
+      margin-bottom: 1rem;
+    }
 
     div.write {
       background: #fff;
       border: 2px solid #07036e;
       padding: 0.5rem;
+      margin-bottom: 1rem;
       border-radius: 10px;
 
       p {
@@ -1677,8 +1703,9 @@ export const NavMenu = styled.div`
     transition: all 0.3s ease;
     position: fixed;
     left: 0;
+    right: 0;
     z-index: 100;
-    width: ${({ userIsOpen }) => (userIsOpen ? "16%" : "4%")};
+    width: 16%;
     /* width: 4%; */
 
     div.side_menu {
@@ -1712,7 +1739,7 @@ export const NavMenu = styled.div`
     position: fixed;
     left: 0;
     z-index: 100;
-    width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "6%")};
+    width: 30%;
     /* width: 4%; */
 
     div.side_menu {
@@ -1843,9 +1870,23 @@ export const NavMenu = styled.div`
 `;
 
 export const Search = styled.div`
+  margin-left: 25rem;
+  /* display: flex; */
+  font-size: 20px;
+
+  .search {
+    position: absolute;
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+    z-index: 1;
+  }
+
+  input {
+    padding-left: 3rem;
+  }
+
   @media (min-width: 1281px) {
-    margin-left: 8rem;
-    /* display: flex; */
+    margin-left: 25rem;
 
     .search {
       position: absolute;
@@ -1976,6 +2017,41 @@ export const Btn = styled.div`
 `;
 
 export const SearchContainer = styled.div`
+  position: absolute;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(6, 2, 88, 0.25);
+  border-radius: 10px;
+  width: 62%;
+  margin: auto;
+  left: 8rem;
+  z-index: 800;
+  font-size: 19px;
+  height: ${({ isSearch }) => (isSearch ? "40rem" : "0rem")};
+  overflow-y: scroll;
+  transition: all 0.3s ease;
+
+  ::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #dbdbdb;
+  }
+
   @media (min-width: 1281px) {
     position: absolute;
     background: #ffffff;

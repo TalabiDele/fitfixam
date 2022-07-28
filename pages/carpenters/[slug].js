@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import AuthContext from "@/context/AuthContext";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import UserLayout from "Components/UserLayout";
@@ -48,9 +48,14 @@ import { PostCategory } from "Components/PostCategory/Style";
 import userImage from "public/userImage.png";
 
 const Slug = ({ post, posts, comments, likes, allUsers }) => {
-  console.log(posts);
   const { user } = useContext(AuthContext);
   const [postId, setPostId] = useState({});
+
+  const ref = useRef(null);
+
+  const handleFocus = () => {
+    ref.current.focus();
+  };
 
   const [isComment, setIsComment] = useState({
     content: "",
@@ -478,13 +483,13 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                       {/* {findUserLiked === undefined && ( */}
                       {/* )} */}
                     </div>
-                    <div className="comment_here">
+                    <div className="comment_here" onClick={handleFocus}>
                       <FaRegComment fontSize={26} color="#020127" />
                       <p>Comment</p>
                     </div>
                     <div className="share_here">
-                      <RiShareForwardLine fontSize={26} color="#020127" />
-                      <p>Share</p>
+                      {/* <RiShareForwardLine fontSize={26} color="#020127" />
+                      <p>Share</p> */}
                     </div>
                   </div>
                 ) : (
@@ -585,6 +590,7 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
                       placeholder="Write a comment..."
                       value={isComment.content}
                       onChange={(input) => handleInputChange(input, e)}
+                      ref={ref}
                     />
 
                     <button>

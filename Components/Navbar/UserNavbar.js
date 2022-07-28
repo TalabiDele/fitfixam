@@ -431,11 +431,7 @@ const Navbar = () => {
         </CreatePost>
       </Modal>
       <UserNav isProfile={isProfile}>
-        <NavMenu
-          userIsOpen={userIsOpen}
-          onMouseEnter={() => setUserIsOpen(true)}
-          onMouseLeave={() => setUserIsOpen(false)}
-        >
+        <NavMenu>
           <div className="side_menu">
             <GiHamburgerMenu
               fontSize={30}
@@ -444,11 +440,9 @@ const Navbar = () => {
               className="menu"
             />
           </div>
-          {userIsOpen && (
-            <div className="logo_image">
-              <Image src={logo} alt="Fitfixam Logo" width={130} height={50} />
-            </div>
-          )}
+          <div className="logo_image">
+            <Image src={logo} alt="Fitfixam Logo" width={130} height={50} />
+          </div>
         </NavMenu>
         <Search>
           <form onSubmit={submitSearch}>
@@ -539,12 +533,12 @@ const Navbar = () => {
         )}
       </UserNav>
       <UserSideNav
-        userIsOpen={userIsOpen}
-        onMouseEnter={() => setUserIsOpen(true)}
-        onMouseLeave={() => setUserIsOpen(false)}
+      // userIsOpen={userIsOpen}
+      // onMouseEnter={() => setUserIsOpen(true)}
+      // onMouseLeave={() => setUserIsOpen(false)}
       >
         <div className="side_nav">
-          {userIsOpen ? (
+          <div className="write_icon">
             <IconNav>
               <div className="write" onClick={() => openModal()}>
                 <p>
@@ -552,22 +546,13 @@ const Navbar = () => {
                 </p>
               </div>
             </IconNav>
-          ) : (
-            <IconNav>
-              <FaPlus
-                fontSize={26}
-                cursor="pointer"
-                color="#fff"
-                className="add_post"
-              />{" "}
-            </IconNav>
-          )}
+          </div>
 
           <Link href="/feeds">
             <a>
               <IconNav className={router.pathname === "/feeds" ? "active" : ""}>
                 <FaToolbox fontSize={26} cursor="pointer" color="#07036e" />
-                {userIsOpen && <p>General Discussions</p>}
+                <p>General Discussions</p>
               </IconNav>
             </a>
           </Link>
@@ -577,7 +562,7 @@ const Navbar = () => {
                 className={router.pathname == "/trending" ? "active" : ""}
               >
                 <BiTrendingUp fontSize={26} cursor="pointer" color="#07036e" />
-                {userIsOpen && <p>Trending</p>}
+                <p>Trending</p>
               </IconNav>
             </a>
           </Link>
@@ -587,7 +572,7 @@ const Navbar = () => {
                 className={router.pathname == "/carpenters" ? "active" : ""}
               >
                 <FaHammer fontSize={26} cursor="pointer" color="#07036e" />
-                {userIsOpen && <p>Carpenters</p>}
+                <p>Carpenters</p>
               </IconNav>
             </a>
           </Link>
@@ -597,7 +582,7 @@ const Navbar = () => {
                 className={router.pathname == "/electricians" ? "active" : ""}
               >
                 <FaScrewdriver fontSize={26} cursor="pointer" color="#07036e" />
-                {userIsOpen && <p>Electricians</p>}
+                <p>Electricians</p>
               </IconNav>
             </a>
           </Link>
@@ -607,7 +592,7 @@ const Navbar = () => {
                 className={router.pathname == "/plumbers" ? "active" : ""}
               >
                 <FaWrench fontSize={26} cursor="pointer" color="#07036e" />
-                {userIsOpen && <p>Plumbers</p>}
+                <p>Plumbers</p>
               </IconNav>
             </a>
           </Link>
@@ -618,7 +603,7 @@ const Navbar = () => {
                 className={router.pathname === "/companies" ? "active" : ""}
               >
                 <FaRegCompass fontSize={26} cursor="pointer" color="#07036e" />
-                {userIsOpen && <p>Companies</p>}
+                <p>Companies</p>
               </IconNav>
             </a>
           </Link>
@@ -630,7 +615,7 @@ const Navbar = () => {
                 }
               >
                 <FaUsersCog fontSize={26} cursor="pointer" color="#07036e" />
-                {userIsOpen && <p>Find an Artisan</p>}
+                <p>Find an Artisan</p>
               </IconNav>
             </a>
           </Link>
@@ -638,7 +623,7 @@ const Navbar = () => {
             <a>
               <IconNav className={router.pathname === "/blog" ? "active" : ""}>
                 <FaFeatherAlt fontSize={26} cursor="pointer" color="#07036e" />
-                {userIsOpen && <p>Articles</p>}
+                <p>Articles</p>
               </IconNav>
             </a>
           </Link>
@@ -651,7 +636,7 @@ const Navbar = () => {
                     cursor="pointer"
                     color="#07036e"
                   />
-                  {userIsOpen && <p>Help</p>}
+                  <p>Help</p>
                 </IconNav>
               </a>
             </Link>

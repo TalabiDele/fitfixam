@@ -85,9 +85,7 @@ const FindArtisan = ({ carpenters, plumbers }) => {
       <>
         <Header>
           <h1>Carpenters</h1>
-          <Link href="/carpenter-artisans">
-            <a>See all</a>
-          </Link>
+          {/* <Link href="/carpenter-artisans"><a>See all</a></Link> */}
         </Header>
         <Cards>
           {isCarpenter &&
@@ -105,9 +103,7 @@ const FindArtisan = ({ carpenters, plumbers }) => {
       <>
         <Header>
           <h1>Plumbers</h1>
-          <Link href="/plumber-artisans">
-            <a>See all</a>
-          </Link>
+          {/* <Link href="/plumber-artisans"><a>See all</a></Link> */}
         </Header>
         <Cards>
           {plumbers.users_permissions_users.map((plumber) => (
@@ -124,9 +120,7 @@ const FindArtisan = ({ carpenters, plumbers }) => {
       <>
         <Header>
           <h1>Electricians</h1>
-          <Link href="/electricians-artisans">
-            <a>See all</a>
-          </Link>
+          {/* <Link href="/electricians-artisans"><a>See all</a></Link> */}
         </Header>
         <Cards>
           {isElectricians &&

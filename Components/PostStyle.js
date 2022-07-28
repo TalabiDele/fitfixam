@@ -3,8 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   /* margin-left: 10rem; */
   /* padding-left: 5rem; */
-  display: grid;
-  grid-template-columns: 30% 70%;
+  /* display: grid;
+  grid-template-columns: 30% 70%; */
+  width: 60%;
+  margin: auto;
+  overflow-y: hidden;
 
   @media (min-width: 1281px) {
     padding-left: 7rem;
@@ -29,46 +32,62 @@ export const PostImages = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
-  margin: 0rem auto 0rem auto;
-  background: #fff;
-  overflow-y: scroll;
-  border-radius: 10px 10px 0px 0px;
+  padding-top: 5rem;
+  /* width: 100%; */
+  /* margin: 0rem auto 0rem auto; */
+  background: #040242ba;
+  display: flex;
+  justify-content: end;
+  position: fixed;
+  /* border-radius: 10px 10px 0px 0px; */
+  z-index: 50;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* margin-right: 20rem; */
+
+  p.back {
+    width: 90%;
+    margin: 2rem auto 0rem auto;
+    font-weight: 700;
+    text-decoration: underline;
+    color: #020127;
+  }
 
   div.reactions {
     padding: 0rem 2rem;
-    background: #fcfdfd;
+    /* background: #fcfdfd; */
   }
 
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     height: 5px;
     width: 5px;
-    /* display: none; */
-  }
+  } */
 
   /* Track */
-  ::-webkit-scrollbar-track {
+  /* ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0px grey;
     border-radius: 10px;
-  }
+  } */
 
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+  /* ::-webkit-scrollbar-thumb {
     background: #c0c0c0;
     border-radius: 10px;
-  }
+  } */
 
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+  /* ::-webkit-scrollbar-thumb:hover {
     background: #dbdbdb;
-  }
+  } */
 
   .user_image {
     border-radius: 50%;
   }
 
   @media (min-width: 1281px) {
-    left: 45rem;
+    /* left: 45rem; */
     /* right: 2rem; */
   }
 
@@ -114,11 +133,11 @@ export const Wrapper = styled.div`
 `;
 
 export const PostItem = styled.div`
-  width: 100%;
-  overflow-y: scroll;
-  height: 85vh;
+  width: 40%;
+  /* overflow-y: scroll; */
+  height: 100vh;
   padding-bottom: 30rem;
-  margin: auto;
+  background: #fff;
 
   p.post {
     margin-top: 0rem;
@@ -193,7 +212,7 @@ export const Cont = styled.div`
   bottom: 0;
   width: 100%;
   margin: 0rem 1rem;
-  background-color: #fcfdfd;
+  /* background-color: #fcfdfd; */
 
   a {
     color: #07036e;
@@ -230,9 +249,9 @@ export const Cont = styled.div`
 export const FeedPosts = styled.div`
   display: block;
   width: 100%;
-  overflow-y: scroll;
   height: 100vh;
   padding-bottom: 10rem;
+
   /* margin-left: 4rem; */
 
   p {
@@ -259,7 +278,7 @@ export const FeedPosts = styled.div`
 export const UserPosted = styled.div`
   display: flex;
   align-items: center;
-  background: #fcfdfd;
+  /* background: #fcfdfd; */
   padding: 2rem 0rem 0rem 2rem;
 
   .user_image {
@@ -283,7 +302,7 @@ export const UserInfo = styled.div`
 `;
 
 export const UserPost = styled.div`
-  background: #fcfdfd;
+  /* background: #fcfdfd; */
   padding: 0rem 2rem;
 
   p {
@@ -299,7 +318,7 @@ export const UserPost = styled.div`
 export const Interract = styled.div`
   align-items: center;
   /* height: 3rem; */
-  background: #fcfdfd;
+  /* background: #fcfdfd; */
   padding: 0rem 2rem;
   z-index: 200;
   /* border-bottom: 1.5px solid #dad9e9;
@@ -390,7 +409,7 @@ export const Likes = styled.div`
 
 export const Reactions = styled.div`
   width: 100%;
-  background-color: #fcfdfd;
+  /* background-color: #fcfdfd; */
   padding-left: 2rem;
   padding-right: 2rem;
 
@@ -406,12 +425,17 @@ export const Reactions = styled.div`
     margin-right: 2rem;
   }
 
+  /* .comment_here {
+    cursor: pointer;
+  } */
+
   .like,
   .comment_here,
   .share_here {
     display: flex;
     align-items: center;
     font-size: 16px;
+    cursor: pointer;
 
     p {
       margin-left: 10px;
@@ -473,7 +497,7 @@ export const Comments = styled.div`
     padding-bottom: 1rem;
     padding-left: 2rem;
     border-radius: 10px 0px 0px 0px;
-    width: 65%;
+    width: 40%;
     margin: auto;
     position: fixed;
     bottom: 0;
@@ -481,7 +505,7 @@ export const Comments = styled.div`
 
     input {
       border-radius: 5px 0px 0px 5px;
-      width: 90%;
+      width: 100%;
       border: none;
       background-color: #fff;
       height: 50px;
@@ -662,15 +686,21 @@ export const UsersComments = styled.div`
     }
   }
 
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .name_time {
+      width: 20rem;
+    }
+  }
+
   @media (min-width: 481px) and (max-width: 767px) {
     .name_time {
-      width: 100%;
+      width: 20rem;
     }
   }
 
   @media (max-width: 480px) {
     .name_time {
-      width: 100%;
+      width: 15rem;
     }
   }
 

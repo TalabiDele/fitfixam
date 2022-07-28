@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-left: 9rem;
+  /* margin-left: 9rem; */
+  margin: auto;
+  position: relative;
   /* padding-top: 2rem; */
   /* display: grid;
   grid-template-columns: 60% 40%; */

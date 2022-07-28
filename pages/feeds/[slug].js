@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import AuthContext from "@/context/AuthContext";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import UserLayout from "Components/UserLayout";
@@ -51,6 +51,12 @@ import cookie from "cookie";
 
 const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
   const { user, userData, isToken } = useContext(AuthContext);
+
+  const ref = useRef(null);
+
+  const handleFocus = () => {
+    ref.current.focus();
+  };
 
   const [postId, setPostId] = useState({});
   const [isComment, setIsComment] = useState({
@@ -306,6 +312,9 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
         <Wrapper>
           {post.map((e) => (
             <PostItem key={e.id}>
+              <p onClick={() => router.back()} className="back">
+                Back
+              </p>
               <UserPosted>
                 <div onClick={() => displayProfile(e.user.slug)}>
                   {e.user.user_image ? (
@@ -492,13 +501,13 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       {/* {findUserLiked === undefined && ( */}
                       {/* )} */}
                     </div>
-                    <div className="comment_here">
+                    <div className="comment_here" onClick={handleFocus}>
                       <FaRegComment fontSize={19} color="#020127" />
                       <p>Comment</p>
                     </div>
                     <div className="share_here">
-                      <RiShareForwardLine fontSize={19} color="#020127" />
-                      <p>Share</p>
+                      {/* <RiShareForwardLine fontSize={19} color="#020127" />
+                      <p>Share</p> */}
                     </div>
                   </div>
                 ) : (
@@ -605,6 +614,7 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                       placeholder="Write a comment..."
                       value={isComment.content}
                       onChange={(input) => handleInputChange(input, e)}
+                      ref={ref}
                     />
 
                     <button>
