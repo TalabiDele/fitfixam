@@ -7,13 +7,14 @@ import ReactPlayer from "react-player";
 // import "video-react/dist/video-react.css";
 import { Player, ControlBar } from "video-react";
 import animation from "@/public/Animation.gif";
+import Why from "../Why/Why";
 
 const Review = () => {
   return (
     <Container>
       <Wrapper>
-        <div>
-          <Header>Why we’re here</Header>
+        {/* <div>
+          <Header>Why we’re here hfsjdfsjh</Header>
           <p>
             You, like many other Nigerians have most likely hired an artisan
             (carpenter, plumber, electrician, etc.) who after claiming to be
@@ -27,7 +28,7 @@ const Review = () => {
             others know who to patronize and who to avoid completely
             (individuals or companies).
           </p>
-        </div>
+        </div> */}
         <Image src={animation} alt="GIF" />
         {/* <video autoPlay loop>
           <source
@@ -46,6 +47,7 @@ const Review = () => {
           object-position="50% 50%"
         />
       </Arrow>
+      <Why />
       <ReviewCard />
     </Container>
   );

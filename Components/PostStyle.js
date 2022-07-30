@@ -6,7 +6,7 @@ export const Container = styled.div`
   /* display: grid;
   grid-template-columns: 30% 70%; */
   width: 60%;
-  margin: auto;
+  margin: 6rem auto;
   overflow-y: hidden;
 
   @media (min-width: 1281px) {

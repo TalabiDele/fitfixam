@@ -432,14 +432,14 @@ const Navbar = () => {
       </Modal>
       <UserNav isProfile={isProfile}>
         <NavMenu>
-          <div className="side_menu">
+          {/* <div className="side_menu">
             <GiHamburgerMenu
               fontSize={30}
               cursor="pointer"
               onClick={() => handleIsOpen()}
               className="menu"
             />
-          </div>
+          </div> */}
           <div className="logo_image">
             <Image src={logo} alt="Fitfixam Logo" width={130} height={50} />
           </div>

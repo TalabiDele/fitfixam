@@ -6,6 +6,8 @@ import Review from "Components/ReviewSection/Review";
 import Action from "Components/Action/Action";
 import Subscribe from "Components/Subscribe/Subscribe";
 import SecondAction from "Components/Action/SecondAction";
+import Why from "@/components/Why/Why";
+import Find from "@/components/Find/Find";
 import AuthContext from "@/context/AuthContext";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -19,27 +21,30 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    if (user) {
-      setIsLoading(true);
-      router.push("/feeds");
-    }
-
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 10000);
-  }, [user, isLoading, router]);
+    // setTimeout(() => {
+    //   setIsLoading(true);
+    // }, 5000);
+    // // setIsLoading(true);
+    // if (user) {
+    //   setIsLoading(true);
+    //   router.push("/feeds");
+    // }
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    // }, 5000);
+  }, []);
 
   return (
     <div>
-      {isLoading ? (
+      {/* {isLoading ? (
         <Loader className="loading">
           <Image width={50} height={50} alt="Spinner" src={Spinner} />
         </Loader>
-      ) : (
-        <Layout
-          title="Fitfixam | Home"
-          description="Here, you can find reviews of artisans and companies that offer artisan services. Be girded with the information that will help you make the right decisions. Fix it one time"
-          keywords="Artisans,
+      ) : ( */}
+      <Layout
+        title="Fitfixam | Home"
+        description="Here, you can find reviews of artisans and companies that offer artisan services. Be girded with the information that will help you make the right decisions. Fix it one time"
+        keywords="Artisans,
         Repair,
         Fix,
         Carpenters,
@@ -54,14 +59,15 @@ export default function Home() {
         Experience,
         Nigeria,
         "
-        >
-          <Hero />
-          <Review />
-          <Action />
-          <Subscribe />
-          <SecondAction />
-        </Layout>
-      )}
+      >
+        <Hero />
+        <Review />
+        <Find />
+        <Action />
+        <Subscribe />
+        <SecondAction />
+      </Layout>
+      {/* )} */}
     </div>
   );
 }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
   width: 90%;
   justify-items: center;
   /* align-items: center; */
@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 2100px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
     width: 90%;
     justify-items: center;
     /* align-items: center; */

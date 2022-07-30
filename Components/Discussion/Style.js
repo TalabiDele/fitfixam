@@ -3,12 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
   /* margin-left: 9rem; */
   margin: auto;
+  top: 6rem;
   position: relative;
   /* padding-top: 2rem; */
   /* display: grid;
   grid-template-columns: 60% 40%; */
   justify-content: center;
   width: 60%;
+
   /* height: 100rem; */
 
   @media (max-width: 1200px) {

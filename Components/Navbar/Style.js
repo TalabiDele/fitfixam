@@ -885,7 +885,7 @@ export const UserNav = styled.div`
     position: fixed;
     /* left: 0; */
     z-index: 100;
-    /* top: 0; */
+    top: 0;
     padding: 1rem 2rem 1rem 0rem;
     transition: all 0.3s ease;
 
@@ -1719,7 +1719,7 @@ export const NavMenu = styled.div`
       top: 1rem;
       left: 0rem;
       position: relative;
-      top: 4rem;
+      /* top: 4rem; */
     }
 
     .logo_image {
