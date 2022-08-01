@@ -6,7 +6,7 @@ import Review from "Components/ReviewSection/Review";
 import Action from "Components/Action/Action";
 import Subscribe from "Components/Subscribe/Subscribe";
 import SecondAction from "Components/Action/SecondAction";
-import Why from "@/components/Why/Why";
+import Conversation from "@/components/Conversation/Conversation";
 import Find from "@/components/Find/Find";
 import AuthContext from "@/context/AuthContext";
 import { useContext, useEffect, useState } from "react";
@@ -63,6 +63,7 @@ export default function Home() {
         <Hero />
         <Review />
         <Find />
+        <Conversation />
         <Action />
         <Subscribe />
         <SecondAction />

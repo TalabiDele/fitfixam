@@ -13,31 +13,39 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
+  /* display: flex; */
   width: 100%;
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10rem;
+  position: relative;
+  padding: 5rem 0rem;
 
   div.wrapper {
     width: 50%;
+    margin: auto;
+    text-align: center;
   }
 
   h1 {
-    font-size: 50px;
+    font-size: 56px;
     margin: 1rem 0rem;
   }
 
   p {
-    font-size: 22px;
-    margin-bottom: 1rem;
-    width: 80%;
+    font-size: 32px;
+    /* margin-bottom: 1rem; */
+    width: 90%;
+    margin: 0rem auto 1rem auto;
+
+    span {
+      color: #1b4167;
+      font-weight: 700;
+    }
   }
 
   div.wrench {
-    display: grid;
-    position: relative;
+    position: absolute;
     top: 3rem;
     overflow-x: clip;
     width: 20rem;
@@ -54,26 +62,26 @@ export const Wrapper = styled.div`
     margin: auto;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10rem;
+    position: relative;
 
     div.wrapper {
       width: 50%;
     }
 
     h1 {
-      font-size: 50px;
+      font-size: 56px;
       margin: 1rem 0rem;
     }
 
     p {
-      font-size: 22px;
+      font-size: 32px;
       margin-bottom: 1rem;
-      width: 80%;
+      width: 90%;
     }
 
     div.wrench {
       display: grid;
-      position: relative;
+      position: absolute;
       top: 3rem;
       overflow-x: clip;
       width: 20rem;

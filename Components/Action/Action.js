@@ -13,8 +13,8 @@ const Action = () => {
         <div className="wrapper">
           <h1>Are you a company providing artisan services?</h1>
           <p>
-            Help people discover you. Get clients here and let the testimonials
-            speak for you
+            Help people discover you on <span>fitfixam</span>. Get clients here
+            and let the testimonials speak for you
           </p>
           <div className="btn">
             <Link href="/signup">
