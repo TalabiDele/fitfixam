@@ -4,12 +4,13 @@ import Image from "next/image";
 import arrow from "@/public/Arrow-2.png";
 import TrendingCards from "../TrendingCards/TrendingCards";
 
-const Conversation = () => {
+const Conversation = ({ posts }) => {
   return (
     <Container>
       <div className="container">
         <h1>
           <span className="blue">Join the Conversation! </span>
+          <br />
           <span className="grey">Find an artisan,</span>{" "}
           <span className="dark">Make a post.</span>
         </h1>
@@ -28,7 +29,7 @@ const Conversation = () => {
           />
         </div>
       </div>
-      <TrendingCards />
+      <TrendingCards posts={posts} />
     </Container>
   );
 };
