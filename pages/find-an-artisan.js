@@ -82,70 +82,76 @@ const FindArtisan = ({ carpenters, plumbers }) => {
       Experience
       "
     >
-      <>
-        <Header>
-          <h1>Carpenters</h1>
-          {/* <Link href="/carpenter-artisans"><a>See all</a></Link> */}
-        </Header>
-        <Cards>
-          {isCarpenter &&
-            isCarpenter.users_permissions_users.map((carpenter) => (
-              <div className="card" key={carpenter.id}>
+      <Container>
+        <>
+          <Header>
+            <h1>Carpenters</h1>
+            {/* <Link href="/carpenter-artisans"><a>See all</a></Link> */}
+          </Header>
+          <Cards>
+            {isCarpenter &&
+              isCarpenter.users_permissions_users.map((carpenter) => (
+                <div className="card" key={carpenter.id}>
+                  <FindArtisans
+                    key={carpenter.id}
+                    user={carpenter}
+                    category={isCarpenter.category}
+                  />
+                </div>
+              ))}
+          </Cards>
+        </>
+        <>
+          <Header>
+            <h1>Plumbers</h1>
+            {/* <Link href="/plumber-artisans"><a>See all</a></Link> */}
+          </Header>
+          <Cards>
+            {plumbers.users_permissions_users.map((plumber) => (
+              <div className="card" key={plumber.id}>
                 <FindArtisans
-                  key={carpenter.id}
-                  user={carpenter}
-                  category={isCarpenter.category}
+                  key={plumber.id}
+                  user={plumber}
+                  category={plumbers.category}
                 />
               </div>
             ))}
-        </Cards>
-      </>
-      <>
-        <Header>
-          <h1>Plumbers</h1>
-          {/* <Link href="/plumber-artisans"><a>See all</a></Link> */}
-        </Header>
-        <Cards>
-          {plumbers.users_permissions_users.map((plumber) => (
-            <div className="card" key={plumber.id}>
-              <FindArtisans
-                key={plumber.id}
-                user={plumber}
-                category={plumbers.category}
-              />
-            </div>
-          ))}
-        </Cards>
-      </>
-      <>
-        <Header>
-          <h1>Electricians</h1>
-          {/* <Link href="/electricians-artisans"><a>See all</a></Link> */}
-        </Header>
-        <Cards>
-          {isElectricians &&
-            isElectricians.users_permissions_users.map((electrician) => (
-              <div className="card" key={electrician.id}>
-                <FindArtisans
-                  key={electrician.id}
-                  user={electrician}
-                  category={isElectricians.category}
-                />
-              </div>
-            ))}
-        </Cards>
-      </>
+          </Cards>
+        </>
+        <>
+          <Header>
+            <h1>Electricians</h1>
+            {/* <Link href="/electricians-artisans"><a>See all</a></Link> */}
+          </Header>
+          <Cards>
+            {isElectricians &&
+              isElectricians.users_permissions_users.map((electrician) => (
+                <div className="card" key={electrician.id}>
+                  <FindArtisans
+                    key={electrician.id}
+                    user={electrician}
+                    category={isElectricians.category}
+                  />
+                </div>
+              ))}
+          </Cards>
+        </>
+      </Container>
     </UserLayout>
   );
 };
 
 export default FindArtisan;
 
+export const Container = styled.div`
+  margin: 10rem auto;
+`;
+
 export const Header = styled.div`
   @media (min-width: 1281px) {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 60%;
     margin: 2rem auto;
     align-items: center;
 
@@ -228,7 +234,8 @@ export const Cards = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    width: 100%;
+    width: 80%;
+    margin: 0rem auto;
 
     div.card {
       width: 100%;
