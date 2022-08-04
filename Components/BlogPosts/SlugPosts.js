@@ -197,140 +197,143 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
         ))}
       </div>
       <Wrapper>
-        {post.map((p) => (
-          <div key={p.id}>
-            <div className="container" key={p.id}>
-              <div className="slug_image">
-                <Image
-                  src={p.image.url}
-                  alt="blog image"
-                  width={1500}
-                  height={200}
-                  objectFit="cover"
-                />
+        <div className="wrapper">
+          {post.map((p) => (
+            <div key={p.id}>
+              <div className="container" key={p.id}>
+                <div className="slug_image">
+                  <Image
+                    src={p.image.url}
+                    alt="blog image"
+                    width={1500}
+                    height={200}
+                    objectFit="cover"
+                  />
+                </div>
+                <h1>{p.title}</h1>
+                <div className="details">
+                  <p>
+                    <BiUserCircle /> {p.author}
+                  </p>
+                  <p>
+                    <BsCalendarEvent /> {p.date}
+                  </p>
+                  <p>
+                    <FaRegClock /> {p.minutes} min read
+                  </p>
+                </div>
+                <p className="post_article">
+                  <ReactMarkdown>{p.article}</ReactMarkdown>
+                </p>
               </div>
-              <h1>{p.title}</h1>
-              <div className="details">
-                <p>
-                  <BiUserCircle /> {p.author}
-                </p>
-                <p>
-                  <BsCalendarEvent /> {p.date}
-                </p>
-                <p>
-                  <FaRegClock /> {p.minutes} min read
-                </p>
-              </div>
-              <p className="post_article">
-                <ReactMarkdown>{p.article}</ReactMarkdown>
-              </p>
-            </div>
-            <Reactions>
-              {user ? (
-                <div className="reactions">
-                  <div className="like">
-                    <div>
-                      {liked ? (
-                        <FaHeart
-                          fontSize={26}
-                          onClick={() => likePost(p)}
-                          color="#F4442E"
-                        />
-                      ) : (
-                        <FaRegHeart
-                          fontSize={26}
-                          onClick={() => likePost(p)}
-                          color="#F4442E"
-                        />
-                      )}
-                      <p>Like</p>
+              <Reactions>
+                {user ? (
+                  <div className="reactions">
+                    <div className="like">
+                      <div>
+                        {liked ? (
+                          <FaHeart
+                            fontSize={26}
+                            onClick={() => likePost(p)}
+                            color="#F4442E"
+                          />
+                        ) : (
+                          <FaRegHeart
+                            fontSize={26}
+                            onClick={() => likePost(p)}
+                            color="#F4442E"
+                          />
+                        )}
+                        <p>Like</p>
+                      </div>
+                    </div>
+                    <div className="comment_here">
+                      <FaRegComment fontSize={26} color="#020127" />
+                      <p>Comment</p>
+                    </div>
+                    <div className="share_here">
+                      <RiShareForwardLine fontSize={26} color="#020127" />
+                      <p>Share</p>
                     </div>
                   </div>
-                  <div className="comment_here">
-                    <FaRegComment fontSize={26} color="#020127" />
-                    <p>Comment</p>
-                  </div>
-                  <div className="share_here">
-                    <RiShareForwardLine fontSize={26} color="#020127" />
-                    <p>Share</p>
-                  </div>
-                </div>
-              ) : (
-                <Contain>
-                  <p>
-                    <span>
-                      <Link href="/login">
-                        <a>Sign in</a>
-                      </Link>
-                    </span>{" "}
-                    or{" "}
-                    <span>
-                      <Link href="/signup">
-                        <a>Sign up</a>
-                      </Link>
-                    </span>{" "}
-                    to react to this post...
-                  </p>
-                </Contain>
-              )}
-            </Reactions>
-            <Comments>
-              <div className="comment">
-                {comments.map((com) => (
-                  <div key={com.key}>
-                    {p.id === com.blog_post.id ? (
-                      <UsersComments>
-                        <div
-                          className="image"
-                          onClick={() =>
-                            displayProfile(com.users_permissions_user.slug)
-                          }
-                        >
-                          <Image
-                            src={
-                              com.users_permissions_user.user_image
-                                ? com.users_permissions_user.user_image.formats
-                                    .small.url
-                                : userImage
+                ) : (
+                  <Contain>
+                    <p>
+                      <span>
+                        <Link href="/login">
+                          <a>Sign in</a>
+                        </Link>
+                      </span>{" "}
+                      or{" "}
+                      <span>
+                        <Link href="/signup">
+                          <a>Sign up</a>
+                        </Link>
+                      </span>{" "}
+                      to react to this post...
+                    </p>
+                  </Contain>
+                )}
+              </Reactions>
+              <Comments>
+                <div className="comment">
+                  {comments.map((com) => (
+                    <div key={com.key}>
+                      {p.id === com.blog_post.id ? (
+                        <UsersComments>
+                          <div
+                            className="image"
+                            onClick={() =>
+                              displayProfile(com.users_permissions_user.slug)
                             }
-                            alt="User Image"
-                            width={70}
-                            height={70}
-                            className="user_image"
-                            objectFit="cover"
-                          />
-                        </div>
-                        <div>
-                          <div className="name_time">
-                            <h2
-                              onClick={() =>
-                                displayProfile(com.users_permissions_user.slug)
+                          >
+                            <Image
+                              src={
+                                com.users_permissions_user.user_image
+                                  ? com.users_permissions_user.user_image
+                                      .formats.small.url
+                                  : userImage
                               }
-                            >
-                              {com.users_permissions_user.username}
-                            </h2>
-                            <span></span>
-                            <p className="time">
-                              <Moment fromNow ago>
-                                {com.created_at}
-                              </Moment>
-                            </p>
+                              alt="User Image"
+                              width={70}
+                              height={70}
+                              className="user_image"
+                              objectFit="cover"
+                            />
                           </div>
-                          <p>{com.content}</p>
-                        </div>
-                      </UsersComments>
-                    ) : (
-                      <div></div>
-                    )}
-                  </div>
-                ))}
-              </div>
-              {user ? (
-                <form
-                  className="input_comment"
-                  onSubmit={(s) => postComment(s, p)}
-                >
-                  {/* <FaCamera
+                          <div>
+                            <div className="name_time">
+                              <h2
+                                onClick={() =>
+                                  displayProfile(
+                                    com.users_permissions_user.slug
+                                  )
+                                }
+                              >
+                                {com.users_permissions_user.username}
+                              </h2>
+                              <span></span>
+                              <p className="time">
+                                <Moment fromNow ago>
+                                  {com.created_at}
+                                </Moment>
+                              </p>
+                            </div>
+                            <p>{com.content}</p>
+                          </div>
+                        </UsersComments>
+                      ) : (
+                        <div></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                {user ? (
+                  <form
+                    className="input_comment"
+                    onSubmit={(s) => postComment(s, p)}
+                  >
+                    {/* <FaCamera
                     fontSize={26}
                     color="#07036E"
                     className="input_icons"
@@ -345,37 +348,38 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
                     color="#07036E"
                     className="input_icons"
                   /> */}
-                  <input
-                    type="text"
-                    placeholder="Write a comment..."
-                    value={isComment.content}
-                    onChange={(input) => handleInputChange(input, p)}
-                  />
-                  <button>
-                    <FaTelegramPlane />
-                  </button>
-                </form>
-              ) : (
-                <Cont>
-                  <p>
-                    <span>
-                      <Link href="/login">
-                        <a>Sign in</a>
-                      </Link>
-                    </span>{" "}
-                    or{" "}
-                    <span>
-                      <Link href="/signup">
-                        <a>Sign up</a>
-                      </Link>
-                    </span>{" "}
-                    to comment on this post...
-                  </p>
-                </Cont>
-              )}
-            </Comments>
-          </div>
-        ))}
+                    <input
+                      type="text"
+                      placeholder="Write a comment..."
+                      value={isComment.content}
+                      onChange={(input) => handleInputChange(input, p)}
+                    />
+                    <button>
+                      <FaTelegramPlane />
+                    </button>
+                  </form>
+                ) : (
+                  <Cont>
+                    <p>
+                      <span>
+                        <Link href="/login">
+                          <a>Sign in</a>
+                        </Link>
+                      </span>{" "}
+                      or{" "}
+                      <span>
+                        <Link href="/signup">
+                          <a>Sign up</a>
+                        </Link>
+                      </span>{" "}
+                      to comment on this post...
+                    </p>
+                  </Cont>
+                )}
+              </Comments>
+            </div>
+          ))}
+        </div>
       </Wrapper>
     </Container>
   );

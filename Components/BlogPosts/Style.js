@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   @media (min-width: 1281px) {
-    margin-left: 10rem;
+    /* margin-left: 10rem; */
+    width: 80%;
+    margin: 10rem auto;
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    margin-left: 7rem;
+    width: 80%;
+    margin: 10rem auto;
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -14,11 +17,13 @@ export const Container = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    margin-left: 2rem;
+    width: 80%;
+    margin: 10rem auto;
   }
 
   @media (max-width: 480px) {
-    margin-left: 3rem;
+    width: 80%;
+    margin: 10rem auto;
     /* margin-right: 1rem; */
   }
 `;
@@ -30,7 +35,8 @@ export const Card = styled.div`
   align-items: center;
   /* border: 0.5px solid #020127; */
   border-radius: 10px;
-  width: 60%;
+  width: 70%;
+  margin: auto;
   padding: 1rem 2rem;
   margin-top: 2rem;
   background: #f9fafb;
@@ -68,7 +74,8 @@ export const Card = styled.div`
     align-items: center;
     /* border: 0.5px solid #020127; */
     border-radius: 10px;
-    width: 60%;
+    width: 70%;
+    margin: auto;
     padding: 1rem 2rem;
     margin-top: 2rem;
     background: #f9fafb;

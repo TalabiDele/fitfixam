@@ -212,7 +212,7 @@ export const Cont = styled.div`
   bottom: 0;
   width: 100%;
   margin: 0rem 1rem;
-  /* background-color: #fcfdfd; */
+  background-color: #fcfdfd;
 
   a {
     color: #07036e;

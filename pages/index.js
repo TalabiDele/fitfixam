@@ -8,6 +8,7 @@ import Subscribe from "Components/Subscribe/Subscribe";
 import SecondAction from "Components/Action/SecondAction";
 import Conversation from "@/components/Conversation/Conversation";
 import Find from "@/components/Find/Find";
+import Blogging from "@/components/BlogSection/Blogging";
 import AuthContext from "@/context/AuthContext";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -15,7 +16,7 @@ import Spinner from "@/public/spinner.gif";
 import styled from "styled-components";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
-export default function Home({ posts }) {
+export default function Home({ posts, blogPosts }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const { user } = useContext(AuthContext);
@@ -66,6 +67,7 @@ export default function Home({ posts }) {
         <Find />
         <Conversation posts={posts} />
         <Action />
+        <Blogging blogPosts={blogPosts} />
         <Subscribe />
         <SecondAction />
       </Layout>
@@ -84,8 +86,11 @@ export async function getServerSideProps() {
   const res = await fetch(`${NEXT_PUBLIC_API_URL}/posts?_limit=3`);
   const posts = await res.json();
 
+  const resBlog = await fetch(`${NEXT_PUBLIC_API_URL}/blog-posts`);
+  const blogPosts = await resBlog.json();
+
   return {
-    props: { posts },
+    props: { posts, blogPosts },
   };
 }
 8;

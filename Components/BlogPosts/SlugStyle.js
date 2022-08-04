@@ -2,11 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   @media (min-width: 1281px) {
-    margin-left: 7rem;
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: 40% 60%;
-    position: fixed;
+    width: 60%;
+    margin: 3rem auto;
 
     div.cont {
       margin-right: 3rem;
@@ -139,10 +136,17 @@ export const Card = styled.div`
 export const Wrapper = styled.div`
   @media (min-width: 1281px) {
     color: #020127;
-    /* position: fixed; */
-    left: 65rem;
+    position: fixed;
+    background: #040242ba;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    /* left: 65rem; */
+    right: 0rem;
     overflow-y: scroll;
-    height: 55rem;
+    height: 100vh;
 
     ::-webkit-scrollbar {
       height: 5px;
@@ -166,6 +170,18 @@ export const Wrapper = styled.div`
       background: #dbdbdb;
     }
 
+    div.wrapper {
+      background: #fff;
+      height: 100%;
+      width: 50%;
+      position: relative;
+      top: 5rem;
+    }
+    div.container {
+      background: #fff;
+      padding-bottom: 1rem;
+    }
+
     h1 {
       text-align: center;
       margin: 2rem 0rem 1rem 0rem;
@@ -186,6 +202,7 @@ export const Wrapper = styled.div`
       width: 90%;
       margin: auto;
       font-size: 19px;
+      background: #fff;
     }
   }
 
@@ -404,13 +421,16 @@ export const Reactions = styled.div`
     width: 100%;
     border-bottom: 1.5px solid #dad9e9;
     border-top: 1.5px solid #dad9e9;
-    margin: 2rem 0rem;
+    margin: 0rem auto;
     padding: 1rem 0rem;
+
+    background: #fff;
 
     div.reactions {
       display: flex;
       justify-content: space-between;
-      width: 50%;
+      width: 90%;
+      margin: auto;
     }
 
     div.like > div,
@@ -783,7 +803,8 @@ export const Likes = styled.div``;
 export const Comments = styled.div`
   @media (min-width: 1281px) {
     background-color: #fff;
-    /* margin-top: 5rem; */
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 
     .user_image {
       cursor: pointer;
@@ -807,7 +828,8 @@ export const Comments = styled.div`
       background-color: #fcfdfd;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      width: 47%;
+      width: 50%;
+      justify-content: center;
       margin: auto;
       position: fixed;
       bottom: 0;
