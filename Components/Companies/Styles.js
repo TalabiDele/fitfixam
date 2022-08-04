@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 90%;
-  margin: 2rem auto;
+  width: 60%;
+  margin: 7rem auto;
   color: #020127;
 
   div.container {
