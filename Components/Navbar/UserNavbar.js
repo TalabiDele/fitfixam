@@ -105,9 +105,9 @@ const Navbar = () => {
   };
 
   const handleIsOpen = () => {
-    setTimeout(() => {
-      setUserIsOpen(!userIsOpen);
-    }, 2000);
+    setUserIsOpen(!userIsOpen);
+    // setTimeout(() => {
+    // }, 2000);
   };
 
   const openModal = () => {
@@ -431,15 +431,15 @@ const Navbar = () => {
         </CreatePost>
       </Modal>
       <UserNav isProfile={isProfile}>
-        <NavMenu>
-          {/* <div className="side_menu">
+        <NavMenu userIsOpen={userIsOpen}>
+          <div className="side_menu">
             <GiHamburgerMenu
               fontSize={30}
               cursor="pointer"
               onClick={() => handleIsOpen()}
               className="menu"
             />
-          </div> */}
+          </div>
           <div className="logo_image">
             <Image src={logo} alt="Fitfixam Logo" width={130} height={50} />
           </div>
@@ -533,9 +533,9 @@ const Navbar = () => {
         )}
       </UserNav>
       <UserSideNav
-      // userIsOpen={userIsOpen}
-      // onMouseEnter={() => setUserIsOpen(true)}
-      // onMouseLeave={() => setUserIsOpen(false)}
+        userIsOpen={userIsOpen}
+        // onMouseEnter={() => setUserIsOpen(true)}
+        // onMouseLeave={() => setUserIsOpen(false)}
       >
         <div className="side_nav">
           <div className="write_icon">

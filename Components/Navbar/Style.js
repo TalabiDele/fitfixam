@@ -993,6 +993,10 @@ export const UserNav = styled.div`
     background-color: #f0f3f6;
     color: #07036e;
     padding: 1rem 2rem 1rem 0rem;
+    position: fixed;
+    /* left: 0; */
+    z-index: 100;
+    top: 0;
     /* margin: auto; */
     transition: all 0.3s ease;
 
@@ -1109,6 +1113,10 @@ export const UserNav = styled.div`
     color: #07036e;
     padding: 1rem 2rem 1rem 0rem;
     transition: all 0.3s ease;
+    position: fixed;
+    /* left: 0; */
+    z-index: 100;
+    top: 0;
 
     .bell {
       transform: rotate(9.21deg);
@@ -1217,6 +1225,10 @@ export const UserNav = styled.div`
     color: #07036e;
     padding: 1rem 2rem 1rem 0rem;
     transition: all 0.3s ease;
+    position: fixed;
+    /* left: 0; */
+    z-index: 100;
+    top: 0;
 
     .bell {
       transform: rotate(9.21deg);
@@ -1329,6 +1341,10 @@ export const UserNav = styled.div`
     color: #07036e;
     padding: 1rem 2rem 1rem 0rem;
     transition: all 0.3s ease;
+    position: fixed;
+    /* left: 0; */
+    z-index: 100;
+    top: 0;
 
     .bell {
       transform: rotate(9.21deg);
@@ -1496,7 +1512,8 @@ export const UserSideNav = styled.div`
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "6%")};
+    /* width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "6%")}; */
+    width: 30%;
 
     div.settings {
       margin-top: 10rem;
@@ -1504,7 +1521,8 @@ export const UserSideNav = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    width: ${({ userIsOpen }) => (userIsOpen ? "40%" : "8%")};
+    /* width: ${({ userIsOpen }) => (userIsOpen ? "40%" : "8%")}; */
+    width: 30%;
 
     div.settings {
       margin-top: 10rem;
@@ -1512,7 +1530,13 @@ export const UserSideNav = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    width: ${({ userIsOpen }) => (userIsOpen ? "60%" : "12%")};
+    width: ${({ userIsOpen }) => (userIsOpen ? "60%" : "0%")};
+    /* width: 40%; */
+    /* display: ${({ userIsOpen }) => (userIsOpen ? "block" : "none")}; */
+
+    div.side_nav {
+      display: ${({ userIsOpen }) => (userIsOpen ? "block" : "none")};
+    }
 
     div.settings {
       margin-top: 10rem;
@@ -1520,7 +1544,11 @@ export const UserSideNav = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "12%")};
+    width: ${({ userIsOpen }) => (userIsOpen ? "70%" : "0%")};
+
+    div.side_nav {
+      display: ${({ userIsOpen }) => (userIsOpen ? "block" : "none")};
+    }
 
     div.settings {
       margin-top: 10rem;
@@ -1550,7 +1578,7 @@ export const IconNav = styled.div`
 
   p {
     color: #07036e;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
     font-weight: bold;
     /* font-size: 1.3rem; */
   }
@@ -1625,6 +1653,7 @@ export const IconNav = styled.div`
     padding-left: 1.5rem;
     /* padding-right: 10px; */
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "16px" : "4px")};
+    /* display: ${({ userIsOpen }) => (userIsOpen ? "block" : "none")}; */
 
     div.write {
       background: #fff;
@@ -1648,8 +1677,8 @@ export const IconNav = styled.div`
   @media (min-width: 481px) and (max-width: 767px) {
     width: 100%;
     padding-left: 1.5rem;
-    padding-right: 10px;
     padding-right: ${({ userIsOpen }) => (userIsOpen ? "30px" : "12px")};
+    /* display: ${({ userIsOpen }) => (userIsOpen ? "block" : "none")}; */
 
     div.write {
       background: #fff;
@@ -1697,6 +1726,8 @@ export const IconNav = styled.div`
 `;
 
 export const NavMenu = styled.div`
+  transition: all 0.3s ease-in-out;
+
   @media (min-width: 1281px) {
     display: flex;
     align-items: center;
@@ -1712,6 +1743,7 @@ export const NavMenu = styled.div`
       background: #f0f3f6;
       height: 10rem;
       width: 4.7rem;
+      display: none;
     }
 
     .menu {
@@ -1746,6 +1778,7 @@ export const NavMenu = styled.div`
       background: #f0f3f6;
       height: 10rem;
       width: 4.7rem;
+      display: none;
     }
 
     .menu {
@@ -1773,8 +1806,9 @@ export const NavMenu = styled.div`
     position: fixed;
     left: 0;
     z-index: 100;
-    width: ${({ userIsOpen }) => (userIsOpen ? "40%" : "8%")};
-    /* width: 4%; */
+    /* width: ${({ userIsOpen }) => (userIsOpen ? "40%" : "8%")}; */
+    width: 30%;
+    display: none;
 
     div.side_menu {
       background: #f0f3f6;
@@ -1792,6 +1826,7 @@ export const NavMenu = styled.div`
 
     .logo_image {
       background-color: #f0f3f6;
+
       padding: 2rem 5rem 2rem 2rem;
       z-index: 400;
       width: 100%;
@@ -1807,25 +1842,28 @@ export const NavMenu = styled.div`
     position: fixed;
     left: 0;
     z-index: 100;
-    width: ${({ userIsOpen }) => (userIsOpen ? "60%" : "12%")};
-    /* width: 4%; */
+    width: ${({ userIsOpen }) => (userIsOpen ? "60%" : "60%")};
+    /* width: 40%; */
+    /* display: none; */
 
     div.side_menu {
       background: #f0f3f6;
-      height: 10rem;
-      width: 4.7rem;
+      /* height: 10rem; */
+      top: 2rem;
+      /* width: 4.7rem; */
     }
 
     .menu {
       margin-left: 1rem;
-      top: 1rem;
+      /* top: 1rem; */
       left: 0rem;
       position: relative;
-      top: 4rem;
+      /* top: 4rem; */
     }
 
     .logo_image {
-      background-color: #f0f3f6;
+      /* background-color: #f0f3f6; */
+      background: ${({ userIsOpen }) => (userIsOpen ? "#f0f3f6" : "none")};
       padding: 2rem 5rem 2rem 2rem;
       z-index: 400;
       width: 100%;
@@ -1841,30 +1879,30 @@ export const NavMenu = styled.div`
     position: fixed;
     left: 0;
     z-index: 100;
-    width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "12%")};
+    /* width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "12%")}; */
+    width: ${({ userIsOpen }) => (userIsOpen ? "70%" : "70%")};
     /* width: 4%; */
 
     div.side_menu {
       background: #f0f3f6;
-      height: 10rem;
-      width: 4.7rem;
+      /* height: 10rem; */
+      /* width: 4.7rem; */
     }
 
     .menu {
       margin-left: 1rem;
-      top: 1rem;
       left: 0rem;
       position: relative;
-      top: 4rem;
     }
 
     .logo_image {
-      background-color: #f0f3f6;
+      background: ${({ userIsOpen }) => (userIsOpen ? "#f0f3f6" : "none")};
       padding: 2rem 5rem 2rem 2rem;
       z-index: 400;
       width: 100%;
       position: relative;
       transition: all 0.3s ease-in-out;
+      display: ${({ userIsOpen }) => (userIsOpen ? "block" : "none")};
     }
   }
 `;
@@ -1934,7 +1972,7 @@ export const Search = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    margin-left: 5rem;
+    margin-left: 15rem;
     margin-right: 1rem;
     width: 80%;
     /* display: flex; */

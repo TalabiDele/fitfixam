@@ -105,13 +105,13 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    left: 4rem;
-    padding-left: 4rem;
+    padding-left: 0;
+    left: 0;
   }
 
   @media (max-width: 480px) {
-    left: 3rem;
-    padding-left: 3rem;
+    padding-left: 0;
+    left: 0;
   }
 
   /* @media (max-width: 1200px) {
@@ -154,6 +154,8 @@ export const PostItem = styled.div`
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 76%;
+
     p.post {
       width: 100%;
       font-size: 19px;
@@ -161,6 +163,8 @@ export const PostItem = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
+    width: 85%;
+
     p.post {
       width: 100%;
       font-size: 19px;
@@ -168,6 +172,8 @@ export const PostItem = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
+    width: 100%;
+
     p.post {
       width: 100%;
       font-size: 19px;
@@ -175,6 +181,8 @@ export const PostItem = styled.div`
   }
 
   @media (max-width: 480px) {
+    width: 100%;
+
     p.post {
       width: 100%;
       font-size: 19px;
@@ -533,45 +541,46 @@ export const Comments = styled.div`
   @media (min-width: 1281px) {
     width: 100%;
 
-    /* .input_comment {
-      width: 55%;
-    } */
+    .input_comment {
+      width: 40%;
+    }
   }
 
-  @media (max-width: 1900px) {
+  /* @media (max-width: 1900px) {
     width: 80%;
 
     .input_comment {
       width: 65%;
     }
-  }
+  } */
 
-  @media (max-width: 1500px) {
+  /* @media (max-width: 1500px) {
     width: 80%;
     margin-right: 5rem;
 
     .input_comment {
       width: 48%;
     }
-  }
+  } */
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     width: 100%;
     margin-right: 5rem;
 
     .input_comment {
-      width: 100%;
-      padding-left: 10rem;
+      width: 70%;
+      /* padding-left: 10rem; */
     }
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
     width: 100%;
-    margin-right: 5rem;
+    margin-right: 10rem;
 
     .input_comment {
-      width: 100%;
+      width: 80%;
       padding-left: 10rem;
+      padding-right: 3rem;
     }
   }
 
@@ -581,7 +590,7 @@ export const Comments = styled.div`
 
     .input_comment {
       width: 100%;
-      padding-left: 6rem;
+      padding-right: 3rem;
     }
   }
 
@@ -591,7 +600,7 @@ export const Comments = styled.div`
 
     .input_comment {
       width: 100%;
-      padding-left: 6rem;
+      padding-right: 3rem;
     }
   }
 `;

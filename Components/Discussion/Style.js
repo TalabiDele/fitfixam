@@ -11,12 +11,26 @@ export const Container = styled.div`
   justify-content: center;
   width: 60%;
 
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    margin-left: 30rem;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 100%;
+    margin: auto;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    margin: auto;
+  }
+
   /* height: 100rem; */
 
-  @media (max-width: 1200px) {
+  /* @media (max-width: 1200px) {
     width: 100%;
     margin-left: 0rem;
-  }
+  } */
 `;
 
 export const Wrapper = styled.div`
