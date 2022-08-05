@@ -71,12 +71,13 @@ export const Container = styled.div`
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    /* margin-left: ; */
-    width: 80%;
+    margin-left: 25rem;
+    width: 60%;
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    width: 70%;
+    width: 50%;
+    margin-left: 20rem;
 
     div.card {
       grid-template-columns: repeat(1, 1fr);

@@ -167,9 +167,9 @@ export const Header = styled.div`
   @media (min-width: 1025px) and (max-width: 1280px) {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 60%;
     align-items: center;
-    margin: 2rem auto;
+    margin: 2rem 0rem 2rem 25rem;
 
     h1 {
       font-weight: 400;
@@ -183,8 +183,8 @@ export const Header = styled.div`
   @media (min-width: 768px) and (max-width: 1024px) {
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    margin: 2rem auto;
+    width: 60%;
+    margin: 2rem 0rem 2rem 20rem;
     align-items: center;
 
     h1 {
@@ -230,6 +230,17 @@ export const Header = styled.div`
 `;
 
 export const Cards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  width: 80%;
+  margin: 0rem auto;
+
+  div.card {
+    width: 100%;
+    margin-right: -10rem;
+  }
+
   @media (min-width: 1281px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -247,9 +258,9 @@ export const Cards = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-    width: 70%;
+    width: 60%;
     gap: 5rem;
-    margin: auto;
+    margin-left: 20rem;
 
     div.card {
       width: 100%;
@@ -258,11 +269,11 @@ export const Cards = styled.div`
 
   @media (min-width: 768px) and (max-width: 1024px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-    width: 70%;
+    width: 40%;
     gap: 3rem;
-    margin: auto;
+    margin-left: 15rem;
 
     div.card {
       width: 100%;
@@ -273,9 +284,9 @@ export const Cards = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-    width: 60%;
+    width: 50%;
     gap: 1rem;
-    margin: auto;
+    margin: 1rem;
 
     div.card {
       width: 100%;
@@ -287,8 +298,8 @@ export const Cards = styled.div`
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
     width: 70%;
-    margin: auto;
-    gap: 1rem;
+    margin: 0rem;
+    /* gap: 1rem; */
 
     div.card {
       width: 100%;

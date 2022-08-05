@@ -134,6 +134,76 @@ export const Card = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  color: #020127;
+  position: fixed;
+  background: #040242ba;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  /* left: 65rem; */
+  right: 0rem;
+  overflow-y: scroll;
+  height: 100vh;
+
+  ::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #dbdbdb;
+  }
+
+  div.wrapper {
+    background: #fff;
+    height: 100%;
+    width: 50%;
+    position: relative;
+    top: 5rem;
+  }
+  div.container {
+    background: #fff;
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 2rem 0rem 1rem 0rem;
+  }
+
+  div.details {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin: 0rem auto 3rem auto;
+
+    p {
+      text-align: center;
+    }
+  }
+
+  p.post_article {
+    width: 90%;
+    margin: auto;
+    font-size: 19px;
+    background: #fff;
+  }
+
   @media (min-width: 1281px) {
     color: #020127;
     position: fixed;
@@ -208,8 +278,10 @@ export const Wrapper = styled.div`
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     color: #020127;
-    margin: 0rem 2rem;
+    background: none;
+    margin: 0rem 0rem;
     padding-bottom: 5rem;
+    width: 100%;
     /* position: fixed; */
 
     ::-webkit-scrollbar {
@@ -232,6 +304,13 @@ export const Wrapper = styled.div`
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
       background: #dbdbdb;
+    }
+
+    div.wrapper {
+      background: #fff;
+      width: 70%;
+      position: relative;
+      /* top: 5rem; */
     }
 
     h1 {
@@ -250,16 +329,17 @@ export const Wrapper = styled.div`
     }
 
     p.post_article {
-      width: 100%;
+      width: 80%;
       margin: auto;
-      font-size: 26px;
+      font-size: 16px;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
     color: #020127;
-    margin: 0rem 1rem 0rem 5rem;
+    margin: 0rem 1rem 0rem 0rem;
     padding-bottom: 5rem;
+    background: none;
     /* position: fixed; */
 
     ::-webkit-scrollbar {
@@ -284,6 +364,13 @@ export const Wrapper = styled.div`
       background: #dbdbdb;
     }
 
+    div.wrapper {
+      background: #fff;
+      height: 100%;
+      width: 70%;
+      position: relative;
+    }
+
     h1 {
       text-align: center;
       margin-top: 1rem;
@@ -292,7 +379,7 @@ export const Wrapper = styled.div`
 
     div.details {
       display: flex;
-      width: 100%;
+      width: 70%;
       justify-content: space-between;
       margin: 0rem auto 1rem auto;
       p {
@@ -301,7 +388,7 @@ export const Wrapper = styled.div`
     }
 
     p.post_article {
-      width: 100%;
+      width: 80%;
       margin: auto;
       font-size: 19px;
     }
@@ -309,9 +396,11 @@ export const Wrapper = styled.div`
 
   @media (min-width: 481px) and (max-width: 767px) {
     color: #020127;
-    margin: 0rem 1rem 0rem 5rem;
+    margin: 0rem 0rem 0rem 5rem;
     padding-bottom: 5rem;
+    background: none;
     /* position: fixed; */
+    width: 100%;
 
     ::-webkit-scrollbar {
       height: 5px;
@@ -333,6 +422,12 @@ export const Wrapper = styled.div`
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
       background: #dbdbdb;
+    }
+
+    div.wrapper {
+      background: #fff;
+      width: 100%;
+      position: relative;
     }
 
     h1 {
@@ -343,7 +438,7 @@ export const Wrapper = styled.div`
 
     div.details {
       display: flex;
-      width: 100%;
+      width: 80%;
       justify-content: space-between;
       margin: 0rem auto 1rem auto;
       p {
@@ -352,16 +447,17 @@ export const Wrapper = styled.div`
     }
 
     p.post_article {
-      width: 100%;
+      width: 80%;
       margin: auto;
-      font-size: 19px;
+      font-size: 16px;
     }
   }
 
   @media (max-width: 480px) {
     color: #020127;
-    margin: 0rem 1rem 0rem 4rem;
+    margin: 0rem 0rem 0rem 4rem;
     padding-bottom: 5rem;
+    background: none;
     /* position: fixed; */
 
     ::-webkit-scrollbar {
@@ -384,6 +480,12 @@ export const Wrapper = styled.div`
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
       background: #dbdbdb;
+    }
+
+    div.wrapper {
+      background: #fff;
+      width: 100%;
+      position: relative;
     }
 
     h1 {
@@ -395,7 +497,7 @@ export const Wrapper = styled.div`
 
     div.details {
       display: flex;
-      width: 100%;
+      width: 80%;
       justify-content: space-between;
       margin: 0rem auto 1rem auto;
       p {
@@ -405,7 +507,7 @@ export const Wrapper = styled.div`
     }
 
     p.post_article {
-      width: 100%;
+      width: 80%;
       margin: auto;
       font-size: 16px;
     }
@@ -457,7 +559,8 @@ export const Reactions = styled.div`
     div.reactions {
       display: flex;
       justify-content: space-between;
-      width: 50%;
+      width: 70%;
+      margin: auto;
     }
 
     div.like > div,
@@ -484,7 +587,8 @@ export const Reactions = styled.div`
     div.reactions {
       display: flex;
       justify-content: space-between;
-      width: 50%;
+      width: 70%;
+      margin: auto;
     }
 
     div.like > div,
@@ -511,7 +615,8 @@ export const Reactions = styled.div`
     div.reactions {
       display: flex;
       justify-content: space-between;
-      width: 90%;
+      width: 80%;
+      margin: auto;
     }
 
     div.like > div,
@@ -538,7 +643,8 @@ export const Reactions = styled.div`
     div.reactions {
       display: flex;
       justify-content: space-between;
-      width: 90%;
+      width: 80%;
+      margin: auto;
     }
 
     div.like > div,
@@ -801,6 +907,66 @@ export const UsersComments = styled.div`
 export const Likes = styled.div``;
 
 export const Comments = styled.div`
+  background-color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+
+  .user_image {
+    cursor: pointer;
+  }
+
+  div.comment {
+    margin-bottom: 18rem;
+  }
+  /* margin-bottom: 5rem; */
+
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    width: 80%;
+    /* padding: 0rem 2rem 0rem 0rem; */
+  }
+
+  .input_comment {
+    display: flex;
+    align-items: center;
+    background-color: #fcfdfd;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    input {
+      border-radius: 5px 0px 0px 5px;
+      width: 70%;
+      border: none;
+      background-color: #fff;
+      height: 50px;
+      font-size: 19px;
+      color: #b2bbc6;
+      padding: 0rem 1rem;
+    }
+
+    button {
+      border: none;
+      background: #07036e;
+      border-radius: 0px 5px 5px 0px;
+      color: #fff;
+      height: 50px;
+      font-size: 19px;
+      padding: 0px 20px;
+      cursor: pointer;
+    }
+
+    .input_icons {
+      margin-right: 15px;
+    }
+  }
+
   @media (min-width: 1281px) {
     background-color: #fff;
     padding-top: 2rem;
@@ -889,7 +1055,8 @@ export const Comments = styled.div`
       background-color: #fcfdfd;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      width: 100%;
+      width: 70%;
+      padding-right: 2rem;
       margin: auto;
       position: fixed;
       bottom: 0;
@@ -950,7 +1117,8 @@ export const Comments = styled.div`
       background-color: #fcfdfd;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      width: 100%;
+      width: 70%;
+      padding-right: 2rem;
       margin: auto;
       position: fixed;
       bottom: 0;
@@ -1072,7 +1240,8 @@ export const Comments = styled.div`
       background-color: #fcfdfd;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      width: 90%;
+      width: 100%;
+      padding-right: 2rem;
       margin: auto;
       position: fixed;
       bottom: 0;

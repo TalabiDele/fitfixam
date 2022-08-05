@@ -1129,10 +1129,9 @@ export const UserNav = styled.div`
     }
 
     form {
-      width: 90%;
+      width: 100%;
     }
     input {
-      /* width: ${({ userIsOpen }) => (userIsOpen ? "60rem" : "100rem")}; */
       width: 100%;
       border: none;
       padding: 1rem;
@@ -1727,6 +1726,39 @@ export const IconNav = styled.div`
 
 export const NavMenu = styled.div`
   transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 16%;
+  /* width: 4%; */
+
+  div.side_menu {
+    background: #f0f3f6;
+    height: 10rem;
+    width: 4.7rem;
+    display: none;
+  }
+
+  .menu {
+    margin-left: 1rem;
+    top: 1rem;
+    left: 0rem;
+    position: relative;
+    /* top: 4rem; */
+  }
+
+  .logo_image {
+    background-color: #f0f3f6;
+    padding: 2rem 5rem 2rem 2rem;
+    z-index: 400;
+    width: 100%;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
 
   @media (min-width: 1281px) {
     display: flex;
@@ -1808,7 +1840,6 @@ export const NavMenu = styled.div`
     z-index: 100;
     /* width: ${({ userIsOpen }) => (userIsOpen ? "40%" : "8%")}; */
     width: 30%;
-    display: none;
 
     div.side_menu {
       background: #f0f3f6;
@@ -1826,7 +1857,6 @@ export const NavMenu = styled.div`
 
     .logo_image {
       background-color: #f0f3f6;
-
       padding: 2rem 5rem 2rem 2rem;
       z-index: 400;
       width: 100%;
@@ -1848,9 +1878,9 @@ export const NavMenu = styled.div`
 
     div.side_menu {
       background: #f0f3f6;
-      /* height: 10rem; */
+      height: 4rem;
       top: 2rem;
-      /* width: 4.7rem; */
+      display: block;
     }
 
     .menu {
@@ -1885,8 +1915,9 @@ export const NavMenu = styled.div`
 
     div.side_menu {
       background: #f0f3f6;
-      /* height: 10rem; */
-      /* width: 4.7rem; */
+      display: block;
+      height: 4rem;
+      width: 0rem;
     }
 
     .menu {
@@ -1939,7 +1970,7 @@ export const Search = styled.div`
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    margin-left: 8rem;
+    /* margin-left: 8rem; */
     /* display: flex; */
 
     .search {
@@ -1955,8 +1986,6 @@ export const Search = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    margin-left: 6rem;
-    width: 80%;
     /* display: flex; */
 
     .search {

@@ -1,28 +1,31 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  margin: 10rem auto;
+
   @media (min-width: 1281px) {
     /* margin-left: 10rem; */
     width: 80%;
-    margin: 10rem auto;
+    /* margin: 10rem auto; */
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 80%;
-    margin: 10rem auto;
+    width: 70%;
+    margin-left: 22rem;
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    margin-left: 7rem;
+    margin-left: 17rem;
+    width: 60%;
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    width: 80%;
+    width: 100%;
     margin: 10rem auto;
   }
 
   @media (max-width: 480px) {
-    width: 80%;
+    width: 100%;
     margin: 10rem auto;
     /* margin-right: 1rem; */
   }
