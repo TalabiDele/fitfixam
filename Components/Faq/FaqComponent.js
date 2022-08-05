@@ -166,6 +166,7 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
                   <h2>Ask Questions</h2>
                   <p>How can we help you?</p>
                   <form>
+                    <input type="email" placeholder="Enter Email" />
                     <textarea
                       placeholder="Leave a question or comment..."
                       rows="15"
@@ -186,6 +187,7 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
                     we‘ll get right back to you
                   </p>
                   <form>
+                    <input type="email" placeholder="Enter Email" />
                     <textarea
                       placeholder="Leave your complaints here..."
                       rows="15"

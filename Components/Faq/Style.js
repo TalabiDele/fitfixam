@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
+  width: 70%;
+  margin-left: 20rem;
+  margin-top: 10rem;
 `;
 
 export const Wrapper = styled.div`
@@ -97,8 +99,17 @@ export const Wrapper = styled.div`
         width: 100%;
       }
 
+      input {
+        border: none;
+        border-radius: 10px;
+        padding: 1rem;
+        background: rgba(196, 196, 196, 0.1);
+        margin-bottom: 2rem;
+      }
+
       textarea {
         border-radius: 10px;
+        border: none;
         margin-bottom: 3rem;
         font-size: 18px;
         padding: 1rem;
