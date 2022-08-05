@@ -37,6 +37,11 @@ export const Wrapper = styled.div`
     justify-items: center;
   }
 
+  div.button {
+    display: flex;
+    gap: 2rem;
+  }
+
   @media (min-width: 1281px) {
     text-align: center;
     padding-top: 10rem;

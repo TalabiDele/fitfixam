@@ -13,6 +13,14 @@ export const Container = styled.div`
     margin-bottom: 2rem;
   }
 
+  div.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+  }
+
   h1 {
     font-size: 60px;
   }

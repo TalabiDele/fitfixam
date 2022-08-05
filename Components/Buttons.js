@@ -22,7 +22,7 @@ export const BtnNav = styled.button`
 `;
 
 export const HeroBtn = styled.button`
-  border: 2px solid #060363;
+  border: 3px solid #060363;
   background-color: none;
   color: #060363;
   font-weight: bold;
@@ -38,6 +38,33 @@ export const HeroBtn = styled.button`
 
   &:hover {
     background-color: #060363;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+`;
+
+export const HeroBtn_two = styled.button`
+  border: 3px solid #f4442e;
+  background-color: none;
+  color: #f4442e;
+  font-weight: bold;
+  padding: 20px 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  /* width: 15%; */
+  font-size: 26px;
+  margin: auto;
+  background-color: #fff;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #f4442e;
     color: #fff;
     transition: all 0.3s ease-in-out;
   }

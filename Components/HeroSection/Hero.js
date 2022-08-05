@@ -1,11 +1,18 @@
 import BGImage from "Components/BG";
 import { Wrapper, Container } from "./Style";
-import { HeroBtn } from "Components/Buttons";
+import { HeroBtn, HeroBtn_two } from "Components/Buttons";
 import HeroBg from "@/public/hero-background.png";
 import Link from "next/link";
 import { HiChevronDoubleDown } from "react-icons/hi";
 
 const Hero = () => {
+  const scroll = () => {
+    window.scrollTo({
+      top: 1100,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -18,15 +25,24 @@ const Hero = () => {
           make the right decisions.
         </p>
         <div className="btns">
-          <Link href="/signup">
-            <a>
-              <HeroBtn>Get Started</HeroBtn>
-            </a>
-          </Link>
+          <div className="button">
+            <Link href="/signup">
+              <a>
+                <HeroBtn>Sign up today!</HeroBtn>
+              </a>
+            </Link>
+            <Link href="/feeds">
+              <a>
+                <HeroBtn_two>Start Reviewing</HeroBtn_two>
+              </a>
+            </Link>
+          </div>
           <HiChevronDoubleDown
             fontSize={70}
             color={"#f4442e"}
             className="hero_icon"
+            onClick={scroll}
+            cursor="pointer"
           />
         </div>
       </Wrapper>
