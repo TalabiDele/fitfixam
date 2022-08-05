@@ -4,6 +4,21 @@ export const Container = styled.div`
   width: 70%;
   margin-left: 20rem;
   margin-top: 10rem;
+
+  .back {
+    font-size: 1.5rem;
+    width: 15%;
+    margin-left: 6rem;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #07036e;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #f4442e;
+    }
+  }
 `;
 
 export const Wrapper = styled.div`

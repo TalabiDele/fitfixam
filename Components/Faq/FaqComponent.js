@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Container, Wrapper } from "./Style";
+import { useRouter } from "next/router";
 
 const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
   const [isFAQ, setIsFAQ] = useState(false);
@@ -8,6 +9,12 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
   const [isGeneral, setIsGeneral] = useState(false);
   const [isQuestion, setIsQuestion] = useState(false);
   const [isComplaint, setIsComplaint] = useState(false);
+
+  const router = useRouter();
+
+  const home = (e) => {
+    router.push("/feeds");
+  };
 
   const getFaq = () => {
     setIsFAQ(!isFAQ);
@@ -62,6 +69,9 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
   return (
     <Container>
       <Wrapper>
+        <p className="back" onClick={home}>
+          Back to home{">>"}
+        </p>
         <div className="container">
           <div className="help">
             <h1>Help</h1>
