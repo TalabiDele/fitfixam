@@ -38,4 +38,58 @@ export const Container = styled.div`
     justify-items: center;
     align-items: center;
   }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    div.texts {
+      p {
+        font-size: 19px;
+        width: 90%;
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    div.texts {
+      p {
+        font-size: 16px;
+        width: 90%;
+      }
+    }
+
+    div.image {
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    div.texts {
+      p {
+        font-size: 16px;
+        width: 90%;
+      }
+    }
+
+    div.image {
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    div.texts {
+      p {
+        font-size: 12px;
+        width: 90%;
+      }
+    }
+
+    div.image {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
 `;

@@ -29,14 +29,16 @@ const Blogging = ({ blogPosts }) => {
           {blogPosts.map((e) => (
             <div className="card" key={e.id}>
               <div className="image" onClick={() => handleLink(e)}>
-                <Image
-                  src={e.image.url}
-                  alt={e.image.name}
-                  width={400}
-                  height={500}
-                  objectFit="cover"
-                  className="img"
-                />
+                <div className="pic">
+                  <Image
+                    src={e.image.url}
+                    alt={e.image.name}
+                    width={400}
+                    height={500}
+                    objectFit="cover"
+                    className="img"
+                  />
+                </div>
                 <div className="other">
                   <p>
                     <AiOutlineClockCircle /> {e.minutes} min read

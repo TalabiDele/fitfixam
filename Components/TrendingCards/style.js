@@ -60,4 +60,52 @@ export const Container = styled.div`
       color: #151a20;
     }
   }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    div.card {
+      width: 90%;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    div.card {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    div.card {
+      width: 100%;
+
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    div.card {
+      width: 100%;
+      padding: 1rem;
+
+      p {
+        font-size: 13px;
+        width: 100%;
+      }
+    }
+
+    div.user {
+      width: 100%;
+
+      h3 {
+        font-size: 14px;
+      }
+    }
+
+    div.details {
+      h3 {
+        font-size: 14px;
+      }
+    }
+  }
 `;

@@ -118,8 +118,7 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    padding-top: 4rem;
-
+    padding-top: 0rem;
     text-align: center;
 
     h1 {
@@ -159,7 +158,7 @@ export const Wrapper = styled.div`
 
   @media (min-width: 481px) and (max-width: 767px) {
     text-align: center;
-    /* padding-top: 2rem; */
+    padding-top: 0rem;
 
     h1 {
       color: #040242;
@@ -306,7 +305,7 @@ export const Container = styled.div`
     background-color: #f9fafb;
     margin-bottom: -3rem;
     padding-top: 1rem;
-    margin-top: 12rem;
+    margin-top: 1rem;
   }
 
   @media (min-width: 481px) and (max-width: 767px) {

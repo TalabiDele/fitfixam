@@ -56,93 +56,19 @@ export const Wrapper = styled.div`
     }
   }
 
-  @media (min-width: 1200px) and (max-width: 2100px) {
-    display: flex;
-    width: 100%;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-
-    div.wrapper {
-      width: 50%;
-    }
-
-    h1 {
-      font-size: 56px;
-      margin: 1rem 0rem;
-    }
-
-    p {
-      font-size: 32px;
-      margin-bottom: 1rem;
-      width: 90%;
-    }
-
-    div.wrench {
-      display: grid;
-      position: absolute;
-      top: 3rem;
-      overflow-x: clip;
-      width: 20rem;
-      right: 0rem;
-
-      .tool {
-        overflow-x: clip;
-      }
-    }
-  }
-
-  @media (max-width: 1200px) {
-  }
-
-  @media (max-width: 1200px) {
-    display: flex;
-    width: 100%;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 2rem;
-
-    div.wrapper {
-      width: 70%;
-    }
-
+  @media (min-width: 1025px) and (max-width: 1280px) {
     h1 {
       font-size: 40px;
-      margin-bottom: 1rem;
     }
 
     p {
-      font-size: 24px;
-      margin-bottom: 1rem;
-    }
-
-    div.wrench {
-      display: grid;
-      position: relative;
-      top: 3rem;
-      overflow-x: clip;
-      width: 20rem;
-      right: 0rem;
-
-      .tool {
-        overflow-x: clip;
-      }
+      font-size: 20px;
     }
   }
 
-  @media (max-width: 900px) {
-    width: 100%;
-    padding: 0rem 3rem;
-
-    div.wrapper {
-      width: 100%;
-    }
-
+  @media (min-width: 768px) and (max-width: 1024px) {
     h1 {
-      font-size: 30px;
-      width: 100%;
+      font-size: 40px;
     }
 
     p {
@@ -150,61 +76,58 @@ export const Wrapper = styled.div`
     }
 
     div.wrench {
-      display: grid;
-      position: relative;
-      top: 3rem;
-      overflow-x: clip;
-      width: 20rem;
-      right: 0rem;
+      top: 15rem;
+      width: 25%;
 
-      .tool {
-        overflow-x: clip;
-        display: none;
+      svg {
+        font-size: 400px;
       }
     }
   }
 
-  @media (max-width: 600px) {
-    display: grid;
+  @media (min-width: 481px) and (max-width: 767px) {
+    div.wrapper {
+      width: 80%;
+    }
 
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    div.wrench {
+      top: 15rem;
+      width: 25%;
+
+      svg {
+        font-size: 300px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
     div.wrapper {
       width: 90%;
     }
 
     h1 {
-      width: 100%;
-      font-size: 24px;
+      font-size: 40px;
     }
 
     p {
-      font-size: 19px;
-    }
-  }
-
-  @media (max-width: 378px) {
-    display: grid;
-    justify-content: center;
-
-    div.wrapper {
-      padding: 0rem;
-      margin: auto;
-      width: 80%;
-      text-align: center;
+      font-size: 20px;
     }
 
-    h1 {
-      font-size: 24px;
-      width: 100%;
-      /* margin: auto; */
-    }
+    div.wrench {
+      top: 20rem;
+      width: 25%;
 
-    p {
-      font-size: 19px;
-      width: 100%;
-    }
-
-    div.btn {
-      width: 100%;
+      svg {
+        font-size: 200px;
+      }
     }
   }
 `;

@@ -128,4 +128,83 @@ export const Container = styled.div`
       }
     }
   }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .header {
+    }
+
+    div.wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    .blog-link {
+      font-size: 19px;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    h1 {
+      font-size: 30px;
+    }
+
+    .blog-link {
+      font-size: 16px;
+    }
+
+    div.wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 25px;
+    }
+
+    .blog-link {
+      font-size: 13px;
+    }
+
+    div.image {
+      width: 90%;
+      margin: auto;
+      height: 100%;
+
+      div.other {
+        width: 100%;
+        margin: auto;
+
+        .bg {
+          margin: auto;
+        }
+      }
+    }
+
+    .img {
+      width: 70%;
+    }
+
+    .pic {
+      /* width: 70%; */
+      margin: auto;
+    }
+
+    div.wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 `;
