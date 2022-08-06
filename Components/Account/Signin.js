@@ -49,9 +49,9 @@ const CreateAccount = () => {
       ) : (
         <Container>
           <Aside>
-            <Image src={Logo} alt="Fitifixam logo" width={100} height={100} />
-            <h1>Welcome Back!</h1>
-            <p>It’s good to have you back.</p>
+            {/* <Image src={Logo} alt="Fitifixam logo" width={100} height={100} /> */}
+            <h1>Welcome back, we missed you!</h1>
+            {/* <p>It’s good to have you back.</p> */}
           </Aside>
           <Wrapper error={error}>
             <h1>Login</h1>

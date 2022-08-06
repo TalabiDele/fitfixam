@@ -18,6 +18,7 @@ import { BiShow, BiHide } from "react-icons/bi";
 import Link from "next/link";
 import spinner from "@/public/spinner.gif";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { BsArrowRight } from "react-icons/bs";
 
 const CreateAccount = () => {
   const [username, setUsername] = useState("");
@@ -196,9 +197,15 @@ const CreateAccount = () => {
       )} */}
       <Container>
         <Aside>
-          <Image src={Logo} alt="Fitifixam logo" width={100} height={100} />
-          <h1>Welcome</h1>
-          <p>Are you ready to get started?</p>
+          {/* <Image src={Logo} alt="Fitifixam logo" width={100} height={100} /> */}
+          <h1>
+            Say <span>{'"no"'}</span> to mediocrity and unprofessionalism among
+            artisans.
+          </h1>
+          <p>
+            Sign up to get started!{" "}
+            <BsArrowRight color="#f4442e" fontSize={50} />
+          </p>
         </Aside>
         <Wrapper error={error}>
           {/* <RegisterAlert sent={sent}>

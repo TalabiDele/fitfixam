@@ -868,9 +868,21 @@ export const Wrapper = styled.div`
 `;
 
 export const Aside = styled.div`
-  @media (min-width: 1281px) {
+  h1 {
+    span {
+      color: #f4442e;
+    }
+  }
+
+  svg {
     text-align: center;
-    background: url("/sign-up-bg.png");
+  }
+
+  @media (min-width: 1281px) {
+    text-align: left;
+    background-color: #020122;
+    background: url("/signupBg.png");
+    /* mix-blend-mode: color; */
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -885,19 +897,22 @@ export const Aside = styled.div`
 
     h1 {
       font-size: 50px;
-      margin-bottom: 0rem;
-      margin-top: 15rem;
+      margin-bottom: 2rem;
+      margin-top: 10rem;
     }
 
     p {
       font-size: 24px;
       margin-top: 0rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
     }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    text-align: center;
-    background: url("/sign-up-bg.png");
+    text-align: left;
+    background: url("/signupBg.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -919,12 +934,15 @@ export const Aside = styled.div`
     p {
       font-size: 24px;
       margin-top: 0rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    text-align: center;
-    background: url("/sign-up-bg.png");
+    text-align: left;
+    background: url("/signupBg.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -946,6 +964,9 @@ export const Aside = styled.div`
     p {
       font-size: 20px;
       margin-top: 0rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
     }
   }
 
