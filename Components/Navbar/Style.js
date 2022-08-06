@@ -687,6 +687,7 @@ export const Actions = styled.div`
     span {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
+      font-size: 10px;
     }
   }
 
