@@ -1678,7 +1678,7 @@ export const UserSideNav = styled.div`
     width: 30%;
 
     div.settings {
-      margin-top: 10rem;
+      margin-top: 5rem;
     }
   }
 
@@ -1692,7 +1692,7 @@ export const UserSideNav = styled.div`
     }
 
     div.settings {
-      margin-top: 10rem;
+      margin-top: 3rem;
     }
   }
 
@@ -1704,7 +1704,7 @@ export const UserSideNav = styled.div`
     }
 
     div.settings {
-      margin-top: 10rem;
+      margin-top: 3rem;
     }
   }
 `;
