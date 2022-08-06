@@ -48,6 +48,23 @@ export const Sign = styled.div`
 `;
 
 export const Modal = styled.div`
+  background: #0201278f;
+  position: fixed;
+  height: ${({ isModal }) => (!isModal ? "0rem" : "100%")};
+  width: ${({ isModal }) => (!isModal ? "0rem" : "100%")};
+  opacity: ${({ isModal }) => (!isModal ? "0" : "1")};
+  /* display: ${({ isModal }) => (!isModal ? "none" : "block")}; */
+  z-index: 200;
+  transition: all 0.1s ease-in-out;
+  top: 0;
+
+  div.cancel_icon {
+    position: absolute;
+    top: 8.5rem;
+    right: 17rem;
+    cursor: pointer;
+  }
+
   @media (min-width: 1281px) {
     background: #0201278f;
     position: fixed;
@@ -57,6 +74,7 @@ export const Modal = styled.div`
     /* display: ${({ isModal }) => (!isModal ? "none" : "block")}; */
     z-index: 200;
     transition: all 0.1s ease-in-out;
+    top: 0;
 
     div.cancel_icon {
       position: absolute;
@@ -114,7 +132,7 @@ export const Modal = styled.div`
 
     div.cancel_icon {
       position: absolute;
-      top: 8.5rem;
+      top: 3.3rem;
       right: 2rem;
       cursor: pointer;
     }
@@ -132,7 +150,7 @@ export const Modal = styled.div`
 
     div.cancel_icon {
       position: absolute;
-      top: 8.5rem;
+      top: 2rem;
       right: 1rem;
       cursor: pointer;
     }
@@ -167,7 +185,7 @@ export const CreatePost = styled.div`
   @media (min-width: 481px) and (max-width: 767px) {
     background-color: #fff;
     width: ${({ isModal }) => (isModal ? "0rem" : "90%")};
-    margin: 10rem auto;
+    margin: 5rem auto;
     border-radius: 20px;
     transition: all 0.1s ease-in-out;
   }
@@ -175,7 +193,7 @@ export const CreatePost = styled.div`
   @media (max-width: 480px) {
     background-color: #fff;
     width: ${({ isModal }) => (isModal ? "0rem" : "90%")};
-    margin: 10rem auto;
+    margin: 4rem auto;
     border-radius: 20px;
     transition: all 0.1s ease-in-out;
   }
@@ -325,7 +343,7 @@ export const Tags = styled.div`
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 
     .active {
       border: 1.5px solid #07036e;
@@ -373,7 +391,7 @@ export const Tags = styled.div`
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 
     .active {
       border: 1.5px solid #07036e;
@@ -440,6 +458,30 @@ export const Contain = styled.div`
 `;
 
 export const PostContainer = styled.div`
+  position: relative;
+  display: ${({ isModal }) => (!isModal ? "none" : "block")};
+  /* width: ${({ isModal }) => (!isModal ? "0rem" : "70%")}; */
+
+  textarea {
+    margin-top: 1rem;
+    border-right: none;
+    border-left: none;
+    border-top: 2px solid #d9d9de;
+    border-bottom: 2px solid #d9d9de;
+    width: 100%;
+    /* width: ${({ isModal }) => (isModal ? "0rem" : "100%")}; */
+    /* display: ${({ isModal }) => (!isModal ? "none" : "block")}; */
+    height: 20rem;
+    padding: 2rem 4rem 2rem 4rem;
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+  }
+
+  h2.post_header {
+    color: #020127;
+    padding: 2rem 2rem 0rem 4rem;
+  }
+
   @media (min-width: 1281px) {
     position: relative;
     display: ${({ isModal }) => (!isModal ? "none" : "block")};
@@ -529,9 +571,9 @@ export const PostContainer = styled.div`
       width: 100%;
       /* width: ${({ isModal }) => (isModal ? "0rem" : "100%")}; */
       /* display: ${({ isModal }) => (!isModal ? "none" : "block")}; */
-      height: 20rem;
-      padding: 2rem;
-      font-size: 19px;
+      height: 10rem;
+      padding: 1rem;
+      font-size: 13px;
     }
 
     h2.post_header {
@@ -554,9 +596,9 @@ export const PostContainer = styled.div`
       width: 100%;
       /* width: ${({ isModal }) => (isModal ? "0rem" : "100%")}; */
       /* display: ${({ isModal }) => (!isModal ? "none" : "block")}; */
-      height: 20rem;
-      padding: 2rem;
-      font-size: 19px;
+      height: 10rem;
+      padding: 1rem;
+      font-size: 13px;
     }
 
     h2.post_header {
@@ -567,11 +609,122 @@ export const PostContainer = styled.div`
 `;
 
 export const Actions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  width: 80%;
+  margin: auto;
+  position: relative;
+
+  /* div.btn {
+    display: flex;
+    justify-self: flex-end;
+  } */
+
+  button {
+    border: none;
+    padding: 1rem;
+    font-size: 19px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  button.btn_cancel {
+    background: #f5f7f9;
+    margin-right: 3rem;
+  }
+
+  button.btn_send {
+    background: #07036e;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  div.upload {
+    width: 60%;
+  }
+
+  div.file {
+    position: relative;
+    width: 100%;
+    /* padding-right: 2rem; */
+
+    div.input {
+      width: 100%;
+      /* display: flex; */
+      align-items: center;
+      margin-top: 1rem;
+      position: relative;
+      /* width: 100%; */
+    }
+
+    p {
+      position: relative;
+      /* right: 30rem; */
+      font-size: 16px;
+      width: 100%;
+    }
+
+    svg {
+      position: relative;
+      /* right: 0rem; */
+      /* left: 30rem; */
+      /* top: 1.3rem; */
+    }
+  }
+
+  div.label {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 50%;
+    /* position: absolute; */
+    top: 1;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+
+    span {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  p.remove {
+    position: absolute;
+    /* left: 15rem; */
+    font-weight: 700;
+    font-size: 30px;
+    top: 2.5rem;
+    left: 15rem;
+    z-index: 100;
+  }
+
+  label.label {
+    width: 100%;
+    position: relative;
+    left: 0;
+    /* margin-top: 2rem; */
+  }
+
+  input[type="file"] {
+    opacity: 0;
+    display: none;
+
+    &::-webkit-file-upload-button {
+      display: none;
+    }
+
+    /* #file-upload-button {
+        display: none;
+      } */
+  }
+
   @media (min-width: 1281px) {
     display: flex;
     justify-content: space-between;
     padding-bottom: 3rem;
-    width: 50%;
+    width: 80%;
     margin: auto;
 
     /* div.btn {

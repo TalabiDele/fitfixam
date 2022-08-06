@@ -47,6 +47,7 @@ import userImg from "@/public/userImage.png";
 import logo from "@/public/logo-menu.png";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import { useRouter } from "next/router";
+import { GrAttachment } from "react-icons/gr";
 
 const Navbar = () => {
   const router = useRouter();
@@ -76,6 +77,9 @@ const Navbar = () => {
   const [isPlumber, setIsPlumber] = useState(false);
   const [isElect, setIsElect] = useState(false);
   const [message, setMessage] = useState("");
+  const [isFile, setIsFile] = useState();
+  const [fileName, setFileName] = useState("");
+  const [lessonImage, setLessonImage] = useState([]);
 
   let imgArr = [];
 
@@ -217,13 +221,24 @@ const Navbar = () => {
       setImage(e.target.files);
     }
 
+    const data = [];
+    for (let i = 0; i < e.target.files.length; i++) {
+      data.push(e.target.files[i]);
+    }
+    setLessonImage(data);
+
+    // setFileName(e.target.files[0].name);
+    lessonImage.map((i) => {
+      console.log(i);
+    });
+
+    setIsFile(true);
+
     // imgArr.push(e.target.files[i]);
     // setImage([imgArr]);
     // console.log(e.target.files[i]);
     // formData.append(e.targte.files[i].name, files[i]);
     // handlePost(e.target.files);
-
-    console.log(image);
   };
 
   const handleSearchChange = async (e) => {
@@ -332,6 +347,12 @@ const Navbar = () => {
     }
   };
 
+  const handleRemoveFile = (e) => {
+    // setSelectedFile();
+
+    setIsFile(null);
+  };
+
   return (
     <>
       <Modal isModal={isModal}>
@@ -388,13 +409,51 @@ const Navbar = () => {
               </Tags>
               <Actions>
                 <div className="upload">
-                  <input
-                    type="file"
-                    placeholder="Upload an image"
-                    onChange={handleFileChange}
-                    multiple="multiple"
-                    accept=".jpg,.jpeg,.png"
-                  />
+                  <div className="file">
+                    <div className="file-label">
+                      <label htmlFor="file">Upload your Picture</label> <br />
+                    </div>
+
+                    <div className="input">
+                      {/* <input
+                        type="file"
+                        name="file"
+                        id="file"
+                        className="width"
+                        placeholder="Choose image"
+                        onChange={(e) => handleFileChange(e)}
+                      /> */}
+                      <input
+                        type="file"
+                        placeholder="Upload an image"
+                        onChange={handleFileChange}
+                        multiple="multiple"
+                        accept=".jpg,.jpeg,.png"
+                        name="file"
+                        id="file"
+                      />
+                      {isFile && (
+                        <p className="remove" onClick={handleRemoveFile}>
+                          X
+                        </p>
+                      )}
+                      <label htmlFor="file" className="label">
+                        <div className="label">
+                          {isFile ? (
+                            lessonImage.map((i) => (
+                              <div key={i}>
+                                <span>{i.name}</span>
+                              </div>
+                            ))
+                          ) : (
+                            <p>Choose image</p>
+                          )}
+                          {!isFile && <GrAttachment fontSize={30} />}
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
                   <p>{message}</p>
                 </div>
                 <div className="btn">
