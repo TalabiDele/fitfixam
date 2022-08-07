@@ -1653,10 +1653,14 @@ export const UserSideNav = styled.div`
     top: 30rem;
   }
 
+  div.settings {
+    margin-top: 10rem;
+  }
+
   @media (min-width: 1281px) {
     width: 16%;
     div.settings {
-      margin-top: 20rem;
+      margin-top: 10rem;
     }
 
     div.write_icon {

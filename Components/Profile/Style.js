@@ -4,8 +4,9 @@ export const Container = styled.div`
   background-color: #fff;
 
   div.profile {
-    width: 90%;
-    margin: auto;
+    width: 70%;
+    margin-left: 25rem;
+    margin-right: 3rem;
   }
 
   button {
@@ -249,7 +250,7 @@ export const Container = styled.div`
 
   div.container {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 30% 65%;
     justify-items: center;
     width: 100%;
     margin: auto;
@@ -368,8 +369,10 @@ export const Container = styled.div`
     background-color: #fff;
 
     div.profile {
-      width: 90%;
-      margin: auto;
+      width: 80%;
+      margin-top: 5rem;
+      margin-left: 20rem;
+      margin-right: 3rem;
     }
 
     button {
@@ -613,7 +616,7 @@ export const Container = styled.div`
 
     div.container {
       display: grid;
-      grid-template-columns: 30% 70%;
+      grid-template-columns: 30% 65%;
       justify-items: center;
       width: 100%;
       margin: auto;
@@ -735,7 +738,7 @@ export const Container = styled.div`
 
     div.profile {
       width: 90%;
-      margin: auto;
+      margin: 5rem auto 0rem auto;
     }
 
     button {
@@ -983,17 +986,17 @@ export const Container = styled.div`
 
     div.container {
       display: grid;
-      grid-template-columns: 30% 70%;
+      grid-template-columns: repeat(1, 1fr);
       justify-items: center;
-      width: 100%;
-      margin: auto;
-      gap: 2rem;
+      width: 50%;
+      margin-left: 25rem;
+      /* gap: 2rem; */
 
       div.detail,
       div.info {
         background-color: #f9fafb;
         border-radius: 10px;
-        margin: 4rem auto;
+        margin: 2rem auto;
       }
 
       div.detail {
@@ -1376,17 +1379,17 @@ export const Container = styled.div`
 
     div.container {
       display: grid;
-      grid-template-columns: 40% 60%;
+      grid-template-columns: repeat(1, 1fr);
       justify-items: center;
-      width: 100%;
-      margin: auto;
+      width: 70%;
+      margin-left: 13rem;
       gap: 2rem;
 
       div.detail,
       div.info {
         background-color: #f9fafb;
         border-radius: 10px;
-        margin: 4rem auto;
+        margin: 2rem auto;
       }
 
       div.detail {
@@ -1495,11 +1498,11 @@ export const Container = styled.div`
 
   @media (min-width: 481px) and (max-width: 767px) {
     background-color: #fff;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
 
     div.profile {
       width: 80%;
-      margin: auto;
+      margin: 4rem auto 0rem auto;
     }
 
     button {
@@ -1891,8 +1894,8 @@ export const Container = styled.div`
     /* margin-left: 2rem; */
 
     div.profile {
-      width: 70%;
-      margin: 0rem 6rem;
+      width: 80%;
+      margin: 4rem auto 0rem auto;
     }
 
     button {
@@ -2354,7 +2357,7 @@ export const Wrapper = styled.div`
       border-radius: 10px;
       padding: 3rem;
       /* z-index: 700; */
-      width: 100%;
+      width: 80%;
 
       h1 {
         font-size: 26px;
@@ -2404,8 +2407,9 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 1281px) {
-    width: 90%;
-    margin: auto;
+    width: 80%;
+    margin-left: 20rem;
+    margin-right: 3rem;
 
     div.reviews {
     }
@@ -2465,184 +2469,14 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 90%;
-    margin: auto;
+    width: 40%;
+    margin-left: 30rem;
 
     div.wrapper {
       background: #f9fafb;
       border-radius: 10px;
       padding: 3rem;
       z-index: 700;
-
-      h1 {
-        font-size: 26px;
-        margin-bottom: 2rem;
-      }
-
-      div.card {
-        background: #ebeef2;
-        border-radius: 10px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-
-        div.dets {
-          display: flex;
-          gap: 1rem;
-          align-items: center;
-
-          .image {
-            border-radius: 50%;
-          }
-
-          div.post {
-            div.username {
-              display: flex;
-              align-items: center;
-              gap: 1rem;
-              margin-bottom: 1rem;
-
-              h2 {
-                font-size: 26px;
-              }
-
-              p {
-                font-size: 14px;
-              }
-            }
-          }
-
-          div.user_post {
-            p {
-              font-size: 19px;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    width: 80%;
-    margin: auto;
-
-    div.wrapper {
-      background: #f9fafb;
-      border-radius: 10px;
-      padding: 3rem;
-      z-index: 700;
-
-      h1 {
-        font-size: 26px;
-        margin-bottom: 2rem;
-      }
-
-      div.card {
-        background: #ebeef2;
-        border-radius: 10px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-
-        div.dets {
-          display: flex;
-          gap: 1rem;
-          align-items: center;
-
-          .image {
-            border-radius: 50%;
-          }
-
-          div.post {
-            div.username {
-              display: flex;
-              align-items: center;
-              gap: 1rem;
-              margin-bottom: 1rem;
-
-              h2 {
-                font-size: 26px;
-              }
-
-              p {
-                font-size: 14px;
-              }
-            }
-          }
-
-          div.user_post {
-            p {
-              font-size: 19px;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  @media (min-width: 481px) and (max-width: 767px) {
-    width: 80%;
-    margin: auto;
-
-    div.wrapper {
-      background: #f9fafb;
-      border-radius: 10px;
-      padding: 3rem;
-      z-index: 700;
-
-      h1 {
-        font-size: 26px;
-        margin-bottom: 2rem;
-      }
-
-      div.card {
-        background: #ebeef2;
-        border-radius: 10px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-
-        div.dets {
-          display: flex;
-          gap: 1rem;
-          align-items: center;
-
-          .image {
-            border-radius: 50%;
-          }
-
-          div.post {
-            div.username {
-              display: flex;
-              align-items: center;
-              gap: 1rem;
-              margin-bottom: 1rem;
-
-              h2 {
-                font-size: 26px;
-              }
-
-              p {
-                font-size: 14px;
-              }
-            }
-          }
-
-          div.user_post {
-            p {
-              font-size: 19px;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  @media (max-width: 480px) {
-    width: 70%;
-    margin: 2rem 6rem;
-
-    div.wrapper {
-      background: #f9fafb;
-      border-radius: 10px;
-      padding: 1rem;
 
       h1 {
         font-size: 19px;
@@ -2676,14 +2510,185 @@ export const Wrapper = styled.div`
               }
 
               p {
-                font-size: 14px;
+                font-size: 11px;
               }
             }
           }
 
           div.user_post {
             p {
-              font-size: 19px;
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 60%;
+    margin-left: 17rem;
+
+    div.wrapper {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 3rem;
+      z-index: 700;
+
+      h1 {
+        font-size: 19px;
+        margin-bottom: 2rem;
+      }
+
+      div.card {
+        background: #ebeef2;
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+
+        div.dets {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+
+          .image {
+            border-radius: 50%;
+          }
+
+          div.post {
+            div.username {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              margin-bottom: 1rem;
+
+              h2 {
+                font-size: 19px;
+              }
+
+              p {
+                font-size: 11px;
+              }
+            }
+          }
+
+          div.user_post {
+            p {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 80%;
+    margin: auto;
+
+    div.wrapper {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 1rem;
+      z-index: 700;
+
+      h1 {
+        font-size: 16px;
+        margin-bottom: 2rem;
+      }
+
+      div.card {
+        background: #ebeef2;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 2rem;
+
+        div.dets {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+
+          .image {
+            border-radius: 50%;
+          }
+
+          div.post {
+            div.username {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              margin-bottom: 1rem;
+
+              h2 {
+                font-size: 16px;
+              }
+
+              p {
+                font-size: 10px;
+              }
+            }
+          }
+
+          div.user_post {
+            p {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 80%;
+    margin: 2rem auto;
+
+    div.wrapper {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 1rem;
+
+      h1 {
+        font-size: 16px;
+        margin-bottom: 2rem;
+      }
+
+      div.card {
+        background: #ebeef2;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 2rem;
+
+        div.dets {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          align-items: flex-start;
+
+          .image {
+            border-radius: 50%;
+          }
+
+          div.post {
+            div.username {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              margin-bottom: 1rem;
+
+              h2 {
+                font-size: 16px;
+              }
+
+              p {
+                font-size: 10px;
+              }
+            }
+          }
+
+          div.user_post {
+            p {
+              font-size: 10px;
             }
           }
         }
