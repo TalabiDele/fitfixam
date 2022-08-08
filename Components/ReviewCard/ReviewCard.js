@@ -28,7 +28,7 @@ const ReviewCard = () => {
               Choose the right carpenter for your project by asking the right
               questions
             </p>
-            <Link href="/carpenters">
+            <Link href="/artisans/carpenters">
               <a>
                 <BtnCard>
                   <button>Click Here</button>
@@ -52,7 +52,7 @@ const ReviewCard = () => {
               Are you looking to install new pipes, or fix the ones you have
               already? You need to make an informed choice
             </p>
-            <Link href="/plumbers">
+            <Link href="/artisans/plumbers">
               <a>
                 <BtnCard>
                   <button className="btn">Click Here</button>
@@ -76,7 +76,7 @@ const ReviewCard = () => {
               Have any electrical issues? Be sure your home is safe. Hire an
               electrical expert.
             </p>
-            <Link href="/electricians">
+            <Link href="/artisans/electricians">
               <a>
                 <BtnCard>
                   <button>Click Here</button>
