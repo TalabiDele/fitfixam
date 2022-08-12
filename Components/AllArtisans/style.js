@@ -11,7 +11,7 @@ export const Container = styled.div`
 
   div.all {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     text-align: center;
   }
@@ -40,7 +40,7 @@ export const Container = styled.div`
 
   p {
     margin-bottom: 1rem;
-    font-size: 19px;
+    font-size: 16px;
     text-transform: capitalize;
   }
 
@@ -48,6 +48,7 @@ export const Container = styled.div`
     display: flex;
     gap: 5px;
     justify-content: center;
+    margin-bottom: 3rem;
   }
 
   h1 {

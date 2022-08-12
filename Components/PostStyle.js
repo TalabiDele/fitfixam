@@ -8,6 +8,8 @@ export const Container = styled.div`
   width: 60%;
   margin: 6rem auto;
   overflow-y: hidden;
+  position: fixed;
+  left: 15rem;
 
   @media (min-width: 1281px) {
     padding-left: 7rem;
@@ -50,7 +52,7 @@ export const Wrapper = styled.div`
   p.back {
     width: 90%;
     margin: 2rem auto 0rem auto;
-    font-weight: 700;
+    font-weight: 400;
     text-decoration: underline;
     color: #020127;
   }
@@ -135,21 +137,24 @@ export const Wrapper = styled.div`
 export const PostItem = styled.div`
   width: 40%;
   /* overflow-y: scroll; */
-  height: 100vh;
-  padding-bottom: 30rem;
+  height: 90vh;
+  padding-bottom: 2rem;
   background: #fff;
+  /* position: fixed; */
+  overflow-y: scroll;
 
   p.post {
-    margin-top: 0rem;
     font-size: 19px;
+    line-height: 1.5;
     color: #020127;
     font-weight: 400;
-    width: 100%;
+    width: 90%;
+    margin: 0rem auto 2rem auto;
   }
 
   @media (min-width: 1281px) {
     p.post {
-      width: 100%;
+      width: 90%;
     }
   }
 
@@ -287,6 +292,9 @@ export const UserPosted = styled.div`
   display: flex;
   align-items: center;
   /* background: #fcfdfd; */
+  /* margin-bottom: 1rem; */
+  width: 90%;
+  margin: 0rem auto 1rem auto;
   padding: 2rem 0rem 0rem 2rem;
 
   .user_image {
@@ -306,6 +314,11 @@ export const UserInfo = styled.div`
     font-size: 20px;
     color: #020127;
     cursor: pointer;
+    margin-bottom: 0.2rem;
+  }
+
+  p {
+    font-size: 12px;
   }
 `;
 
@@ -328,6 +341,7 @@ export const Interract = styled.div`
   /* height: 3rem; */
   /* background: #fcfdfd; */
   padding: 0rem 2rem;
+  /* margin-bottom: 2rem; */
   z-index: 200;
   /* border-bottom: 1.5px solid #dad9e9;
   padding: 1rem 2rem;
@@ -337,8 +351,9 @@ export const Interract = styled.div`
     display: flex;
     border-bottom: 1.5px solid #dad9e9;
     z-index: 300;
-    padding: 0.5rem 0rem;
-    width: 100%;
+    padding: 0rem 0rem 1rem 0rem;
+    width: 90%;
+    margin: 0rem auto 1rem auto;
   }
 
   div.likes {
@@ -372,7 +387,7 @@ export const Interract = styled.div`
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     div.interract {
-      width: 100%;
+      width: 90%;
     }
   }
 
@@ -424,9 +439,9 @@ export const Reactions = styled.div`
   div.reactions {
     display: flex;
     border-bottom: 1.5px solid #dad9e9;
-    padding: 0.5rem 0rem;
-    margin-bottom: 1rem;
-    width: 100%;
+    padding: 0rem 0rem 1rem 0rem;
+    margin: 0rem auto 2rem auto;
+    width: 90%;
   }
 
   div {
@@ -488,7 +503,8 @@ export const Comments = styled.div`
   /* overflow-y: scroll; */
   height: 30rem;
   padding-bottom: 5rem;
-  width: 100%;
+  width: 90%;
+  margin: auto;
 
   p {
     font-weight: 400;
@@ -539,7 +555,7 @@ export const Comments = styled.div`
   }
 
   @media (min-width: 1281px) {
-    width: 100%;
+    width: 90%;
 
     .input_comment {
       width: 40%;
@@ -619,10 +635,10 @@ export const UsersComments = styled.div`
   align-items: flex-start;
   color: #020127;
   padding: 0rem 2rem;
-  margin-bottom: 0.5rem;
+  margin: 0rem auto 2rem auto;
 
   div.comment {
-    width: 100%;
+    width: 90%;
   }
 
   h2 {
@@ -647,7 +663,7 @@ export const UsersComments = styled.div`
   }
 
   p.time {
-    font-size: 14px;
+    font-size: 11px;
   }
 
   span {
@@ -663,6 +679,7 @@ export const UsersComments = styled.div`
     flex-wrap: nowrap;
     grid-template-columns: 60% 5% 30%;
     align-items: center;
+    margin-bottom: 0.5rem;
     /* justify-content: center; */
     width: 40%;
 

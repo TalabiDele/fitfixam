@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Wrapper } from "./Style";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
   const [isFAQ, setIsFAQ] = useState(false);
@@ -70,7 +71,7 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
     <Container>
       <Wrapper>
         <p className="back" onClick={home}>
-          Back to home{">>"}
+          {"<< "}Back to home
         </p>
         <div className="container">
           <div className="help">
@@ -108,11 +109,19 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
             </div>
             <div className="about">
               <div className="dot"></div>
-              <p className="header">About us</p>
+              <Link href="/about">
+                <a>
+                  <p className="header">About us</p>
+                </a>
+              </Link>
             </div>
             <div className="contact">
               <div className="dot"></div>
-              <div className="header">Contact us</div>
+              <Link href="/contact">
+                <a>
+                  <div className="header">Contact us</div>
+                </a>
+              </Link>
             </div>
           </div>
           <div className="frequently">

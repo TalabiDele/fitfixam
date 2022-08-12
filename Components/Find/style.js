@@ -20,7 +20,7 @@ export const Container = styled.div`
   p {
     margin: 3rem auto;
     font-size: 32px;
-    line-height: 1;
+    line-height: 1.2;
     width: 80%;
   }
 

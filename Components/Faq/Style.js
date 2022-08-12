@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin-top: 10rem;
 
   .back {
-    font-size: 1.5rem;
+    font-size: 20pxrem;
     width: 15%;
     margin-left: 6rem;
     text-decoration: underline;

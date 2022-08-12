@@ -25,7 +25,7 @@ export const Container = styled.div`
     }
 
     .grey {
-      color: #546881;
+      color: #f4442e;
     }
 
     .dark {

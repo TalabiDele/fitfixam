@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     font-size: 24px;
     color: #47586e;
     width: 40%;
-    margin: 0rem auto 2rem auto;
+    margin: 0rem auto 5rem auto;
   }
 
   span {
@@ -61,7 +61,7 @@ export const Wrapper = styled.div`
       font-size: 24px;
       color: #47586e;
       width: 40%;
-      margin: 0rem auto 2rem auto;
+      margin: 0rem auto 5rem auto;
     }
 
     span {

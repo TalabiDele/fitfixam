@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 80%;
+  width: 70%;
   margin: auto;
   justify-items: center;
   padding-bottom: 5rem;
@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   @media (min-width: 1281px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 100%;
+    width: 80%;
     margin: auto;
     justify-items: center;
     padding-bottom: 5rem;
@@ -141,7 +141,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div``;
 
 export const Card = styled.div`
-  width: 60%;
+  width: 70%;
   background-color: #3c91e6;
   border-radius: 10px;
   color: white;
@@ -168,7 +168,7 @@ export const Card = styled.div`
   }
 
   @media (min-width: 1281px) {
-    width: 60%;
+    width: 70%;
     background-color: #3c91e6;
     border-radius: 10px;
     color: white;
