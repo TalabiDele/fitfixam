@@ -202,6 +202,7 @@ export const Wrapper = styled.div`
     margin: auto;
     font-size: 19px;
     background: #fff;
+    line-height: 1.5;
   }
 
   @media (min-width: 1281px) {
@@ -977,7 +978,7 @@ export const Comments = styled.div`
     }
 
     div.comment {
-      margin-bottom: 18rem;
+      margin-bottom: 8rem;
     }
     /* margin-bottom: 5rem; */
 

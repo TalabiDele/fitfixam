@@ -1,7 +1,7 @@
 import React from "react";
 import Carpenters from "@/components/AllArtisans/Carpenters";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
-import UserLayout from "@/components/userLayout";
+import UserLayout from "@/components/UserLayout";
 
 const carpenters = ({ allCarpenters }) => {
   return (
