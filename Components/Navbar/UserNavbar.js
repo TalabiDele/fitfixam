@@ -114,6 +114,10 @@ const Navbar = () => {
     // }, 2000);
   };
 
+  const handleClose = () => {
+    setUserIsOpen(false);
+  };
+
   const openModal = () => {
     setIsModal(!isModal);
   };
@@ -499,6 +503,7 @@ const Navbar = () => {
               className="menu"
             />
           </div>
+
           <div className="logo_image">
             <Image src={logo} alt="Fitfixam Logo" width={130} height={50} />
           </div>

@@ -2075,7 +2075,7 @@ export const NavMenu = styled.div`
       background: #f0f3f6;
       display: block;
       height: 4rem;
-      width: 0rem;
+      width: 3rem;
     }
 
     .menu {
