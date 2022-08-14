@@ -625,7 +625,7 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <Link href="/carpenters">
+          <Link href="/artisans/carpenters">
             <a>
               <IconNav
                 className={router.pathname == "/carpenters" ? "active" : ""}
@@ -635,7 +635,7 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <Link href="/electricians">
+          <Link href="/artisans/electricians">
             <a>
               <IconNav
                 className={router.pathname == "/electricians" ? "active" : ""}
@@ -645,7 +645,7 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <Link href="/plumbers">
+          <Link href="/artisans/plumbers">
             <a>
               <IconNav
                 className={router.pathname == "/plumbers" ? "active" : ""}
