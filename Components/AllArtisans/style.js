@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 80%;
-  margin: 7rem auto 7rem 20rem;
+  margin: 7rem auto 7rem 23rem;
   /* height: 22rem; */
   /* text-align: center; */
   color: #020127;
@@ -12,7 +12,8 @@ export const Container = styled.div`
   div.all {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
+    /* justify-items: center; */
+    width: 100%;
     text-align: center;
   }
 
@@ -61,7 +62,7 @@ export const Container = styled.div`
   }
 
   div.card {
-    width: 70%;
+    width: 90%;
     cursor: pointer;
     background: #f9fafb;
     border-radius: 10px;
@@ -70,25 +71,28 @@ export const Container = styled.div`
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    margin-left: 25rem;
-    width: 70%;
+    /* margin-left: 25rem; */
+    width: 90%;
+    margin: 7rem auto 7rem 17rem;
 
     div.all {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     div.card {
-      width: 80%;
+      width: 90%;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
+    margin: 7rem auto 7rem 17rem;
+
     div.all {
       grid-template-columns: repeat(2, 1fr);
     }
 
     div.card {
-      width: 70%;
+      width: 90%;
     }
   }
 
@@ -110,6 +114,19 @@ export const Container = styled.div`
 
     p {
       font-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin: 7rem auto;
+
+    div.all {
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+    }
+
+    div.card {
+      width: 80%;
     }
   }
 `;

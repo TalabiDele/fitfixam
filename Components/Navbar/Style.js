@@ -1679,7 +1679,7 @@ export const UserSideNav = styled.div`
 
   @media (min-width: 768px) and (max-width: 1024px) {
     /* width: ${({ userIsOpen }) => (userIsOpen ? "40%" : "8%")}; */
-    width: 30%;
+    width: 25%;
 
     div.settings {
       margin-top: 5rem;
@@ -1735,7 +1735,7 @@ export const IconNav = styled.div`
 
   p {
     color: #07036e;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     font-weight: bold;
     /* font-size: 1.3rem; */
   }
@@ -1997,7 +1997,7 @@ export const NavMenu = styled.div`
     left: 0;
     z-index: 100;
     /* width: ${({ userIsOpen }) => (userIsOpen ? "40%" : "8%")}; */
-    width: 30%;
+    width: 20%;
 
     div.side_menu {
       background: #f0f3f6;

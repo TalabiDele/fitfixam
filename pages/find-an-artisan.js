@@ -277,8 +277,8 @@ export const Cards = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-    width: 40%;
-    gap: 3rem;
+    width: 30%;
+    gap: 2rem;
     margin-left: 15rem;
 
     div.card {
@@ -290,7 +290,7 @@ export const Cards = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-    width: 50%;
+    width: 40%;
     gap: 1rem;
     margin: 1rem;
 

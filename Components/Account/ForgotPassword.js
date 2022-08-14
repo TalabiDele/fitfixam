@@ -29,7 +29,7 @@ const CreateAccount = () => {
   const handleSubmitSignin = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`${NEXT_PUBLIC_API_URL}/auth/forgot-password`, {
+    const res = await fetch(`http://localhost:1337/auth/forgot-password`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,6 +42,8 @@ const CreateAccount = () => {
 
     const data = await res.json();
 
+    console.log(data);
+
     if (res.ok) {
       setSent(true);
 
@@ -53,7 +55,7 @@ const CreateAccount = () => {
     if (!res.ok) {
       setError(true);
 
-      setErrorMessage(data.message[0].messages[0].message);
+      // setErrorMessage(data.message[0].messages[0].message);
 
       setTimeout(() => {
         setError(false);
