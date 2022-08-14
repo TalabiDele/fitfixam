@@ -173,9 +173,9 @@ export const Header = styled.div`
   @media (min-width: 1025px) and (max-width: 1280px) {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 50%;
     align-items: center;
-    margin: 2rem 0rem 2rem 25rem;
+    margin: 1rem auto;
 
     h1 {
       font-weight: 400;
@@ -266,7 +266,7 @@ export const Cards = styled.div`
     justify-items: center;
     width: 60%;
     gap: 5rem;
-    margin-left: 20rem;
+    /* margin-left: 20rem; */
 
     div.card {
       width: 100%;

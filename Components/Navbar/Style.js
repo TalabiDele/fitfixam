@@ -1670,7 +1670,7 @@ export const UserSideNav = styled.div`
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     /* width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "6%")}; */
-    width: 30%;
+    width: 20%;
 
     div.settings {
       margin-top: 10rem;
@@ -1961,7 +1961,7 @@ export const NavMenu = styled.div`
     position: fixed;
     left: 0;
     z-index: 100;
-    width: 30%;
+    width: 20%;
     /* width: 4%; */
 
     div.side_menu {
