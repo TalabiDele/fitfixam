@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   @media (min-width: 1281px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 80%;
+    width: 90%;
     margin: auto;
     justify-items: center;
     padding-bottom: 5rem;
@@ -160,7 +160,7 @@ export const Card = styled.div`
   p {
     padding: 0rem 1rem 1rem 1rem;
     font-size: 19px;
-    height: 6rem;
+    height: 7rem;
   }
 
   .image {
@@ -187,7 +187,7 @@ export const Card = styled.div`
     p {
       padding: 0rem 1rem 1rem 1rem;
       font-size: 19px;
-      height: 6rem;
+      height: 7rem;
     }
 
     .image {
@@ -238,14 +238,14 @@ export const Card = styled.div`
     }
 
     h1 {
-      padding-bottom: 1rem;
+      padding: 0rem 0rem 1rem 0rem;
       font-size: 30px;
     }
 
     p {
       /* padding: 0rem 1rem 1rem 1rem; */
       font-size: 16px;
-      height: 6rem;
+      height: 8rem;
     }
 
     .image {
@@ -268,7 +268,7 @@ export const Card = styled.div`
     }
 
     h1 {
-      padding-bottom: 1rem;
+      padding: 0rem 0rem 1rem 0rem;
       font-size: 26px;
     }
 
@@ -276,7 +276,7 @@ export const Card = styled.div`
       padding: 0rem 0rem 1rem 0rem;
       font-size: 16px;
       height: 6rem;
-      margin-bottom: 1rem;
+      /* margin-bottom: 1rem; */
     }
 
     .image {
@@ -299,7 +299,7 @@ export const Card = styled.div`
     }
 
     h1 {
-      padding-bottom: 1rem;
+      padding: 0rem 0rem 1rem 0rem;
       font-size: 26px;
     }
 

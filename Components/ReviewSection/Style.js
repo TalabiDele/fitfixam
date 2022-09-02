@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   width: 90%;
   justify-items: center;
   /* align-items: center; */
-  margin: auto;
+  margin: 0rem auto 5rem auto;
   z-index: 10;
 
   p {
@@ -37,7 +37,7 @@ export const Wrapper = styled.div`
     width: 90%;
     justify-items: center;
     /* align-items: center; */
-    margin: auto;
+    margin: 0rem auto 5rem auto;
     z-index: 10;
 
     p {

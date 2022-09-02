@@ -37,16 +37,6 @@ const Review = () => {
           />
         </video> */}
       </Wrapper>
-      <Arrow>
-        <Image
-          src={ArrowOne}
-          alt="Arrow Down"
-          width={200}
-          height={200}
-          className="arrow_down"
-          object-position="50% 50%"
-        />
-      </Arrow>
       <Why />
       <ReviewCard />
     </Container>

@@ -3,10 +3,19 @@ import { Container } from "./style";
 import Image from "next/image";
 import userImage from "@/public/userImage.png";
 import Moment from "react-moment";
+import { useRouter } from "next/router";
 // import VerticalCarousel from "../Carousel";
 
 const TrendingCards = ({ posts }) => {
-  console.log(posts);
+  const router = useRouter();
+
+  const handlePost = (e) => {
+    router.push(`/feeds/${e.slug}`);
+  };
+
+  const handleUser = (e) => {
+    router.push(`/profile/${e.slug}`);
+  };
 
   return (
     <Container>
@@ -14,9 +23,9 @@ const TrendingCards = ({ posts }) => {
         {posts.map((e) => (
           <div className="card_container" key={e.id}>
             <div className="card" key={e.id}>
-              <p>{e.post}</p>
+              <p onClick={() => handlePost(e)}>{e.post}</p>
               <div className="user">
-                <div className="details">
+                <div className="details" onClick={() => handleUser(e.user)}>
                   <div className="image">
                     {e.user.userImage ? (
                       <Image

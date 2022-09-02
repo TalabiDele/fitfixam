@@ -17,7 +17,7 @@ const Action = () => {
             and let the testimonials speak for you
           </p>
           <div className="btn">
-            <Link href="/signup">
+            <Link href="/contact">
               <a>
                 <HeroBtn>Proceed</HeroBtn>
               </a>

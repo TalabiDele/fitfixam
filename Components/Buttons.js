@@ -3,21 +3,42 @@ import styled from "styled-components";
 export const BtnNav = styled.button`
   border: 2px solid #f4442e;
   background-color: none;
-  color: #f4442e;
+  color: #fff;
+  background: #f4442e;
   font-weight: bold;
-  padding: 20px 30px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
   width: 100%;
-  background-color: #fff;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-size: 16px;
 
   &:hover {
-    background-color: #f4442e;
+    background-color: #060363;
     color: white;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #060363;
+  }
+`;
+
+export const BtnNav_two = styled.button`
+  border: 2px solid #060363;
+  background-color: none;
+  color: #060363;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+
+  &:hover {
+    color: #f4442e;
+    border: 2px solid #f4442e;
     /* border: none; */
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 `;
 

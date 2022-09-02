@@ -17,7 +17,7 @@ import {
   Actions,
   Sign,
 } from "./Style";
-import { BtnNav } from "../Buttons";
+import { BtnNav, BtnNav_two } from "../Buttons";
 import Link from "next/link";
 import {
   FaToolbox,
@@ -115,6 +115,11 @@ const Navbar = () => {
                   <li>Discussions</li>
                 </a>
               </Link>
+              <Link href="/trending">
+                <a>
+                  <li>Trending</li>
+                </a>
+              </Link>
               <Link href="/blog">
                 <a>
                   <li>Blog</li>
@@ -132,10 +137,17 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="button_nav">
+              <Link href="/login">
+                <a>
+                  <li>
+                    <BtnNav_two>Login</BtnNav_two>
+                  </li>
+                </a>
+              </Link>
               <Link href="/signup">
                 <a>
                   <li>
-                    <BtnNav>Sign up today!</BtnNav>
+                    <BtnNav>Sign up</BtnNav>
                   </li>
                 </a>
               </Link>

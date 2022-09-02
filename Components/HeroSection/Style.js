@@ -282,7 +282,7 @@ export const Container = styled.div`
   @media (min-width: 1025px) and (max-width: 1280px) {
     z-index: 3;
     background: url("/hero-background.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: 70vh;
@@ -305,7 +305,7 @@ export const Container = styled.div`
     background-color: #f9fafb;
     margin-bottom: -3rem;
     padding-top: 1rem;
-    margin-top: 1rem;
+    margin-top: 10rem;
   }
 
   @media (min-width: 481px) and (max-width: 767px) {

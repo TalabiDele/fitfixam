@@ -505,7 +505,11 @@ const Navbar = () => {
           </div>
 
           <div className="logo_image">
-            <Image src={logo} alt="Fitfixam Logo" width={130} height={50} />
+            <Link href="/">
+              <a>
+                <Image src={logo} alt="Fitfixam Logo" width={130} height={50} />
+              </a>
+            </Link>
           </div>
         </NavMenu>
         <Search>
@@ -630,7 +634,7 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <Link href="/artisans/carpenters">
+          <Link href="/carpenters">
             <a>
               <IconNav
                 className={router.pathname == "/carpenters" ? "active" : ""}
@@ -640,7 +644,7 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <Link href="/artisans/electricians">
+          <Link href="/electricians">
             <a>
               <IconNav
                 className={router.pathname == "/electricians" ? "active" : ""}
@@ -650,7 +654,7 @@ const Navbar = () => {
               </IconNav>
             </a>
           </Link>
-          <Link href="/artisans/plumbers">
+          <Link href="/plumbers">
             <a>
               <IconNav
                 className={router.pathname == "/plumbers" ? "active" : ""}

@@ -884,6 +884,12 @@ export const Wrapper = styled.div`
   margin: auto;
   padding-top: 1rem;
 
+  div.button_nav {
+    z-index: 700;
+    display: flex;
+    gap: 1rem;
+  }
+
   a.image {
     width: 10rem;
   }
@@ -927,7 +933,16 @@ export const Wrapper = styled.div`
     display: none;
   }
 
-  @media (max-width: 1200px) {
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    li {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    li {
+      font-size: 16px;
+    }
   }
 
   @media (max-width: 900px) {
@@ -953,6 +968,9 @@ export const Wrapper = styled.div`
 
     div.button_nav {
       z-index: 700;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
     }
 
     .burger_mobile {
@@ -987,7 +1005,7 @@ export const Container = styled.div`
   div.contain {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 60%;
     margin: auto;
   }
 

@@ -40,6 +40,7 @@ export const Container = styled.div`
       color: #1d242d;
       width: 80%;
       margin: 0rem auto 3rem auto;
+      cursor: pointer;
     }
   }
 
@@ -54,6 +55,7 @@ export const Container = styled.div`
   div.details {
     display: flex;
     gap: 1rem;
+    cursor: pointer;
 
     h3 {
       margin-top: 1rem;
