@@ -37,6 +37,39 @@ export const Wrapper = styled.div`
   @media (max-width: 1200px) {
     width: 100%;
   }
+
+  .imgs:first-child img {
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  .imgs:nth-child(2) img {
+    margin: 0px 2px;
+  }
+
+  .imgs:nth-child(3) img {
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  .images {
+    display: flex;
+    /* width: 60%; */
+    padding: 2rem;
+    gap: 3px;
+    -webkit-column-gap: 3px;
+
+    &:nth-of-type(1n) {
+      border-radius: 10px 0px 0px 0px;
+    }
+
+    .imgs {
+      /* width: 100%; */
+
+      img {
+        /* width: 100%; */
+        margin: 2px;
+      }
+    }
+  }
 `;
 
 export const PostCard = styled.div`

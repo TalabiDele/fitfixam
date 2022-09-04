@@ -17,12 +17,15 @@ import Link from "next/link";
 import Moment from "react-moment";
 import { PostCategory } from "Components/PostCategory/Style";
 import userImage from "/public/userImage.png";
+import { GiPodiumThird } from "react-icons/gi";
 
 const Posts = ({ posts, comments, userPost }) => {
   const [postDisplay, setPostDisplay] = useState({});
   const { user, isLoading } = useContext(AuthContext);
   const router = useRouter();
   const initialState = [];
+
+  console.log(posts);
 
   useEffect(() => {
     setPostDisplay(posts);
@@ -57,6 +60,21 @@ const Posts = ({ posts, comments, userPost }) => {
                   {posts.post.slice(0, 150).concat("...Read more")}
                 </p>
               </PostText>
+              <div className="images">
+                {posts.images &&
+                  posts.images.map((i) => (
+                    <div className="imgs" key={i.id}>
+                      <Image
+                        src={i.url}
+                        width={300}
+                        height={300}
+                        objectFit="cover"
+                        alt={i.name}
+                        className="img"
+                      />
+                    </div>
+                  ))}
+              </div>
               <PostCategory className="post_category">
                 {posts.category === null || posts.category === undefined ? (
                   <div></div>
@@ -68,6 +86,7 @@ const Posts = ({ posts, comments, userPost }) => {
                   </a>
                 )}
               </PostCategory>
+
               {/* </a> */}
               {/* </Link> */}
               <PostDetails>
