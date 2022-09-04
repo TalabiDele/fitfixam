@@ -39,6 +39,21 @@ const Electrician = ({ posts, comments, allUsers }) => {
               {posts.post.slice(0, 150).concat("...Read more")}
             </p>
           </PostText>
+          <div className="images">
+            {posts.images &&
+              posts.images.map((i) => (
+                <div className="imgs" key={i.id}>
+                  <Image
+                    src={i.url}
+                    width={300}
+                    height={300}
+                    objectFit="cover"
+                    alt={i.name}
+                    className="img"
+                  />
+                </div>
+              ))}
+          </div>
           <PostCategory className="post_category">
             <Link href="/electricians">
               <a>
