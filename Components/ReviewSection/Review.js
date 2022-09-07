@@ -29,7 +29,7 @@ const Review = () => {
             (individuals or companies).
           </p>
         </div> */}
-        <Image src={animation} alt="GIF" />
+        <Image unoptimized={true} src={animation} alt="GIF" />
         {/* <video autoPlay loop>
           <source
             src="https://res.cloudinary.com/ofundu/video/upload/v1652117729/Fitfixam_Video-1_2_zmiat1.mp4"
