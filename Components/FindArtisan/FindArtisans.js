@@ -4,11 +4,14 @@ import Image from "next/image";
 import userImage from "@/public/userImage.png";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useRouter } from "next/router";
+import RatingStar from "../RatingStar/RatingStar";
 
 const FindArtisans = ({ user, category }) => {
   // user.artisan ? console.log(user) : console.log("not an artisan");
 
   const router = useRouter();
+
+  const stars = [0, 1, 2, 3, 4, 5];
 
   const getArtisanProfile = () => {
     router.push(`/profile/${user.slug}`);
@@ -42,6 +45,23 @@ const FindArtisans = ({ user, category }) => {
             </div>
           </div>
           <h2>{user.username}</h2>
+          <div
+            className="star"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            {stars.map((star, i) =>
+              i === 0 ? (
+                <></>
+              ) : (
+                <RatingStar
+                  key={i}
+                  starId={i}
+                  id={i}
+                  userRating={user.rating}
+                />
+              )
+            )}
+          </div>
           <p className="category">{category}</p>
           {user.address && (
             <div className="address">

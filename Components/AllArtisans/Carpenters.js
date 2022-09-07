@@ -3,9 +3,11 @@ import { Container } from "./style";
 import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useRouter } from "next/router";
+import RatingStar from "../RatingStar/RatingStar";
 
 const Carpenters = ({ allCarpenters }) => {
   const router = useRouter();
+  const stars = [0, 1, 2, 3, 4, 5];
 
   const handlePush = (e) => {
     router.push(`/profile/${e.slug}`);
@@ -42,6 +44,23 @@ const Carpenters = ({ allCarpenters }) => {
                 </div>
               </div>
               <h2>{e.username}</h2>
+              <div
+                className="star"
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                {stars.map((star, i) =>
+                  i === 0 ? (
+                    <></>
+                  ) : (
+                    <RatingStar
+                      key={i}
+                      starId={i}
+                      id={i}
+                      userRating={e.rating}
+                    />
+                  )
+                )}
+              </div>
               <p className="category">{e.category}</p>
               {e.address && (
                 <div className="address">

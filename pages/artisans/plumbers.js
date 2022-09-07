@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import UserLayout from "@/components/UserLayout";
 import Plumber from "@/components/AllArtisans/Plumber";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
-const plumbers = ({ allPlumbers }) => {
+const Plumbers = ({ allPlumbers }) => {
+  console.log(allPlumbers);
+
   return (
     <UserLayout>
       <Plumber allPlumbers={allPlumbers} />
@@ -11,13 +13,15 @@ const plumbers = ({ allPlumbers }) => {
   );
 };
 
-export default plumbers;
+export default Plumbers;
 
 export async function getServerSideProps() {
   const resPlumbers = await fetch(
-    `${NEXT_PUBLIC_API_URL}/user-categories/2?_limit=5`
+    `${NEXT_PUBLIC_API_URL}/users/?_user_category=2`
   );
   const allPlumbers = await resPlumbers.json();
+
+  console.log(allPlumbers);
 
   return {
     props: { allPlumbers },

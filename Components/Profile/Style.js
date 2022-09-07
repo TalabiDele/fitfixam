@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: #fff;
 
+  /* .star {
+    display: flex;
+  } */
+
   div.profile {
     width: 70%;
     margin-left: 25rem;
@@ -273,7 +277,7 @@ export const Container = styled.div`
         margin: 0rem auto;
         display: grid;
         justify-items: center;
-        height: 10rem;
+        height: 11rem;
         border-radius: 10px 10px 0px 0px;
         margin-bottom: 2rem;
 
@@ -639,7 +643,7 @@ export const Container = styled.div`
           margin: 0rem auto;
           display: grid;
           justify-items: center;
-          height: 10rem;
+          height: 11rem;
           border-radius: 10px 10px 0px 0px;
           margin-bottom: 2rem;
 
@@ -1010,7 +1014,7 @@ export const Container = styled.div`
           margin: 0rem auto;
           display: grid;
           justify-items: center;
-          height: 10rem;
+          height: 11rem;
           border-radius: 10px 10px 0px 0px;
           margin-bottom: 2rem;
 
@@ -1403,7 +1407,7 @@ export const Container = styled.div`
           margin: 0rem auto;
           display: grid;
           justify-items: center;
-          height: 10rem;
+          height: 11rem;
           border-radius: 10px 10px 0px 0px;
           margin-bottom: 2rem;
 
@@ -1796,7 +1800,7 @@ export const Container = styled.div`
           margin: 0rem auto;
           display: grid;
           justify-items: center;
-          height: 10rem;
+          height: 11rem;
           border-radius: 10px 10px 0px 0px;
           margin-bottom: 2rem;
 
@@ -2192,7 +2196,7 @@ export const Container = styled.div`
           margin: 0rem auto;
           display: grid;
           justify-items: center;
-          height: 10rem;
+          height: 11rem;
           border-radius: 10px 10px 0px 0px;
           margin-bottom: 2rem;
 

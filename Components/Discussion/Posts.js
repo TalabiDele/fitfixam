@@ -86,9 +86,6 @@ const Posts = ({ posts, comments, userPost }) => {
                   </a>
                 )}
               </PostCategory>
-
-              {/* </a> */}
-              {/* </Link> */}
               <PostDetails>
                 <UserDetails>
                   <div onClick={() => displayProfile(posts.user.slug)}>

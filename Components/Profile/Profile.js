@@ -21,6 +21,8 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { useRouter } from "next/router";
 import spinner from "@/public/spinner.gif";
 import Rating from "react-rating";
+import RatingStar from "../RatingStar/RatingStar";
+import Star from "../RatingStar/Star";
 
 const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,6 +50,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
   const [description, setDescription] = useState("");
   const [matchUser, setMatchUser] = useState();
 
+  console.log(usersProfile);
+
   const stars = [0, 1, 2, 3, 4, 5];
   // console.log(stars.shift());
 
@@ -55,11 +59,13 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
 
   // console.log(usersProfile);
 
-  const { user } = useContext(AuthContext);
+  const { user, sum, setSum } = useContext(AuthContext);
 
   let binaryData = [];
 
   useEffect(() => {
+    rateUser();
+
     console.log(usersProfile.artisan_ratings);
     if (user) {
       usersProfile.artisan_ratings.map((e) => {
@@ -176,6 +182,25 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
     setIsImage(true);
   };
 
+  const rateUser = async () => {
+    try {
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/artisan-ratings`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          rating: rating,
+        }),
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleRating = async (e) => {
     e.preventDefault();
 
@@ -201,50 +226,95 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
       });
       const data = await res.json();
       console.log(data);
-      refreshData();
+      // refreshData();
     } catch (error) {
       console.log(error);
     }
 
     console.log(rating, description);
-  };
 
-  const RatingStar = ({ starId, userRating }) => {
-    let ratingStar = (
-      <AiFillStar fontSize={30} color="#B2BBC6" cursor="pointer" />
-    );
+    let count = 0;
+    let add = 0;
 
-    if (userRating && userRating >= starId) {
-      ratingStar = (
-        <AiFillStar fontSize={30} color="#FA7B23" cursor="pointer" />
-      );
+    for (let i = 0; i < usersProfile.rating_artisan.length; i++) {
+      // console.log(e.rating_artisan);
+      add += usersProfile.rating_artisan[i].rating;
     }
 
-    return <div className="star">{ratingStar}</div>;
-  };
+    console.log(usersProfile);
 
-  const Star = ({ starId, rating, onMouseEnter, onMouseLeave, onClick }) => {
-    let ratingStar = (
-      <AiFillStar fontSize={30} color="#B2BBC6" cursor="pointer" />
-    );
+    console.log(add);
 
-    if (rating && rating >= starId) {
-      ratingStar = (
-        <AiFillStar fontSize={30} color="#FA7B23" cursor="pointer" />
-      );
+    stars.forEach(function (value, index) {
+      count += value;
+      add += value * (index + 1);
+    });
+
+    console.log(stars);
+    if (usersProfile.rating_artisan.length < 1) {
+      setSum(0);
+    } else {
+      setSum(add / count);
+      setRating(add / count);
     }
 
-    return (
-      <div
-        className="star"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onClick={onClick}
-      >
-        {ratingStar}
-      </div>
-    );
+    try {
+      const res = await fetch(
+        `${NEXT_PUBLIC_API_URL}/users/${usersProfile.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            rating: rating,
+          }),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  // const RatingStar = ({ starId, userRating }) => {
+  //   let ratingStar = (
+  //     <AiFillStar fontSize={30} color="#B2BBC6" cursor="pointer" />
+  //   );
+
+  //   if (userRating && userRating >= starId) {
+  //     ratingStar = (
+  //       <AiFillStar fontSize={30} color="#FA7B23" cursor="pointer" />
+  //     );
+  //   }
+
+  //   return <div className="star">{ratingStar}</div>;
+  // };
+
+  // const Star = ({ starId, rating, onMouseEnter, onMouseLeave, onClick }) => {
+  //   let ratingStar = (
+  //     <AiFillStar fontSize={30} color="#B2BBC6" cursor="pointer" />
+  //   );
+
+  //   if (rating && rating >= starId) {
+  //     ratingStar = (
+  //       <AiFillStar fontSize={30} color="#FA7B23" cursor="pointer" />
+  //     );
+  //   }
+
+  //   return (
+  //     <div
+  //       className="star"
+  //       onMouseEnter={onMouseEnter}
+  //       onMouseLeave={onMouseLeave}
+  //       onClick={onClick}
+  //     >
+  //       {ratingStar}
+  //     </div>
+  //   );
+  // };
 
   const getRatingScore = (e) => {
     if (e === 0) console.log(index);
@@ -533,7 +603,22 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                   {"      "}
                   {"      "}
                   {usersProfile.artisan ? <FaToolbox /> : <FaUserAlt />}
+                  {console.log(usersProfile.rating)}
                 </p>
+              </div>
+              <div className="star" style={{ display: "flex" }}>
+                {stars.map((star, i) =>
+                  i === 0 ? (
+                    <></>
+                  ) : (
+                    <RatingStar
+                      key={i}
+                      starId={i}
+                      id={i}
+                      userRating={usersProfile.rating}
+                    />
+                  )
+                )}
               </div>
               {usersProfile.artisan && (
                 <div className="category">
@@ -660,6 +745,7 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                 <h1>What others have said</h1>
                 {artisanRatings.map(
                   (rate) =>
+                    rate.user &&
                     rate.user.id === usersProfile.id && (
                       <div className="card" key={rate.id}>
                         <div className="dets">
@@ -752,6 +838,7 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
               <h1>What others have said</h1>
               {artisanRatings.map(
                 (rate) =>
+                  rate.user &&
                   rate.user.id === usersProfile.id && (
                     <div className="card" key={rate.id}>
                       <div className="dets">
@@ -776,6 +863,7 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                         )}
                         <div className="post">
                           <div className="username">
+                            {console.log(rate.rating)}
                             <h2>{rate.user_rating.username}</h2>
                             <p className="time">
                               <Moment fromNow ago>

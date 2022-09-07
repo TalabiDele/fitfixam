@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
   const [emailMessage, setEmailMessage] = useState("");
   const [sent, setSent] = useState(false);
   const [isToken, setIsToken] = useState();
+  const [sum, setSum] = useState(0);
   // const [allUsers, setAllUsers] = useState(null);
 
   const { data: session } = useSession();
@@ -205,6 +206,8 @@ export const AuthProvider = ({ children }) => {
         forgotPassword,
         emailMessage,
         sent,
+        sum,
+        setSum,
       }}
     >
       {children}
