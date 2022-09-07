@@ -199,13 +199,12 @@ const CreateAccount = () => {
         <Aside>
           {/* <Image src={Logo} alt="Fitifixam logo" width={100} height={100} /> */}
           <h1>
-            Say <span>{'"no"'}</span> to mediocrity and unprofessionalism among
-            artisans.
+            <span>{'"Fill out"'}</span> the form to register
           </h1>
-          <p>
+          {/* <p>
             Sign up to get started!{" "}
             <BsArrowRight color="#f4442e" fontSize={50} />
-          </p>
+          </p> */}
         </Aside>
         <Wrapper error={error}>
           {/* <RegisterAlert sent={sent}>
