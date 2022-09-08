@@ -63,7 +63,22 @@ export const HeroBtn = styled.button`
     transition: all 0.3s ease-in-out;
   }
 
-  @media (max-width: 900px) {
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+
+  @media (max-width: 480px) {
     font-size: 19px;
     padding: 10px 20px;
   }
@@ -90,7 +105,22 @@ export const HeroBtn_two = styled.button`
     transition: all 0.3s ease-in-out;
   }
 
-  @media (max-width: 900px) {
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    font-size: 19px;
+    padding: 10px 20px;
+  }
+
+  @media (max-width: 480px) {
     font-size: 19px;
     padding: 10px 20px;
   }

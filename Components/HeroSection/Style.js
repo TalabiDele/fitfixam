@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 
   h1 {
     font-size: 70px;
-    width: 50%;
+    width: 60rem;
     margin: 2rem auto 1rem auto;
     color: #040242;
     line-height: 1;
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   p {
     font-size: 24px;
     color: #47586e;
-    width: 40%;
+    width: 50rem;
     margin: 0rem auto 5rem auto;
   }
 
@@ -44,11 +44,11 @@ export const Wrapper = styled.div`
 
   @media (min-width: 1281px) {
     text-align: center;
-    padding-top: 10rem;
+    padding-top: 5rem;
 
     h1 {
       font-size: 70px;
-      width: 50%;
+      width: 60rem;
       margin: 2rem auto 1rem auto;
       color: #040242;
       line-height: 1;
@@ -60,7 +60,7 @@ export const Wrapper = styled.div`
     p {
       font-size: 24px;
       color: #47586e;
-      width: 40%;
+      width: 50rem;
       margin: 0rem auto 5rem auto;
     }
 
@@ -86,7 +86,7 @@ export const Wrapper = styled.div`
 
     h1 {
       font-size: 50px;
-      width: 55%;
+      width: 40rem;
       margin: 0rem auto 2rem auto;
       color: #040242;
       z-index: -2;
@@ -97,7 +97,7 @@ export const Wrapper = styled.div`
     p {
       font-size: 22px;
       color: #47586e;
-      width: 50%;
+      width: 40rem;
       margin: 0rem auto 4rem auto;
     }
 
@@ -118,7 +118,7 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    padding-top: 0rem;
+    padding-top: 5rem;
     text-align: center;
 
     h1 {
@@ -130,13 +130,13 @@ export const Wrapper = styled.div`
       font-weight: 900;
       letter-spacing: -0.02em;
       margin: 2rem auto 1rem auto;
-      width: 80%;
+      width: 70%;
     }
 
     p {
       font-size: 20px;
       color: #47586e;
-      width: 70%;
+      width: 60%;
       margin: 0rem auto 2rem auto;
     }
 
@@ -166,7 +166,7 @@ export const Wrapper = styled.div`
       z-index: -2;
       font-weight: 900;
       letter-spacing: -0.02em;
-      width: 90%;
+      width: 40rem;
       font-size: 50px;
       margin: 2rem auto 2rem auto;
     }
@@ -221,7 +221,7 @@ export const Wrapper = styled.div`
       font-weight: 900;
       letter-spacing: -0.02em;
       line-height: 104px;
-      width: 70%;
+      width: 30rem;
       font-size: 75px;
       line-height: 1;
       margin: 2rem auto;
@@ -299,13 +299,13 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     position: relative;
     padding-top: -2rem;
     background-color: #f9fafb;
     margin-bottom: -3rem;
     padding-top: 1rem;
-    margin-top: 10rem;
+    margin-top: 3rem;
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
@@ -330,7 +330,7 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 35rem;
+    height: 60vh;
     position: relative;
     background-color: #f9fafb;
     margin-bottom: -3rem;
