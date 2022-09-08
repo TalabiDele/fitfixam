@@ -1639,7 +1639,7 @@ export const UserSideNav = styled.div`
   display: grid;
   /* padding: 1rem; */
   background: #f0f3f6;
-  width: 15%;
+  width: 18rem;
   height: 100%;
   position: fixed;
   transition: all 0.1s ease;
@@ -1676,7 +1676,7 @@ export const UserSideNav = styled.div`
   }
 
   @media (min-width: 1281px) {
-    width: 16%;
+    width: 18rem;
     div.settings {
       margin-top: 10rem;
     }
@@ -1688,7 +1688,7 @@ export const UserSideNav = styled.div`
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     /* width: ${({ userIsOpen }) => (userIsOpen ? "30%" : "6%")}; */
-    width: 20%;
+    width: 15rem;
 
     div.settings {
       margin-top: 10rem;
@@ -1697,7 +1697,7 @@ export const UserSideNav = styled.div`
 
   @media (min-width: 768px) and (max-width: 1024px) {
     /* width: ${({ userIsOpen }) => (userIsOpen ? "40%" : "8%")}; */
-    width: 25%;
+    width: 15rem;
 
     div.settings {
       margin-top: 5rem;

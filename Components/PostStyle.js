@@ -26,11 +26,72 @@ export const Container = styled.div`
 
 export const PostImages = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 40%;
-  /* margin-left: 2rem; */
-  /* padding: 3rem 0rem; */
-  /* background-color: #fcfdfd; */
+  width: 60%;
+  margin: 0rem auto 2rem 3rem;
+
+  div.post_images {
+    width: 100%;
+  }
+
+  .post_images:first-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 100%;
+  }
+
+  .post_images:first-child img {
+    border-radius: 10px 10px 0px 0px;
+    min-width: 35rem;
+    max-height: 20rem;
+  }
+
+  .post_images:nth-child(2) img {
+    margin: 0px 2px;
+    border-radius: 0px 0px 0px 10px;
+  }
+
+  .post_images:nth-child(3) img {
+    border-radius: 0px 0px 10px 0px;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    margin: 0rem auto 2rem 0rem;
+
+    .post_images:first-child img {
+      min-width: 30rem;
+      max-height: 15rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin: 0rem auto 2rem 0rem;
+    /* width: 50%; */
+
+    .post_images:first-child img {
+      min-width: 30rem;
+      max-height: 15rem;
+    }
+  }
+
+  /* .post_images {
+    display: flex;
+    padding: 2rem;
+    gap: 3px;
+    -webkit-column-gap: 3px;
+
+    &:nth-of-type(1n) {
+      border-radius: 10px 0px 0px 0px;
+    }
+
+    .imgs {
+
+      img {
+        margin: 2px;
+      }
+    }
+  }  */
 `;
 
 export const Wrapper = styled.div`
@@ -94,7 +155,7 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 1200px) {
-    left: 5rem;
+    /* left: 5rem; */
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
@@ -135,7 +196,7 @@ export const Wrapper = styled.div`
 `;
 
 export const PostItem = styled.div`
-  width: 40%;
+  width: 60%;
   /* overflow-y: scroll; */
   height: 90vh;
   padding-bottom: 2rem;
@@ -149,7 +210,7 @@ export const PostItem = styled.div`
     color: #020127;
     font-weight: 400;
     width: 90%;
-    margin: 0rem auto 2rem auto;
+    margin: 0rem auto 0rem auto;
   }
 
   @media (min-width: 1281px) {
@@ -159,7 +220,7 @@ export const PostItem = styled.div`
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 76%;
+    width: 60%;
 
     p.post {
       width: 100%;
@@ -168,7 +229,7 @@ export const PostItem = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    width: 85%;
+    width: 89%;
 
     p.post {
       width: 100%;
@@ -224,7 +285,7 @@ export const Cont = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  margin: 0rem 1rem;
+  /* margin: 0rem 1rem; */
   background-color: #fcfdfd;
 
   a {
@@ -503,7 +564,7 @@ export const Comments = styled.div`
   /* overflow-y: scroll; */
   height: 30rem;
   padding-bottom: 5rem;
-  width: 90%;
+  width: 100%;
   margin: auto;
 
   p {
@@ -521,7 +582,7 @@ export const Comments = styled.div`
     padding-bottom: 1rem;
     padding-left: 2rem;
     border-radius: 10px 0px 0px 0px;
-    width: 40%;
+    width: 60%;
     margin: auto;
     position: fixed;
     bottom: 0;
@@ -555,10 +616,10 @@ export const Comments = styled.div`
   }
 
   @media (min-width: 1281px) {
-    width: 90%;
+    width: 100%;
 
     .input_comment {
-      width: 40%;
+      width: 60%;
     }
   }
 
@@ -584,7 +645,7 @@ export const Comments = styled.div`
     margin-right: 5rem;
 
     .input_comment {
-      width: 70%;
+      width: 60%;
       /* padding-left: 10rem; */
     }
   }

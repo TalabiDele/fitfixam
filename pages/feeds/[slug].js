@@ -361,9 +361,9 @@ const Slug = ({ post, posts, comments, likes, token, loggedUsers }) => {
                         <Image
                           src={img.url}
                           alt={img.name}
-                          width={img.width}
-                          height={img.height}
-                          obajectFit="cover"
+                          width={300}
+                          height={300}
+                          objectFit="cover"
                         />
                       </div>
                     ))}
