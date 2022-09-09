@@ -27,6 +27,8 @@ const Posts = ({ posts, comments, userPost }) => {
 
   console.log(posts);
 
+  const read = <h1>...Read more</h1>;
+
   useEffect(() => {
     setPostDisplay(posts);
   }, [postDisplay]);
@@ -57,7 +59,8 @@ const Posts = ({ posts, comments, userPost }) => {
             <PostCard>
               <PostText>
                 <p onClick={() => displayPost(posts)}>
-                  {posts.post.slice(0, 150).concat("...Read more")}
+                  {posts.post.slice(0, 150).concat("...")}{" "}
+                  <span style={{ fontWeight: "bold" }}>Read more</span>
                 </p>
               </PostText>
               <div className="images">

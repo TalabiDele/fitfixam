@@ -33,7 +33,7 @@ export const Card = styled.div`
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
-    height: 22rem;
+    height: 25rem;
     text-align: center;
     color: #020127;
     padding-bottom: 2rem;
@@ -73,6 +73,8 @@ export const Card = styled.div`
       display: flex;
       gap: 5px;
       justify-content: center;
+      width: 90%;
+      margin: auto;
     }
   }
 
@@ -282,6 +284,7 @@ export const Card = styled.div`
       gap: 5px;
       justify-content: center;
       width: 80%;
+      padding-bottom: 1rem;
       margin: auto;
 
       p {

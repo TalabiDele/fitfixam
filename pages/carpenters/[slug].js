@@ -217,7 +217,8 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
             <PostCard key={post.id}>
               <PostText>
                 <p onClick={() => displayPost(post)}>
-                  {post.post.slice(0, 80).concat(" ...Read more")}
+                  {post.post.slice(0, 80).concat(" ...")}{" "}
+                  <span style={{ fontWeight: "bold" }}>Read more</span>
                 </p>
               </PostText>
               <PostCategory className="post_category">

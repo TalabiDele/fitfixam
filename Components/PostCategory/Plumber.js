@@ -36,7 +36,8 @@ const Plumber = ({ posts, comments, allUsers }) => {
         <PostCard>
           <PostText>
             <p onClick={() => displayPost(posts)}>
-              {posts.post.slice(0, 150).concat("...Read more")}
+              {posts.post.slice(0, 150).concat(" ...")}{" "}
+              <span style={{ fontWeight: "bold" }}>Read more</span>
             </p>
           </PostText>
           <div className="images">
