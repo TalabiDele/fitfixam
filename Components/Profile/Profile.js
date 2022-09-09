@@ -279,43 +279,6 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
     }
   };
 
-  // const RatingStar = ({ starId, userRating }) => {
-  //   let ratingStar = (
-  //     <AiFillStar fontSize={30} color="#B2BBC6" cursor="pointer" />
-  //   );
-
-  //   if (userRating && userRating >= starId) {
-  //     ratingStar = (
-  //       <AiFillStar fontSize={30} color="#FA7B23" cursor="pointer" />
-  //     );
-  //   }
-
-  //   return <div className="star">{ratingStar}</div>;
-  // };
-
-  // const Star = ({ starId, rating, onMouseEnter, onMouseLeave, onClick }) => {
-  //   let ratingStar = (
-  //     <AiFillStar fontSize={30} color="#B2BBC6" cursor="pointer" />
-  //   );
-
-  //   if (rating && rating >= starId) {
-  //     ratingStar = (
-  //       <AiFillStar fontSize={30} color="#FA7B23" cursor="pointer" />
-  //     );
-  //   }
-
-  //   return (
-  //     <div
-  //       className="star"
-  //       onMouseEnter={onMouseEnter}
-  //       onMouseLeave={onMouseLeave}
-  //       onClick={onClick}
-  //     >
-  //       {ratingStar}
-  //     </div>
-  //   );
-  // };
-
   const getRatingScore = (e) => {
     if (e === 0) console.log(index);
     setRating(e);
@@ -330,17 +293,6 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
           className="cancel_icon"
           onClick={openModalHandler}
         />
-        {/* <form onSubmit={(e) => uploadImage(e)}>
-          <input
-            type="file"
-            className="image-input"
-            name="image"
-            onChange={handleFileChange}
-          />
-          <button>Upload</button>
-        </form> */}
-        {/* <Image src={image} alt="image" width={100} height={100} /> */}
-        {/* <h1>{image.name}</h1> */}
         <form className="edit" onSubmit={(e) => updateUserHandler(e)}>
           <div className="user">
             <div className="user_info">

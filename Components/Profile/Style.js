@@ -254,7 +254,7 @@ export const Container = styled.div`
 
   div.container {
     display: grid;
-    grid-template-columns: 30% 65%;
+    grid-template-columns: 40% 60%;
     justify-items: center;
     width: 100%;
     margin: auto;
@@ -620,10 +620,10 @@ export const Container = styled.div`
 
     div.container {
       display: grid;
-      grid-template-columns: 30% 65%;
+      grid-template-columns: 40% 60%;
       justify-items: center;
-      width: 100%;
-      margin: auto;
+      width: 95%;
+      margin: 0rem 3rem 0rem 0rem;
 
       div.detail,
       div.info {
@@ -993,7 +993,7 @@ export const Container = styled.div`
       grid-template-columns: repeat(1, 1fr);
       justify-items: center;
       width: 50%;
-      margin-left: 25rem;
+      margin-left: 20rem;
       /* gap: 2rem; */
 
       div.detail,
@@ -1043,7 +1043,7 @@ export const Container = styled.div`
       }
 
       div.contact {
-        margin-top: 11rem;
+        margin-top: 12rem;
         margin-bottom: 4rem;
         width: 90%;
 
@@ -1113,7 +1113,7 @@ export const Container = styled.div`
 
     div.profile {
       width: 80%;
-      margin: auto;
+      margin: 5rem auto;
     }
 
     button {
@@ -1436,7 +1436,7 @@ export const Container = styled.div`
       }
 
       div.contact {
-        margin-top: 11rem;
+        margin-top: 12rem;
         margin-bottom: 4rem;
         width: 90%;
 
@@ -2473,14 +2473,26 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    width: 40%;
-    margin-left: 30rem;
+    width: 90%;
+    margin: auto;
+
+    div.reviews {
+      grid-template-columns: repeat(1, 1fr);
+      width: 50%;
+      justify-content: center;
+      margin-left: 20rem;
+    }
+
+    div.review_form {
+      margin-right: 0rem;
+    }
 
     div.wrapper {
       background: #f9fafb;
       border-radius: 10px;
       padding: 3rem;
-      z-index: 700;
+      margin: auto;
+      /* z-index: 100; */
 
       h1 {
         font-size: 19px;
