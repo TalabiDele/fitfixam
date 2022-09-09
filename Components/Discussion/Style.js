@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   /* margin-left: 9rem; */
-  margin: auto;
+  margin: 0rem auto 0rem 30rem;
   top: 6rem;
   position: relative;
   /* padding-top: 2rem; */
@@ -12,7 +12,11 @@ export const Container = styled.div`
   width: 60%;
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    margin-left: 30rem;
+    margin-left: 20rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-left: 12rem;
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
@@ -89,7 +93,7 @@ export const PostCard = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    width: 80%;
+    width: 100%;
     margin: 2rem auto 2rem 7rem;
   }
 
