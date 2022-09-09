@@ -79,8 +79,9 @@ export const HeroBtn = styled.button`
   }
 
   @media (max-width: 480px) {
-    font-size: 19px;
-    padding: 10px 20px;
+    font-size: 16px;
+    padding: 5px 5px;
+    border: 1px solid #060363;
   }
 `;
 
@@ -121,8 +122,9 @@ export const HeroBtn_two = styled.button`
   }
 
   @media (max-width: 480px) {
-    font-size: 19px;
-    padding: 10px 20px;
+    font-size: 16px;
+    padding: 5px 5px;
+    border: 1px solid #f4442e;
   }
 `;
 

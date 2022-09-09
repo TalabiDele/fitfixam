@@ -97,8 +97,8 @@ export async function getServerSideProps() {
 
 // Tasks
 
-// 9 Add user location
-// Create like functionality
-// Provider logins
-// Icon on the feeds page
-// Artisan reviews
+// Fix the hero buttons
+// Fix the hero responsiveness
+// Move user details to the top
+// Change the size of the time to 16px
+//
