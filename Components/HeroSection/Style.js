@@ -221,7 +221,7 @@ export const Wrapper = styled.div`
       font-weight: 900;
       letter-spacing: -0.02em;
       line-height: 104px;
-      width: 30rem;
+      width: 20rem;
       font-size: 75px;
       line-height: 1;
       margin: 2rem auto;
