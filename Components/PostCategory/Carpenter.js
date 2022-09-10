@@ -34,6 +34,50 @@ const Carpenter = ({ posts, comments, allUsers }) => {
     <Container>
       <Wrapper>
         <PostCard>
+          <UserDetails>
+            {allUsers.map((all) =>
+              posts.user === all.id ? (
+                <div className="user_details">
+                  {all.user_image ? (
+                    <Image
+                      src={all.user_image.formats.small.url}
+                      alt="User Image"
+                      width={50}
+                      height={50}
+                      cursor="pointer"
+                      objectFit="cover"
+                      className="user_image"
+                      onClick={() => displayProfile(all.slug)}
+                    />
+                  ) : (
+                    <Image
+                      src={userImage}
+                      alt="User Image"
+                      width={50}
+                      height={50}
+                      cursor="pointer"
+                      objectFit="cover"
+                      className="user_image"
+                      onClick={() => displayProfile(all.slug)}
+                    />
+                  )}
+
+                  <div>
+                    <h3 onClick={() => displayProfile(all.slug)}>
+                      {all.username}
+                    </h3>
+                    <p className="time">
+                      <Moment fromNow ago>
+                        {posts.created_at}
+                      </Moment>
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div></div>
+              )
+            )}
+          </UserDetails>
           <PostText>
             <p onClick={() => displayPost(posts)}>
               {posts.post.slice(0, 150).concat(" ...")}{" "}
@@ -63,50 +107,6 @@ const Carpenter = ({ posts, comments, allUsers }) => {
             </Link>
           </PostCategory>
           <PostDetails>
-            <UserDetails>
-              {allUsers.map((all) =>
-                posts.user === all.id ? (
-                  <div className="user_details">
-                    {all.user_image ? (
-                      <Image
-                        src={all.user_image.formats.small.url}
-                        alt="User Image"
-                        width={50}
-                        height={50}
-                        cursor="pointer"
-                        objectFit="cover"
-                        className="user_image"
-                        onClick={() => displayProfile(all.slug)}
-                      />
-                    ) : (
-                      <Image
-                        src={userImage}
-                        alt="User Image"
-                        width={50}
-                        height={50}
-                        cursor="pointer"
-                        objectFit="cover"
-                        className="user_image"
-                        onClick={() => displayProfile(all.slug)}
-                      />
-                    )}
-
-                    <div>
-                      <h3 onClick={() => displayProfile(all.slug)}>
-                        {all.username}
-                      </h3>
-                      <p className="time">
-                        <Moment fromNow ago>
-                          {posts.created_at}
-                        </Moment>
-                      </p>
-                    </div>
-                  </div>
-                ) : (
-                  <div></div>
-                )
-              )}
-            </UserDetails>
             <PostComments>
               {/* {comments.map((e) =>
                 posts.id === e.post.id ? (

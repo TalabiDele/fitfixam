@@ -154,6 +154,7 @@ export const UserDetails = styled.div`
 
   p.time {
     margin-left: 1rem;
+    font-size: 14px;
   }
 `;
 

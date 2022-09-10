@@ -57,6 +57,41 @@ const Posts = ({ posts, comments, userPost }) => {
         <Container>
           <Wrapper>
             <PostCard>
+              <UserDetails>
+                <div onClick={() => displayProfile(posts.user.slug)}>
+                  {posts.user.user_image ? (
+                    <Image
+                      src={posts.user.user_image.formats.small.url}
+                      alt="User Image"
+                      width={50}
+                      height={50}
+                      cursor="pointer"
+                      objectFit="cover"
+                      className="user_image"
+                    />
+                  ) : (
+                    <Image
+                      src={userImage}
+                      alt="User Image"
+                      width={50}
+                      height={50}
+                      cursor="pointer"
+                      objectFit="cover"
+                      className="user_image"
+                    />
+                  )}
+                </div>
+                <div className="post_dets">
+                  <h3 onClick={() => displayProfile(posts.user.slug)}>
+                    {posts.user.username}
+                  </h3>
+                  <p className="time">
+                    <Moment fromNow ago>
+                      {posts.created_at}
+                    </Moment>
+                  </p>
+                </div>
+              </UserDetails>
               <PostText>
                 <p onClick={() => displayPost(posts)}>
                   {posts.post.slice(0, 150).concat("...")}{" "}
@@ -90,41 +125,6 @@ const Posts = ({ posts, comments, userPost }) => {
                 )}
               </PostCategory>
               <PostDetails>
-                <UserDetails>
-                  <div onClick={() => displayProfile(posts.user.slug)}>
-                    {posts.user.user_image ? (
-                      <Image
-                        src={posts.user.user_image.formats.small.url}
-                        alt="User Image"
-                        width={50}
-                        height={50}
-                        cursor="pointer"
-                        objectFit="cover"
-                        className="user_image"
-                      />
-                    ) : (
-                      <Image
-                        src={userImage}
-                        alt="User Image"
-                        width={50}
-                        height={50}
-                        cursor="pointer"
-                        objectFit="cover"
-                        className="user_image"
-                      />
-                    )}
-                  </div>
-                  <div className="post_dets">
-                    <h3 onClick={() => displayProfile(posts.user.slug)}>
-                      {posts.user.username}
-                    </h3>
-                    <p className="time">
-                      <Moment fromNow ago>
-                        {posts.created_at}
-                      </Moment>
-                    </p>
-                  </div>
-                </UserDetails>
                 <PostComments>
                   {/* {comments.map((comment) =>
                     posts.id === comment.post.id ? (
