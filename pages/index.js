@@ -97,8 +97,6 @@ export async function getServerSideProps() {
 
 // Tasks
 
-// Fix the hero buttons
 // Fix the hero responsiveness
 // Move user details to the top
-// Change the size of the time to 16px
-//
+// Put images of likes in feeds
