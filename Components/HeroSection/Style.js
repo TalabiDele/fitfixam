@@ -285,7 +285,7 @@ export const Container = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     position: relative;
     /* padding-bottom: 10rem; */
     background-color: #f9fafb;
@@ -299,7 +299,7 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     position: relative;
     padding-top: -2rem;
     background-color: #f9fafb;

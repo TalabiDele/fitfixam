@@ -95,8 +95,7 @@ export async function getServerSideProps() {
 }
 8;
 
-// Tasks
+// TASKS
 
-// Fix the hero responsiveness
-// Move user details to the top
+// Fix responsiveness for mobile
 // Put images of likes in feeds
