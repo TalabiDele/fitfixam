@@ -7,7 +7,7 @@ const Find = () => {
   return (
     <Container>
       <div className="container">
-        <h1>Find an artisan that’s right for you without hassle.</h1>
+        <h1>Find the artisan that is right for you without hassle</h1>
         <p>
           Discover rated artisans with the click of a button, no stress, no
           hassle, no wahala

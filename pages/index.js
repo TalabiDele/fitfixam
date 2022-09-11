@@ -17,32 +17,8 @@ import styled from "styled-components";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 export default function Home({ posts, blogPosts }) {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const { user } = useContext(AuthContext);
-  const router = useRouter();
-
-  useEffect(() => {
-    // setTimeout(() => {
-    //   setIsLoading(true);
-    // }, 5000);
-    // // setIsLoading(true);
-    // if (user) {
-    //   setIsLoading(true);
-    //   router.push("/feeds");
-    // }
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 5000);
-  }, []);
-
   return (
     <div>
-      {/* {isLoading ? (
-        <Loader className="loading">
-          <Image width={50} height={50} alt="Spinner" src={Spinner} />
-        </Loader>
-      ) : ( */}
       <Layout
         title="Fitfixam | Home"
         description="Here, you can find reviews of artisans and companies that offer artisan services. Be girded with the information that will help you make the right decisions. Fix it one time"
