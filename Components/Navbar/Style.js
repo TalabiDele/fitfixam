@@ -1672,13 +1672,13 @@ export const UserSideNav = styled.div`
   }
 
   div.settings {
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
 
   @media (min-width: 1281px) {
     width: 18rem;
     div.settings {
-      margin-top: 10rem;
+      margin-top: 5rem;
     }
 
     div.write_icon {
@@ -1691,7 +1691,7 @@ export const UserSideNav = styled.div`
     width: 15rem;
 
     div.settings {
-      margin-top: 10rem;
+      margin-top: 5rem;
     }
   }
 

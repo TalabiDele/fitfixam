@@ -93,7 +93,6 @@ export async function getServerSideProps() {
     props: { posts, blogPosts },
   };
 }
-8;
 
 // TASKS
 
