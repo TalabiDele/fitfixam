@@ -58,7 +58,7 @@ export const Modal = styled.div`
 
   div.cancel_icon {
     position: absolute;
-    top: 8.5rem;
+    top: 1.5rem;
     right: 17rem;
     cursor: pointer;
   }
@@ -76,7 +76,7 @@ export const Modal = styled.div`
 
     div.cancel_icon {
       position: absolute;
-      top: 8.5rem;
+      top: 1.5rem;
       right: 17rem;
       cursor: pointer;
     }
@@ -94,7 +94,7 @@ export const Modal = styled.div`
 
     div.cancel_icon {
       position: absolute;
-      top: 8.5rem;
+      top: 1.5rem;
       right: 10rem;
       cursor: pointer;
     }
@@ -112,7 +112,7 @@ export const Modal = styled.div`
 
     div.cancel_icon {
       position: absolute;
-      top: 8.5rem;
+      top: 1.5rem;
       right: 2rem;
       cursor: pointer;
     }
@@ -159,7 +159,7 @@ export const CreatePost = styled.div`
   @media (min-width: 1281px) {
     background-color: #fff;
     width: ${({ isModal }) => (isModal ? "0rem" : "70%")};
-    margin: 10rem auto;
+    margin: 3rem auto;
     border-radius: 20px;
     transition: all 0.1s ease-in-out;
   }
@@ -167,7 +167,7 @@ export const CreatePost = styled.div`
   @media (min-width: 1025px) and (max-width: 1280px) {
     background-color: #fff;
     width: ${({ isModal }) => (isModal ? "0rem" : "70%")};
-    margin: 10rem auto;
+    margin: 3rem auto;
     border-radius: 20px;
     transition: all 0.1s ease-in-out;
   }
@@ -175,7 +175,7 @@ export const CreatePost = styled.div`
   @media (min-width: 768px) and (max-width: 1024px) {
     background-color: #fff;
     width: ${({ isModal }) => (isModal ? "0rem" : "90%")};
-    margin: 10rem auto;
+    margin: 3rem auto;
     border-radius: 20px;
     transition: all 0.1s ease-in-out;
   }
@@ -202,7 +202,7 @@ export const Tags = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 
     .active {
       border: 1.5px solid #07036e;
@@ -248,7 +248,7 @@ export const Tags = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 
     .active {
       border: 1.5px solid #07036e;
@@ -294,7 +294,7 @@ export const Tags = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 
     .active {
       border: 1.5px solid #07036e;
@@ -674,7 +674,7 @@ export const Actions = styled.div`
   div.label {
     border: 1px solid #eaeaea;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0.5rem;
     width: 50%;
     /* position: absolute; */
     top: 1;
@@ -950,8 +950,6 @@ export const Wrapper = styled.div`
     top: 0rem;
     right: 0rem;
     width: 100%;
-    /* margin-bottom: 4rem; */
-    /* bottom: 0rem; */
     background-color: #f0f3f6;
     height: 6rem;
     padding-top: 1px;
