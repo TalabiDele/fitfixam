@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Sign = styled.div`
-  /* position: absolute; */
-
   div.sign_nav {
     z-index: 100;
     position: absolute;
@@ -1677,6 +1675,7 @@ export const UserSideNav = styled.div`
 
   @media (min-width: 1281px) {
     width: 18rem;
+
     div.settings {
       margin-top: 5rem;
     }

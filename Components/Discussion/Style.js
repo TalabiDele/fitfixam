@@ -101,13 +101,13 @@ export const PostCard = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    margin: 2rem auto 2rem 7rem;
-    width: 70%;
+    margin: 2rem auto;
+    width: 90%;
   }
 
   @media (max-width: 480px) {
-    width: 70%;
-    margin: 2rem auto 2rem 5rem;
+    width: 90%;
+    margin: 2rem auto;
   }
 `;
 
