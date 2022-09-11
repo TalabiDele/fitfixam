@@ -77,7 +77,6 @@ export const Wrapper = styled.div`
 `;
 
 export const PostCard = styled.div`
-  /* border: 0.5px solid #020127; */
   background: #f9fafb;
   border-radius: 10px;
   width: 90%;
@@ -85,7 +84,6 @@ export const PostCard = styled.div`
   color: #020127;
   font-weight: 400;
   font-size: 16px;
-  /* padding: 1rem 3rem; */
 
   .user_image {
     border-radius: 50%;
@@ -95,9 +93,6 @@ export const PostCard = styled.div`
   @media (min-width: 768px) and (max-width: 1024px) {
     width: 100%;
     margin: 2rem auto 2rem 7rem;
-  }
-
-  @media (max-width: 900px) {
   }
 
   @media (min-width: 481px) and (max-width: 767px) {

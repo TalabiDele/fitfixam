@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { LoginBtn } from "Components/Buttons";
 import Subscribe from "Components/Subscribe/Subscribe";
+import Link from "next/link";
 
 const ContactUs = () => {
   return (
@@ -48,10 +49,18 @@ const ContactUs = () => {
         <div className="social">
           <h2>Connect with us!</h2>
           <div className="soc">
-            <FaFacebookSquare />
-            <FaTwitterSquare />
-            <FaLinkedin />
-            <FaInstagramSquare />
+            <a href="https://www.facebook.com/fitfixam/">
+              <FaFacebookSquare />
+            </a>
+            <a href="https://twitter.com/Ifitfixam?t=fvZSAX1y21YVuK8y6Axh-w&s=09">
+              <FaTwitterSquare />
+            </a>
+            <a href="https://www.linkedin.com/company/fit-fixam/">
+              <FaLinkedin />
+            </a>
+            <a href="https://instagram.com/fitfixam?igshid=YmMyMTA2M2Y=">
+              <FaInstagramSquare />
+            </a>
           </div>
         </div>
         <Subscribe />

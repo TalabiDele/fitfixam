@@ -85,10 +85,18 @@ const Footer = () => {
         </Flex>
         <Flex>
           <Social>
-            <FaLinkedinIn fontSize={30} className="icon" />
-            <FaInstagram fontSize={30} className="icon" />
-            <FaFacebookF fontSize={30} className="icon" />
-            <FaTwitter fontSize={30} className="icon" />
+            <a href="https://www.linkedin.com/company/fit-fixam/">
+              <FaLinkedinIn fontSize={30} className="icon" />
+            </a>
+            <a href="https://instagram.com/fitfixam?igshid=YmMyMTA2M2Y=">
+              <FaInstagram fontSize={30} className="icon" />
+            </a>
+            <a href="https://www.facebook.com/fitfixam/">
+              <FaFacebookF fontSize={30} className="icon" />
+            </a>
+            <a href="https://twitter.com/Ifitfixam?t=fvZSAX1y21YVuK8y6Axh-w&s=09">
+              <FaTwitter fontSize={30} className="icon" />
+            </a>
           </Social>
           <p>fitfixam, 2022. All Rights Reserved</p>
         </Flex>
