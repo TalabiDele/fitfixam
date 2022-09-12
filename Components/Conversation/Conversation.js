@@ -19,7 +19,7 @@ const Conversation = ({ posts }) => {
           mediocre services from artisans, promote competent services.
           <strong> See what others have said...</strong>
         </p>
-        <div className="img">
+        {/* <div className="img">
           <Image
             src={arrow}
             alt="arrow"
@@ -27,7 +27,7 @@ const Conversation = ({ posts }) => {
             height={100}
             objectFit="cover"
           />
-        </div>
+        </div> */}
       </div>
       <TrendingCards posts={posts} />
     </Container>

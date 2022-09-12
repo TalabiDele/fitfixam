@@ -18,9 +18,11 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 
   h1 {
     font-size: 86px;
+    text-align: center;
   }
 
   p {
@@ -38,6 +40,7 @@ export const Wrapper = styled.div`
     h1 {
       /* padding-top: 3rem; */
       font-size: 30px;
+      text-align: center;
     }
 
     p {
