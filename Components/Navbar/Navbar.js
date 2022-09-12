@@ -110,7 +110,7 @@ const Navbar = () => {
                   src={Logo}
                   alt="Fitfixam Logo"
                   width={200}
-                  height={60}
+                  height={100}
                   className="img"
                   objectFit="contain"
                 />
