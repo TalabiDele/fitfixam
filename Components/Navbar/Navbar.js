@@ -47,6 +47,15 @@ import LogoBlue from "@/public/Blue.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHome, setIsHome] = useState(false);
+
+  useEffect(() => {
+    if (router.pathname === "/") {
+      setIsHome(true);
+    } else {
+      setIsHome(false);
+    }
+  }, []);
 
   const router = useRouter();
 
@@ -61,7 +70,7 @@ const Navbar = () => {
     router.pathname === "/reset-password"
   ) {
     return (
-      <Sign>
+      <Sign isHome={isHome}>
         <div className="sign_nav">
           <Link href="/">
             <a>

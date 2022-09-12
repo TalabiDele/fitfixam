@@ -15,8 +15,8 @@ const Conversation = ({ posts }) => {
           <span className="dark">Make a post.</span>
         </h1>
         <p>
-          Save time and money, and help other do the same. Together, we can curb
-          mediocre services from artisans, and promote competent services.
+          Save time & money, and help others do the same. Together, we can curb
+          mediocre services from artisans, promote competent services.
           <strong> See what others have said...</strong>
         </p>
         <div className="img">
