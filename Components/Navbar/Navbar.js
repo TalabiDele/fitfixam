@@ -70,7 +70,7 @@ const Navbar = () => {
     router.pathname === "/reset-password"
   ) {
     return (
-      <Sign isHome={isHome}>
+      <Sign>
         <div className="sign_nav">
           <Link href="/">
             <a>
@@ -101,7 +101,7 @@ const Navbar = () => {
     );
   } else {
     return (
-      <Wrapper isOpen={isOpen}>
+      <Wrapper isOpen={isOpen} isHome={isHome}>
         <ul>
           <li>
             <Link href="/">
