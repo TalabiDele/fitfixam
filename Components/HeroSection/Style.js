@@ -27,19 +27,21 @@ export const Wrapper = styled.div`
   }
 
   .hero_icon {
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
     margin-bottom: -10rem;
     text-align: center;
+    justify-self: flex-end;
   }
 
   div.btns {
     display: grid;
-    justify-items: center;
+    justify-content: center;
   }
 
   div.button {
     display: flex;
     gap: 2rem;
+    min-height: 10rem;
   }
 
   @media (min-width: 1281px) {
@@ -61,7 +63,7 @@ export const Wrapper = styled.div`
       font-size: 24px;
       color: #47586e;
       width: 50rem;
-      margin: 0rem auto 5rem auto;
+      margin: 0rem auto 3rem auto;
     }
 
     span {
@@ -69,14 +71,17 @@ export const Wrapper = styled.div`
     }
 
     .hero_icon {
-      margin-top: 10rem;
+      /* margin-top: 5rem; */
       margin-bottom: -10rem;
       text-align: center;
+      justify-self: flex-end;
     }
 
     div.btns {
-      display: grid;
-      justify-items: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -109,11 +114,14 @@ export const Wrapper = styled.div`
       margin-top: 4rem;
       margin-bottom: -10rem;
       text-align: center;
+      justify-self: flex-end;
     }
 
     div.btns {
-      display: grid;
-      justify-items: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -151,8 +159,10 @@ export const Wrapper = styled.div`
     }
 
     div.btns {
-      display: grid;
-      justify-items: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -189,8 +199,10 @@ export const Wrapper = styled.div`
     }
 
     div.btns {
-      display: grid;
-      justify-items: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -246,20 +258,23 @@ export const Wrapper = styled.div`
     }
 
     div.btns {
-      display: grid;
-      justify-items: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
   }
 `;
 
 export const Container = styled.div`
   z-index: 3;
+  position: relative;
   background: url("/hero-background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   padding-top: -2rem;
   background-color: #f9fafb;
@@ -272,7 +287,7 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-position: bottom;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     padding-top: -2rem;
     background-color: #f9fafb;
