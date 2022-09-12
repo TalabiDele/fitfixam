@@ -11,7 +11,7 @@ export const Container = styled.div`
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     width: 70%;
-    margin-left: 22rem;
+    margin-left: 20rem;
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -39,7 +39,7 @@ export const Card = styled.div`
   /* border: 0.5px solid #020127; */
   border-radius: 10px;
   width: 70%;
-  margin: auto;
+  margin: 0rem 0rem 0rem 20rem;
   padding: 1rem 2rem;
   margin-top: 2rem;
   background: #f9fafb;
@@ -78,7 +78,7 @@ export const Card = styled.div`
     /* border: 0.5px solid #020127; */
     border-radius: 10px;
     width: 70%;
-    margin: auto;
+    margin: 0rem 0rem 0rem 20rem;
     padding: 1rem 2rem;
     margin-top: 2rem;
     background: #f9fafb;
@@ -119,7 +119,7 @@ export const Card = styled.div`
     border-radius: 10px;
     width: 90%;
     padding: 1rem 2rem;
-    margin-top: 2rem;
+    margin: 2rem 0rem 0rem 0rem;
     background: #f9fafb;
     cursor: pointer;
 
@@ -156,9 +156,9 @@ export const Card = styled.div`
     align-items: center;
     /* border: 0.5px solid #020127; */
     border-radius: 10px;
-    width: 90%;
+    width: 100%;
     padding: 1rem 2rem;
-    margin-top: 2rem;
+    margin: 0rem 0rem 0rem 2rem;
     background: #f9fafb;
     cursor: pointer;
 
