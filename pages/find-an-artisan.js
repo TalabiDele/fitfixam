@@ -158,7 +158,7 @@ export const Header = styled.div`
     display: flex;
     justify-content: space-between;
     width: 60%;
-    margin: 2rem auto;
+    margin: 2rem auto 2rem 30rem;
     align-items: center;
 
     h1 {
