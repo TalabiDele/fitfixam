@@ -1,6 +1,39 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  width: 60%;
+  margin: 3rem auto;
+
+  div.cont {
+    margin-right: 3rem;
+    overflow-y: scroll;
+    height: 55rem;
+    padding-right: 1rem;
+    padding-bottom: 5rem;
+
+    ::-webkit-scrollbar {
+      height: 5px;
+      width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 0px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #c0c0c0;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #dbdbdb;
+    }
+  }
+
   @media (min-width: 1281px) {
     width: 60%;
     margin: 3rem auto;
@@ -172,7 +205,7 @@ export const Wrapper = styled.div`
   div.wrapper {
     background: #fff;
     height: 100%;
-    width: 50%;
+    width: 70%;
     position: relative;
     top: 5rem;
   }
@@ -244,7 +277,7 @@ export const Wrapper = styled.div`
     div.wrapper {
       background: #fff;
       height: 100%;
-      width: 50%;
+      width: 70%;
       position: relative;
       top: 5rem;
     }
@@ -934,7 +967,7 @@ export const Comments = styled.div`
     background-color: #fcfdfd;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    width: 50%;
+    width: 70%;
     justify-content: center;
     margin: auto;
     position: fixed;
@@ -995,7 +1028,7 @@ export const Comments = styled.div`
       background-color: #fcfdfd;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      width: 50%;
+      width: 70%;
       justify-content: center;
       margin: auto;
       position: fixed;

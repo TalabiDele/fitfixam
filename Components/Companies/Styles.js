@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 60%;
-  margin: 7rem auto;
+  margin: 7rem 0rem 7rem 30rem;
   color: #020127;
 
   div.container {
@@ -93,6 +93,7 @@ export const Container = styled.div`
 
   @media (min-width: 481px) and (max-width: 767px) {
     width: 70%;
+    margin: 7rem auto;
     /* margin: 3rem 2rem 0rem auto; */
 
     div.card {
@@ -109,6 +110,7 @@ export const Container = styled.div`
 
   @media (max-width: 480px) {
     width: 70%;
+    margin: 7rem auto;
 
     div.card {
       grid-template-columns: repeat(1, 1fr);
