@@ -31,6 +31,7 @@ const Plumbers = ({ post, posts, comments, likes, allUsers }) => {
             posts={e}
             comments={comments}
             allUsers={allUsers}
+            likes={likes}
           />
         ))}
       </div>
@@ -50,7 +51,7 @@ export async function getServerSideProps({ query: { slug } }) {
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);
   const comments = await resComments.json();
 
-  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/likes`);
+  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`);
   const likes = await resLikes.json();
 
   const resUsers = await fetch(`${NEXT_PUBLIC_API_URL}/users`);

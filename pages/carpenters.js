@@ -5,7 +5,7 @@ import { useContext, useState, useEffect } from "react";
 import AuthContext from "@/context/AuthContext";
 import Carpenter from "@/components/PostCategory/Carpenter";
 
-const Carpenters = ({ post, posts, comments, likes, allUsers }) => {
+const Carpenters = ({ post, posts, comments, likes, allUsers, allPosts }) => {
   return (
     <UserLayout
       title="Fitfixam | Carpenters Feed"
@@ -31,6 +31,8 @@ const Carpenters = ({ post, posts, comments, likes, allUsers }) => {
             posts={e}
             comments={comments}
             allUsers={allUsers}
+            likes={likes}
+            allPosts={allPosts}
           />
         ))}
       </div>
@@ -50,13 +52,16 @@ export async function getServerSideProps({ query: { slug } }) {
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);
   const comments = await resComments.json();
 
-  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/likes`);
+  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`);
   const likes = await resLikes.json();
 
   const resUsers = await fetch(`${NEXT_PUBLIC_API_URL}/users`);
   const allUsers = await resUsers.json();
 
+  const resAllPosts = await fetch(`${NEXT_PUBLIC_API_URL}/posts`);
+  const allPosts = await resAllPosts.json();
+
   return {
-    props: { post, posts, comments, likes, allUsers },
+    props: { post, posts, comments, likes, allUsers, allPosts },
   };
 }

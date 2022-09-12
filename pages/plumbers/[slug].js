@@ -18,6 +18,7 @@ import {
   UsersComments,
   Cont,
   Contain,
+  PostImages,
 } from "@/components/PostStyle";
 import Image from "next/image";
 import {
@@ -295,6 +296,9 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
         <Wrapper>
           {post.map((e) => (
             <PostItem key={e.id}>
+              <p onClick={() => router.back()} className="back">
+                Back
+              </p>
               <UserPosted>
                 <Image
                   src={
@@ -323,6 +327,20 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
               </UserPosted>
               <UserPost>
                 <p className="post">{e.post}</p>
+                <PostImages>
+                  {e.images &&
+                    e.images.map((img) => (
+                      <div className="post_images" key={img.id}>
+                        <Image
+                          src={img.url}
+                          alt={img.name}
+                          width={300}
+                          height={300}
+                          objectFit="cover"
+                        />
+                      </div>
+                    ))}
+                </PostImages>
               </UserPost>
               <Interract>
                 <div className="interract">

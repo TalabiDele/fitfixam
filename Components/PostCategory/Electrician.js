@@ -17,7 +17,7 @@ import Moment from "react-moment";
 import { PostCategory } from "./Style";
 import userImage from "public/userImage.png";
 
-const Electrician = ({ posts, comments, allUsers }) => {
+const Electrician = ({ posts, comments, allUsers, likes }) => {
   console.log(posts);
 
   const router = useRouter();
@@ -99,34 +99,48 @@ const Electrician = ({ posts, comments, allUsers }) => {
                 </div>
               ))}
           </div>
-          <PostCategory className="post_category">
-            <Link href="/electricians">
-              <a>
-                <button>#Electricians</button>
-              </a>
-            </Link>
-          </PostCategory>
-          <PostDetails>
-            <PostComments>
-              {/* {comments.map((e) =>
-                posts.id === e.post.id ? (
-                  <div key={e.id}>
-                    <Image
-                      src={e.users.user_image.formats.small.url}
-                      alt="User Image"
-                      width={50}
-                      height={50}
-                      cursor="pointer"
-                      objectFit="cover"
-                      className="user_image"
-                    />
-                  </div>
-                ) : (
-                  <div></div>
-                )
-              )} */}
-            </PostComments>
-          </PostDetails>
+          <div className="details">
+            <PostDetails>
+              <PostComments>
+                {likes.length > 0 &&
+                  likes.map(
+                    (l) =>
+                      posts.id === l.post.id && (
+                        <div key={l.id}>
+                          {l.user.user_image ? (
+                            <Image
+                              src={l.user.user_image.formats.small.url}
+                              alt="User Image"
+                              width={30}
+                              height={30}
+                              cursor="pointer"
+                              objectFit="cover"
+                              className="user_image"
+                            />
+                          ) : (
+                            <Image
+                              src={userImage}
+                              alt="User Image"
+                              width={30}
+                              height={30}
+                              cursor="pointer"
+                              objectFit="cover"
+                              className="user_image"
+                            />
+                          )}
+                        </div>
+                      )
+                  )}
+              </PostComments>
+            </PostDetails>
+            <PostCategory className="post_category">
+              <Link href="/electricians">
+                <a>
+                  <button>#Electricians</button>
+                </a>
+              </Link>
+            </PostCategory>
+          </div>
         </PostCard>
       </Wrapper>
     </Container>

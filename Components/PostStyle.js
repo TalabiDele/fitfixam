@@ -688,7 +688,7 @@ export const None = styled.div`
 
 export const UsersComments = styled.div`
   display: flex;
-  width: 100%;
+  width: 90%;
   gap: 1rem;
   flex-wrap: nowrap;
   /* grid-template-columns: 10% 70%; */
@@ -736,13 +736,13 @@ export const UsersComments = styled.div`
   }
 
   .name_time {
-    display: grid;
+    display: flex;
     flex-wrap: nowrap;
-    grid-template-columns: 60% 5% 30%;
+    /* grid-template-columns: 60% 5% 30%; */
     align-items: center;
     margin-bottom: 0.5rem;
     /* justify-content: center; */
-    width: 40%;
+    width: 100%;
 
     h2 {
       cursor: pointer;

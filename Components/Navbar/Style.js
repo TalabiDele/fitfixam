@@ -665,9 +665,6 @@ export const Actions = styled.div`
 
     svg {
       position: relative;
-      /* right: 0rem; */
-      /* left: 30rem; */
-      /* top: 1.3rem; */
     }
   }
 

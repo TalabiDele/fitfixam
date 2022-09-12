@@ -299,6 +299,9 @@ const Slug = ({ post, posts, comments, likes, allUsers }) => {
         <Wrapper>
           {post.map((e) => (
             <PostItem key={e.id}>
+              <p onClick={() => router.back()} className="back">
+                Back
+              </p>
               <UserPosted>
                 {e.user.user_image ? (
                   <Image

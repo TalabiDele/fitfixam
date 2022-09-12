@@ -72,5 +72,4 @@ export async function getServerSideProps() {
 
 // TASKS
 
-// Fix responsiveness for mobile
 // Put images of likes in feeds

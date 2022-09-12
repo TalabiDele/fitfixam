@@ -5,7 +5,7 @@ import Slug from "./feeds/[slug].js";
 import styled from "styled-components";
 import IconStatic from "../Components/IconStatic/IconStatic";
 
-const Feeds = ({ posts, comments, userPost, allUsers }) => {
+const Feeds = ({ posts, comments, userPost, allUsers, likes }) => {
   return (
     <UserLayout
       title="Fitfixam | Feed"
@@ -34,6 +34,7 @@ const Feeds = ({ posts, comments, userPost, allUsers }) => {
                 posts={e}
                 comments={comments}
                 userPost={userPost}
+                likes={likes}
               />
             ))}
           </Container>
@@ -59,8 +60,11 @@ export async function getServerSideProps() {
   const resAllUsers = await fetch(`${NEXT_PUBLIC_API_URL}/users`);
   const allUsers = await resAllUsers.json();
 
+  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`);
+  const likes = await resLikes.json();
+
   return {
-    props: { posts, comments, allUsers },
+    props: { posts, comments, allUsers, likes },
   };
 }
 

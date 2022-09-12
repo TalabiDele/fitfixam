@@ -24,7 +24,7 @@ const Trending = ({ post, posts, comments, likes }) => {
       {posts.length !== 0 ? (
         <div>
           {posts.map((e) => (
-            <Posts key={e.id} posts={e} comments={comments} />
+            <Posts key={e.id} posts={e} comments={comments} likes={likes} />
           ))}
         </div>
       ) : (
@@ -46,7 +46,7 @@ export async function getServerSideProps({ query: { slug }, req }) {
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);
   const comments = await resComments.json();
 
-  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/likes`);
+  const resLikes = await fetch(`${NEXT_PUBLIC_API_URL}/post-likes`);
   const likes = await resLikes.json();
 
   return {

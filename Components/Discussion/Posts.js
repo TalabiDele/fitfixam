@@ -19,11 +19,13 @@ import { PostCategory } from "Components/PostCategory/Style";
 import userImage from "/public/userImage.png";
 import { GiPodiumThird } from "react-icons/gi";
 
-const Posts = ({ posts, comments, userPost }) => {
+const Posts = ({ posts, comments, userPost, likes }) => {
   const [postDisplay, setPostDisplay] = useState({});
   const { user, isLoading } = useContext(AuthContext);
   const router = useRouter();
   const initialState = [];
+
+  console.log(likes);
 
   console.log(posts);
 
@@ -113,38 +115,54 @@ const Posts = ({ posts, comments, userPost }) => {
                     </div>
                   ))}
               </div>
-              <PostCategory className="post_category">
-                {posts.category === null || posts.category === undefined ? (
-                  <div></div>
-                ) : (
-                  <a>
-                    <button onClick={() => categoryPage(posts.category.title)}>
-                      #{posts.category.title}
-                    </button>
-                  </a>
-                )}
-              </PostCategory>
-              <PostDetails>
-                <PostComments>
-                  {/* {comments.map((comment) =>
-                    posts.id === comment.post.id ? (
-                      <div key={comment.id}>
-                        <Image
-                          src={comment.users.user_image.formats.small.url}
-                          alt="User Image"
-                          width={50}
-                          height={50}
-                          cursor="pointer"
-                          objectFit="cover"
-                          className="user_image"
-                        />
-                      </div>
-                    ) : (
-                      <div></div>
-                    )
-                  )} */}
-                </PostComments>
-              </PostDetails>
+              <div className="details">
+                <PostDetails>
+                  <PostComments>
+                    {likes.length > 0 &&
+                      likes.map(
+                        (l) =>
+                          posts.id === l.post.id && (
+                            <div key={l.id}>
+                              {l.user.user_image ? (
+                                <Image
+                                  src={l.user.user_image.formats.small.url}
+                                  alt="User Image"
+                                  width={30}
+                                  height={30}
+                                  cursor="pointer"
+                                  objectFit="cover"
+                                  className="user_image"
+                                />
+                              ) : (
+                                <Image
+                                  src={userImage}
+                                  alt="User Image"
+                                  width={30}
+                                  height={30}
+                                  cursor="pointer"
+                                  objectFit="cover"
+                                  className="user_image"
+                                />
+                              )}
+                            </div>
+                          )
+                      )}
+                  </PostComments>
+                </PostDetails>
+                <PostCategory className="post_category">
+                  {posts.category === null || posts.category === undefined ? (
+                    <div></div>
+                  ) : (
+                    <a>
+                      <button
+                        onClick={() => categoryPage(posts.category.title)}
+                      >
+                        #{posts.category.title}
+                      </button>
+                    </a>
+                  )}
+                </PostCategory>
+              </div>
             </PostCard>
           </Wrapper>
         </Container>

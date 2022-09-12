@@ -38,6 +38,13 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  .details {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 2rem;
+    align-items: center;
+  }
+
   @media (max-width: 1200px) {
     width: 100%;
   }
@@ -111,7 +118,7 @@ export const PostDetails = styled.div`
   /* grid-template-columns: repeat(2, 1fr); */
   align-items: center;
   /* border-top: 0.5px solid #c4c4c4; */
-  background: #fff;
+  /* background: #fff; */
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 `;
