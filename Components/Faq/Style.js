@@ -22,6 +22,10 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  p {
+    font-size: 19px;
+  }
+
   div.help {
     div.dot {
       background-color: #d7d6dc;
@@ -64,6 +68,7 @@ export const Wrapper = styled.div`
 
     h1 {
       margin-bottom: 3rem;
+      font-size: 40px;
     }
   }
 
@@ -73,6 +78,7 @@ export const Wrapper = styled.div`
 
     p {
       margin-bottom: 1rem;
+      font-size: 19px;
     }
   }
 

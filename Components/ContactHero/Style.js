@@ -9,6 +9,7 @@ export const Container = styled.div`
   padding-bottom: 3rem;
   text-align: center;
   color: #fff;
+  margin-bottom: 3rem;
   /* bottom: 0; */
 
   @media (max-width: 768px) {

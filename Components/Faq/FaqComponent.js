@@ -119,7 +119,7 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
               <div className="dot"></div>
               <Link href="/contact">
                 <a>
-                  <div className="header">Contact us</div>
+                  <p className="header">Contact us</p>
                 </a>
               </Link>
             </div>

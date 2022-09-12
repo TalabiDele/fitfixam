@@ -25,8 +25,7 @@ const ContactUs = () => {
           <div className="card">
             <FaPhoneAlt color="#060258" fontSize={36} />
             <h3>Via Phone</h3>
-            <p>+243 563 5363 353</p>
-            <p>+243 563 5363 353</p>
+            <p>+234 816 6674 464</p>
           </div>
         </div>
         <div className="form">
