@@ -14,9 +14,9 @@ export const Container = styled.div`
   }
 
   .back {
-    font-size: 20pxrem;
-    width: 15%;
-    margin-left: 6rem;
+    font-size: 20px;
+    /* width: 15%;
+    margin-left: 6rem; */
     text-decoration: underline;
     cursor: pointer;
     color: #07036e;
