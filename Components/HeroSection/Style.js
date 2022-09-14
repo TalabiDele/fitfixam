@@ -198,6 +198,10 @@ export const Wrapper = styled.div`
       text-align: center;
     }
 
+    div.button {
+      min-height: 5rem;
+    }
+
     div.btns {
       display: flex;
       justify-content: center;
@@ -255,6 +259,10 @@ export const Wrapper = styled.div`
       margin-top: 4rem;
       margin-bottom: -10rem;
       text-align: center;
+    }
+
+    div.button {
+      min-height: 5rem;
     }
 
     div.btns {

@@ -75,13 +75,13 @@ export const HeroBtn = styled.button`
 
   @media (min-width: 481px) and (max-width: 767px) {
     font-size: 19px;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
   }
 
   @media (max-width: 480px) {
     font-size: 16px;
-    padding: 5px 5px;
-    border: 1px solid #060363;
+    padding: 1rem 1rem;
+    border: 2px solid #060363;
   }
 `;
 
@@ -118,13 +118,13 @@ export const HeroBtn_two = styled.button`
 
   @media (min-width: 481px) and (max-width: 767px) {
     font-size: 19px;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
   }
 
   @media (max-width: 480px) {
     font-size: 16px;
-    padding: 5px 5px;
-    border: 1px solid #f4442e;
+    padding: 1rem 1rem;
+    border: 2px solid #f4442e;
   }
 `;
 
