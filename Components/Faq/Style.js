@@ -5,6 +5,14 @@ export const Container = styled.div`
   margin-left: 20rem;
   margin-top: 10rem;
 
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
   .back {
     font-size: 20pxrem;
     width: 15%;

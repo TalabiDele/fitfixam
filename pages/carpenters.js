@@ -46,7 +46,9 @@ export async function getServerSideProps({ query: { slug } }) {
   const resPost = await fetch(`${NEXT_PUBLIC_API_URL}/posts?slug=${slug}`);
   const post = await resPost.json();
 
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}/categories/1`);
+  const res = await fetch(
+    `${NEXT_PUBLIC_API_URL}/categories/1?_sort=created_at:DESC`
+  );
   const posts = await res.json();
 
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);

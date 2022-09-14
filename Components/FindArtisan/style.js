@@ -28,6 +28,54 @@ export const Wrapper = styled.div`
 `;
 
 export const Card = styled.div`
+  background: #f9fafb;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 25rem;
+  text-align: center;
+  color: #020127;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+
+  div.img {
+    background-color: #d9d9de;
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: 5rem;
+
+    div.image {
+      /* margin-top: 2rem; */
+      position: relative;
+      top: 4rem;
+    }
+
+    .user-img {
+      border-radius: 50%;
+      position: relative;
+    }
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 20px;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 19px;
+    text-transform: capitalize;
+  }
+
+  div.address {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+  }
+
   @media (min-width: 1281px) {
     background: #f9fafb;
     border-radius: 10px;
@@ -236,7 +284,7 @@ export const Card = styled.div`
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
-    height: 15rem;
+    height: 22rem;
     text-align: center;
     color: #020127;
     padding-bottom: 0.5rem;
@@ -269,12 +317,13 @@ export const Card = styled.div`
     }
 
     h2 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       font-size: 20px;
     }
 
     p {
-      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
       font-size: 15px;
       text-transform: capitalize;
     }
