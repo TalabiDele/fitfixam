@@ -952,6 +952,10 @@ export const Wrapper = styled.div`
     padding-top: 1px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 
+    a.image {
+      margin-left: 2rem;
+    }
+
     .img {
       z-index: 600;
       width: 3rem;
@@ -1381,7 +1385,6 @@ export const UserNav = styled.div`
 
   @media (min-width: 481px) and (max-width: 767px) {
     display: flex;
-    /* grid-template-columns: 10% 60% 30%; */
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -1390,7 +1393,6 @@ export const UserNav = styled.div`
     padding: 1rem 2rem 1rem 0rem;
     transition: all 0.3s ease;
     position: fixed;
-    /* left: 0; */
     z-index: 100;
     top: 0;
 
