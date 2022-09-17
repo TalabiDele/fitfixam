@@ -5,32 +5,19 @@ export const Container = styled.div`
   background-size: cover;
   width: 100%;
   background-repeat: no-repeat;
-  /* margin-top: 5rem; */
+  margin: 4rem 0rem;
 
-  div.card_container {
-    position: relative;
-
-    &:last-child {
-      z-index: -1;
-      bottom: 10rem;
-    }
-
-    &:nth-child(2) {
-      z-index: 0;
-    }
-
-    &:first-child {
-      z-index: -1;
-      top: 10rem;
-    }
+  div.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   div.card {
     background: #ffffff;
-    box-shadow: 0px 10px 40px 60px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 32px 8px rgba(0, 0, 0, 0.05);
     border-radius: 15px;
     padding: 3rem;
-    width: 70%;
+    width: 90%;
     z-index: 1;
     margin: auto;
 
@@ -38,7 +25,7 @@ export const Container = styled.div`
       font-size: 19px;
       line-height: 1.5;
       color: #1d242d;
-      width: 80%;
+      width: 90%;
       margin: 0rem auto 3rem auto;
       cursor: pointer;
     }
@@ -55,10 +42,11 @@ export const Container = styled.div`
   div.details {
     display: flex;
     gap: 1rem;
+    align-items: center;
     cursor: pointer;
 
     h3 {
-      margin-top: 1rem;
+      /* margin-top: 1rem; */
       color: #151a20;
     }
   }

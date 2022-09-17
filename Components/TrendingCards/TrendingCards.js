@@ -23,7 +23,10 @@ const TrendingCards = ({ posts }) => {
         {posts.map((e) => (
           <div className="card_container" key={e.id}>
             <div className="card" key={e.id}>
-              <p onClick={() => handlePost(e)}>{e.post}</p>
+              <p onClick={() => handlePost(e)}>
+                {e.post.slice(0, 50).concat("...")}{" "}
+                <span style={{ fontWeight: "bold" }}>Read more</span>
+              </p>
               <div className="user">
                 <div className="details" onClick={() => handleUser(e.user)}>
                   <div className="image">
@@ -39,19 +42,19 @@ const TrendingCards = ({ posts }) => {
                       <Image
                         src={userImage}
                         alt="user image"
-                        width={100}
-                        height={100}
+                        width={30}
+                        height={30}
                         objectFit="cover"
                       />
                     )}
                   </div>
                   <h3>{e.user.username}</h3>
                 </div>
-                <h3>
+                {/* <h3>
                   <Moment format="D MMM YYYY" withTitle>
                     {posts.created_at}
                   </Moment>
-                </h3>
+                </h3> */}
                 {/* <Moment date={posts.created_at} format="YYYY-MM-DD" withTitle /> */}
               </div>
             </div>

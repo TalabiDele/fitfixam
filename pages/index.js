@@ -59,7 +59,9 @@ const Loader = styled.div`
 `;
 
 export async function getServerSideProps() {
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}/posts?_limit=3`);
+  const res = await fetch(
+    `${NEXT_PUBLIC_API_URL}/posts?comments_gte=3&_limit=4`
+  );
   const posts = await res.json();
 
   const resBlog = await fetch(`${NEXT_PUBLIC_API_URL}/blog-posts`);
