@@ -4,7 +4,8 @@ import Image from "next/image";
 import userImage from "@/public/userImage.png";
 import Moment from "react-moment";
 import { useRouter } from "next/router";
-// import VerticalCarousel from "../Carousel";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import { HeroBtn } from "../Buttons";
 
 const TrendingCards = ({ posts }) => {
   const router = useRouter();
@@ -24,7 +25,7 @@ const TrendingCards = ({ posts }) => {
           <div className="card_container" key={e.id}>
             <div className="card" key={e.id}>
               <p onClick={() => handlePost(e)}>
-                {e.post.slice(0, 50).concat("...")}{" "}
+                {e.post.slice(0, 100).concat("...")}{" "}
                 <span style={{ fontWeight: "bold" }}>Read more</span>
               </p>
               <div className="user">
@@ -50,16 +51,30 @@ const TrendingCards = ({ posts }) => {
                   </div>
                   <h3>{e.user.username}</h3>
                 </div>
-                {/* <h3>
-                  <Moment format="D MMM YYYY" withTitle>
-                    {posts.created_at}
-                  </Moment>
-                </h3> */}
-                {/* <Moment date={posts.created_at} format="YYYY-MM-DD" withTitle /> */}
               </div>
             </div>
           </div>
         ))}
+      </div>
+      <div className="wrapper">
+        <h1>
+          Your journey to reviewing starts here{"                   "}
+          {"                   "}
+          <HiArrowNarrowRight
+            color="#F4442E"
+            // style={{ marginLeft: "7rem" }}
+            fontSize="3rem"
+            className="none"
+          />
+        </h1>
+        <HiArrowNarrowRight
+          color="#F4442E"
+          // style={{ marginLeft: "7rem" }}
+          fontSize="3rem"
+          className="show"
+          style={{ transform: "rotate(90deg)" }}
+        />
+        <HeroBtn>Sign up Today!</HeroBtn>
       </div>
     </Container>
   );
