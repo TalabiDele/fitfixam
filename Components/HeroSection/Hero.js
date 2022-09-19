@@ -8,7 +8,7 @@ import { HiChevronDoubleDown } from "react-icons/hi";
 const Hero = () => {
   const scroll = () => {
     window.scrollTo({
-      top: 1100,
+      top: 900,
       behavior: "smooth",
     });
   };

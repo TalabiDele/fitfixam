@@ -878,6 +878,12 @@ export const Wrapper = styled.div`
   width: 80%;
   margin: auto;
   padding-top: 1rem;
+  /* position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  left: 0;
+  right: 0; */
 
   div.button_nav {
     z-index: 700;

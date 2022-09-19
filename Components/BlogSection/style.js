@@ -72,13 +72,19 @@ export const Container = styled.div`
         width: 100%;
         background-size: cover;
         background-repeat: no-repeat;
-        height: 10rem;
+        height: 13rem;
         position: absolute;
         bottom: 0;
         border-radius: 15px;
       }
 
-      p {
+      .article {
+        color: #fff;
+        width: 80%;
+        margin: 1rem auto;
+      }
+
+      p.time {
         color: #fff;
         background: #020127;
         width: 40%;
@@ -99,10 +105,10 @@ export const Container = styled.div`
       }
 
       h3 {
-        position: absolute;
+        /* position: absolute; */
         bottom: 5rem;
         color: #fff;
-        width: 70%;
+        width: 80%;
         margin: auto;
         left: 2rem;
         font-size: 26px;
@@ -112,7 +118,7 @@ export const Container = styled.div`
 
       .details {
         position: absolute;
-        bottom: 2rem;
+        bottom: 1rem;
         display: flex;
         color: #fff;
         font-weight: 500;
@@ -172,7 +178,7 @@ export const Container = styled.div`
 
   @media (max-width: 480px) {
     h1 {
-      font-size: 25px;
+      font-size: 20px;
     }
 
     .blog-link {
@@ -188,8 +194,17 @@ export const Container = styled.div`
         width: 100%;
         margin: auto;
 
+        h3 {
+          font-size: 20px;
+        }
+
+        p.article {
+          font-size: 16px;
+        }
+
         .bg {
           margin: auto;
+          height: 12rem;
         }
       }
     }

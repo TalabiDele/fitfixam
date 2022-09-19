@@ -40,11 +40,14 @@ const Blogging = ({ blogPosts }) => {
                   />
                 </div>
                 <div className="other">
-                  <p>
+                  <p className="time">
                     <AiOutlineClockCircle /> {e.minutes} min read
                   </p>
                   <div className="bg">
                     <h3>{e.title}</h3>
+                    <p className="article">
+                      {e.article.slice(0, 100).concat("...Read more")}
+                    </p>
                     <div className="details">
                       <div className="user">
                         <HiUserCircle />

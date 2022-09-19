@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import AuthContext from "@/context/AuthContext";
 import Logo from "@/public/Blue.png";
 import {
@@ -48,6 +48,8 @@ import LogoBlue from "@/public/Blue.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHome, setIsHome] = useState(false);
+  const [isScroll, setIsScroll] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     if (router.pathname === "/") {
@@ -55,9 +57,23 @@ const Navbar = () => {
     } else {
       setIsHome(false);
     }
+
+    const div = ref.current;
+    // div.addEventListener("scroll", scroll);
   }, []);
 
   const router = useRouter();
+  const ref = useRef();
+
+  const scroll = () => {
+    const updatePosition = () => {
+      setScrollPosition(window.pageYOffset);
+    };
+    window.addEventListener("scroll", updatePosition);
+    updatePosition();
+    console.log(scrollPosition);
+    return () => window.removeEventListener("scroll", updatePosition);
+  };
 
   const openMenu = () => {
     setIsOpen(!isOpen);
@@ -101,7 +117,7 @@ const Navbar = () => {
     );
   } else {
     return (
-      <Wrapper isOpen={isOpen} isHome={isHome}>
+      <Wrapper isOpen={isOpen} isHome={isHome} ref={ref}>
         <ul>
           <li>
             <Link href="/">
