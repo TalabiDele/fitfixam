@@ -3,6 +3,9 @@ import { Container, Wrapper } from "./Style";
 import Image from "next/image";
 import arrow from "@/public/Arrow-2.png";
 import founder from "@/public/mr-francis.png";
+import Babatunde from "@/public/Babatunde.JPG";
+import Tofunmi from "@/public/Tofunmi.jpg";
+import Great from "@/public/Great.JPG";
 
 const AboutUs = () => {
   return (
@@ -19,12 +22,6 @@ const AboutUs = () => {
           deliver quality service. There are in fact a lot of them, and we would
           love to promote their work here on Fitfixam.
         </p>
-
-        {/* <p className="para">
-          This is not to say that there are no amazing artisans out there who
-          deliver quality service. There are in fact a lot of them, and we would
-          love to promote their work here on Fitfixam.
-        </p> */}
         <div className="about">
           <div className="vision">
             <h1>Vision</h1>
@@ -33,8 +30,7 @@ const AboutUs = () => {
               and ultimately, across the world.
             </p>
           </div>
-          <div>
-            <h1>Mission</h1>
+          <div className="mission">
             <ul>
               <li>
                 Gather information/reviews on artisans and organizations for
@@ -46,6 +42,7 @@ const AboutUs = () => {
                 artisans
               </li>
             </ul>
+            <h1>Mission</h1>
           </div>
         </div>
         <div className="founder">
@@ -118,6 +115,56 @@ const AboutUs = () => {
               most trusted platform for hiring quality artisans for personal and
               business related technical or handiwork jobs.
             </p>
+          </div>
+        </div>
+
+        <div className="team">
+          <h1>The Team</h1>
+          <div className="members">
+            <div className="member">
+              <Image
+                src={Great}
+                width={300}
+                height={400}
+                objectFit="cover"
+                alt="team member"
+              />
+              <h1>Great Donatus</h1>
+              <p>Project Lead</p>
+            </div>
+            <div className="member">
+              <Image
+                src={Babatunde}
+                width={300}
+                height={400}
+                objectFit="cover"
+                alt="team member"
+              />
+              <h1>Babatunde Atijosan</h1>
+              <p>Platform Developer</p>
+            </div>
+            <div className="member">
+              <Image
+                src={Tofunmi}
+                width={300}
+                height={400}
+                objectFit="cover"
+                alt="team member"
+              />
+              <h1>Tofunmi Komolafe</h1>
+              <p>Social Media & Community Manager</p>
+            </div>
+            {/* <div className="member">
+              <Image
+                src={Babatunde}
+                width={300}
+                height={400}
+                objectFit="cover"
+                alt="team member"
+              />
+              <h1>Babatunde Atijosan</h1>
+              <p>Platform Developer</p>
+            </div> */}
           </div>
         </div>
       </Wrapper>

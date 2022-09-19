@@ -62,13 +62,9 @@ export const Wrapper = styled.div`
     font-size: 20px;
   }
 
-  /* p.first {
-    margin-left: 15rem;
+  p.first {
+    padding-bottom: 5rem;
   }
-
-  p.para {
-    margin-left: 60rem;
-  } */
 
   .image {
     position: relative;
@@ -84,16 +80,55 @@ export const Wrapper = styled.div`
   }
 
   div.about {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
     width: 100%;
-    margin: 5rem auto;
-    padding: 7rem 0rem;
     background-color: #fff;
 
+    div.vision,
+    div.mission {
+      display: flex;
+      color: #fff;
+      /* align-items: center; */
+    }
+
     div.vision {
-      border-right: 2px solid #060258;
+      /* border-right: 2px solid #060258; */
+      h1,
+      p {
+        width: 50%;
+      }
+
+      h1 {
+        background: url("/About2.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 7rem 0rem;
+        font-size: 40px;
+      }
+
+      p {
+        background: #07036e;
+        padding: 7rem 10rem;
+      }
+    }
+
+    div.mission {
+      h1,
+      ul {
+        width: 50%;
+      }
+
+      h1 {
+        background: url("/About1.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 10rem 0rem;
+        font-size: 40px;
+      }
+
+      ul {
+      }
     }
 
     p {
@@ -101,17 +136,18 @@ export const Wrapper = styled.div`
       margin: auto;
     }
 
-    h1,
-    p {
+    h1 {
       text-align: center;
     }
 
     ul {
       font-weight: 400;
       font-size: 30px;
-      line-height: 45px;
+      line-height: 1.2;
       width: 60%;
       margin: auto;
+      background: #07036e;
+      padding: 10rem 4rem;
 
       li {
         font-size: 20px;
@@ -137,6 +173,10 @@ export const Wrapper = styled.div`
     p {
       width: 100%;
     }
+  }
+
+  div.members {
+    display: flex;
   }
 
   @media (min-width: 1281px) {
@@ -177,11 +217,6 @@ export const Wrapper = styled.div`
     }
 
     div.about {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      justify-content: center;
-      width: 100%;
-      margin: 5rem auto;
       padding: 7rem 0rem;
       background-color: #fff;
 
@@ -194,15 +229,14 @@ export const Wrapper = styled.div`
         margin: auto;
       }
 
-      h1,
-      p {
+      h1 {
         text-align: center;
       }
 
       ul {
         font-weight: 400;
         font-size: 30px;
-        line-height: 45px;
+        line-height: 1.3;
         width: 60%;
         margin: auto;
 
@@ -267,12 +301,8 @@ export const Wrapper = styled.div`
     }
 
     div.about {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      justify-content: center;
+      /* display: flex; */
       width: 100%;
-      margin: 5rem auto;
-      padding: 7rem 0rem;
       background-color: #fff;
 
       div.vision {
@@ -286,7 +316,7 @@ export const Wrapper = styled.div`
 
       h1,
       p {
-        text-align: center;
+        /* text-align: center; */
       }
 
       ul {
@@ -295,6 +325,7 @@ export const Wrapper = styled.div`
         line-height: 45px;
         width: 60%;
         margin: auto;
+        padding: 3rem;
 
         li {
           font-size: 20px;
@@ -357,16 +388,16 @@ export const Wrapper = styled.div`
     }
 
     div.about {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
       justify-content: center;
       width: 100%;
-      margin: 5rem auto;
-      padding: 7rem 0rem;
       background-color: #fff;
 
       div.vision {
         border-right: 2px solid #060258;
+
+        p {
+          padding: 10rem 2rem;
+        }
       }
 
       p {
@@ -377,15 +408,21 @@ export const Wrapper = styled.div`
 
       h1,
       p {
-        text-align: center;
+        /* text-align: center; */
+      }
+
+      div.mission {
+        ul {
+        }
       }
 
       ul {
         font-weight: 400;
         font-size: 20px;
-        line-height: 45px;
-        width: 60%;
+        line-height: 1.3;
+        width: 70%;
         margin: auto;
+        padding: 7rem 3rem;
 
         li {
           font-size: 20px;
@@ -448,16 +485,16 @@ export const Wrapper = styled.div`
     }
 
     div.about {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
       justify-content: center;
       width: 100%;
-      margin: 5rem auto;
-      padding: 7rem 0rem;
       background-color: #fff;
 
       div.vision {
         border-right: 2px solid #060258;
+
+        p {
+          padding: 7rem 2rem;
+        }
       }
 
       p {
@@ -468,15 +505,14 @@ export const Wrapper = styled.div`
 
       h1,
       p {
-        text-align: center;
       }
 
       ul {
         font-weight: 400;
         font-size: 20px;
-        line-height: 45px;
+        line-height: 1.3;
         width: 90%;
-        padding-left: 1rem;
+        padding: 7rem 2rem;
         margin: auto;
 
         li {
@@ -493,7 +529,6 @@ export const Wrapper = styled.div`
       margin: 5rem auto;
       /* align-items: center; */
       background: #f9fafb;
-      padding: 2rem 2rem;
       grid-gap: 2rem;
     }
 
@@ -540,35 +575,54 @@ export const Wrapper = styled.div`
     }
 
     div.about {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      justify-content: center;
       width: 100%;
-      margin: 5rem auto;
-      padding: 7rem 0rem;
       background-color: #fff;
 
       div.vision {
+        h1 {
+          width: 100%;
+          padding: 5rem 2rem;
+        }
+
+        p {
+          width: 100%;
+          padding: 5rem 2rem;
+        }
+      }
+
+      div.vision,
+      div.mission {
         border-right: none;
-        margin-bottom: 4rem;
+        flex-direction: column;
+      }
+
+      div.mission {
+        flex-direction: column-reverse;
+
+        h1 {
+          width: 100%;
+          padding: 5rem 2rem;
+        }
+
+        ul {
+          width: 100%;
+          padding: 5rem 2rem;
+        }
       }
 
       p {
-        width: 90%;
         margin: auto;
         font-size: 16px;
       }
 
       h1,
       p {
-        text-align: center;
       }
 
       ul {
         font-weight: 400;
         font-size: 16px;
-        line-height: 1.5;
-        width: 90%;
+        line-height: 1.3;
         padding-left: 1rem;
         margin: auto;
 
