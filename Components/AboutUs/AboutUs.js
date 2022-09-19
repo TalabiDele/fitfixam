@@ -119,14 +119,15 @@ const AboutUs = () => {
         </div>
 
         <div className="team">
-          <h1>The Team</h1>
+          <h1 className="team_head">The Team</h1>
           <div className="members">
             <div className="member">
               <Image
                 src={Great}
-                width={300}
+                width={350}
                 height={400}
                 objectFit="cover"
+                objectPosition="top"
                 alt="team member"
               />
               <h1>Great Donatus</h1>
@@ -135,9 +136,10 @@ const AboutUs = () => {
             <div className="member">
               <Image
                 src={Babatunde}
-                width={300}
+                width={350}
                 height={400}
                 objectFit="cover"
+                objectPosition="top"
                 alt="team member"
               />
               <h1>Babatunde Atijosan</h1>
@@ -146,9 +148,10 @@ const AboutUs = () => {
             <div className="member">
               <Image
                 src={Tofunmi}
-                width={300}
+                width={350}
                 height={400}
                 objectFit="cover"
+                objectPosition="top"
                 alt="team member"
               />
               <h1>Tofunmi Komolafe</h1>
@@ -157,7 +160,7 @@ const AboutUs = () => {
             {/* <div className="member">
               <Image
                 src={Babatunde}
-                width={300}
+                width={350}
                 height={400}
                 objectFit="cover"
                 alt="team member"

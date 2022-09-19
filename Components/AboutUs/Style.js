@@ -91,7 +91,6 @@ export const Wrapper = styled.div`
     }
 
     div.vision {
-      /* border-right: 2px solid #060258; */
       h1,
       p {
         width: 50%;
@@ -175,8 +174,36 @@ export const Wrapper = styled.div`
     }
   }
 
+  div.team {
+    .team_head {
+      width: 60%;
+      margin: 0rem auto 3rem auto;
+      font-size: 50px;
+    }
+  }
+
   div.members {
     display: flex;
+    flex-wrap: 100rem;
+    justify-content: space-between;
+    width: 60%;
+    margin: auto;
+    color: #fff;
+
+    .member {
+      background: #f75b30;
+      text-align: center;
+
+      h1 {
+        font-size: 24px;
+        padding: 1rem 1rem 0.5rem 1rem;
+      }
+
+      p {
+        font-size: 16px;
+        padding-bottom: 1rem;
+      }
+    }
   }
 
   @media (min-width: 1281px) {
@@ -265,6 +292,14 @@ export const Wrapper = styled.div`
         width: 100%;
       }
     }
+
+    div.members {
+      width: 60%;
+
+      .member {
+        width: 30%;
+      }
+    }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
@@ -350,6 +385,14 @@ export const Wrapper = styled.div`
 
       p {
         width: 100%;
+      }
+    }
+
+    div.members {
+      width: 90%;
+
+      div.member {
+        width: 30%;
       }
     }
   }
@@ -450,6 +493,14 @@ export const Wrapper = styled.div`
         width: 100%;
       }
     }
+
+    div.members {
+      width: 90%;
+
+      div.member {
+        width: 30%;
+      }
+    }
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
@@ -538,6 +589,21 @@ export const Wrapper = styled.div`
 
       p {
         width: 100%;
+      }
+    }
+
+    div.team {
+      .team_head {
+        width: 100%;
+        font-size: 30px;
+      }
+    }
+
+    div.members {
+      width: 90%;
+
+      div.member {
+        width: 30%;
       }
     }
   }
@@ -650,6 +716,24 @@ export const Wrapper = styled.div`
 
       p {
         width: 100%;
+      }
+    }
+
+    div.team {
+      .team_head {
+        width: 100%;
+        font-size: 30px;
+        text-align: center;
+      }
+    }
+
+    div.members {
+      width: 90%;
+      flex-direction: column;
+
+      div.member {
+        width: 80%;
+        margin: 2rem auto;
       }
     }
   }
