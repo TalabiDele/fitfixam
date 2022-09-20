@@ -26,7 +26,6 @@ const Feeds = ({ posts, comments, userPost, allUsers, likes }) => {
     >
       {posts.length !== 0 ? (
         <div>
-          <IconStatic />
           <Container>
             {posts.map((e) => (
               <Posts
