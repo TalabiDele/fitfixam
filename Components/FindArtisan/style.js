@@ -226,7 +226,7 @@ export const Card = styled.div`
     background: #f9fafb;
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 90%;
     height: 22rem;
     text-align: center;
     color: #020127;
@@ -283,7 +283,7 @@ export const Card = styled.div`
     background: #f9fafb;
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 90%;
     height: 22rem;
     text-align: center;
     color: #020127;

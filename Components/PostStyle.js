@@ -27,7 +27,7 @@ export const Container = styled.div`
 export const PostImages = styled.div`
   display: grid;
   width: 60%;
-  margin: 0rem auto 2rem 3rem;
+  margin: 0rem auto 2rem auto;
 
   div.post_images {
     width: 100%;
@@ -43,7 +43,7 @@ export const PostImages = styled.div`
 
   .post_images:first-child img {
     border-radius: 10px 10px 0px 0px;
-    min-width: 35rem;
+    min-width: 39rem;
     max-height: 20rem;
   }
 
@@ -72,6 +72,28 @@ export const PostImages = styled.div`
     .post_images:first-child img {
       min-width: 30rem;
       max-height: 15rem;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    margin: 0rem auto 2rem auto;
+    width: 80%;
+
+    .post_images:first-child img {
+      min-width: 25rem;
+      max-height: 15rem;
+      /* margin: auto; */
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin: 0rem auto 2rem auto;
+    width: 100%;
+
+    .post_images:first-child img {
+      min-width: 18rem;
+      max-height: 20rem;
+      margin: auto;
     }
   }
 
@@ -241,7 +263,7 @@ export const PostItem = styled.div`
     width: 100%;
 
     p.post {
-      width: 100%;
+      width: 90%;
       font-size: 19px;
     }
   }
@@ -250,7 +272,7 @@ export const PostItem = styled.div`
     width: 100%;
 
     p.post {
-      width: 100%;
+      width: 90%;
       font-size: 19px;
     }
   }
@@ -394,6 +416,26 @@ export const UserPost = styled.div`
     margin-bottom: 0rem;
     width: 90%;
     font-size: 19px;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 80%;
+    margin: auto;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 80%;
+    margin: auto;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 80%;
+    margin: auto;
+  }
+
+  @media (max-width: 480px) {
+    width: 80%;
+    margin: auto;
   }
 `;
 
