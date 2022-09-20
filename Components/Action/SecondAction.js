@@ -27,7 +27,6 @@ const SecondAction = () => {
               fontSize={510.88}
               color="#fff"
               transform="matrix(-1, 0, 0, 1, 0, 0)"
-              // overflow={none}
               className="tool"
             />
           </div>

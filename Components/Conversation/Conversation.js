@@ -1,7 +1,5 @@
 import React from "react";
 import { Container } from "./style";
-import Image from "next/image";
-import arrow from "@/public/Arrow-2.png";
 import TrendingCards from "../TrendingCards/TrendingCards";
 
 const Conversation = ({ posts }) => {
@@ -19,15 +17,6 @@ const Conversation = ({ posts }) => {
           mediocre services from artisans, promote competent services.
           <strong> See what others have said...</strong>
         </p>
-        {/* <div className="img">
-          <Image
-            src={arrow}
-            alt="arrow"
-            width={100}
-            height={100}
-            objectFit="cover"
-          />
-        </div> */}
       </div>
       <TrendingCards posts={posts} />
     </Container>

@@ -12,7 +12,6 @@ const Subscribe = () => {
         <input type="email" placeholder="Enter your email" />
         <InputBtn>Enter</InputBtn>
       </Wrapper>
-      {/* <BGImage url={Bg} /> */}
     </Container>
   );
 };
