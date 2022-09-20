@@ -292,10 +292,11 @@ export const Cards = styled.div`
     justify-items: center;
     width: 40%;
     gap: 1rem;
-    margin: 1rem;
+    margin: auto;
 
     div.card {
       width: 100%;
+      margin: auto;
     }
   }
 
@@ -304,11 +305,12 @@ export const Cards = styled.div`
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
     width: 70%;
-    margin: 0rem;
+    margin: auto;
     /* gap: 1rem; */
 
     div.card {
       width: 100%;
+      margin: auto;
     }
   }
 `;
