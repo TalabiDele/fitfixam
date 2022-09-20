@@ -41,12 +41,12 @@ export const Wrapper = styled.div`
   div.button {
     display: flex;
     gap: 2rem;
-    min-height: 10rem;
+    min-height: 2rem;
   }
 
   @media (min-width: 1281px) {
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 2rem;
 
     h1 {
       font-size: 70px;
@@ -71,7 +71,7 @@ export const Wrapper = styled.div`
     }
 
     .hero_icon {
-      /* margin-top: 5rem; */
+      margin-top: 2rem;
       margin-bottom: -10rem;
       text-align: center;
       justify-self: flex-end;
@@ -176,7 +176,7 @@ export const Wrapper = styled.div`
       z-index: -2;
       font-weight: 900;
       letter-spacing: -0.02em;
-      width: 40rem;
+      width: 35rem;
       font-size: 50px;
       margin: 2rem auto 2rem auto;
     }
@@ -193,7 +193,7 @@ export const Wrapper = styled.div`
     }
 
     .hero_icon {
-      margin-top: 4rem;
+      margin-top: 2rem;
       margin-bottom: -10rem;
       text-align: center;
     }
@@ -221,10 +221,6 @@ export const Wrapper = styled.div`
 
     p {
       font-size: 19px;
-    }
-
-    .hero_icon {
-      margin-top: 20px;
     }
 
     text-align: center;
@@ -256,7 +252,7 @@ export const Wrapper = styled.div`
     }
 
     .hero_icon {
-      margin-top: 4rem;
+      margin-top: 1rem;
       margin-bottom: -10rem;
       text-align: center;
     }
@@ -280,11 +276,11 @@ export const Container = styled.div`
   background: url("/hero-background.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 70vh;
   position: relative;
-  padding-top: -2rem;
+  /* padding-top: -2rem; */
   background-color: #f9fafb;
   margin-bottom: -4rem;
 
@@ -295,9 +291,9 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-position: bottom;
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     position: relative;
-    padding-top: -2rem;
+    /* padding-top: -2rem; */
     background-color: #f9fafb;
     margin-bottom: -4rem;
   }
@@ -307,8 +303,9 @@ export const Container = styled.div`
     background: url("/hero-background.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: bottom;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     position: relative;
     /* padding-bottom: 10rem; */
     background-color: #f9fafb;
@@ -322,13 +319,11 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     position: relative;
     padding-top: -2rem;
     background-color: #f9fafb;
     margin-bottom: -3rem;
-    padding-top: 1rem;
-    margin-top: 3rem;
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
@@ -338,7 +333,7 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-position: top;
     width: 100%;
-    height: 50vh;
+    min-height: 70vh;
     margin-top: 10rem;
     position: relative;
     /* padding-top: 10rem; */
@@ -353,7 +348,7 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 60vh;
+    min-height: 80vh;
     position: relative;
     background-color: #f9fafb;
     margin-bottom: -3rem;
