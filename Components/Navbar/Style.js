@@ -2088,7 +2088,7 @@ export const NavMenu = styled.div`
     left: 0;
     z-index: 100;
     /* width: ${({ userIsOpen }) => (userIsOpen ? "75%" : "12%")}; */
-    width: ${({ userIsOpen }) => (userIsOpen ? "70%" : "70%")};
+    width: ${({ userIsOpen }) => (userIsOpen ? "70%" : "16%")};
     /* width: 4%; */
 
     div.side_menu {

@@ -290,7 +290,7 @@ export const Container = styled.div`
         }
 
         div.name {
-          padding: 0rem 5rem 1rem 5rem;
+          padding: 0rem 1rem 0rem 1rem;
           color: #020127;
           display: flex;
           font-size: 26px;
@@ -656,7 +656,7 @@ export const Container = styled.div`
           }
 
           div.name {
-            padding: 0rem 5rem 0rem 5rem;
+            padding: 0rem 1rem 0rem 1rem;
             color: #020127;
             display: flex;
             font-size: 26px;
@@ -667,12 +667,13 @@ export const Container = styled.div`
             text-align: center;
             border-bottom: 1px solid rgba(0, 0, 0, 0.3);
             padding: 1rem;
+            margin-bottom: 2rem;
           }
         }
       }
 
       div.contact {
-        margin-top: 11rem;
+        margin-top: 13rem;
         margin-bottom: 4rem;
         width: 80%;
 
@@ -1027,7 +1028,7 @@ export const Container = styled.div`
           }
 
           div.name {
-            padding: 0rem 5rem 1rem 5rem;
+            padding: 0rem 1rem 1rem 1rem;
             color: #020127;
             display: flex;
             font-size: 26px;
@@ -1113,7 +1114,7 @@ export const Container = styled.div`
 
     div.profile {
       width: 80%;
-      margin: 5rem auto;
+      margin: 5rem auto 2rem auto;
     }
 
     button {
@@ -1420,7 +1421,7 @@ export const Container = styled.div`
           }
 
           div.name {
-            padding: 0rem 5rem 1rem 5rem;
+            padding: 0rem 1rem 1rem 1rem;
             color: #020127;
             display: flex;
             font-size: 26px;
@@ -1813,7 +1814,7 @@ export const Container = styled.div`
           }
 
           div.name {
-            padding: 0rem 5rem 1rem 5rem;
+            padding: 0rem 1rem 1rem 1rem;
             color: #020127;
             display: flex;
             font-size: 26px;
@@ -1829,7 +1830,7 @@ export const Container = styled.div`
       }
 
       div.contact {
-        margin-top: 11rem;
+        margin-top: 13rem;
         margin-bottom: 4rem;
         width: 90%;
 
@@ -1898,7 +1899,7 @@ export const Container = styled.div`
     /* margin-left: 2rem; */
 
     div.profile {
-      width: 80%;
+      width: 90%;
       margin: 4rem auto 0rem auto;
     }
 
@@ -2209,11 +2210,12 @@ export const Container = styled.div`
           }
 
           div.name {
-            padding: 0rem 5rem 1rem 5rem;
+            padding: 0rem 1rem 1rem 1rem;
             color: #020127;
             display: flex;
-            font-size: 26px;
+            font-size: 20px;
             font-weight: 700;
+            text-align: center;
           }
 
           div.category {
@@ -2225,8 +2227,8 @@ export const Container = styled.div`
       }
 
       div.contact {
-        margin-top: 11rem;
-        margin-bottom: 4rem;
+        margin-top: 15rem;
+        margin-bottom: 2rem;
         width: 90%;
 
         h1 {
@@ -2240,7 +2242,7 @@ export const Container = styled.div`
           font-size: 14px;
           display: flex;
           align-items: center;
-          grid-gap: 1rem;
+          grid-gap: 0.5rem;
           width: 100%;
           margin-bottom: 1rem;
           flex-wrap: wrap;
@@ -2295,12 +2297,12 @@ export const Wrapper = styled.div`
   margin: auto;
 
   div.reviews {
-    display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-    margin: 0rem 4rem 4rem 2rem;
+    margin-left: 0rem;
     align-items: flex-start;
     gap: 5rem;
+    width: 100%;
   }
 
   div.review_form {
@@ -2311,7 +2313,8 @@ export const Wrapper = styled.div`
     padding: 2rem;
     width: 100%;
     gap: 2rem;
-    margin-right: 4rem;
+    margin-top: 2rem;
+    margin-right: 0rem;
 
     div.flex {
       display: flex;
@@ -2492,6 +2495,7 @@ export const Wrapper = styled.div`
       border-radius: 10px;
       padding: 3rem;
       margin: auto;
+      width: 100%;
       /* z-index: 100; */
 
       h1 {
@@ -2542,14 +2546,26 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    width: 60%;
-    margin-left: 17rem;
+    width: 90%;
+    margin-left: 10rem;
+
+    div.reviews {
+      grid-template-columns: repeat(1, 1fr);
+      width: 60%;
+      justify-content: center;
+      margin-left: 9rem;
+    }
+
+    div.review_form {
+      margin-right: 0rem;
+    }
 
     div.wrapper {
       background: #f9fafb;
       border-radius: 10px;
       padding: 3rem;
       z-index: 700;
+      width: 100%;
 
       h1 {
         font-size: 19px;
@@ -2602,11 +2618,23 @@ export const Wrapper = styled.div`
     width: 80%;
     margin: auto;
 
+    div.reviews {
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+      justify-content: center;
+      margin-left: 0rem;
+    }
+
+    div.review_form {
+      margin-right: 0rem;
+    }
+
     div.wrapper {
       background: #f9fafb;
       border-radius: 10px;
       padding: 1rem;
       z-index: 700;
+      width: 100%;
 
       h1 {
         font-size: 16px;
