@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import UserLayout from "@/components/UserLayout";
-import Plumber from "@/components/AllArtisans/Plumber";
+import React from "react";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 const Plumbers = ({ allPlumbers }) => {
-  console.log(allPlumbers);
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const Plumber = dynamic(() => import("@/components/AllArtisans/Plumber"));
 
   return (
     <UserLayout>

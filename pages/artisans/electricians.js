@@ -1,9 +1,12 @@
 import React from "react";
-import UserLayout from "@/components/UserLayout";
-import Electrician from "@/components/AllArtisans/Electrician";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 const electricians = ({ allElectricians }) => {
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const Electrician = dynamic(() =>
+    import("@/components/AllArtisans/Electrician")
+  );
+
   return (
     <UserLayout>
       <Electrician allElectricians={allElectricians} />
