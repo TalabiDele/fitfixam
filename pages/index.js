@@ -1,16 +1,6 @@
 import Layout from "@/components/Layout";
-// import Hero from "Components/HeroSection/Hero";
-// import Review from "Components/ReviewSection/Review";
-// import Action from "Components/Action/Action";
-// import Subscribe from "Components/Subscribe/Subscribe";
-// import SecondAction from "Components/Action/SecondAction";
-// import Conversation from "@/components/Conversation/Conversation";
-// import Find from "@/components/Find/Find";
-// import Blogging from "@/components/BlogSection/Blogging";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
-
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 
 export default function Home({ posts, blogPosts }) {
   const Hero = dynamic(() => import("Components/HeroSection/Hero"));
