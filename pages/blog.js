@@ -1,8 +1,10 @@
-import UserLayout from "@/components/UserLayout";
-import BlogPosts from "@/components/BlogPosts/BlogPosts";
 import { NEXT_PUBLIC_API_URL } from "../config";
+import dynamic from "next/dynamic";
 
 const Blog = ({ blogPosts }) => {
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const BlogPosts = dynamic(() => import("@/components/BlogPosts/BlogPosts"));
+
   return (
     <UserLayout
       title="Fitfixam Blog"

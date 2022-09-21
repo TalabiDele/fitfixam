@@ -1,8 +1,10 @@
 import { NEXT_PUBLIC_API_URL } from "../../config";
-import UserLayout from "@/components/UserLayout";
-import SlugPosts from "@/components/BlogPosts/SlugPosts";
+import dynamic from "next/dynamic";
 
 const Slug = ({ blogPosts, post, likes, comments }) => {
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const SlugPosts = dynamic(() => import("@/components/BlogPosts/SlugPosts"));
+
   return (
     <UserLayout>
       <SlugPosts

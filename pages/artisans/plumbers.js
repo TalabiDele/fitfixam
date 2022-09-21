@@ -1,5 +1,6 @@
 import React from "react";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
+import dynamic from "next/dynamic";
 
 const Plumbers = ({ allPlumbers }) => {
   const UserLayout = dynamic(() => import("@/components/UserLayout"));
