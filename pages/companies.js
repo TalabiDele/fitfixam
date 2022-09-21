@@ -1,9 +1,13 @@
 import React from "react";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
-import UserLayout from "@/components/UserLayout";
-import CompaniesPage from "@/components/Companies/CompaniesPage";
+import dynamic from "next/dynamic";
 
 const Companies = ({ companies }) => {
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const CompaniesPage = dynamic(() =>
+    import("@/components/Companies/CompaniesPage")
+  );
+
   return (
     <UserLayout
       title="Fitfixam | Companies"

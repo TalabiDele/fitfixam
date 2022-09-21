@@ -1,13 +1,11 @@
 import React from "react";
-import UserLayout from "@/components/UserLayout";
-import Profile from "@/components/Profile/Profile";
 import { parseCookies } from "@/helpers/index";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
-import AuthContext from "@/context/AuthContext";
-import { useContext } from "react";
+import dynamic from "next/dynamic";
 
 const Slug = ({ usersProfile, userPosts, token, artisanRatings }) => {
-  const { user } = useContext(AuthContext);
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const Profile = dynamic(() => import("@/components/Profile/Profile"));
 
   return (
     <UserLayout>

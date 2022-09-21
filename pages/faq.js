@@ -1,8 +1,10 @@
-import UserLayout from "@/components/UserLayout";
-import FaqComponent from "@/components/Faq/FaqComponent";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
+import dynamic from "next/dynamic";
 
 const Faq = ({ artisanFaq, clientFaq, generalFaq }) => {
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const FaqComponent = dynamic(() => import("@/components/Faq/FaqComponent"));
+
   return (
     <UserLayout
       title="Fitfixam | FAQ"

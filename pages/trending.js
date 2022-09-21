@@ -1,8 +1,10 @@
-import UserLayout from "@/components/UserLayout";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
-import Posts from "@/components/Discussion/Posts";
+import dynamic from "next/dynamic";
 
 const Trending = ({ post, posts, comments, likes }) => {
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const Posts = dynamic(() => import("@/components/Discussion/Posts"));
+
   return (
     <UserLayout
       title="Fitfixam | Trending"

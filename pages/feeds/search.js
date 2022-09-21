@@ -1,13 +1,14 @@
 import React from "react";
-import UserLayout from "@/components/UserLayout";
-import SearchItem from "@/components/Search/SearchItem";
 import qs from "qs";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import { Container } from "@/components/SearchStyle";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 
 const Search = ({ posts, query }) => {
-  console.log(posts);
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const SearchItem = dynamic(() => import("@/components/Search/SearchItem"));
+
   const router = useRouter();
 
   return (

@@ -1,11 +1,11 @@
-import UserLayout from "@/components/UserLayout";
 import { NEXT_PUBLIC_API_URL } from "../config";
-import Posts from "@/components/Discussion/Posts";
-import Slug from "./feeds/[slug].js";
 import styled from "styled-components";
-import IconStatic from "../Components/IconStatic/IconStatic";
+import dynamic from "next/dynamic";
 
 const Feeds = ({ posts, comments, userPost, allUsers, likes }) => {
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const Posts = dynamic(() => import("@/components/Discussion/Posts"));
+
   return (
     <UserLayout
       title="Fitfixam | Feed"

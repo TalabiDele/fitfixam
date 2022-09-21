@@ -1,5 +1,4 @@
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
-
 import { parseCookies } from "@/helpers/index";
 import dynamic from "next/dynamic";
 

@@ -605,7 +605,7 @@ export const Comments = styled.div`
   background-color: #fff;
   /* overflow-y: scroll; */
   height: 30rem;
-  padding-bottom: 5rem;
+  padding-bottom: 50rem;
   width: 100%;
   margin: auto;
 

@@ -1,13 +1,14 @@
-import UserLayout from "@/components/UserLayout";
-import FindArtisans from "@/components/FindArtisan/FindArtisans";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-
 import styled from "styled-components";
+import dynamic from "next/dynamic";
 
 const FindArtisan = ({ carpenters, plumbers }) => {
-  // console.log(plumbers);
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const FindArtisans = dynamic(() =>
+    import("@/components/FindArtisan/FindArtisans")
+  );
 
   const [isCarpenter, setIsCarpenter] = useState();
   const [isElectricians, setIsElectricians] = useState();
@@ -17,23 +18,7 @@ const FindArtisan = ({ carpenters, plumbers }) => {
     getElectricians();
   }, []);
 
-  // useEffect(() => {
-  //   first
-
-  //   return () => {
-  //     second
-  //   }
-  // }, [third])
-
   const getPlumbers = async () => {
-    // const res = await fetch(`${NEXT_PUBLIC_API_URL}/posts`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     // Authorization: `Bearer ${token}`,
-    //   },
-    //   body: JSON.stringify(postItem),
-    // });
     const response = await fetch(
       `${NEXT_PUBLIC_API_URL}/user-categories/1?_limit=5`
     );
@@ -42,7 +27,6 @@ const FindArtisan = ({ carpenters, plumbers }) => {
     if (response.ok) {
       setIsCarpenter(json);
     }
-    // console.log(isCarpenter);
   };
 
   const getElectricians = async () => {
@@ -54,13 +38,6 @@ const FindArtisan = ({ carpenters, plumbers }) => {
     if (response.ok) {
       setIsElectricians(json);
     }
-  };
-
-  const headerStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    width: "90%",
-    margin: "2rem auto",
   };
 
   return (

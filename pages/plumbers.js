@@ -1,11 +1,10 @@
 import { NEXT_PUBLIC_API_URL } from "../config/index";
-import UserLayout from "@/components/UserLayout";
-import Posts from "@/components/Discussion/Posts";
-import { useContext, useState, useEffect } from "react";
-import AuthContext from "@/context/AuthContext";
-import Plumber from "@/components/PostCategory/Plumber";
+import dynamic from "next/dynamic";
 
 const Plumbers = ({ post, posts, comments, likes, allUsers }) => {
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const Plumber = dynamic(() => import("@/components/PostCategory/Plumber"));
+
   return (
     <UserLayout
       title="Fitfixam | Plumbers Feed"
