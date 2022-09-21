@@ -15,6 +15,8 @@ const Review = () => {
           width={700}
           height={400}
           objectFit="contain"
+          blurDataURL="URL"
+          placeholder="blur"
         />
       </Wrapper>
       <Why />

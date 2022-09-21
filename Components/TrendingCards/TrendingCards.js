@@ -38,6 +38,8 @@ const TrendingCards = ({ posts }) => {
                         width={100}
                         height={100}
                         objectFit="cover"
+                        blurDataURL="URL"
+                        placeholder="blur"
                       />
                     ) : (
                       <Image
@@ -46,6 +48,8 @@ const TrendingCards = ({ posts }) => {
                         width={30}
                         height={30}
                         objectFit="cover"
+                        blurDataURL="URL"
+                        placeholder="blur"
                       />
                     )}
                   </div>

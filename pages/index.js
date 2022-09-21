@@ -48,11 +48,16 @@ export default function Home({ posts, blogPosts }) {
   );
 }
 
-export async function getServerSideProps() {
-  const res = await fetch(
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
+  const resPosts = await fetch(
     `${NEXT_PUBLIC_API_URL}/posts?comments_gte=3&_limit=4`
   );
-  const posts = await res.json();
+  const posts = await resPosts.json();
 
   const resBlog = await fetch(`${NEXT_PUBLIC_API_URL}/blog-posts`);
   const blogPosts = await resBlog.json();

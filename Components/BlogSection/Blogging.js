@@ -37,6 +37,8 @@ const Blogging = ({ blogPosts }) => {
                     height={500}
                     objectFit="cover"
                     className="img"
+                    blurDataURL="URL"
+                    placeholder="blur"
                   />
                 </div>
                 <div className="other">
