@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useRouter } from "next/router";
 import RatingStar from "../RatingStar/RatingStar";
+import userImage from "@/public/userImage.png";
 
 const Carpenters = ({ allCarpenters }) => {
   const router = useRouter();
