@@ -1,9 +1,13 @@
 import React from "react";
-import Carpenters from "@/components/AllArtisans/Carpenters";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
-import UserLayout from "@/components/UserLayout";
+import dynamic from "next/dynamic";
 
 const carpenters = ({ allCarpenters }) => {
+  const UserLayout = dynamic(() => import("@/components/UserLayout"));
+  const Carpenters = dynamic(() =>
+    import("@/components/AllArtisans/Carpenters")
+  );
+
   return (
     <UserLayout>
       <Carpenters allCarpenters={allCarpenters} />
