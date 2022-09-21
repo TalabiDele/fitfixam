@@ -1,8 +1,10 @@
-import Layout from "@/components/Layout";
-import Hero from "@/components/AboutHero/Hero";
-import AboutUs from "@/components/AboutUs/AboutUs";
+import dynamic from "next/dynamic";
 
 const about = () => {
+  const Layout = dynamic(() => import("@/components/Layout"));
+  const Hero = dynamic(() => import("@/components/AboutHero/Hero"));
+  const AboutUs = dynamic(() => import("@/components/AboutUs/AboutUs"));
+
   return (
     <Layout
       title="Fitfixam | About"

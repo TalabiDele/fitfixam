@@ -13,6 +13,7 @@ export default function Home({ posts, blogPosts }) {
   );
   const Find = dynamic(() => import("@/components/Find/Find"));
   const Blogging = dynamic(() => import("@/components/BlogSection/Blogging"));
+  const Layout = dynamic(() => import("@/components/Layout"));
 
   return (
     <>

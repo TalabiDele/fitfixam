@@ -1,8 +1,12 @@
 import React from "react";
-import Layout from "@/components/Layout";
-import ResetPassword from "@/components/Account/ResetPassword";
+import dynamic from "next/dynamic";
 
 const resetPassword = () => {
+  const Layout = dynamic(() => import("@/components/Layout"));
+  const ResetPassword = dynamic(() =>
+    import("@/components/Account/ResetPassword")
+  );
+
   return (
     <Layout>
       <ResetPassword />
