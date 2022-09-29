@@ -229,14 +229,19 @@ const Slug = ({ post, posts, comments, likes }) => {
   // console.log(uniqueId);
 
   return (
-    <UserLayout>
+    <>
       <Container>
         <FeedPosts>
           {posts.map((e) => (
             <PostCard key={e.id}>
               <PostText>
                 <p onClick={() => displayPost(e)}>
-                  {e.post.slice(0, 80).concat(" ...Read more")}
+                  {e.post.slice(0, 150)}
+                  {e.post.length > 150 ? (
+                    <span style={{ fontWeight: "bold" }}>...Read more</span>
+                  ) : (
+                    <span></span>
+                  )}
                 </p>
               </PostText>
               <PostCategory className="post_category">
@@ -643,7 +648,7 @@ const Slug = ({ post, posts, comments, likes }) => {
           ))}
         </Wrapper>
       </Container>
-    </UserLayout>
+    </>
   );
 };
 

@@ -25,8 +25,12 @@ const TrendingCards = ({ posts }) => {
           <div className="card_container" key={e.id}>
             <div className="card" key={e.id}>
               <p onClick={() => handlePost(e)}>
-                {e.post.slice(0, 100).concat("...")}{" "}
-                <span style={{ fontWeight: "bold" }}>Read more</span>
+                {e.post.slice(0, 100)}{" "}
+                {e.post.length > 100 ? (
+                  <span style={{ fontWeight: "bold" }}>...Read more</span>
+                ) : (
+                  <span></span>
+                )}
               </p>
               <div className="user">
                 <div className="details" onClick={() => handleUser(e.user)}>
