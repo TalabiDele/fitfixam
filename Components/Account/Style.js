@@ -1071,8 +1071,7 @@ export const Alert = styled.div`
   border: 1px solid #8bc34a;
   width: 60%;
   text-align: center;
-
-  margin: 2rem auto 2rem auto;
+  margin: 2rem auto 4rem auto;
   padding: 1rem;
   border-radius: 20px;
   color: #8bc34a;
@@ -1095,13 +1094,14 @@ export const Alert = styled.div`
 
   @media (min-width: 1281px) {
     width: 60%;
-    margin: 2rem auto 0rem auto;
+    margin: 2rem auto 4rem auto;
     height: ${({ sent }) => (sent ? "4rem" : "0rem")};
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
     width: 80%;
     padding: 1rem;
+    margin: 2rem auto 4rem auto;
     height: ${({ sent }) => (sent ? "5rem" : "0rem")};
 
     p {
@@ -1112,6 +1112,7 @@ export const Alert = styled.div`
   @media (min-width: 768px) and (max-width: 1024px) {
     width: 80%;
     padding: 1rem;
+    margin: 2rem auto 4rem auto;
     height: ${({ sent }) => (sent ? "5rem" : "0rem")};
 
     p {
@@ -1122,6 +1123,7 @@ export const Alert = styled.div`
   @media (min-width: 481px) and (max-width: 767px) {
     width: 80%;
     padding: 1rem;
+    margin: 2rem auto 4rem auto;
     height: ${({ sent }) => (sent ? "5rem" : "0rem")};
 
     p {
@@ -1132,6 +1134,7 @@ export const Alert = styled.div`
   @media (max-width: 480px) {
     width: 80%;
     padding: 1rem;
+    margin: 2rem auto 4rem auto;
     height: ${({ sent }) => (sent ? "5rem" : "0rem")};
 
     p {
