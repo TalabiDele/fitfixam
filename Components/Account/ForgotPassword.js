@@ -45,14 +45,13 @@ const CreateAccount = () => {
 
     // forgotPassword({ email });
 
-    const res = await fetch(`http://localhost:1337/auth/forgot-password`, {
+    const res = await fetch(`${NEXT_PUBLIC_API_URL}/auth/forgot-password`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email,
-        url: `${NEXT_PUBLIC_URL}/reset-password`,
       }),
     });
 
