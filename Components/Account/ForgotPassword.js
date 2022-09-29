@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { BiShow, BiHide } from "react-icons/bi";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import axios from "axios";
 // import { getProviders, signIn as SignIntoProvider } from "next-auth/react";
 
 const CreateAccount = () => {
@@ -28,6 +29,21 @@ const CreateAccount = () => {
 
   const handleSubmitSignin = async (e) => {
     e.preventDefault();
+
+    console.log(email);
+
+    // axios
+    //   .post(`http://localhost:1337/auth/forgot-password`, {
+    //     email, // user's email
+    //   })
+    //   .then((response) => {
+    //     console.log("Your user received an email");
+    //   })
+    //   .catch((error) => {
+    //     console.log("An error occurred:", error.response);
+    //   });
+
+    // forgotPassword({ email });
 
     const res = await fetch(`http://localhost:1337/auth/forgot-password`, {
       method: "POST",
@@ -71,7 +87,6 @@ const CreateAccount = () => {
     <>
       <Container>
         <Aside>
-          <Image src={Logo} alt="Fitifixam logo" width={100} height={100} />
           <h1>Forgot your password?</h1>
           <p></p>
         </Aside>

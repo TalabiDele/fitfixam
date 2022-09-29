@@ -3,7 +3,7 @@ import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 export default async (req, res) => {
   if (req.method === "POST") {
-    const { email } = req.body;
+    const { email, url } = req.body;
     if (!req.headers.cookie) {
       res.status(403).json({ message: "Not Authorized" });
       return;
@@ -12,19 +12,22 @@ export default async (req, res) => {
     const { token } = cookie.parse(req.headers.cookie);
 
     const strapiRes = await fetch(
-      `${NEXT_PUBLIC_API_URL}/auth/forgot-password`,
+      `http://localhost:1337/auth/forgot-password`,
       {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        // },
         body: JSON.stringify({
           email,
+          url,
         }),
       }
     );
 
     const data = await strapiRes.json();
+
+    console.log(data);
 
     if (strapiRes.ok) {
       res.status(200).json({ data });

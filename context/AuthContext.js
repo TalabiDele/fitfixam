@@ -96,17 +96,16 @@ export const AuthProvider = ({ children }) => {
 
     const data = await res.json();
 
-    // console.log(data);
-    // setUserData(data);
+    console.log(data);
 
-    if (res.ok) {
-      setUser(data.user.user);
-      setUserData(data);
-      // router.push("/feeds");
-    } else {
-      setErrorMessage(data.message);
-      setError(true);
-    }
+    // if (res.ok) {
+    //   setUser(data.user.user);
+    //   setUserData(data);
+    //   // router.push("/feeds");
+    // } else {
+    //   setErrorMessage(data.message);
+    //   setError(true);
+    // }
   };
 
   // Login

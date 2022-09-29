@@ -122,6 +122,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
 
     binaryData.push(image);
 
+    uploadImage();
+
     // uploadImage(e);
   };
 
@@ -130,8 +132,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
     console.log(isOpen);
   };
 
-  const uploadImage = async (e) => {
-    e.preventDefault();
+  const uploadImage = async () => {
+    // e.preventDefault();
 
     setIsLoading(true);
     setMessage("File uploading...");
@@ -237,13 +239,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
     let add = 0;
 
     for (let i = 0; i < usersProfile.rating_artisan.length; i++) {
-      // console.log(e.rating_artisan);
       add += usersProfile.rating_artisan[i].rating;
     }
-
-    console.log(usersProfile);
-
-    console.log(add);
 
     stars.forEach(function (value, index) {
       count += value;
@@ -355,9 +352,9 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
               ) : (
                 <></>
               )} */}
-              <div className="upload-btn">
-                <button onClick={uploadImage}>Upload</button>
-              </div>
+              {/* <div className="upload-btn">
+                <button onClick={uploadImage}>Update Image</button>
+              </div> */}
               <h2>
                 <input
                   type="text"
