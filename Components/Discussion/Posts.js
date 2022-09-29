@@ -96,8 +96,13 @@ const Posts = ({ posts, comments, userPost, likes }) => {
               </UserDetails>
               <PostText>
                 <p onClick={() => displayPost(posts)}>
-                  {posts.post.slice(0, 150).concat("...")}{" "}
-                  <span style={{ fontWeight: "bold" }}>Read more</span>
+                  {posts.post.slice(0, 150)}{" "}
+                  {posts.post.length > 150 ? (
+                    <span style={{ fontWeight: "bold" }}>...Read more</span>
+                  ) : (
+                    <span></span>
+                  )}
+                  {/* {posts.post.slice(0, 150)} */}
                 </p>
               </PostText>
               <div className="images">
