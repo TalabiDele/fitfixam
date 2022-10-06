@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Wrapper } from "./Style";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
   const [isFAQ, setIsFAQ] = useState(false);
@@ -10,8 +11,67 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
   const [isGeneral, setIsGeneral] = useState(false);
   const [isQuestion, setIsQuestion] = useState(false);
   const [isComplaint, setIsComplaint] = useState(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
 
   const router = useRouter();
+
+  const handleQuestion = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch(`${NEXT_PUBLIC_API_URL}/questions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        message,
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.ok) {
+      setSent(true);
+      setEmail("");
+      setMessage("");
+
+      setTimeout(() => {
+        setSent(false);
+      }, 5000);
+    }
+  };
+
+  const handleComplaint = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch(`${NEXT_PUBLIC_API_URL}/complaints`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        message,
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.ok) {
+      setSent(true);
+      setEmail("");
+      setMessage("");
+
+      setTimeout(() => {
+        setSent(false);
+      }, 5000);
+    }
+  };
 
   const home = (e) => {
     router.push("/feeds");
@@ -184,11 +244,19 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
                 <div className="question">
                   <h2>Ask Questions</h2>
                   <p>How can we help you?</p>
-                  <form>
-                    <input type="email" placeholder="Enter Email" />
+                  {sent && <p className="sent">Message Sent!</p>}
+                  <form onSubmit={handleQuestion}>
+                    <input
+                      type="email"
+                      placeholder="Enter Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                     <textarea
                       placeholder="Leave a question or comment..."
                       rows="15"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                     <button>Send your Questions</button>
                   </form>
@@ -205,11 +273,19 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
                     Having trouble navigating the website? Send a message and
                     we‘ll get right back to you
                   </p>
-                  <form>
-                    <input type="email" placeholder="Enter Email" />
+                  {sent && <p className="sent">Message Sent!</p>}
+                  <form onSubmit={handleComplaint}>
+                    <input
+                      type="email"
+                      placeholder="Enter Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                     <textarea
                       placeholder="Leave your complaints here..."
                       rows="15"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                     <button>Send your Complaints</button>
                   </form>

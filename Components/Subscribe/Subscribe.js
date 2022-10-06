@@ -1,16 +1,53 @@
+import React, { useState } from "react";
 import { InputBtn } from "Components/Buttons";
 import { Container, Wrapper } from "./Style";
-import BGImage from "./BG";
-import Bg from "@/public/subscribe-bg.png";
+import { NEXT_PUBLIC_API_URL } from "@/config/index";
 
 const Subscribe = () => {
+  const [email, setEmail] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch(`${NEXT_PUBLIC_API_URL}/subscribers`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.ok) {
+      setSent(true);
+      setEmail("");
+
+      setTimeout(() => {
+        setSent(false);
+      }, 5000);
+    }
+  };
+
   return (
     <Container>
       <Wrapper>
         <h1>Get exclusive news first-hand</h1>
         <p>Sign up to our newsletter to receive regular updates</p>
-        <input type="email" placeholder="Enter your email" />
-        <InputBtn>Enter</InputBtn>
+        <form action="" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <InputBtn>Enter</InputBtn>
+          {sent && <p>You have successfully subscribed</p>}
+        </form>
       </Wrapper>
     </Container>
   );

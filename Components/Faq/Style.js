@@ -44,6 +44,10 @@ export const Wrapper = styled.div`
     font-size: 19px;
   }
 
+  .sent {
+    color: #059c05;
+  }
+
   div.help {
     div.dot {
       background-color: #d7d6dc;
@@ -122,7 +126,7 @@ export const Wrapper = styled.div`
     }
 
     p {
-      font-size: 26px;
+      font-size: 16px;
       margin-bottom: 2rem;
       line-height: 1.5;
     }

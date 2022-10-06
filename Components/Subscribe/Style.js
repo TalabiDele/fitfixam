@@ -5,6 +5,12 @@ export const Wrapper = styled.div`
   padding-top: 10rem;
   height: 40rem;
 
+  form {
+    p {
+      color: #059c05;
+    }
+  }
+
   @media (max-width: 2100px) {
     background-color: #bdddfd1f;
     padding-top: 10rem;
