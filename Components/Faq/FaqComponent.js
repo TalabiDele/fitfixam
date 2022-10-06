@@ -14,62 +14,73 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
 
   const router = useRouter();
 
   const handleQuestion = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`${NEXT_PUBLIC_API_URL}/questions`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        message,
-      }),
-    });
+    if (email === "" || message === "") {
+      setError(true);
+    } else {
+      setError(false);
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/questions`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          message,
+        }),
+      });
 
-    const data = await res.json();
-    console.log(data);
+      const data = await res.json();
+      console.log(data);
 
-    if (res.ok) {
-      setSent(true);
-      setEmail("");
-      setMessage("");
+      if (res.ok) {
+        setSent(true);
+        setEmail("");
+        setMessage("");
 
-      setTimeout(() => {
-        setSent(false);
-      }, 5000);
+        setTimeout(() => {
+          setSent(false);
+        }, 5000);
+      }
     }
   };
 
   const handleComplaint = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`${NEXT_PUBLIC_API_URL}/complaints`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        message,
-      }),
-    });
+    if (email === "" || message === "") {
+      setError(true);
+    } else {
+      setError(false);
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/complaints`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          message,
+        }),
+      });
 
-    const data = await res.json();
-    console.log(data);
+      const data = await res.json();
+      console.log(data);
 
-    if (res.ok) {
-      setSent(true);
-      setEmail("");
-      setMessage("");
+      if (res.ok) {
+        setSent(true);
+        setEmail("");
+        setMessage("");
 
-      setTimeout(() => {
-        setSent(false);
-      }, 5000);
+        setTimeout(() => {
+          setSent(false);
+        }, 5000);
+      }
     }
   };
 
@@ -245,6 +256,7 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
                   <h2>Ask Questions</h2>
                   <p>How can we help you?</p>
                   {sent && <p className="sent">Message Sent!</p>}
+                  {error && <p className="error">Please fill all fields</p>}
                   <form onSubmit={handleQuestion}>
                     <input
                       type="email"
@@ -274,6 +286,7 @@ const FaqComponent = ({ artisanFaq, clientFaq, generalFaq }) => {
                     we‘ll get right back to you
                   </p>
                   {sent && <p className="sent">Message Sent!</p>}
+                  {error && <p className="error">Please fill all fields</p>}
                   <form onSubmit={handleComplaint}>
                     <input
                       type="email"

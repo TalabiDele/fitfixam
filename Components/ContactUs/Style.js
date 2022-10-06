@@ -66,6 +66,10 @@ export const Wrapper = styled.div`
           color: #059c05;
         }
 
+        .error {
+          color: #c41a1a;
+        }
+
         p {
           margin-bottom: 2rem;
         }

@@ -19,36 +19,42 @@ const ContactUs = () => {
   const [number, setNumber] = useState(null);
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`${NEXT_PUBLIC_API_URL}/contacts`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        number,
-        message,
-      }),
-    });
+    if (name === "" || email === "" || number === nul || message === "") {
+      setError(true);
+    } else {
+      setError(false);
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/contacts`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          number,
+          message,
+        }),
+      });
 
-    const data = await res.json();
-    console.log(data);
+      const data = await res.json();
+      console.log(data);
 
-    if (res.ok) {
-      setSent(true);
-      setEmail("");
-      setMessage("");
-      setNumber("");
-      setName("");
+      if (res.ok) {
+        setSent(true);
+        setEmail("");
+        setMessage("");
+        setNumber("");
+        setName("");
 
-      setTimeout(() => {
-        setSent(false);
-      }, 5000);
+        setTimeout(() => {
+          setSent(false);
+        }, 5000);
+      }
     }
   };
 
@@ -73,6 +79,7 @@ const ContactUs = () => {
             <h2>Tell us Something</h2>
             <p>Questions or comments are welcome</p>
             {sent && <p className="sent">Message sent successfully!</p>}
+            {error && <p className="error">Please fill all fields</p>}
             <input
               type="text"
               placeholder="Full Name"

@@ -6,30 +6,36 @@ import { NEXT_PUBLIC_API_URL } from "@/config/index";
 const Subscribe = () => {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`${NEXT_PUBLIC_API_URL}/subscribers`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-      }),
-    });
+    if (email === "") {
+      setError(true);
+    } else {
+      setError(false);
+      const res = await fetch(`${NEXT_PUBLIC_API_URL}/subscribers`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+        }),
+      });
 
-    const data = await res.json();
-    console.log(data);
+      const data = await res.json();
+      console.log(data);
 
-    if (res.ok) {
-      setSent(true);
-      setEmail("");
+      if (res.ok) {
+        setSent(true);
+        setEmail("");
 
-      setTimeout(() => {
-        setSent(false);
-      }, 5000);
+        setTimeout(() => {
+          setSent(false);
+        }, 5000);
+      }
     }
   };
 
@@ -46,7 +52,8 @@ const Subscribe = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <InputBtn>Enter</InputBtn>
-          {sent && <p>You have successfully subscribed</p>}
+          {sent && <p className="sent">You have successfully subscribed</p>}
+          {error && <p className="error">Please fill the field</p>}
         </form>
       </Wrapper>
     </Container>

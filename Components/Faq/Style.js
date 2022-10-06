@@ -48,6 +48,10 @@ export const Wrapper = styled.div`
     color: #059c05;
   }
 
+  .error {
+    color: #c41a1a;
+  }
+
   div.help {
     div.dot {
       background-color: #d7d6dc;

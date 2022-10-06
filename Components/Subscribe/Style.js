@@ -6,8 +6,12 @@ export const Wrapper = styled.div`
   height: 40rem;
 
   form {
-    p {
+    .sent {
       color: #059c05;
+    }
+
+    .error {
+      color: #c41a1a;
     }
   }
 
