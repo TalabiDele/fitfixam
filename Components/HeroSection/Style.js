@@ -176,7 +176,7 @@ export const Wrapper = styled.div`
       z-index: -2;
       font-weight: 900;
       letter-spacing: -0.02em;
-      width: 35rem;
+      width: 30rem;
       font-size: 50px;
       margin: 2rem auto 2rem auto;
     }
