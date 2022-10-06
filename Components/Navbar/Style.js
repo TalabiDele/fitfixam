@@ -1911,7 +1911,7 @@ export const NavMenu = styled.div`
   left: 0;
   right: 0;
   z-index: 100;
-  width: 16%;
+  width: 18rem;
   /* width: 4%; */
 
   div.side_menu {
@@ -1946,7 +1946,7 @@ export const NavMenu = styled.div`
     left: 0;
     right: 0;
     z-index: 100;
-    width: 16%;
+    width: 18rem;
     /* width: 4%; */
 
     div.side_menu {
