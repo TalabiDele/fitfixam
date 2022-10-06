@@ -24,7 +24,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (name === "" || email === "" || number === nul || message === "") {
+    if (name === "" || email === "" || number === null || message === "") {
       setError(true);
     } else {
       setError(false);
