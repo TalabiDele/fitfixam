@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 100%;
   margin: auto;
   font-size: 20px;
+  position: fixed;
 
   div.container {
     display: flex;

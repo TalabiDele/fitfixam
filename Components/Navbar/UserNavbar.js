@@ -252,54 +252,20 @@ const Navbar = () => {
       setIsSearch(false);
     }
 
-    // const query = qs.stringify({
-    //   _where: {
-    //     _or: [{ post_contains: e }],
-    //   },
-    // });
-
     const res = await fetch(
       `${NEXT_PUBLIC_API_URL}/posts?post_contains=${searchValue}`,
       {
         method: "GET",
-        // headers: {
-        // "Content-Type": "application/json",
-        // Authorization: `Bearer ${token}`,
-        // },
-        // body: JSON.stringify(postItem),
       }
     );
 
     const data = await res.json();
     setSearchData(data);
-    console.log(data);
   };
 
   const submitSearch = async (e) => {
     e.preventDefault();
     setSearchValue("");
-    // setSearchValue(e.target.value);
-    // if (e.target.value === "") {
-    //   setIsSearch(false);
-    // }
-
-    // const query = qs.stringify({
-    //   _where: {
-    //     _or: [{ post_contains: e }],
-    //   },
-    // });
-
-    // const res = await fetch(
-    //   `${NEXT_PUBLIC_API_URL}/posts?post_contains=${searchValue}`,
-    //   {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
-
-    // const data = await res.json();
     router.push(`/feeds/search?term=${searchValue}`);
     setIsSearch(false);
 

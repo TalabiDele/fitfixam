@@ -2262,13 +2262,14 @@ export const Btn = styled.div`
 `;
 
 export const SearchContainer = styled.div`
-  position: absolute;
+  position: fixed;
   background: #ffffff;
   box-shadow: 0px 2px 4px rgba(6, 2, 88, 0.25);
   border-radius: 10px;
-  width: 62%;
+  width: 60%;
+  left: 20rem;
+  top: 6rem;
   margin: auto;
-  left: 8rem;
   z-index: 800;
   font-size: 19px;
   height: ${({ isSearch }) => (isSearch ? "40rem" : "0rem")};
@@ -2298,13 +2299,11 @@ export const SearchContainer = styled.div`
   }
 
   @media (min-width: 1281px) {
-    position: absolute;
     background: #ffffff;
     box-shadow: 0px 2px 4px rgba(6, 2, 88, 0.25);
     border-radius: 10px;
-    width: 62%;
+    /* width: 62%; */
     margin: auto;
-    left: 8rem;
     z-index: 800;
     font-size: 19px;
     height: ${({ isSearch }) => (isSearch ? "40rem" : "0rem")};
@@ -2356,13 +2355,11 @@ export const SearchContainer = styled.div`
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    position: absolute;
     background: #ffffff;
     box-shadow: 0px 2px 4px rgba(6, 2, 88, 0.25);
     border-radius: 10px;
-    width: 62%;
+    /* width: 62%; */
     margin: auto;
-    left: 8rem;
     z-index: 800;
     font-size: 19px;
     height: ${({ isSearch }) => (isSearch ? "40rem" : "0rem")};
@@ -2414,13 +2411,11 @@ export const SearchContainer = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    position: absolute;
     background: #ffffff;
     box-shadow: 0px 2px 4px rgba(6, 2, 88, 0.25);
     border-radius: 10px;
-    width: 62%;
+    /* width: 62%; */
     margin: auto;
-    left: 6rem;
     z-index: 800;
     font-size: 16px;
     height: ${({ isSearch }) => (isSearch ? "40rem" : "0rem")};
@@ -2476,13 +2471,12 @@ export const SearchContainer = styled.div`
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
-    position: absolute;
     background: #ffffff;
     box-shadow: 0px 2px 4px rgba(6, 2, 88, 0.25);
     border-radius: 10px;
-    width: 62%;
-    margin: auto;
+    width: 80%;
     left: 5rem;
+    margin: auto;
     z-index: 800;
     font-size: 16px;
     height: ${({ isSearch }) => (isSearch ? "40rem" : "0rem")};
@@ -2538,13 +2532,12 @@ export const SearchContainer = styled.div`
   }
 
   @media (max-width: 480px) {
-    position: absolute;
     background: #ffffff;
     box-shadow: 0px 2px 4px rgba(6, 2, 88, 0.25);
     border-radius: 10px;
-    width: 62%;
+    width: 90%;
+    left: 2rem;
     margin: auto;
-    left: 4rem;
     z-index: 800;
     font-size: 12px;
     height: ${({ isSearch }) => (isSearch ? "40rem" : "0rem")};
@@ -2589,7 +2582,7 @@ export const SearchContainer = styled.div`
       padding-bottom: 2rem;
 
       h2 {
-        font-size: 16px;
+        font-size: 12px;
       }
 
       h3 {
