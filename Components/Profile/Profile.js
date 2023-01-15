@@ -274,6 +274,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
     } catch (error) {
       console.log(error);
     }
+
+    refreshData();
   };
 
   const getRatingScore = (e) => {
