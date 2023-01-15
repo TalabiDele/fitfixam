@@ -1,6 +1,10 @@
 import Layout from "@/components/Layout";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import loader from "@/public/ball.gif";
+import { useState, useEffect } from "react";
+import { Loader } from "@/components/Loader";
 
 export default function Home({ posts, blogPosts }) {
   const Hero = dynamic(() => import("Components/HeroSection/Hero"));
@@ -15,12 +19,36 @@ export default function Home({ posts, blogPosts }) {
   const Blogging = dynamic(() => import("@/components/BlogSection/Blogging"));
   const Layout = dynamic(() => import("@/components/Layout"));
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    displayLoader();
+  }, [loading]);
+
+  const displayLoader = () => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  };
+
   return (
     <>
-      <Layout
-        title="Fitfixam | Home"
-        description="Here, you can find reviews of artisans and companies that offer artisan services. Be girded with the information that will help you make the right decisions. Fix it one time"
-        keywords="Artisans,
+      {loading ? (
+        <Loader>
+          <Image
+            src={loader}
+            alt="loader"
+            width={100}
+            height={100}
+            objectFit="cover"
+          />
+        </Loader>
+      ) : (
+        <>
+          <Layout
+            title="Fitfixam | Home"
+            description="Here, you can find reviews of artisans and companies that offer artisan services. Be girded with the information that will help you make the right decisions. Fix it one time"
+            keywords="Artisans,
         Repair,
         Fix,
         Carpenters,
@@ -35,16 +63,18 @@ export default function Home({ posts, blogPosts }) {
         Experience,
         Nigeria,
         "
-      >
-        <Hero />
-        <Review />
-        <Find />
-        <Conversation posts={posts} />
-        <Action />
-        <Blogging blogPosts={blogPosts} />
-        <Subscribe />
-        <SecondAction />
-      </Layout>
+          >
+            <Hero />
+            <Review />
+            <Find />
+            <Conversation posts={posts} />
+            <Action />
+            <Blogging blogPosts={blogPosts} />
+            <Subscribe />
+            <SecondAction />
+          </Layout>
+        </>
+      )}
     </>
   );
 }

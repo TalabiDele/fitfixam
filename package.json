@@ -34,6 +34,7 @@
     "next": "12.1.0",
     "next-auth": "^4.3.4",
     "nodemon": "^2.0.15",
+    "npm": "^9.3.0",
     "nprogress": "^0.2.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
