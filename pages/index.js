@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import loader from "@/public/ball.gif";
+import loader from "@/public/Orange.png";
 import { useState, useEffect } from "react";
 import { Loader } from "@/components/Loader";
 
@@ -38,8 +38,8 @@ export default function Home({ posts, blogPosts }) {
           <Image
             src={loader}
             alt="loader"
-            width={100}
-            height={100}
+            width={50}
+            height={50}
             objectFit="cover"
           />
         </Loader>
