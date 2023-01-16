@@ -43,14 +43,19 @@ const Carpenters = ({ post, posts, comments, likes, allUsers, allPosts }) => {
 
 export default Carpenters;
 
-export async function getServerSideProps({ query: { slug } }) {
+export async function getServerSideProps({ query: { slug }, req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const resPost = await fetch(`${NEXT_PUBLIC_API_URL}/posts?slug=${slug}`);
   const post = await resPost.json();
 
-  const res = await fetch(
+  const reso = await fetch(
     `${NEXT_PUBLIC_API_URL}/categories/1?_sort=created_at:DESC`
   );
-  const posts = await res.json();
+  const posts = await reso.json();
 
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);
   const comments = await resComments.json();

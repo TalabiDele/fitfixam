@@ -20,6 +20,8 @@ const ReviewCard = () => {
               height={312}
               objectFit="cover"
               className="image"
+              blurDataURL="URL"
+              placeholder="blur"
             />
           </div>
           <div className="card_details">
@@ -45,6 +47,8 @@ const ReviewCard = () => {
             height={312}
             objectFit="cover"
             className="image"
+            blurDataURL="URL"
+            placeholder="blur"
           />
           <div className="card_details">
             <h1>Plumber</h1>
@@ -68,6 +72,8 @@ const ReviewCard = () => {
             width={410}
             height={312}
             objectFit="cover"
+            blurDataURL="URL"
+            placeholder="blur"
             className="image"
           />
           <div className="card_details">

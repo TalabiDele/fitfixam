@@ -18,11 +18,16 @@ const Blog = ({ blogPosts }) => {
 
 export default Blog;
 
-export async function getServerSideProps() {
-  const res = await fetch(
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
+  const reso = await fetch(
     `${NEXT_PUBLIC_API_URL}/blog-posts?_sort=created_at:DESC`
   );
-  const blogPosts = await res.json();
+  const blogPosts = await reso.json();
 
   return {
     props: { blogPosts },

@@ -33,6 +33,8 @@ const Plumber = ({ allElectricians }) => {
                       width={118.21}
                       objectFit="cover"
                       className="user-img"
+                      blurDataURL="URL"
+                      placeholder="blur"
                     />
                   ) : (
                     <Image
@@ -42,6 +44,8 @@ const Plumber = ({ allElectricians }) => {
                       width={118.21}
                       objectFit="cover"
                       className="user-img"
+                      blurDataURL="URL"
+                      placeholder="blur"
                     />
                   )}
                 </div>

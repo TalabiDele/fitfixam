@@ -31,6 +31,8 @@ const FindArtisans = ({ user, category }) => {
                   width={118.21}
                   objectFit="cover"
                   className="user-img"
+                  blurDataURL="URL"
+                  placeholder="blur"
                 />
               ) : (
                 <Image
@@ -40,6 +42,8 @@ const FindArtisans = ({ user, category }) => {
                   width={118.21}
                   objectFit="cover"
                   className="user-img"
+                  blurDataURL="URL"
+                  placeholder="blur"
                 />
               )}
             </div>

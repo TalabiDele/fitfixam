@@ -35,7 +35,12 @@ const Search = ({ posts, query }) => {
 
 export default Search;
 
-export async function getServerSideProps({ query: { term } }) {
+export async function getServerSideProps({ query: { term }, req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const query = qs.stringify({
     _where: {
       _or: [{ post_contains: term }],

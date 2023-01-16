@@ -40,12 +40,17 @@ const Plumbers = ({ post, posts, comments, likes, allUsers }) => {
 
 export default Plumbers;
 
-export async function getServerSideProps({ query: { slug } }) {
+export async function getServerSideProps({ query: { slug }, req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const resPost = await fetch(`${NEXT_PUBLIC_API_URL}/posts?slug=${slug}`);
   const post = await resPost.json();
 
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}/categories/2`);
-  const posts = await res.json();
+  const reso = await fetch(`${NEXT_PUBLIC_API_URL}/categories/2`);
+  const posts = await reso.json();
 
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);
   const comments = await resComments.json();

@@ -15,7 +15,12 @@ const Slug = ({ post, posts, comments, likes }) => {
 
 export default Slug;
 
-export async function getServerSideProps({ req, query: { slug } }) {
+export async function getServerSideProps({ req, query: { slug }, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const { token } = parseCookies(req);
 
   console.log(token);
@@ -23,8 +28,10 @@ export async function getServerSideProps({ req, query: { slug } }) {
   const resPost = await fetch(`${NEXT_PUBLIC_API_URL}/posts?slug=${slug}`);
   const post = await resPost.json();
 
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}/posts?_sort=created_at:DESC`);
-  const posts = await res.json();
+  const reso = await fetch(
+    `${NEXT_PUBLIC_API_URL}/posts?_sort=created_at:DESC`
+  );
+  const posts = await reso.json();
 
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);
   const comments = await resComments.json();

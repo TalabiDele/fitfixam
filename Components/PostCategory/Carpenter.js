@@ -47,6 +47,8 @@ const Carpenter = ({ posts, comments, allUsers, likes }) => {
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
+                      blurDataURL="URL"
+                      placeholder="blur"
                       onClick={() => displayProfile(all.slug)}
                     />
                   ) : (
@@ -58,6 +60,8 @@ const Carpenter = ({ posts, comments, allUsers, likes }) => {
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
+                      blurDataURL="URL"
+                      placeholder="blur"
                       onClick={() => displayProfile(all.slug)}
                     />
                   )}
@@ -99,6 +103,8 @@ const Carpenter = ({ posts, comments, allUsers, likes }) => {
                     objectFit="cover"
                     alt={i.name}
                     className="img"
+                    blurDataURL="URL"
+                    placeholder="blur"
                   />
                 </div>
               ))}
@@ -120,6 +126,8 @@ const Carpenter = ({ posts, comments, allUsers, likes }) => {
                               cursor="pointer"
                               objectFit="cover"
                               className="user_image"
+                              blurDataURL="URL"
+                              placeholder="blur"
                             />
                           ) : (
                             <Image

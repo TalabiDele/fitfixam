@@ -25,6 +25,8 @@ const BlogPosts = ({ blogPosts }) => {
               objectFit="cover"
               className="blog_image"
               borderRadius="10px"
+              blurDataURL="URL"
+              placeholder="blur"
             />
           </div>
           <div className="blog_details">

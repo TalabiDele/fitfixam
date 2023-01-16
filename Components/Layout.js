@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Navbar from "./Navbar/Navbar";
-import Footer from "./Footer/Footer";
+import dynamic from "next/dynamic";
 import { useContext, useState, useEffect } from "react";
 import AuthContext from "@/context/AuthContext";
 import Router from "next/router";
@@ -26,6 +25,9 @@ export default function Layout({
   children,
   router,
 }) {
+  const Navbar = dynamic(() => import("@/components/Navbar/Navbar"));
+  const Footer = dynamic(() => import("@/components/Footer/Footer"));
+
   const { user } = useContext(AuthContext);
   const isRouter = useRouter();
 

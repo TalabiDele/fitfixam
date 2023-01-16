@@ -53,6 +53,8 @@ const AboutUs = () => {
               width={521}
               height={615}
               objectFit="contain"
+              blurDataURL="URL"
+              placeholder="blur"
             />
           </div>
           <div className="about_founder">
@@ -129,6 +131,8 @@ const AboutUs = () => {
                 objectFit="cover"
                 objectPosition="top"
                 alt="team member"
+                blurDataURL="URL"
+                placeholder="blur"
               />
               <h1>Great Donatus</h1>
               <p>Project Lead</p>
@@ -141,6 +145,8 @@ const AboutUs = () => {
                 objectFit="cover"
                 objectPosition="top"
                 alt="team member"
+                blurDataURL="URL"
+                placeholder="blur"
               />
               <h1>Babatunde Atijosan</h1>
               <p>Platform Developer</p>
@@ -153,6 +159,8 @@ const AboutUs = () => {
                 objectFit="cover"
                 objectPosition="top"
                 alt="team member"
+                blurDataURL="URL"
+                placeholder="blur"
               />
               <h1>Tofunmi Komolafe</h1>
               <p>Social Media & Community Manager</p>

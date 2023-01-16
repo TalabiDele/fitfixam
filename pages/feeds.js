@@ -49,9 +49,16 @@ const Feeds = ({ posts, comments, userPost, allUsers, likes }) => {
 
 export default Feeds;
 
-export async function getServerSideProps() {
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}/posts?_sort=created_at:DESC`);
-  const posts = await res.json();
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
+  const reso = await fetch(
+    `${NEXT_PUBLIC_API_URL}/posts?_sort=created_at:DESC`
+  );
+  const posts = await reso.json();
 
   const resComments = await fetch(`${NEXT_PUBLIC_API_URL}/comments`);
   const comments = await resComments.json();

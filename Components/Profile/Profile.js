@@ -304,6 +304,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                     height={170}
                     className="image"
                     objectFit="cover"
+                    blurDataURL="URL"
+                    placeholder="blur"
                   />
                 ) : (
                   <Image
@@ -313,6 +315,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                     height={170}
                     className="image"
                     objectFit="cover"
+                    blurDataURL="URL"
+                    placeholder="blur"
                   />
                 )}
               </div>
@@ -418,7 +422,14 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
             <div className="message">
               <span>{message}</span>
               {isLoading && (
-                <Image src={spinner} alt="spinner" width={20} height={20} />
+                <Image
+                  src={spinner}
+                  alt="spinner"
+                  width={20}
+                  height={20}
+                  blurDataURL="URL"
+                  placeholder="blur"
+                />
               )}
             </div>
             <div className="modal">
@@ -536,6 +547,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                     height={170}
                     objectFit="cover"
                     className="image"
+                    blurDataURL="URL"
+                    placeholder="blur"
                   />
                 ) : (
                   <Image
@@ -545,6 +558,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                     height={170}
                     objectFit="cover"
                     className="image"
+                    blurDataURL="URL"
+                    placeholder="blur"
                   />
                 )}
               </div>
@@ -707,6 +722,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                               width={70}
                               height={70}
                               objectFit="cover"
+                              blurDataURL="URL"
+                              placeholder="blur"
                               className="image"
                             />
                           ) : (
@@ -717,6 +734,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                               height={70}
                               objectFit="cover"
                               className="image"
+                              blurDataURL="URL"
+                              placeholder="blur"
                             />
                           )}
                           <div className="post">
@@ -801,6 +820,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                             height={70}
                             objectFit="cover"
                             className="image"
+                            blurDataURL="URL"
+                            placeholder="blur"
                           />
                         ) : (
                           <Image
@@ -810,6 +831,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                             height={70}
                             objectFit="cover"
                             className="image"
+                            blurDataURL="URL"
+                            placeholder="blur"
                           />
                         )}
                         <div className="post">
@@ -858,6 +881,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                       height={70}
                       objectFit="cover"
                       className="image"
+                      blurDataURL="URL"
+                      placeholder="blur"
                     />
                   ) : (
                     <Image
@@ -867,6 +892,8 @@ const Profile = ({ usersProfile, token, userPosts, artisanRatings }) => {
                       height={70}
                       objectFit="cover"
                       className="image"
+                      blurDataURL="URL"
+                      placeholder="blur"
                     />
                   )}
                   <div className="post">

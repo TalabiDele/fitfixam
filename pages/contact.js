@@ -1,9 +1,12 @@
 import React from "react";
 import Layout from "Components/Layout";
-import ContactHero from "@/components/ContactHero/ContactHero";
-import ContactUs from "Components/ContactUs/ContactUs";
 
 const Contact = () => {
+  const ContactHero = dynamic(() =>
+    import("@/components/ContactHero/ContactHero")
+  );
+  const ContactUs = dynamic(() => import("@/components/ContactUs/ContactUs"));
+
   return (
     <Layout
       title="Fitfixam | Contact us"

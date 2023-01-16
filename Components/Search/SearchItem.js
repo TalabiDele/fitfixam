@@ -24,6 +24,8 @@ const SearchItem = ({ posts }) => {
                 height={40}
                 objectFit="cover"
                 className="image"
+                blurDataURL="URL"
+                placeholder="blur"
               />
             ) : (
               <Image
@@ -33,6 +35,8 @@ const SearchItem = ({ posts }) => {
                 height={40}
                 objectFit="cover"
                 className="image"
+                blurDataURL="URL"
+                placeholder="blur"
               />
             )}
             <h2>{e.user.username}</h2>

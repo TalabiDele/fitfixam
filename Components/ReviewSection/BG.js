@@ -47,7 +47,14 @@ function BGImage({ url }) {
   if (width && height) {
     return (
       <Box>
-        <Image src={url} width={width} height={height} alt="Background Image" />
+        <Image
+          src={url}
+          width={width}
+          height={height}
+          alt="Background Image"
+          blurDataURL="URL"
+          placeholder="blur"
+        />
       </Box>
     );
   }

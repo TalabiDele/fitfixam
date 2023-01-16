@@ -70,6 +70,8 @@ const Posts = ({ posts, comments, userPost, likes }) => {
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
+                      blurDataURL="URL"
+                      placeholder="blur"
                     />
                   ) : (
                     <Image
@@ -80,6 +82,8 @@ const Posts = ({ posts, comments, userPost, likes }) => {
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
+                      blurDataURL="URL"
+                      placeholder="blur"
                     />
                   )}
                 </div>
@@ -116,6 +120,8 @@ const Posts = ({ posts, comments, userPost, likes }) => {
                         objectFit="cover"
                         alt={i.name}
                         className="img"
+                        blurDataURL="URL"
+                        placeholder="blur"
                       />
                     </div>
                   ))}
@@ -137,6 +143,8 @@ const Posts = ({ posts, comments, userPost, likes }) => {
                                   cursor="pointer"
                                   objectFit="cover"
                                   className="user_image"
+                                  blurDataURL="URL"
+                                  placeholder="blur"
                                 />
                               ) : (
                                 <Image
@@ -147,6 +155,8 @@ const Posts = ({ posts, comments, userPost, likes }) => {
                                   cursor="pointer"
                                   objectFit="cover"
                                   className="user_image"
+                                  blurDataURL="URL"
+                                  placeholder="blur"
                                 />
                               )}
                             </div>

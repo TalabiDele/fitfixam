@@ -17,7 +17,12 @@ const carpenters = ({ allCarpenters }) => {
 
 export default carpenters;
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const resCarpenters = await fetch(`${NEXT_PUBLIC_API_URL}/user-categories/1`);
   const allCarpenters = await resCarpenters.json();
 

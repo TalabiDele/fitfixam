@@ -24,14 +24,21 @@ const Slug = ({ usersProfile, userPosts, token, artisanRatings }) => {
 
 export default Slug;
 
-export async function getServerSideProps({ query: { slug }, req }) {
+export async function getServerSideProps({ query: { slug }, req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const { token } = parseCookies(req);
 
   const resUser = await fetch(`${NEXT_PUBLIC_API_URL}/users?slug=${slug}`);
   const usersProfile = await resUser.json();
 
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}/posts?_sort=created_at:DESC`);
-  const posts = await res.json();
+  const resPost = await fetch(
+    `${NEXT_PUBLIC_API_URL}/posts?_sort=created_at:DESC`
+  );
+  const posts = await resPost.json();
 
   const resUserPosts = await fetch(
     `${NEXT_PUBLIC_API_URL}/users/me?populate=*`

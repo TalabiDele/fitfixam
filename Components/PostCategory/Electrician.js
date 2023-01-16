@@ -47,6 +47,8 @@ const Electrician = ({ posts, comments, allUsers, likes }) => {
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
+                      blurDataURL="URL"
+                      placeholder="blur"
                       onClick={() => displayProfile(all.slug)}
                     />
                   ) : (
@@ -58,6 +60,8 @@ const Electrician = ({ posts, comments, allUsers, likes }) => {
                       cursor="pointer"
                       objectFit="cover"
                       className="user_image"
+                      blurDataURL="URL"
+                      placeholder="blur"
                       onClick={() => displayProfile(all.slug)}
                     />
                   )}
@@ -99,6 +103,8 @@ const Electrician = ({ posts, comments, allUsers, likes }) => {
                     objectFit="cover"
                     alt={i.name}
                     className="img"
+                    blurDataURL="URL"
+                    placeholder="blur"
                   />
                 </div>
               ))}
@@ -119,6 +125,8 @@ const Electrician = ({ posts, comments, allUsers, likes }) => {
                               height={30}
                               cursor="pointer"
                               objectFit="cover"
+                              blurDataURL="URL"
+                              placeholder="blur"
                               className="user_image"
                             />
                           ) : (
@@ -129,6 +137,8 @@ const Electrician = ({ posts, comments, allUsers, likes }) => {
                               height={30}
                               cursor="pointer"
                               objectFit="cover"
+                              blurDataURL="URL"
+                              placeholder="blur"
                               className="user_image"
                             />
                           )}

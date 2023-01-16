@@ -241,6 +241,8 @@ const Post = ({ post, posts, comments, likes, allUsers }) => {
                             height={50}
                             cursor="pointer"
                             objectFit="cover"
+                            blurDataURL="URL"
+                            placeholder="blur"
                             className="user_image"
                             onClick={() => displayProfile(all.slug)}
                           />
@@ -253,6 +255,8 @@ const Post = ({ post, posts, comments, likes, allUsers }) => {
                             cursor="pointer"
                             objectFit="cover"
                             className="user_image"
+                            blurDataURL="URL"
+                            placeholder="blur"
                             onClick={() => displayProfile(all.slug)}
                           />
                         )}
@@ -293,6 +297,8 @@ const Post = ({ post, posts, comments, likes, allUsers }) => {
                     height={80}
                     cursor="pointer"
                     objectFit="cover"
+                    blurDataURL="URL"
+                    placeholder="blur"
                     className="user_image"
                     onClick={() => displayProfile(e.user.slug)}
                   />
@@ -304,6 +310,8 @@ const Post = ({ post, posts, comments, likes, allUsers }) => {
                     height={80}
                     cursor="pointer"
                     objectFit="cover"
+                    blurDataURL="URL"
+                    placeholder="blur"
                     className="user_image"
                     onClick={() => displayProfile(e.user.slug)}
                   />
@@ -356,6 +364,8 @@ const Post = ({ post, posts, comments, likes, allUsers }) => {
                                     height={30}
                                     className="user_image"
                                     objectFit="cover"
+                                    blurDataURL="URL"
+                                    placeholder="blur"
                                   />
                                 ) : (
                                   <Image
@@ -365,6 +375,8 @@ const Post = ({ post, posts, comments, likes, allUsers }) => {
                                     height={30}
                                     className="user_image"
                                     objectFit="cover"
+                                    blurDataURL="URL"
+                                    placeholder="blur"
                                   />
                                 )}
                               </div>
@@ -507,6 +519,8 @@ const Post = ({ post, posts, comments, likes, allUsers }) => {
                               height={70}
                               className="user_image"
                               objectFit="cover"
+                              blurDataURL="URL"
+                              placeholder="blur"
                             />
                           ) : (
                             <Image
@@ -516,6 +530,8 @@ const Post = ({ post, posts, comments, likes, allUsers }) => {
                               height={70}
                               className="user_image"
                               objectFit="cover"
+                              blurDataURL="URL"
+                              placeholder="blur"
                             />
                           )}
                         </div>

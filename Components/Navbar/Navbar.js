@@ -98,6 +98,8 @@ const Navbar = () => {
                   height={50}
                   objectFit="contain"
                   className="white"
+                  blurDataURL="URL"
+                  placeholder="blur"
                 />
               </div>
               <div className="blue">
@@ -108,6 +110,8 @@ const Navbar = () => {
                   height={50}
                   objectFit="contain"
                   className="blue"
+                  blurDataURL="URL"
+                  placeholder="blur"
                 />
               </div>
             </a>
@@ -129,6 +133,8 @@ const Navbar = () => {
                   height={100}
                   className="img"
                   objectFit="contain"
+                  blurDataURL="URL"
+                  placeholder="blur"
                 />
               </a>
             </Link>

@@ -33,9 +33,14 @@ const Companies = ({ companies }) => {
 
 export default Companies;
 
-export async function getServerSideProps() {
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}/companies`);
-  const companies = await res.json();
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
+  const reso = await fetch(`${NEXT_PUBLIC_API_URL}/companies`);
+  const companies = await reso.json();
 
   return {
     props: { companies },

@@ -176,6 +176,8 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
                 objectFit="cover"
                 className="blog_image"
                 borderRadius="10px"
+                blurDataURL="URL"
+                placeholder="blur"
               />
             </div>
             <div className="blog_details">
@@ -208,6 +210,8 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
                     width={1500}
                     height={200}
                     objectFit="cover"
+                    blurDataURL="URL"
+                    placeholder="blur"
                   />
                 </div>
                 <h1>{p.title}</h1>
@@ -299,6 +303,8 @@ const BlogPosts = ({ blogPosts, post, likes, comments }) => {
                               height={70}
                               className="user_image"
                               objectFit="cover"
+                              blurDataURL="URL"
+                              placeholder="blur"
                             />
                           </div>
                           <div>

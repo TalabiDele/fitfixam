@@ -15,7 +15,12 @@ const Plumbers = ({ allPlumbers }) => {
 
 export default Plumbers;
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const resPlumbers = await fetch(
     `${NEXT_PUBLIC_API_URL}/users/?_user_category=2`
   );

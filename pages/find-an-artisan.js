@@ -292,7 +292,12 @@ export const Cards = styled.div`
   }
 `;
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
   const resCarpenters = await fetch(`${NEXT_PUBLIC_API_URL}/user-categories/1`);
   const carpenters = await resCarpenters.json();
 
