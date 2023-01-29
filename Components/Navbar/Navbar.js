@@ -158,12 +158,18 @@ const Navbar = () => {
               </Link>
               <Link href="/contact">
                 <a>
-                  <li>Contact us</li>
+                  <li
+                    className={router.pathname === "/contact" ? "active" : ""}
+                  >
+                    Contact us
+                  </li>
                 </a>
               </Link>
               <Link href="/about">
                 <a>
-                  <li>About us</li>
+                  <li className={router.pathname === "/about" ? "active" : ""}>
+                    About us
+                  </li>
                 </a>
               </Link>
             </div>

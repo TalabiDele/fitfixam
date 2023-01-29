@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "Components/Layout";
+import dynamic from "next/dynamic";
 
 const Contact = () => {
   const ContactHero = dynamic(() =>

@@ -1005,6 +1005,24 @@ export const Container = styled.div`
   margin: auto;
   transition: all 0.2s ease-in-out;
 
+  .active {
+    border-bottom: 2px solid #f4442e;
+    padding-bottom: 10px;
+    color: #f4442e;
+  }
+
+  a {
+    transition: all 0.3s ease-in-out;
+  }
+
+  li {
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: #f4442e;
+    }
+  }
+
   div.contain {
     display: flex;
     justify-content: space-between;
