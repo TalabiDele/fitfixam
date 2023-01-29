@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
   const [sum, setSum] = useState(0);
   // const [allUsers, setAllUsers] = useState(null);
 
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
   // console.log(session);
   // console.log(userData);
@@ -32,8 +32,8 @@ export const AuthProvider = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
-    checkUserLoggedIn();
-    router.prefetch("/feeds");
+    // checkUserLoggedIn();
+    // router.prefetch("/feeds");
   }, []);
 
   // Register
@@ -57,12 +57,17 @@ export const AuthProvider = ({ children }) => {
 
     const data = await res.json();
 
+    // console.log(data);
+
     setUserData(data);
 
     if (res.ok) {
       setIsLoading(true);
       setUser(data.user);
       setSent(true);
+
+      console.log(user);
+
       window.scrollTo({
         top: 0,
         left: 0,
@@ -70,7 +75,7 @@ export const AuthProvider = ({ children }) => {
       });
       setTimeout(() => {
         router.push("/feeds");
-      }, 10000);
+      }, 3000);
       setEmailMessage("Check email for confirmation!");
       setIsLoading(false);
     } else {

@@ -204,6 +204,7 @@ export const Wrapper = styled.div`
           margin-top: 1rem;
           margin-right: 2rem;
           cursor: pointer;
+          color: #050253;
         }
 
         .active {

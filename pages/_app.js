@@ -48,14 +48,10 @@ function Loading() {
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <SessionProvider session={session}>
-      <AuthProvider>
-        <LikesContextProvider>
-          <Loading />
-          <Component {...pageProps} />
-        </LikesContextProvider>
-      </AuthProvider>
-    </SessionProvider>
+    <AuthProvider>
+      <Loading />
+      <Component {...pageProps} />
+    </AuthProvider>
   );
 }
 

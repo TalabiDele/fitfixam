@@ -35,6 +35,7 @@ const CreateAccount = () => {
   const [isCarpenter, setIsCarpenter] = useState(false);
   const [isPlumber, setIsPlumber] = useState(false);
   const [isElectrician, setIsElectrician] = useState(false);
+  const [isMechanic, setIsMechanic] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [isValid, setIsValid] = useState(false);
@@ -57,6 +58,7 @@ const CreateAccount = () => {
     confirmError,
     setConfirmError,
     sent,
+    user,
   } = useContext(AuthContext);
 
   useEffect(() => {
@@ -64,30 +66,8 @@ const CreateAccount = () => {
     getIsUser();
   }, []);
 
-  const validateEmail = (e) => {
-    // const pattern =
-    //   /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    // const result = pattern.test(e);
-    // console.log(result);
-    // if (result) {
-    //   console.log("Valid");
-    //   setIsValid(false);
-    // } else {
-    //   console.log("Not valid");
-    //   setIsValid(true);
-    // }
-  };
-
   const handleSubmitSignup = (e) => {
     e.preventDefault();
-
-    // validateEmail(email);
-
-    // if (isValid) {
-    //   console.log("Email is not valid");
-    // } else {
-    //   console.log("Email is valid");
-    // }
 
     if (password !== passwordConfirm) {
       setError(true);
@@ -124,12 +104,7 @@ const CreateAccount = () => {
       }, 5000);
     }
 
-    // setSlug(username);
     register({ username, email, password, artisan, slug, user_category });
-
-    // if (user_category.id === null) {
-    //   console.log(user_category);
-    // }
   };
 
   const handleShowPassword = () => {
@@ -154,12 +129,11 @@ const CreateAccount = () => {
     setIsCarpenter(true);
     setIsPlumber(false);
     setIsElectrician(false);
+    setIsMechanic(false);
 
     setUser_category({
       id: e.target.name,
     });
-
-    console.log(user_category);
   };
 
   const getPlumber = (e) => {
@@ -168,18 +142,29 @@ const CreateAccount = () => {
     setIsCarpenter(false);
     setIsPlumber(true);
     setIsElectrician(false);
+    setIsMechanic(false);
 
     setUser_category({
       id: e.target.name,
     });
-
-    console.log(user_category);
   };
 
   const getElectrician = (e) => {
     setIsCarpenter(false);
     setIsPlumber(false);
     setIsElectrician(true);
+    setIsMechanic(false);
+
+    setUser_category({
+      id: e.target.name,
+    });
+  };
+
+  const getMechanic = (e) => {
+    setIsCarpenter(false);
+    setIsPlumber(false);
+    setIsElectrician(false);
+    setIsMechanic(true);
 
     setUser_category({
       id: e.target.name,
@@ -314,6 +299,13 @@ const CreateAccount = () => {
                     name="3"
                     onClick={getElectrician}
                     className={!isElectrician ? "" : "active"}
+                  />
+                  <input
+                    type="button"
+                    value="mechanic"
+                    name="4"
+                    onClick={getMechanic}
+                    className={!isMechanic ? "" : "active"}
                   />
                 </div>
               </div>

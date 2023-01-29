@@ -18,10 +18,6 @@ const CreateAccount = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const { data: session } = useSession();
-
-  console.log(session);
-
   const { login, errorMessage, isLoading, error } = useContext(AuthContext);
 
   const handleSubmitSignin = (e) => {

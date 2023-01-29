@@ -25,10 +25,6 @@ const Posts = ({ posts, comments, userPost, likes }) => {
   const router = useRouter();
   const initialState = [];
 
-  console.log(likes);
-
-  console.log(posts);
-
   const read = <h1>...Read more</h1>;
 
   useEffect(() => {
@@ -37,9 +33,6 @@ const Posts = ({ posts, comments, userPost, likes }) => {
 
   const displayPost = (e) => {
     setPostDisplay(e);
-    // console.log(postDisplay.user.id);
-
-    // if(e.user.id === )
     router.push(`/feeds/${e.slug}`);
   };
 

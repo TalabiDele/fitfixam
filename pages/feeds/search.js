@@ -47,8 +47,8 @@ export async function getServerSideProps({ query: { term }, req, res }) {
     },
   });
 
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}/posts?${query}`);
-  const posts = await res.json();
+  const resPosts = await fetch(`${NEXT_PUBLIC_API_URL}/posts?${query}`);
+  const posts = await resPosts.json();
 
   return {
     props: { posts, query },
