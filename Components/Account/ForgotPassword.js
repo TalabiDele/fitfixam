@@ -23,8 +23,6 @@ const CreateAccount = () => {
   const [errorMessage, setErrorMessage] = useState();
   const [sent, setSent] = useState(false);
 
-  const { data: session } = useSession();
-
   const { forgotPassword, error, setError } = useContext(AuthContext);
 
   const handleSubmitSignin = async (e) => {
