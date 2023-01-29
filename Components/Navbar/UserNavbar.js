@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useState, useContext, useEffect } from "react";
 import AuthContext from "@/context/AuthContext";
-import qs from "qs";
 import Logo from "@/public/Blue.png";
 import userImage from "public/userImage.png";
 import {
