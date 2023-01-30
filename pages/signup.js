@@ -13,19 +13,19 @@ const Signup = () => {
 
   const router = useRouter();
 
-  if (!user) {
-    return (
-      <Layout
-        title="Fitfixam | Sign up"
-        description="Get started with Fitfixam today. Sign up for free!"
-        keywords=""
-      >
-        <CreateAccount />
-      </Layout>
-    );
-  } else {
-    return <>{router.push("/feeds")}</>;
-  }
+  // if (!user) {
+  return (
+    <Layout
+      title="Fitfixam | Sign up"
+      description="Get started with Fitfixam today. Sign up for free!"
+      keywords=""
+    >
+      <CreateAccount />
+    </Layout>
+  );
+  // } else {
+  //   return <>{router.push("/feeds")}</>;
+  // }
 };
 
 export default Signup;
