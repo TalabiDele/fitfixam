@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
-    // checkUserLoggedIn();
+    checkUserLoggedIn();
     // router.prefetch("/feeds");
   }, []);
 
