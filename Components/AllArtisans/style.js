@@ -67,6 +67,7 @@ export const Container = styled.div`
     background: #f9fafb;
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
     /* margin-right: -10rem; */
   }
 
