@@ -58,8 +58,6 @@ const ResetPassword = () => {
     setConfirmError,
   } = useContext(AuthContext);
 
-  console.log(router.query.code);
-
   const handleSubmitSignup = async (e) => {
     e.preventDefault();
 
@@ -90,10 +88,6 @@ const ResetPassword = () => {
       setSent(false);
       router.push("/login");
     }, 5000);
-
-    // if (user_category.id === null) {
-    //   console.log(user_category);
-    // }
   };
 
   const handleShowPassword = () => {

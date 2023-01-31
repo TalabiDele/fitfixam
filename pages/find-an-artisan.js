@@ -42,8 +42,6 @@ const FindArtisan = ({ carpenters, plumbers }) => {
     if (response.ok) {
       setIsElectricians(json);
     }
-
-    console.log(isElectricians);
   };
 
   const getMechanics = async () => {

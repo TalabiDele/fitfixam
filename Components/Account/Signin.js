@@ -23,8 +23,6 @@ const CreateAccount = () => {
   const handleSubmitSignin = (e) => {
     e.preventDefault();
     login({ email, password });
-
-    console.log(login);
   };
 
   const displayError = () => {

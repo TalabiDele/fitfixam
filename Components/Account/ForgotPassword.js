@@ -28,21 +28,6 @@ const CreateAccount = () => {
   const handleSubmitSignin = async (e) => {
     e.preventDefault();
 
-    console.log(email);
-
-    // axios
-    //   .post(`http://localhost:1337/auth/forgot-password`, {
-    //     email, // user's email
-    //   })
-    //   .then((response) => {
-    //     console.log("Your user received an email");
-    //   })
-    //   .catch((error) => {
-    //     console.log("An error occurred:", error.response);
-    //   });
-
-    // forgotPassword({ email });
-
     const res = await fetch(`${NEXT_PUBLIC_API_URL}/auth/forgot-password`, {
       method: "POST",
       headers: {
@@ -54,8 +39,6 @@ const CreateAccount = () => {
     });
 
     const data = await res.json();
-
-    console.log(data);
 
     if (res.ok) {
       setSent(true);
