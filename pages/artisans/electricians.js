@@ -9,7 +9,22 @@ const electricians = ({ allElectricians }) => {
   );
 
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam | Electricians"
+      keywords="Artisans
+  Repair
+  Fix
+  Carpenters
+  Plumbers 
+  Electricians 
+  Reviews 
+  Good 
+  Bad 
+  Services 
+  Satisfied 
+  Craftsmen
+  Experience"
+    >
       <Electrician allElectricians={allElectricians} />
     </UserLayout>
   );

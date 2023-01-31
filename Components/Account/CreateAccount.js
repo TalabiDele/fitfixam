@@ -36,6 +36,7 @@ const CreateAccount = () => {
   const [isPlumber, setIsPlumber] = useState(false);
   const [isElectrician, setIsElectrician] = useState(false);
   const [isMechanic, setIsMechanic] = useState(false);
+  const [isOthers, setIsOthers] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [isValid, setIsValid] = useState(false);
@@ -130,6 +131,7 @@ const CreateAccount = () => {
     setIsPlumber(false);
     setIsElectrician(false);
     setIsMechanic(false);
+    setIsOthers(false);
 
     setUser_category({
       id: e.target.name,
@@ -143,6 +145,7 @@ const CreateAccount = () => {
     setIsPlumber(true);
     setIsElectrician(false);
     setIsMechanic(false);
+    setIsOthers(false);
 
     setUser_category({
       id: e.target.name,
@@ -154,6 +157,7 @@ const CreateAccount = () => {
     setIsPlumber(false);
     setIsElectrician(true);
     setIsMechanic(false);
+    setIsOthers(false);
 
     setUser_category({
       id: e.target.name,
@@ -165,12 +169,23 @@ const CreateAccount = () => {
     setIsPlumber(false);
     setIsElectrician(false);
     setIsMechanic(true);
+    setIsOthers(false);
 
     setUser_category({
       id: e.target.name,
     });
+  };
 
-    console.log(user_category);
+  const getOthers = (e) => {
+    setIsCarpenter(false);
+    setIsPlumber(false);
+    setIsElectrician(false);
+    setIsMechanic(false);
+    setIsOthers(true);
+
+    setUser_category({
+      id: e.target.name,
+    });
   };
 
   return (
@@ -306,6 +321,13 @@ const CreateAccount = () => {
                     name="4"
                     onClick={getMechanic}
                     className={!isMechanic ? "" : "active"}
+                  />
+                  <input
+                    type="button"
+                    value="others"
+                    name="5"
+                    onClick={getOthers}
+                    className={!isOthers ? "" : "active"}
                   />
                 </div>
               </div>

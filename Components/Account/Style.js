@@ -186,6 +186,7 @@ export const Wrapper = styled.div`
 
     div.category {
       transition: all 0.3s ease;
+
       p {
         font-size: 26px;
         text-align: left;
@@ -195,6 +196,9 @@ export const Wrapper = styled.div`
 
       .artisan_category {
         display: flex;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        align-items: center;
 
         input {
           border: 1px solid #909dad;
@@ -315,6 +319,7 @@ export const Wrapper = styled.div`
 
       div.category {
         transition: all 0.3s ease;
+
         p {
           font-size: 26px;
           text-align: left;
@@ -324,6 +329,9 @@ export const Wrapper = styled.div`
 
         .artisan_category {
           display: flex;
+          flex-wrap: wrap;
+          flex-basis: 100%;
+          align-items: center;
 
           input {
             border: 1px solid #909dad;

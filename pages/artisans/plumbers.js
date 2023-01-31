@@ -7,7 +7,22 @@ const Plumbers = ({ allPlumbers }) => {
   const Plumber = dynamic(() => import("@/components/AllArtisans/Plumber"));
 
   return (
-    <UserLayout>
+    <UserLayout
+      title="Fitfixam | Plumbers"
+      keywords="Artisans
+  Repair
+  Fix
+  Carpenters
+  Plumbers 
+  Electricians 
+  Reviews 
+  Good 
+  Bad 
+  Services 
+  Satisfied 
+  Craftsmen
+  Experience"
+    >
       <Plumber allPlumbers={allPlumbers} />
     </UserLayout>
   );

@@ -12,10 +12,14 @@ const FindArtisan = ({ carpenters, plumbers }) => {
 
   const [isCarpenter, setIsCarpenter] = useState();
   const [isElectricians, setIsElectricians] = useState();
+  const [isMechanics, setIsMechanics] = useState();
+  const [isOthers, setIsOthers] = useState();
 
   useEffect(() => {
     getPlumbers();
     getElectricians();
+    getMechanics();
+    getOthers();
   }, []);
 
   const getPlumbers = async () => {
@@ -37,6 +41,30 @@ const FindArtisan = ({ carpenters, plumbers }) => {
 
     if (response.ok) {
       setIsElectricians(json);
+    }
+
+    console.log(isElectricians);
+  };
+
+  const getMechanics = async () => {
+    const response = await fetch(
+      `${NEXT_PUBLIC_API_URL}/user-categories/4?_limit=5`
+    );
+    const json = await response.json();
+
+    if (response.ok) {
+      setIsMechanics(json);
+    }
+  };
+
+  const getOthers = async () => {
+    const response = await fetch(
+      `${NEXT_PUBLIC_API_URL}/user-categories/5?_limit=5`
+    );
+    const json = await response.json();
+
+    if (response.ok) {
+      setIsOthers(json);
     }
   };
 
@@ -69,15 +97,17 @@ const FindArtisan = ({ carpenters, plumbers }) => {
           </Header>
           <Cards>
             {isCarpenter &&
-              isCarpenter.users_permissions_users.map((carpenter) => (
-                <div className="card" key={carpenter.id}>
-                  <FindArtisans
-                    key={carpenter.id}
-                    user={carpenter}
-                    category={isCarpenter.category}
-                  />
-                </div>
-              ))}
+              isCarpenter.users_permissions_users
+                .slice(0, 5)
+                .map((carpenter) => (
+                  <div className="card" key={carpenter.id}>
+                    <FindArtisans
+                      key={carpenter.id}
+                      user={carpenter}
+                      category={isCarpenter.category}
+                    />
+                  </div>
+                ))}
           </Cards>
         </>
         <>
@@ -88,7 +118,7 @@ const FindArtisan = ({ carpenters, plumbers }) => {
             </Link>
           </Header>
           <Cards>
-            {plumbers.users_permissions_users.map((plumber) => (
+            {plumbers.users_permissions_users.slice(0, 5).map((plumber) => (
               <div className="card" key={plumber.id}>
                 <FindArtisans
                   key={plumber.id}
@@ -108,12 +138,56 @@ const FindArtisan = ({ carpenters, plumbers }) => {
           </Header>
           <Cards>
             {isElectricians &&
-              isElectricians.users_permissions_users.map((electrician) => (
-                <div className="card" key={electrician.id}>
+              isElectricians.users_permissions_users
+                .slice(0, 5)
+                .map((electrician) => (
+                  <div className="card" key={electrician.id}>
+                    <FindArtisans
+                      key={electrician.id}
+                      user={electrician}
+                      category={isElectricians.category}
+                    />
+                  </div>
+                ))}
+          </Cards>
+        </>
+
+        <>
+          <Header>
+            <h1>Mechanics</h1>
+            <Link href="/artisans/mechanics">
+              <a>See all</a>
+            </Link>
+          </Header>
+          <Cards>
+            {isMechanics &&
+              isMechanics.users_permissions_users.slice(0, 5).map((mech) => (
+                <div className="card" key={mech.id}>
                   <FindArtisans
-                    key={electrician.id}
-                    user={electrician}
-                    category={isElectricians.category}
+                    key={mech.id}
+                    user={mech}
+                    category={isMechanics.categories}
+                  />
+                </div>
+              ))}
+          </Cards>
+        </>
+
+        <>
+          <Header>
+            <h1>Mechanics</h1>
+            <Link href="/artisans/others">
+              <a>See all</a>
+            </Link>
+          </Header>
+          <Cards>
+            {isOthers &&
+              isOthers.users_permissions_users.slice(0, 5).map((mech) => (
+                <div className="card" key={mech.id}>
+                  <FindArtisans
+                    key={mech.id}
+                    user={mech}
+                    category={isOthers.categories}
                   />
                 </div>
               ))}

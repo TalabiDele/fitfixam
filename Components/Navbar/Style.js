@@ -239,8 +239,14 @@ export const Tags = styled.div`
       margin-right: 2rem;
     }
 
-    input.artisan {
+    input.mech {
       background: #fdd6bb;
+      margin-right: 2rem;
+    }
+
+    input.others {
+      background: #bbfdd1;
+      margin-right: 2rem;
     }
   }
 

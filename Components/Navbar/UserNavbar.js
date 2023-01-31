@@ -37,7 +37,9 @@ import {
   FaChevronUp,
   FaPlus,
   FaEnvelope,
+  FaCogs,
 } from "react-icons/fa";
+import { CgMore } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiTrendingUp, BiUserCircle } from "react-icons/bi";
 import { ImCancelCircle } from "react-icons/im";
@@ -75,6 +77,8 @@ const Navbar = () => {
   const [isCarpenter, setIsCarpenter] = useState(false);
   const [isPlumber, setIsPlumber] = useState(false);
   const [isElect, setIsElect] = useState(false);
+  const [isOthers, setIsOthers] = useState(false);
+  const [isMechanic, setIsMechanic] = useState(false);
   const [message, setMessage] = useState("");
   const [isFile, setIsFile] = useState();
   const [fileName, setFileName] = useState("");
@@ -275,6 +279,8 @@ const Navbar = () => {
     setIsCarpenter(true);
     setIsPlumber(false);
     setIsElect(false);
+    setIsMechanic(false);
+    setIsOthers(false);
 
     handlePostCategory(e);
   };
@@ -282,6 +288,8 @@ const Navbar = () => {
     setIsCarpenter(false);
     setIsPlumber(true);
     setIsElect(false);
+    setIsMechanic(false);
+    setIsOthers(false);
 
     handlePostCategory(e);
   };
@@ -289,6 +297,28 @@ const Navbar = () => {
     setIsCarpenter(false);
     setIsPlumber(false);
     setIsElect(true);
+    setIsMechanic(false);
+    setIsOthers(false);
+
+    handlePostCategory(e);
+  };
+
+  const handleMechanic = (e) => {
+    setIsCarpenter(false);
+    setIsPlumber(false);
+    setIsElect(false);
+    setIsMechanic(true);
+    setIsOthers(false);
+
+    handlePostCategory(e);
+  };
+
+  const handleOthers = (e) => {
+    setIsCarpenter(false);
+    setIsPlumber(false);
+    setIsElect(false);
+    setIsMechanic(false);
+    setIsOthers(true);
 
     handlePostCategory(e);
   };
@@ -369,11 +399,19 @@ const Navbar = () => {
                 />
                 <input
                   type="button"
-                  placeholder="#ArtisanWahala"
-                  value="#ArtisanWahala"
-                  name="artisanwahala"
-                  className="artisan"
-                  onClick={(e) => console.log(e.target.name)}
+                  placeholder="#Mechanics"
+                  value="#mechanics"
+                  name="34"
+                  className={isMechanic ? "mech active" : "mech"}
+                  onClick={(e) => handleMechanic(e)}
+                />
+                <input
+                  type="button"
+                  placeholder="#Others"
+                  value="#others"
+                  name="35"
+                  className={isOthers ? "others active" : "others"}
+                  onClick={(e) => handleOthers(e)}
                 />
               </Tags>
               <Actions>
@@ -626,6 +664,24 @@ const Navbar = () => {
               >
                 <FaWrench fontSize={26} cursor="pointer" color="#07036e" />
                 <p>Plumbers</p>
+              </IconNav>
+            </a>
+          </Link>
+          <Link href="/mechanics">
+            <a>
+              <IconNav
+                className={router.pathname == "/mechanics" ? "active" : ""}
+              >
+                <FaCogs fontSize={26} cursor="pointer" color="#07036e" />
+                <p>Mechanics</p>
+              </IconNav>
+            </a>
+          </Link>
+          <Link href="/others">
+            <a>
+              <IconNav className={router.pathname == "/others" ? "active" : ""}>
+                <CgMore fontSize={26} cursor="pointer" color="#07036e" />
+                <p>Others</p>
               </IconNav>
             </a>
           </Link>

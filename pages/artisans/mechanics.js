@@ -2,15 +2,15 @@ import React from "react";
 import { NEXT_PUBLIC_API_URL } from "@/config/index";
 import dynamic from "next/dynamic";
 
-const carpenters = ({ allCarpenters }) => {
+const mechanics = ({ allMechanics }) => {
   const UserLayout = dynamic(() => import("@/components/UserLayout"));
-  const Carpenters = dynamic(() =>
-    import("@/components/AllArtisans/Carpenters")
-  );
+  const Mechanics = dynamic(() => import("@/components/AllArtisans/Mechanics"));
+
+  console.log(allMechanics);
 
   return (
     <UserLayout
-      title="Fitfixam | Carpenters"
+      title="Fitfixam | Mechanics"
       keywords="Artisans
   Repair
   Fix
@@ -25,23 +25,22 @@ const carpenters = ({ allCarpenters }) => {
   Craftsmen
   Experience"
     >
-      <Carpenters allCarpenters={allCarpenters} />
+      <Mechanics allMechanics={allMechanics} />
     </UserLayout>
   );
 };
 
-export default carpenters;
+export default mechanics;
 
 export async function getServerSideProps({ req, res }) {
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"
   );
-
-  const resCarpenters = await fetch(`${NEXT_PUBLIC_API_URL}/user-categories/1`);
-  const allCarpenters = await resCarpenters.json();
+  const resMechanics = await fetch(`${NEXT_PUBLIC_API_URL}/user-categories/4`);
+  const allMechanics = await resMechanics.json();
 
   return {
-    props: { allCarpenters },
+    props: { allMechanics },
   };
 }

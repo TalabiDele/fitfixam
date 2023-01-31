@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import RatingStar from "../RatingStar/RatingStar";
 import userImage from "@/public/userImage.png";
 
-const Plumber = ({ allPlumbers }) => {
+const Others = ({ allOthers }) => {
   const router = useRouter();
 
   const stars = [0, 1, 2, 3, 4, 5];
@@ -22,9 +22,9 @@ const Plumber = ({ allPlumbers }) => {
   return (
     <Container>
       <div className="container">
-        <h1>Plumbers</h1>
+        <h1>Others</h1>
         <div className="all">
-          {allPlumbers.map((e) => (
+          {allOthers.users_permissions_users.map((e) => (
             <div className="card" key={e.id} onClick={() => handlePush(e)}>
               <div className="img">
                 <div className="image">
@@ -86,4 +86,4 @@ const Plumber = ({ allPlumbers }) => {
   );
 };
 
-export default Plumber;
+export default Others;
