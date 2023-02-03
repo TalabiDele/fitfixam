@@ -173,7 +173,7 @@ const FindArtisan = ({ carpenters, plumbers }) => {
 
         <>
           <Header>
-            <h1>Mechanics</h1>
+            <h1>Others</h1>
             <Link href="/artisans/others">
               <a>See all</a>
             </Link>
